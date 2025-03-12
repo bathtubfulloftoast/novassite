@@ -1,0 +1,32 @@
+@font-face { font-family: segoeui; src: url('/misc/media/segoeui.ttf'); }
+body {
+font-family: segoeui;
+background-color:#0078d7;
+color:white;
+}
+
+.qrcode {
+    display:flex;
+    align-items:center;
+
+}
+.qrcode p {
+    width:85%;
+    justify-content:right;
+    }
+
+.qrcode img {
+padding-right:10px;
+    }
+
+a{
+    text-decoration: none;
+
+}
+
+a:link, a:visited{
+    color: white;
+
+}
+
+
