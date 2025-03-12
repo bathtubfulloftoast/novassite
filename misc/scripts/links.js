@@ -2,7 +2,7 @@ let cachedlinks = null;
 
 async function getlinks() {
 if (!cachedlinks) {
-const response = await fetch('/links.json');
+const response = await fetch('/misc/links.json');
 cachedlinks = await response.json();
 }
 return cachedlinks;
