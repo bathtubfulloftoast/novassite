@@ -55,10 +55,32 @@ cannot ensure silliness with every visit.
 <b>hey there!</b><br>
 you can call me alice or nova,
 i go by <span class="trans">she/her</span>.<br>
-im a $age year</span> old ametuer web developer
+im a <span id="age">17 year</span> old ametuer web developer
 and i enjoy jailbreaking and doing things im not supposed to.<br>
 this site is entirely selfhosted and self developed<br>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+    const birthTimestamp = 1181368800 * 1000; // Convert the Unix timestamp to milliseconds
+    const currentTimestamp = Date.now();
+
+    // Calculate the difference in milliseconds
+    const timeDifference = currentTimestamp - birthTimestamp;
+
+    // Convert milliseconds to years
+    const years = timeDifference / (1000 * 60 * 60 * 24 * 365.25); // Approximate years (365.25 to account for leap years)
+
+// Display the age
+const currentAge = `${Math.floor(years)} year`;
+const ageElement = document.getElementById("age");
+
+if (ageElement) {
+    ageElement.innerHTML = currentAge; // Update the element if it exists
+} else {
+    console.error('Element with ID "age" not found.');
+}
+});
+</script>
 
 <div class="box">
 <b>Main Projects</b><br>
