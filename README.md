@@ -14,3 +14,8 @@ i feel i have stagnated lately and i *need* a challenge
 i want to make more shit and i need it to be great
 so to do this i have to sacrifice some things i love.
 if this doesnt work the way i want it to i will make sure to cry on camera
+
+## TODO
+- [ ] redo qr code thing
+- [ ] redo discord profile share
+- [ ] redo blog (maybe)
