@@ -1,3 +1,5 @@
+header("Access-Control-Allow-Origin: *");
+
 function timeAgo(time) {
 const timeDifference = Math.floor(Date.now() / 1000) - time;
 
