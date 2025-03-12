@@ -53,7 +53,7 @@ return cachedCensoredIds;
 
 const mainsong = async () => {
 const names = await censoredids();
-const response = await fetch('/misc/apis/lastfm.php');
+const response = await fetch('https://cdn.novassite.net/apis/lastfm.php');
 // doesnt have to be my specific thing this is just to hide my api key from you bastards
 // also my own rate limiting and error handling fuck yuo
 const myJson = await response.json();
