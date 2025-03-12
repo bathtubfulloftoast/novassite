@@ -15,10 +15,10 @@ cannot ensure silliness with every visit.
 <link rel="icon" href="favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="/style.css">
-<link id='darkmode' rel='stylesheet' href='/Dark.css'>
+<link rel="stylesheet" href="style.css">
+<link id='darkmode' rel='stylesheet' href='Dark.css'>
 
-<script src="/misc/media/fontawesome-free-6.6.0-web/js/all.js" crossorigin="anonymous"></script>
+<script src="misc/media/fontawesome-free-6.6.0-web/js/all.js" crossorigin="anonymous"></script>
 
 <!--Embed-->
 <meta content="Novas Site" property="og:title" />
@@ -40,16 +40,16 @@ cannot ensure silliness with every visit.
 <meta name="msapplication-config" content="/browserconfig.xml">
 <meta name="theme-color" content="#6b0059">
 
-<script src="/jquery-3.7.1.min.js"></script>
+<script src="jquery-3.7.1.min.js"></script>
 
 </head>
 <body>
 <div class="topbox">
 
-<img src="/misc/media/SILLY.png" class="lefticon"><h1 class="headtext"> Novas Site</h1>
+<img src="misc/media/SILLY.png" class="lefticon"><h1 class="headtext"> Novas Site</h1>
 </div>
-<div class="mobilebox"><p class="splash"></p></div>
-<!-- since splashes are handled server side you can find them all here /misc/media/splashes.txt -->
+<div class="mobilebox"><p id="splash" class="splash"></p></div>
+<script src="misc/scripts/splash.js"></script>
 
 <div class="box">
 <b>hey there!</b><br>
@@ -92,7 +92,7 @@ Here are the main projects ive been working on, or just things i like to host an
 <br><a href="/qr">Random Thing</a> (usually a redirect)
 </div>
 
-<script src="/misc/scripts/openweather.js"></script>
+<script src="misc/scripts/openweather.js"></script>
 
 <div class="box">
 <div class="weatherparent">
@@ -110,11 +110,11 @@ Here are the main projects ive been working on, or just things i like to host an
 
 <div style="text-align:center" class="box">
 <b>What Music am I Listening to?</b><br><br>
-<script src="/misc/scripts/lastfm.js"></script>
+<script src="misc/scripts/lastfm.js"></script>
 <div class="lastfm">
 <a id="mainfmlink"  target="blank">
 <div class="albumcover">
-<img id="cover" src="/misc/media/missing512.jpeg">
+<img id="cover" src="misc/media/missing512.jpeg">
 </div>
 <h2 class="musicinfo" >
 <span id="trackname" style="font-size:30">A Song</span>
@@ -140,20 +140,20 @@ MUCH
 <div class="box">
 <b>What WAS i listening to?</b><br>
 <span id="previoustracks">
-<i>[2d]</i> <a><img style="border-radius:2px;width:16px;height:16px;" src="/misc/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
-<i>[2d]</i> <a><img style="border-radius:2px;width:16px;height:16px;" src="/misc/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
-<i>[2d]</i> <a><img style="border-radius:2px;width:16px;height:16px;" src="/misc/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
-<i>[2d]</i> <a><img style="border-radius:2px;width:16px;height:16px;" src="/misc/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
+<i>[2d]</i> <a><img style="border-radius:2px;width:16px;height:16px;" src="misc/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span></a><br>
+<i>[2d]</i> <a><img style="border-radius:2px;width:16px;height:16px;" src="misc/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span></a><br>
+<i>[2d]</i> <a><img style="border-radius:2px;width:16px;height:16px;" src="misc/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span></a><br>
+<i>[2d]</i> <a><img style="border-radius:2px;width:16px;height:16px;" src="misc/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span></a><br>
 
 </span>
 <div style="margin-top:10px;"><!-- I NEED ANOTHER MOTHERFUCKING DIV I JUST WANT IT TO BE A FEW PIXELS LOWER WHAT TH E FUCK -->
 <i id="goals">listened to 10000000000 songs :D</i></div>
 </div>
 <div class="box" style="text-align:center">
-<img style="text-align:center" src="/misc/media/aproval.webp">
+<img style="text-align:center" src="misc/media/aproval.webp">
 </div>
 
-<script src="/misc/scripts/links.js"></script>
+<script src="misc/scripts/links.js"></script>
 
 <div style="text-align:center" class="box">
 <div  style="margin-bottom:5px;"><b>Badges :3</b></div><br> <!-- WHY DO I HAVE TO CREATE A DIV FOR EVERYTHING GOD DAMNIT -->
@@ -185,11 +185,11 @@ google.com is a pretty cool site ig...
 
 </div>
 <br>
-<marquee><a href="/secret/battleblock" class="invisible">you found me!</a></marquee>
+<marquee><a href="secret/battleblock" class="invisible">you found me!</a></marquee>
 </body>
-<script src="/misc/scripts/oneko.js"></script>
+<script src="misc/scripts/oneko.js"></script>
 
-<script src="/misc/scripts/darkmode.js"></script>
+<script src="misc/scripts/darkmode.js"></script>
 <script>
 document.getElementById("copyright").innerHTML = `Novas Site `+new Date().getFullYear();
 </script>
