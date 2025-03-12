@@ -85,11 +85,10 @@ if (ageElement) {
 <div class="box">
 <b>Main Projects</b><br>
 Here are the main projects ive been working on, or just things i like to host and want to give special attention to
-<br><a href="sonas">Characters</a>
 <br><a href="blog">Blog</a>
-<br><a href="//files.novassite.net">Random Files</a>
+<br><a href="//projects.novassite.net/files/">Random Files</a>
 <!--<br><a href="/misc/guestbook">Guest Book</a>-->
-<br><a href="//wiki.novassite.net">Wiki</a>
+<br><a href="//wiki.novassite.net">Character Wiki</a>
 <br><a href="/qr">Random Thing</a> (usually a redirect)
 </div>
 
@@ -189,41 +188,8 @@ google.com is a pretty cool site ig...
 <marquee><a href="/secret/battleblock" class="invisible">you found me!</a></marquee>
 </body>
 <script src="/misc/scripts/oneko.js"></script>
-<script>
-function toClipboard(text) {
-    if ("clipboard" in navigator && typeof navigator.clipboard.writeText === "function") {
-        // Chrome
-        return navigator.clipboard.writeText(text)
-        .then(() => true)
-        .catch(() => false);
-    } else {
-        // Firefox
-        const input = document.createElement("input");
-        input.value = text;
-        input.style.position = "fixed";
-        input.style.top = "-2000px";
-        document.body.appendChild(input);
-        input.select();
-        try {
-            return Promise.resolve(document.execCommand("copy"))
-            .then(res => {
-                document.body.removeChild(input);
-                return res;
-            });
-        } catch (err) {
-            return Promise.resolve(false);
-        }
-    }
-}
 
-document.querySelector("#copycode").addEventListener("click", function (e) {
-    e.preventDefault();
-    toClipboard('<a href="https://novassite.net/">\n<img src="https://cdn.novassite.net/nova.gif">\n</a>')
-    .then(res => console.log("copied", res));
-})
-</script>
-
-<script src="/darkmode.js"></script>
+<script src="/misc/scripts/darkmode.js"></script>
 <script>
 document.getElementById("copyright").innerHTML = `Novas Site `+new Date().getFullYear();
 </script>
