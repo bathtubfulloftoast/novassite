@@ -55,7 +55,7 @@ a:link, a:visited{
     transition: color 0.2s;
 }
 
-a:link:hover {
+a:hover {
     color: var(--link-hover);
 }
 
