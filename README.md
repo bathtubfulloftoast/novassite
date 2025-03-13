@@ -18,4 +18,5 @@ if this doesnt work the way i want it to i will make sure to cry on camera
 ## TODO
 - [ ] redo qr code thing
 - [ ] redo discord profile share
-- [ ] redo blog (maybe)
+- [ ] redo blog
+- [ ] make footer better

@@ -1,8 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
+
 import logo from '../assets/SILLY.png';
 import approval from '../assets/aproval.webp';
+
+import links from '../assets/links.json';
+
+const badges = links[0] ?? [];
+const stamps = links[1] ?? [];
+const socialLinks = links[2] ?? [];
 ---
 
 <Layout>
@@ -85,35 +92,53 @@ Here are the main projects ive been working on, or just things i like to host an
 
 <div style="text-align:center" class="box">
 <div  style="margin-bottom:5px;"><b>Badges :3</b></div><br> <!-- WHY DO I HAVE TO CREATE A DIV FOR EVERYTHING GOD DAMNIT -->
-<div id="badges" class="banners">
-you must have javascript for this sorry :(
+<div class="banners">
+<section id="badges">
+    {badges.map((item) => (
+        <a title={item.title} href={item.url} target="_blank">
+            <img src={`/media/badges/${item.source}`} alt={item.title} />
+        </a>
+    ))}
+</section>
 </div>
 </div>
 
 
 <div style="text-align:center" class="box">
 <div style="margin-bottom:5px;"><b>Stamps :0</b></div><br> <!-- WHY DO I HAVE TO CREATE A DIV FOR EVERYTHING GOD DAMNIT -->
-<div id="stamps" class="banners">
-loading :D<br><i>maybe</i>
+<div class="banners">
+<section id="stamps">
+    {stamps.map((item) => (
+        <a title={item.title} href={item.url} target="_blank">
+            <img src={`/media/stamps/${item.source}`} alt={item.title} />
+        </a>
+    ))}
+</section>
 </div>
 </div>
 
 <div class="box">
-<div id="links" class="links">
-google.com is a pretty cool site ig...
+<div class="links">
+<section id="links">
+    {socialLinks.map((item) => (
+        <div class="link">
+            <a href={item.url}>
+                <i title={item.title} class={item.source}></i>
+            </a>
+        </div>
+    ))}
+</section>
 </div>
 </div>
-
     <Footer />
 
 </Layout>
-<script is:inline src="/media/fontawesome-free-6.6.0-web/js/all.js" crossorigin="anonymous"></script>
+<script is:inline src="https://kit.fontawesome.com/3c882d8d47.js" crossorigin="anonymous"></script>
 <script src="/scripts/splash.js" is:inline></script>
 <script is:inline src="/scripts/openweather.js"></script>
 <script is:inline src="/scripts/lastfm.js"></script>
 <script is:inline src="/scripts/oneko.js"></script>
 
-<script src="../assets/links.js"></script>
 <script src="../assets/age.js"></script>
 
 <script>
