@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+import logo from '../assets/SILLY.png';
+import approval from '../assets/aproval.webp';
+---
+
+<Layout>
+
+<div class="topbox">
+<img src={logo.src} class="lefticon"><h1 class="headtext"> Novas Site</h1>
+</div>
+<div class="mobilebox"><p id="splash" class="splash">SPLASH!</p></div>
+
+<div class="box">
+<b>hey there!</b><br>
+you can call me alice or nova,
+i go by <span class="trans">she/her</span>.<br>
+im a <span id="age">3 year</span> old ametuer web developer
+and i enjoy jailbreaking and doing things im not supposed to.<br>
+this site is entirely self developed<br>
+you can find the source code <a href="https://github.com/bathtubfulloftoast/novassite">here.</a>
+</div>
+
+<div class="box">
+<b>Main Projects</b><br>
+Here are the main projects ive been working on, or just things i like to host and want to give special attention to
+<br><a href="//blog.novassite.net">Blog</a>
+<br><a href="//projects.novassite.net/files/">Random Files</a>
+<!--<br><a href="//guestbook">Guest Book</a>-->
+<br><a href="//wiki.novassite.net">Character Wiki</a>
+<br><a href="/qr">Random Thing</a> (usually a redirect)
+</div>
+
+
+<div class="box">
+<div class="weatherparent">
+<div class="weather">
+<div><h1><a id="location">Weather for location</a></h1></div>
+<div><h2 id="wdes">sunny</h2></div>
+<div><h3 id="temps">temperature</h3></div>
+</div>
+<div class="weathericon">
+<img id="wico">
+</div>
+</div>
+<i><a href="https://openweathermap.org/" target="blank">powered by openweathermap</a></i>
+</div>
+
+<div style="text-align:center" class="box">
+<b>What Music am I Listening to?</b><br><br>
+<div class="lastfm">
+<a id="mainfmlink"  target="blank">
+<div class="albumcover">
+<img id="cover" src="/media/missing512.jpeg">
+</div>
+<h2 class="musicinfo" >
+<span id="trackname" style="font-size:30">A Song</span>
+<br>
+<span id="albumname" style="font-size:25">On An Album</span>
+<br>
+<span id="artistname" style="font-size:20">By An Artist</span>
+</h2></a>
+<div id="nowplaying">now loading...</div>
+</div>
+<div style="margin-top:5px;margin-bottom:-10px;"><i><a id="poweredby" href="https://www.last.fm" target="blank">powered by last.fm</a></i></div>
+</div>
+
+<div class="box">
+<b>What WAS i listening to?</b><br>
+<span id="previoustracks">
+<i>[2d]</i> <img style="border-radius:2px;width:16px;height:16px;" src="/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
+<i>[2d]</i> <img style="border-radius:2px;width:16px;height:16px;" src="/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
+<i>[2d]</i> <img style="border-radius:2px;width:16px;height:16px;" src="/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
+<i>[2d]</i> <img style="border-radius:2px;width:16px;height:16px;" src="/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
+
+</span>
+<div style="margin-top:10px;"><!-- I NEED ANOTHER MOTHERFUCKING DIV I JUST WANT IT TO BE A FEW PIXELS LOWER WHAT TH E FUCK -->
+<i id="goals" style="display:block">listened to 10000000000 songs :D</i></div>
+</div>
+<div class="box" style="text-align:center">
+<img style="text-align:center" src={approval.src}>
+</div>
+
+
+<div style="text-align:center" class="box">
+<div  style="margin-bottom:5px;"><b>Badges :3</b></div><br> <!-- WHY DO I HAVE TO CREATE A DIV FOR EVERYTHING GOD DAMNIT -->
+<div id="badges" class="banners">
+you must have javascript for this sorry :(
+</div>
+</div>
+
+
+<div style="text-align:center" class="box">
+<div style="margin-bottom:5px;"><b>Stamps :0</b></div><br> <!-- WHY DO I HAVE TO CREATE A DIV FOR EVERYTHING GOD DAMNIT -->
+<div id="stamps" class="banners">
+loading :D<br><i>maybe</i>
+</div>
+</div>
+
+<div class="box">
+<div id="links" class="links">
+google.com is a pretty cool site ig...
+</div>
+</div>
+
+    <Footer />
+
+</Layout>
+<script is:inline src="/media/fontawesome-free-6.6.0-web/js/all.js" crossorigin="anonymous"></script>
+<script src="/scripts/splash.js" is:inline></script>
+<script is:inline src="/scripts/openweather.js"></script>
+<script is:inline src="/scripts/lastfm.js"></script>
+<script is:inline src="/scripts/oneko.js"></script>
+
+<script src="../assets/links.js"></script>
+<script src="../assets/age.js"></script>
+
+<script>
+cookie = "alicesnote=Alice Wuz Here :3";
+</script>
