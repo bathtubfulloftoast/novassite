@@ -2,7 +2,7 @@ let cachedlinks = null;
 
 async function getlinks() {
 if (!cachedlinks) {
-const response = await fetch('/misc/links.json');
+const response = await fetch('/links.json');
 cachedlinks = await response.json();
 }
 return cachedlinks;
@@ -19,7 +19,7 @@ links?.[0].forEach(myFunction);
 document.getElementById("badges").innerHTML = text;
 
 function myFunction(item, index) {
- text += `<a title="${item.title}" href="${item.url}" target="blank" ><img src="/misc/media/badges/${item.source}"></a>`;
+ text += `<a title="${item.title}" href="${item.url}" target="blank" ><img src="/media/badges/${item.source}"></a>`;
 
 }
 }
@@ -33,7 +33,7 @@ links?.[1].forEach(myFunction);
 document.getElementById("stamps").innerHTML = text;
 
 function myFunction(item, index) {
- text += `<a title="${item.title}" href="${item.url}" target="blank" ><img src="/misc/media/stamps/${item.source}"></a>`;
+ text += `<a title="${item.title}" href="${item.url}" target="blank" ><img src="/media/stamps/${item.source}"></a>`;
 
 }
 }
