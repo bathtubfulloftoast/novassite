@@ -16,22 +16,35 @@ const posts = (await getCollection('blog')).sort(
 
 <!doctype html>
 <html lang="en">
+<meta charset="utf-8" />
+
 <head>
 <title>Novas Blog</title>
+<link rel="stylesheet" href="/styles/blog.css">
+<link id="darkmode" rel="stylesheet" href="/styles/dark.css">
+<meta name="viewport" content="width=device-width" />
+
 </head>
+
 <body>
-<main>
+<div class="topbox">
+<h1><a href="/">Novas Blog</a></h1>
+<h3><a href="/blog/rss.xml">RSS Feed</h3></p>
+</div>
+<hr>
 <section>
+
 {
 posts.map((post) => (
+<div class="box">
 <a href={`/blog/${post.id}/`}>
 <h2 class="title">{post.data.title}</h2>
 </a>
 <FormattedDate date={post.data.pubDate} />
+</div>
 
 ))
 }
 </section>
-</main>
 </body>
 </html>
