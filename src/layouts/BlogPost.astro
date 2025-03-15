@@ -15,18 +15,19 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 <head>
 <title>{title}</title>
+<link rel="stylesheet" href="/styles/blog.css">
+<link id="darkmode" rel="stylesheet" href="/styles/dark.css">
+<meta name="viewport" content="width=device-width" />
 </head>
 
 <body>
-<main>
-
+<div class="topbox">
 <h1>{title}</h1>
 <FormattedDate date={pubDate} />
+<p><a href="/blog">Back</a></p>
+</div>
 
 <hr />
-</div>
-<slot />
-</div>
-</main>
+<div class="content"><slot /></div>
 </body>
 </html>
