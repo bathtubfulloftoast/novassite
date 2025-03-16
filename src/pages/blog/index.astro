@@ -12,6 +12,9 @@ import FormattedDate from '../../components/FormattedDate.astro';
 const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
+
+import '../../styles/blog.css';
+
 ---
 
 <!doctype html>
@@ -20,7 +23,6 @@ const posts = (await getCollection('blog')).sort(
 
 <head>
 <title>Novas Blog</title>
-<link rel="stylesheet" href="/styles/blog.css">
 <link id="darkmode" rel="stylesheet" href="/styles/dark.css">
 <meta name="viewport" content="width=device-width" />
 

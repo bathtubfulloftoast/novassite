@@ -1,0 +1,101 @@
+@font-face { font-family: SetoFont; src: url('/fonts/setofont.woff'); }
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    text-align:center;
+    font-family: SetoFont;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration:none;
+}
+
+a:link, a:visited{
+    color: var(--link);
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: var(--link-hover);
+}
+
+.box {
+background-color:var(--bg2);
+width:20vw;
+margin:auto;
+margin-top:20px;
+padding:5px;
+display:block;
+border-radius: 1em;
+}
+
+.topbox {
+    background-color:var(--bg3);
+    width:80vw;
+    margin:auto;
+    margin-top:20px;
+    padding:5px;
+    display:block;
+    border-radius: 1em;
+    padding:10px;
+}
+
+hr {
+    border: 2px solid var(--tophr);
+    margin: -10px -10px 20px;
+    margin-top:20px;
+}
+
+.content {
+background:var(--bg2);
+width:90vw;
+min-height:100vh;
+margin:auto;
+padding:20px;
+border: 10px var(--bg3) solid;
+margin-bottom:0;
+padding-bottom:0;
+display: inline-block;
+border-radius: 5vmax 5vmax 0 0;
+
+}
+
+.content p {
+white-space: pre;
+word-break: break-word;
+white-space: pre-line;
+}
+
+code {
+background-color:var(--bg3);
+padding:2px;
+border-radius:5px;
+}
+
+ul {
+text-align:left;
+margin:auto;
+width:40%;
+
+}
+
+@media screen and (max-width: 1280px){
+.content {
+background:none;
+width:95vw;
+padding:0;
+border:none;
+border-radius:0;
+}
+
+ul {
+    width:100%;
+
+}
+
+.box {
+width:80vw;
+}
+}
