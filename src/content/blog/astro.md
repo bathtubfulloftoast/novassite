@@ -1,7 +1,7 @@
 ---
 title: 'My experience moving my site'
 description: 'spoiler alert: BRUTAL HELLISH TORTURE GOD SAVE ME I HATE EVERYTHING KILL ME'
-pubDate: '11/6/2024 7:27 AM'
+pubDate: '3/15/2025 7:57 PM'
 ---
 hello everybody!
 the blog is back in action!
