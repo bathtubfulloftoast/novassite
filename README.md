@@ -19,4 +19,7 @@ if this doesnt work the way i want it to i will make sure to cry on camera
 - [ ] redo qr code thing
 - [ ] redo discord profile share
 - [X] redo blog
-- [ ] make footer better
+- [X] make footer better
+- [ ] make blog better
+- [ ] re-add misc stuff
+- [ ] make misc menu better
