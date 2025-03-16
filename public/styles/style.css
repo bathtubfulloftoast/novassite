@@ -197,6 +197,23 @@ button:active {
 }
 
 
+.footer {
+    background-color:var(--bg3);
+    width:100vw;
+    display:block;
+    margin-top:30px;
+    height:100px;
+    left: 0px;
+    position: absolute;
+    padding:10px;
+}
+
+.footer div {
+    width:50vw;
+    margin:auto;
+    text-align:left;
+}
+
 @media screen and (max-width: 1280px){
 
     .topbox {
@@ -248,6 +265,13 @@ button:active {
     .weather > div:nth-child(4) {
         font-size:17px;
     }
+
+    .footer div {
+        width:100vw;
+        text-align:center;
+        font-size:15px;
+    }
+
 }
 
 .supersecret {
@@ -380,13 +404,4 @@ hr {
   overflow:hidden;
 }
 
-.footer {
-background-color:var(--bg3);
-width:100vw;
-display:block;
-margin-top:30px;
-height:100px;
-left: 0px;
-position: absolute;
-padding:10px;
-}
+

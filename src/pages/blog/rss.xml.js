@@ -6,7 +6,7 @@ export async function GET(context) {
 	return rss({
 		title: "Novas Blog",
 		description: "The Blog Of Nova",
-		site: "https://novassite.net",
+		site: context.site,
 		items: posts.map((post) => ({
 			...post.data,
 			link: `/blog/${post.id}/`,
