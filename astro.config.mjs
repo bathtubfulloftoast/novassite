@@ -7,4 +7,9 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
 	site: 'https://novassite.net',
 	integrations: [mdx(), sitemap()],
+	markdown: {
+		shikiConfig: {
+		theme: "none", // Removes automatic styles
+	},
+},
 });

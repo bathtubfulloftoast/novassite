@@ -52,7 +52,7 @@ NOPE.
 instead of 
 
 ```
-&lt;img src="image.png"&gt;
+<img src="image.png">
 ```
 
 you have to do
@@ -62,7 +62,7 @@ you have to do
 // this is the header for code
 import swagimage from './image.png';
 ---
-&lt;img src={swagimage.src}&gt;
+<img src={swagimage.src}>
 ```
 AAAAAAAAAAAAAAAA
 
