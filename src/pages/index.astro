@@ -10,6 +10,23 @@ import links from '../assets/links.json';
 const badges = links[0] ?? [];
 const stamps = links[1] ?? [];
 const socialLinks = links[2] ?? [];
+
+const basePath = "/misc"; // Adjust this to match your deployment path
+
+// Import all files, including those inside subfolders
+const files = Object.keys(import.meta.glob('./misc/**/*.astro', { eager: true }));
+
+// Convert file paths to valid Astro routes
+const routes = files.map(file => {
+  return file
+    .replace('./misc', '') // Change base path
+    .replace('/index.astro', '/') // Convert index files to folder paths
+    .replace('.astro', '') // Remove .astro extension
+    .replace('/', ''); // Remove .astro extension
+});
+
+// this is so fucked kill me
+// this is so bodged but it works rn so fuck off
 ---
 
 <Layout>
@@ -39,6 +56,18 @@ Here are the main projects ive been working on, or just things i like to host an
 <br><a href="/qr">Random Thing</a> (usually a redirect)
 </div>
 
+<div class="box">
+<b>Side Projects</b><br>
+
+some of the random single-file side projects ive decided to make<br>
+<details>
+<summary>Show Projects</summary>
+{routes.map(route => (
+  <a href={basePath + "/" + route}>{route}</a><br>
+))}
+</details>
+
+</div>
 
 <div class="box">
 <div class="weatherparent">
