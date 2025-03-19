@@ -10,3 +10,6 @@ pnpm-debug.log*
 .DS_Store
 .idea/
 defaultsrc/
+
+# Local Netlify folder
+.netlify
