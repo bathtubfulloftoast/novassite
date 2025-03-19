@@ -69,14 +69,17 @@ white-space: pre-line;
 }
 
 code {
-background-color:var(--bg3);
-padding:2px;
+background-color:var(--bg);
+padding:5px;
 border-radius:5px;
+display:inline-block;
+text-align:left;
 }
+
 
 ul {
 text-align:left;
-margin:auto;
+/* margin:auto; */
 width:40%;
 
 }
