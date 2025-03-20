@@ -1,19 +1,27 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/94b89afa-2e50-49ab-94db-46dca3418353/deploy-status)](https://app.netlify.com/sites/novassite/deploys)
+
 # novassite.net
-the official repo for the site
+the official repo for Novas Site
 
-## why is it all javascript now?
-the reason for this is because i want to challenge myself.
-i need ***limits***
-i need to use the free edition of something and challenge myself to work client side instead of server side.
+## whats hosted with netlify and whats hosted locally
 
-## you have become what youve sworn to destroy.
-i am aware.
-i love being selfhosted i love php i love shoehorning shit in and forcing it to work the way i want
-however.
-i feel i have stagnated lately and i *need* a challenge
-i want to make more shit and i need it to be great
-so to do this i have to sacrifice some things i love.
-if this doesnt work the way i want it to i will make sure to cry on camera
+anything that doesnt require me to lost any large files/large ammounts of files will be hosted via netlify
+
+## How to run
+
+first run ``npm install``
+if you want to run the server side functions [install netlify cli](https://docs.netlify.com/cli/get-started/)
+
+
+then run one of these
+
+| Command | What it does |
+| -------- | ------- |
+| npm run build | builds astro |
+| npm run preview | preview built site |
+| npm run dev | astro dev mode |
+| netlify run dev | netlify dev mode (like astro dev mode but with server side stuff) |
+
 
 ## TODO
 - [ ] redo qr code thing
@@ -21,5 +29,3 @@ if this doesnt work the way i want it to i will make sure to cry on camera
 - [X] redo blog
 - [X] make footer better
 - [ ] make blog better
-- [ ] re-add misc stuff
-- [ ] make misc menu better
