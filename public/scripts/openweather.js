@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function() {
 
     async function weather() {
-        const response = await fetch('https://cdn.novassite.net/apis/openweather.php');
+        const response = await fetch('/.netlify/functions/openweather');
         data = await response.json();
 
         const location = data.name;
