@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import logo from '../assets/404.png';
 import qrcode from '../assets/404.svg';
 
@@ -39,7 +40,8 @@ a:link, a:visited{
 }
 </style>
 </head>
-<img src={logo.src} height="250">
+<Image src={logo} alt="404" width="250"/>
+
 <p style="font-size:30;">You ran into a problem and you need to <a style="cursor:pointer" onclick="history.back()">go back</a>. this page <span id="webpath"></span> doesnt exist.</p>
 <!--<p style="font-size:28;">100% deleted</p>-->
 <br>
