@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   async function getlinks() {
     if (!cachedsplash) {
-      const response = await fetch('/media/splashes.txt');
+      const response = await fetch('/splashes.txt');
       const text = await response.text();
       const splashes = text.split("\n").map(name => name.trim()).filter(name => name);
       const maxsplash = splashes.length;

@@ -5,7 +5,7 @@ var mm = String(now.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = now.getFullYear();
 
 let hours = now.getHours();
-let minutes = now.getMinutes();
+var minutes = String((now.getMinutes()) % 60).padStart(2, '0');
 let seconds = now.getSeconds();
 
 const currentTimeZone = '(' + new Date().toString().match(/\(([A-Za-z\s].*)\)/)[1] + ')';

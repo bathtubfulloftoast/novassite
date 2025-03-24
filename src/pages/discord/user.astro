@@ -12,7 +12,8 @@
 <style>
 body {
 /* banner shit below :D */
-background-color:#161cbb;
+background-color:var(--background-color);
+background-image:var(--background-url);
 background-repeat: no-repeat;
 background-size: cover;
 background-position: center;
@@ -162,6 +163,10 @@ fetch(url)
 
     if (avatarid) {
       coverimage.src = `https://cdn.discordapp.com/avatars/${userid}/${avatarid}?size=256`;
+      coverimage.onerror = function () {
+    coverimage.src = '/media/avatar.png'; // Fallback image
+};
+
       document.getElementById("tabicon").href = `https://cdn.discordapp.com/avatars/${userid}/${avatarid}?size=16`;
     } else {
       coverimage.src = `/media/avatar.png`;
@@ -169,9 +174,9 @@ fetch(url)
 
     document.getElementById("title").innerHTML = nickname;
     document.getElementById("nickname").innerHTML = nickname;
- document.body.style.backgroundColor = bannercolor;
+ document.documentElement.style.setProperty("--background-color", bannercolor);
 if(bannerid) {
-document.body.style.backgroundImage = `url(https://cdn.discordapp.com/banners/${userid}/${bannerid}?size=2048)`;
+ document.documentElement.style.setProperty("--background-url", `url(https://cdn.discordapp.com/banners/${userid}/${bannerid}?size=2048)`);
 }
   })
   .catch(error => {

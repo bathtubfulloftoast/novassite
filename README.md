@@ -3,10 +3,6 @@
 # novassite.net
 the official repo for Novas Site
 
-## whats hosted with netlify and whats hosted locally
-
-anything that doesnt require me to lost any large files/large ammounts of files will be hosted via netlify
-
 ## How to run
 
 first run ``npm install``
@@ -20,7 +16,7 @@ then run one of these
 | npm run build | builds astro |
 | npm run preview | preview built site |
 | npm run dev | astro dev mode |
-| netlify run dev | netlify dev mode (like astro dev mode but with server side stuff) |
+| netlify dev | netlify dev mode (like astro dev mode but with server side stuff) |
 
 
 ## TODO
