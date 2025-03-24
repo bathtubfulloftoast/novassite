@@ -1,12 +1,12 @@
 import 'dotenv/config';
 
 let cache = {};
-
+//this is gonna take a bit to finish
 export async function handler(event, context) {
-    const API_KEY = process.env.LASTFM_API_KEY;
-    const USER = "bathtuboftoast";
-    const MAXFM = "10";
-    const CACHE_DURATION = 29000;
+    const API_KEY = process.env.DISCORD_API_KEY;
+    const channelid = process.env.DISCORD_CHANNELID;
+    const CACHE_DURATION = 99999999999999999;
+    const MLIMIT = 5;
 
     // Check if we have cached data for this user and it's still valid
     if (cache && (Date.now() - cache.timestamp < CACHE_DURATION)) {
@@ -20,14 +20,37 @@ export async function handler(event, context) {
         };
     }
 
-    const url = `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USER}&api_key=${API_KEY}&format=json&limit=${MAXFM}`;
+    const url = `https://discord.com/api/v9/channels/${channelid}/messages?limit=${MLIMIT}`;
 
     try {
         const response = await fetch(url, {
             method: 'GET',
+            headers: {
+                'Authorization': `Bot ${API_KEY}`,
+                'Content-Type': 'application/json; charset=utf-8',
+            },
         });
 
-        const data = await response.json();
+        const dataa = await response.json();
+
+        // Find the first item where content is a link
+        const contentItem = dataa?.find(item => {
+            let contentstring = item.content;
+
+            if (!contentstring) {
+                contentstring = item.attachments?.[0].url;
+            }
+
+            return typeof contentstring === 'string' && contentstring.startsWith('http');
+        });
+
+        const data = {
+            "content": contentItem?.content, // content from the found item
+            "attachment": contentItem?.attachments?.[0].url // attachment URL from the found item
+        };
+
+
+        //const data = dataa;
 
         // Store response in cache with a timestamp
         cache = {

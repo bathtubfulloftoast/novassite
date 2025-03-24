@@ -1,11 +1,11 @@
 import 'dotenv/config';
 
-let cache = {}; // Simple in-memory cache
+let cache = {};
 
 export async function handler(event, context) {
     const API_KEY = process.env.OPENWEATHER_API_KEY;
     const CITYID = "5476913";
-    const CACHE_DURATION = 120000; // 1 minute in milliseconds
+    const CACHE_DURATION = 120000;
 
     // Check if we have cached data for this user and it's still valid
     if (cache && (Date.now() - cache.timestamp < CACHE_DURATION)) {
