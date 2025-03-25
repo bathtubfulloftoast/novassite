@@ -20,7 +20,7 @@ then run one of these
 
 
 ## TODO
-- [ ] redo qr code thing
+- [X] redo qr code thing
 - [X] redo discord profile share
 - [X] redo blog
 - [X] make footer better

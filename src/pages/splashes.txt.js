@@ -24,13 +24,8 @@ export async function GET() {
         const text = await fs.readFile(filePath, "utf-8");
         const splashes = text.split("\n").map(name => name.trim()).filter(name => name);
         const textContent = shuffle(splashes).join("\n");
-        return new Response(textContent, {
-            headers: {
-                "Content-Type": "text/plain",
-                "Content-Disposition": "attachment; filename=dynamic-file.txt",
-            },
-        });
+        return new Response(textContent);
     } catch (error) {
-        return new Response("Error: File not found", { status: 404 });
+        return new Response("Error: File not found");
     }
 }

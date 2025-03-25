@@ -1,10 +1,75 @@
-<body>
-you will be redirected.
-</body>
-<script>
-function redirect() {
-    window.location.replace("https://projects.novassite.net/qr");
+<head>
+<title>qr code</title>
+<style is:global>
+
+body {
+background:#000;
+color:#fff;
+padding:0;
+margin:0;
+text-align:center;
+overflow:hidden;
 }
 
-window.onload = redirect;
+#test{
+height:100vh;
+}
+
+img {
+  height: 100vh;
+  width: 100vw;
+  object-fit: contain;
+}
+
+video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: contain;
+}
+
+</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+<div id="test">
+imagine scanning a qr code LOSER!
+</div>
+</body>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    async function geturl() {
+        const response = await fetch('/.netlify/functions/qr');
+        const data = await response.json(); // Declare 'data' with 'const'
+
+        const content = data.content;
+        const attachment = data.attachment;
+        const type = data.content_type ||"null";
+
+        let url; // Declare url once
+        if (content) {
+            url = content;
+        } else {
+            url = attachment;
+        }
+
+    if(type.startsWith('video')) {
+        document.getElementById("test").innerHTML = `<video controls autoplay src="${url}"></video>`;
+    } else if (type.startsWith('image')) {
+        document.getElementById("test").innerHTML = `<img src="${url}" />`;
+    } else {
+    document.getElementById("test").innerHTML = `cant display content in browser`;
+    window.location.replace(url);
+    }
+
+
+    }
+
+    geturl(); // No need to await since it's already handled inside the function
+
+});
 </script>
+
