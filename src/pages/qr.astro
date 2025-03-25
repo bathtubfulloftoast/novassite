@@ -42,34 +42,45 @@ imagine scanning a qr code LOSER!
 document.addEventListener("DOMContentLoaded", function() {
 
     async function geturl() {
-        const response = await fetch('/.netlify/functions/qr');
-        const data = await response.json(); // Declare 'data' with 'const'
+        try {
+            const response = await fetch('/.netlify/functions/qr');
 
-        const content = data.content;
-        const attachment = data.attachment;
-        const type = data.content_type ||"null";
+            if (!response.ok) {
+                throw new Error('Network response was not okay');
+            }
 
-        let url; // Declare url once
-        if (content) {
-            url = content;
-        } else {
-            url = attachment;
+            const data = await response.json(); // Parse the JSON response
+
+            const content = data.content;
+            const attachment = data.attachment;
+            const type = data.content_type || "null";
+
+            let url; // Declare url once
+            if (content) {
+                url = content;
+            } else {
+                url = attachment;
+            }
+
+            if (type.startsWith('video')) {
+                document.getElementById("test").innerHTML = `<video controls autoplay src="${url}"></video>`;
+            } else if (type.startsWith('image')) {
+                document.getElementById("test").innerHTML = `<img src="${url}" />`;
+            } else if (!url) {
+                window.location.replace("https://youtu.be/dQw4w9WgXcQ?si=JCrc2Zj42erzHwNK");
+            } else {
+                document.getElementById("test").innerHTML = `Can't display content in the browser`;
+                window.location.replace(url);
+            }
+        } catch (error) {
+            console.error('Error fetching or processing JSON:', error);
+            window.location.replace("https://youtu.be/dQw4w9WgXcQ?si=JCrc2Zj42erzHwNK"); // Optional: redirect to fallback URL
         }
-
-    if(type.startsWith('video')) {
-        document.getElementById("test").innerHTML = `<video controls autoplay src="${url}"></video>`;
-    } else if (type.startsWith('image')) {
-        document.getElementById("test").innerHTML = `<img src="${url}" />`;
-    } else {
-    document.getElementById("test").innerHTML = `cant display content in browser`;
-    window.location.replace(url);
     }
 
-
-    }
-
-    geturl(); // No need to await since it's already handled inside the function
+    geturl(); // Call the function
 
 });
 </script>
+
 
