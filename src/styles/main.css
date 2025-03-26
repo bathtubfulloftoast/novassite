@@ -1,8 +1,8 @@
 @font-face { font-family: SetoFont; src: url('/fonts/setofont.woff'); }
 
 body {
-    background-color: var(--bg);
-    color: var(--text);
+    background-color: var(--bg-dark);
+    color: var(--fg0-dark);
     text-align:center;
     font-family: SetoFont;
     overflow-x: hidden;
@@ -10,7 +10,7 @@ body {
 }
 
 .topbox {
-    background-color: var(--bg3);
+    background-color: var(--bg1-dark);
     width: 40%;
     min-height: 10vh;
     margin: auto;
@@ -31,7 +31,7 @@ body {
 }
 
 .box {
-    background-color: var(--bg2);
+    background-color: var(--bg2-dark);
     width: 40%;
     margin: auto;
     border-radius: 1em;
@@ -50,12 +50,12 @@ a {
 }
 
 a:link, a:visited{
-    color: var(--link);
+    color: var(--aqua-dark);
     transition: color 0.2s;
 }
 
 a:hover {
-    color: var(--link-hover);
+    color: var(--bright-aqua-dark);
 }
 
 .trans {
@@ -80,19 +80,19 @@ a:hover {
 }
 
 ::selection {
-    color: var(--select-text);
-    background: var(--select);
-    -webkit-text-fill-color: var(--select-text);
+    color: var(--bg-dark);
+    background: var(--fg-dark);
+    -webkit-text-fill-color: var(--bg-dark);
 }
 
 i {
-    color:var(--link);
+    color:var(--blue-dark);
     font-size:10px;
 }
 
 
 .no:link, .no:visited, .no:hover{
-    color: var(--text);
+    color: var(--fg0-dark);
 }
 
 .links {
@@ -111,12 +111,12 @@ i {
 }
 
 .link a {
-    color:var(--navicon);
+    color:var(--purple-dark);
     transition: color 0.3s;
 }
 
 .link a:hover {
-    color:var(--navicon-hover);
+    color:var(--bright-purple-dark);
 }
 
 .invisible {
@@ -128,8 +128,7 @@ i {
 }
 
 .splash {
-    
-    color:yellow;
+    color:var(--bright-yellow-dark);
     right:33%;
     top:55px;
     font-size:20px;
@@ -174,30 +173,8 @@ i {
     }
 }
 
-button {
-    border-radius: 5px;
-    background-color: var(--button);
-    border: 3px solid rgba(0,0,0,.0);
-    color: var(--button-text);
-    font-family: 'Source Code Pro', monospace;
-    text-decoration: none;
-    cursor:pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover  {
-    background-color: var(--button-hover);
-    border: 3px solid rgba(0,0,0,.0);
-}
-
-button:active {
-    background-color: var(--button-hover);
-    border: 3px solid var(--button-hover);
-}
-
-
 .footer {
-    background-color:var(--bg3);
+    background-color:var(--bg1-dark);
     width:100vw;
     display:block;
     margin-top:30px;
@@ -228,7 +205,6 @@ button:active {
     }
 
     .splash {
-        color:yellow;
         right:0;
         top:0;
         position: relative; /* Takes the element out of the normal flow */
@@ -238,7 +214,7 @@ button:active {
     }
 
     .mobilebox {
-        background-color: var(--bg3);
+        background-color: var(--bg2-dark);
         width: 90%;
         margin: auto;
         border-radius: 1em;
@@ -287,7 +263,7 @@ button:active {
 /* beware the man who speaks in hands. */
 
 .lastfm {
-    background-color:var(--bg3);
+    background-color:var(--bg4-dark);
     display:inline-block;
     padding:15px;
     border-radius:0.5em;
@@ -296,13 +272,13 @@ button:active {
 
 
 .lastfm b {
-    color:var(--navicon);
+    color:var(--purple-dark);
     font-size:17px;
 }
 
 
 .lastfm .listening b{
-    color:var(--text);
+    color:var(--fg0-dark);
 }
 
 .lastfm .listening{
@@ -330,12 +306,6 @@ button:active {
 
 .lastfm .albumcover img:hover {
 filter:brightness(80%);
-}
-
-hr {
-    border: 2px solid var(--tophr);
-    margin: -10px -10px 20px;
-    margin-top:20px;
 }
 
 .weather {

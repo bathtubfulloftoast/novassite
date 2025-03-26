@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async function() {
-    const birthTimestamp = 1181368800 * 1000; // Convert the Unix timestamp to milliseconds
+    const birthTimestamp = 1181368800 * 1000; // Convert Unix timestamp to milliseconds
     const currentTimestamp = Date.now();
 
     // Calculate the difference in milliseconds
