@@ -1,5 +1,10 @@
 ---
 import '../styles/main.css';
+
+var now = new Date();
+var yyyy = now.getFullYear();
+
+const copyright = `NovasSite &copy;2021 - ${yyyy+1}`; //why
 ---
 <!--
 _   _                        _____ _ _                      _
@@ -22,7 +27,7 @@ cannot ensure silliness with every visit.
 		<meta name="generator" content={Astro.generator} />
 
 		<meta content="Novas Site" property="og:title" />
-		<meta content="NovasSite ©2021" property="og:description" />
+		<meta content={copyright} property="og:description" />
 		<meta content="/media/embeds/main.png" property="og:image" />
 		<meta content="#6b0059" data-react-helmet="true" name="theme-color" />
 
