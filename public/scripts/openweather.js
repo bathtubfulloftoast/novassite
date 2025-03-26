@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     async function weather() {
         const response = await fetch('/.netlify/functions/openweather');
-        data = await response.json();
+        let data = await response.json();
 
         const location = data.name;
         const cityid = data.id;

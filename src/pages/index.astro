@@ -47,7 +47,7 @@ const currentAge = `${Math.floor(years)} year`;
 <Layout>
 
 <div class="topbox">
-<Image src={logo} alt="novas site logo" class="lefticon" height="200" format="png"/><h1 class="headtext"> Novas Site</h1>
+<Image loading="eager" src={logo} alt="novas site logo" class="lefticon" height="200" format="png"/><h1 class="headtext"> Novas Site</h1>
 </div>
 <div class="mobilebox"><p id="splash" class="splash">SPLASH!</p></div>
 
@@ -145,7 +145,7 @@ some of the random single-file side projects ive decided to make<br>
 <section id="badges">
     {badges.map((item) => (
         <a title={item.title} href={item.url} target="_blank">
-            <img src={`/media/badges/${item.source}`} alt={item.title} />
+            <img loading="lazy" src={`/media/badges/${item.source}`} alt={item.title} />
         </a>
     ))}
 </section>
@@ -159,7 +159,7 @@ some of the random single-file side projects ive decided to make<br>
 <section id="stamps">
     {stamps.map((item) => (
         <a title={item.title} href={item.url} target="_blank">
-            <img src={`/media/stamps/${item.source}`} alt={item.title} />
+            <img loading="lazy" src={`/media/stamps/${item.source}`} alt={item.title} />
         </a>
     ))}
 </section>
@@ -183,12 +183,12 @@ some of the random single-file side projects ive decided to make<br>
 
 </Layout>
 <script is:inline src="https://kit.fontawesome.com/3c882d8d47.js" crossorigin="anonymous"></script>
-<script src="/scripts/splash.js" is:inline></script>
-<script is:inline src="/scripts/openweather.js"></script>
-<script is:inline src="/scripts/lastfm.js"></script>
+<script src="/src/scripts/splash.js"></script>
+<script is:client src="/scripts/openweather.js"></script>
+<script is:client src="/scripts/lastfm.js"></script>
 <script is:inline src="/scripts/oneko.js"></script>
 
-<script src="../components/age.js"></script>
+<script src="/src/scripts/age.js"></script>
 
 <script>
 cookie = "alicesnote=Alice Wuz Here :3";
