@@ -4,13 +4,12 @@ var dd = String(now.getDate()).padStart(2, '0');
 var mm = String(now.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = now.getFullYear();
 
-let hours = now.getHours();
+var hours = String((now.getHours())).padStart(2, '0');
+
 var minutes = String((now.getMinutes()) % 60).padStart(2, '0');
 let seconds = now.getSeconds();
 
 const currentTimeZone = '(' + new Date().toString().match(/\(([A-Za-z\s].*)\)/)[1] + ')';
-
-console.log(currentTimeZone);
 
 const year = new Date().getFullYear();
 const copyright = `Novas Site ©${year}`;
