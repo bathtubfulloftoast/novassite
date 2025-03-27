@@ -90,6 +90,9 @@ console.log(`track: ${trackname}\nalbum: ${albumname}\nartist: ${artist}\ncover:
 
 var coverimage = document.getElementById("cover");
 coverimage.src = cdnurl;
+coverimage.onerror = function () {
+  coverimage.src = '/media/missing512.jpeg'; // Fallback image
+};
 
 document.getElementById("mainfmlink").href=fmurl; 
 document.getElementById("mainfmlink").title=`${trackname} by ${artist}`; 
@@ -180,8 +183,9 @@ const coverid = basename(image);
 
 const cdnurl = `https://cdn.novassite.net/albumcovers/?size=16&format=webp&file=${coverid}&noerror`;
 
-  text += `<i>${funnierdate}</i> <a href="${fmurl}" target="blank"><img style="border-radius:2px;width:16px;height:16px;" src="${cdnurl}"> <span title="${trackname}" class='pastsong'>${trackname}</span> - <span title="${artist}" class='pastartist'>${artist}</span><br>`;
+  text += `<i>${funnierdate}</i> <a href="${fmurl}" target="blank"><img style="border-radius:2px;width:16px;height:16px;" src="${cdnurl}" onerror="this.onerror=null;this.src='/media/missing16.jpeg'" "> <span title="${trackname}" class='pastsong'>${trackname}</span> - <span title="${artist}" class='pastartist'>${artist}</span><br>`;
 }
+// that error handling is fucking ass LMAO
 }
 
 setInterval(mainsong, 30000);

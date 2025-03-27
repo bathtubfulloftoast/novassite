@@ -1,0 +1,33 @@
+:root {
+--bg: #e9e6f2;
+--bg0: #dcd9e6;
+--bg1: #d3d0df;
+--bg2: #cbc7d9;
+--bg3: #c3bfd3;
+--bg4: #bbb8cc;
+
+--fg: #15121a;
+--fg0: #28242f;
+--fg1: #312d38;
+--fg2: #3a3642;
+--fg3: #453e4c;
+--fg4: #524a5a;
+
+--aqua: #5e9595;
+--blue: #5c67a3;
+--gray: #867b97;
+--green: #68a368;
+--orange: #e08f47;
+--purple: #a16492;
+--red: #d24b4b;
+--yellow: #e0a94a;
+
+--bright-aqua: #5ababa;
+--bright-blue: #6a6aff;
+--bright-gray: #ab9cb0;
+--bright-green: #90cf50;
+--bright-orange: #ffa24c;
+--bright-purple: #d374b5;
+--bright-red: #ff6666;
+--bright-yellow: #f8d16a;
+}

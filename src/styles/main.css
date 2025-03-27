@@ -1,8 +1,8 @@
 @font-face { font-family: SetoFont; src: url('/fonts/setofont.woff'); }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--fg0-dark);
+    background-color: var(--bg);
+    color: var(--fg);
     text-align:center;
     font-family: SetoFont;
     overflow-x: hidden;
@@ -10,7 +10,7 @@ body {
 }
 
 .topbox {
-    background-color: var(--bg1-dark);
+    background-color: var(--bg0);
     width: 40%;
     min-height: 10vh;
     margin: auto;
@@ -31,7 +31,7 @@ body {
 }
 
 .box {
-    background-color: var(--bg2-dark);
+    background-color: var(--bg2);
     width: 40%;
     margin: auto;
     border-radius: 1em;
@@ -50,12 +50,12 @@ a {
 }
 
 a:link, a:visited{
-    color: var(--aqua-dark);
+    color: var(--aqua);
     transition: color 0.2s;
 }
 
 a:hover {
-    color: var(--bright-aqua-dark);
+    color: var(--bright-aqua);
 }
 
 .trans {
@@ -80,19 +80,19 @@ a:hover {
 }
 
 ::selection {
-    color: var(--bg-dark);
-    background: var(--fg-dark);
-    -webkit-text-fill-color: var(--bg-dark);
+    color: var(--bg);
+    background: var(--fg);
+    -webkit-text-fill-color: var(--bg);
 }
 
 i {
-    color:var(--blue-dark);
+    color:var(--blue);
     font-size:10px;
 }
 
 
 .no:link, .no:visited, .no:hover{
-    color: var(--fg0-dark);
+    color: var(--fg);
 }
 
 .links {
@@ -111,12 +111,12 @@ i {
 }
 
 .link a {
-    color:var(--purple-dark);
+    color:var(--purple);
     transition: color 0.3s;
 }
 
 .link a:hover {
-    color:var(--bright-purple-dark);
+    color:var(--bright-purple);
 }
 
 .invisible {
@@ -128,7 +128,7 @@ i {
 }
 
 .splash {
-    color:var(--bright-yellow-dark);
+    color:var(--bright-yellow);
     right:33%;
     top:55px;
     font-size:20px;
@@ -174,7 +174,7 @@ i {
 }
 
 .footer {
-    background-color:var(--bg1-dark);
+    background-color:var(--bg1);
     width:100vw;
     display:block;
     margin-top:30px;
@@ -214,7 +214,7 @@ i {
     }
 
     .mobilebox {
-        background-color: var(--bg2-dark);
+        background-color: var(--bg2);
         width: 90%;
         margin: auto;
         border-radius: 1em;
@@ -263,7 +263,7 @@ i {
 /* beware the man who speaks in hands. */
 
 .lastfm {
-    background-color:var(--bg4-dark);
+    background-color:var(--bg4);
     display:inline-block;
     padding:15px;
     border-radius:0.5em;
@@ -272,13 +272,13 @@ i {
 
 
 .lastfm b {
-    color:var(--purple-dark);
+    color:var(--purple);
     font-size:17px;
 }
 
 
 .lastfm .listening b{
-    color:var(--fg0-dark);
+    color:var(--fg);
 }
 
 .lastfm .listening{
