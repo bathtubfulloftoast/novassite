@@ -22,7 +22,7 @@ img {
 }
 
 video {
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   object-fit: contain;
 }
@@ -39,6 +39,49 @@ imagine scanning a qr code LOSER!
 </body>
 
 <script>
+
+const fallbacks = [
+"https://derpy-hooves.com/",
+"https://discord.com/",
+"https://romsfun.com/",
+"https://store.steampowered.com/app/449040/Jesus_Christ_RPG_Trilogy/",
+"https://unknownworlds.com",
+"https://www.fortnite.com/item-shop/bundles/hatsune-miku-bundle-54bd0fcf",
+"https://www.mcdonalds.com/us/en-us/product/chicken-mcnuggets-40-piece.html",
+"https://www.mcdonalds.com/us/en-us/product/mccrispy-chicken-sandwich.html",
+"https://www.pinterest.com/pin/411094272257118490/",
+"https://www.youtube.com/watch?v=4PyFkH9LCGQ",
+"https://www.youtube.com/watch?v=CNPdO5TZ1DQ",
+"https://www.youtube.com/watch?v=GbnEa5JWibQ",
+"https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+"https://www.youtube.com/watch?v=dgxPlUgIqSA",
+"https://www.youtube.com/watch?v=eZNxD4NbxLA",
+"https://www.youtube.com/watch?v=la1CEyUFHDU",
+"https://www.youtube.com/watch?v=rzLIUgnKY40",
+"https://youtu.be/Cb6F14AGrvI?si=ZOfhcXlrHjZ0yzRg",
+"https://youtu.be/MobkO51msMI?si=Sb1KY1LOSMd8abYd",
+"https://youtu.be/Yp8o35zahgo?si=bIt6sXMGdQYFxh-B",
+"https://youtu.be/bDrNolNVMPg?si=SjCiSx7xiSdWbPuE",
+"https://youtu.be/j2VnKfpuZCI?si=3nmFHDtLDMQK1zbk",
+"https://youtu.be/oiuyhxp4w9I?si=PgjSw2RXfPZ-NaSb",
+"https://youtu.be/zHC1ZOknOCA?si=tsu9YwLTzYDTYQg5",
+"https://youtube.com/watch?v=t1SJ6wUJjjg",
+"https://youtu.be/Tlu1ZfYr6vA",
+"https://cad-comic.com/",
+"https://www.bluey.tv/",
+"https://fbandcc.fandom.com/wiki/Main_Page",
+"https://novassite.net",
+];
+
+const maxlink = fallbacks.length;
+const linkid = Math.floor(Math.random() * maxlink);
+const randomlink = fallbacks[linkid];
+
+function fallbacklink() {
+window.location.replace(randomlink);
+}
+
+
 document.addEventListener("DOMContentLoaded", function() {
 
     async function geturl() {
@@ -55,26 +98,37 @@ document.addEventListener("DOMContentLoaded", function() {
             const attachment = data.attachment;
             const type = data.content_type || "null";
 
-            let url; // Declare url once
-            if (content) {
-                url = content;
-            } else {
-                url = attachment;
-            }
+let url = content || attachment;
 
             if (type.startsWith('video')) {
-                document.getElementById("test").innerHTML = `<video controls autoplay src="${url}"></video>`;
+                const videoElement = document.createElement('video');
+                videoElement.controls = true;
+                videoElement.autoplay = true;
+                videoElement.src = url;
+
+                videoElement.onerror = fallbacklink;
+
+                document.getElementById("test").innerHTML = ``;
+
+                document.getElementById("test").appendChild(videoElement);
             } else if (type.startsWith('image')) {
-                document.getElementById("test").innerHTML = `<img src="${url}" />`;
+            const imageElement = document.createElement('img');
+                imageElement.src = url;
+
+                imageElement.onerror = fallbacklink;
+
+                document.getElementById("test").innerHTML = ``;
+
+                document.getElementById("test").appendChild(imageElement);
             } else if (!url) {
-                window.location.replace("https://youtu.be/dQw4w9WgXcQ?si=JCrc2Zj42erzHwNK");
+                fallbacklink();
             } else {
                 document.getElementById("test").innerHTML = `Can't display content in the browser`;
                 window.location.replace(url);
             }
         } catch (error) {
             console.error('Error fetching or processing JSON:', error);
-            window.location.replace("https://youtu.be/dQw4w9WgXcQ?si=JCrc2Zj42erzHwNK"); // Optional: redirect to fallback URL
+            fallbacklink(); // Optional: redirect to fallback URL
         }
     }
 
