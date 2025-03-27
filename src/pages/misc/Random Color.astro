@@ -1,9 +1,10 @@
 <script>
-const randomnumber = Math.floor(Math.random() * 16777215)
+const randomnumber = Math.floor(Math.random() * 16777215);
 
-const hex =  randomnumber.toString(16);
+let hex = randomnumber.toString(16);
+hex = hex.padEnd(6, "0");
 
-document.body.style.backgroundColor = '#'+hex;
+document.body.style.backgroundColor = "#" + hex;
 
 console.log(hex);
 </script>
