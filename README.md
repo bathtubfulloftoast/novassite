@@ -20,8 +20,5 @@ then run one of these
 
 
 ## TODO
-- [X] redo qr code thing
-- [X] redo discord profile share
-- [X] redo blog
-- [X] make footer better
-- [ ] make blog better
+- [ ] Redo Front Page
+- [ ] Make other shit more concise
