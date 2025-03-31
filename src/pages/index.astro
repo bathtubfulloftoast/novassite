@@ -145,7 +145,7 @@ some of the random single-file side projects ive decided to make<br>
 <section id="badges">
     {badges.map((item) => (
         <a title={item.title} href={item.url} target="_blank">
-            <img loading="lazy" src={`/media/badges/${item.source}`} alt={item.title} />
+            <img loading="lazy" id={item.id} src={`/media/badges/${item.source}`} alt={item.title} />
         </a>
     ))}
 </section>
@@ -185,7 +185,8 @@ some of the random single-file side projects ive decided to make<br>
 <script is:inline src="https://kit.fontawesome.com/3c882d8d47.js" crossorigin="anonymous"></script>
 <script src="/src/scripts/splash.js"></script>
 <script src="/src/scripts/openweather.js"></script>
-<script is:client src="/scripts/lastfm.js"></script>
+<script src="/src/scripts/randomsite.js"></script>
+<script is:inline src="/scripts/lastfm.js"></script>
 <script is:inline src="/scripts/oneko.js"></script>
 
 <script src="/src/scripts/age.js"></script>

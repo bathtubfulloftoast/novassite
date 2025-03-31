@@ -86,6 +86,12 @@
       "url": "http://listen.hatnote.com/"
     },
     {
+      "title": "take me to a random site!",
+      "source": "randomsite.gif",
+      "url": "/misc/RandomSite",
+      "id":"randomsite"
+    },
+    {
       "title": "inspiration for the look :D",
       "source": "ava.png",
       "url": "https://avasilver.dev"
