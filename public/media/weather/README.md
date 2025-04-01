@@ -1,2 +1,2 @@
 # Custom OpenWeatherMap Icons
-drawn by [https://toyhou.se/BATZZILLA](BATZZILLA)
+drawn by [BATZZILLA](https://toyhou.se/BATZZILLA)
