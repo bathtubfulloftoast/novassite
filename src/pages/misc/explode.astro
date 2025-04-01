@@ -1,6 +1,7 @@
+---
+import '/src/styles/colors.css';
+---
 <head>
-<!-- hopefully load the video and audio before the button is pressed -->
-
 <title>SPLODE.</title>
 
 <meta charset="UTF-8" />
@@ -16,20 +17,19 @@ overflow:hidden;
 font-family: Arial, sans-serif;
 background:var(--bg);
 }
-video {
-height:100vh;
-width:100vw;
-object-fit:contain;
-margin:0;
-image-rendering: pixelated;
-}
-
 button {
 background:var(--red);
 color:var(--fg);
 font-size:50px;
+border:none;
+border-radius:.3em;
+cursor:pointer;
 }
 
+button:active {
+background:var(--bright-red);
+color:var(--fg1)
+}
 .center-screen {
   display: flex;
   justify-content: center;
@@ -38,49 +38,18 @@ font-size:50px;
   min-height: 100vh;
 }
 </style>
-
-<script>
-function createimage() {
-const imageurl = "/media/splode.webm";
-const audiourl = "/media/splode.ogg";
-
-const imageElement = document.createElement('video');
-imageElement.src = imageurl;
-const audioElement = document.createElement('audio');
-audioElement.src = audiourl;
-
-document.body.innerHTML = '';
-document.body.style.backgroundColor="#000";
-document.title='SPLODING.';
-
-document.body.appendChild(audioElement);
-document.body.appendChild(imageElement);
-
-imageElement.play();
-audioElement.play();
-
-imageElement.addEventListener('ended', (event) => {
-imageElement.remove();
-});
-
-audioElement.addEventListener('ended', (event) => {
-document.body.innerHTML = '<div class="center-screen"><h1>you have exploded.</h1></div>';
-document.title='SPLODED.';
-
-document.body.style.color="#ff0000";
-document.body.style.textAlign="center";
-});
-}
-
-document.getElementById("explodebutton").addEventListener("click", function(event) {
-    event.preventDefault();
-    createimage();
-});
-</script>
 </head>
-<video preload="auto" style="display:none" src="/media/splode.webm"></video>
-<audio preload="auto" style="display:none" src="/media/splode.ogg"></audio>
-
 <div class="center-screen">
 <button id="explodebutton">DO NOT PUSH</button>
+<title>SPLODE.</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<meta content="Button that wont make you explode" property="og:title" />
+<meta content="i promise" property="og:description" />
+<meta content="#ff0000" data-react-helmet="true" name="theme-color" />
+<script src="/src/scripts/splode.js"></script>
+</head>
+
+<div class="center-screen">
+<button id="explodebutton">NORMAL BUTTON</button>
 </div>

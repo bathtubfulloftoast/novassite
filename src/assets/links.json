@@ -91,6 +91,12 @@
       "url": "/misc/RandomSite",
       "id":"randomsite"
     },
+        {
+      "title": "take me to a random site!",
+      "source": "youdied.gif",
+      "url": "/misc/explode",
+      "id":"explodebutton"
+    },
     {
       "title": "inspiration for the look :D",
       "source": "ava.png",
