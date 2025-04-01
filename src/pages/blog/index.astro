@@ -13,7 +13,8 @@ const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-import '../../styles/blog.css';
+import '/src/styles/blog.css';
+import '/src/styles/colors.css';
 
 ---
 
@@ -23,7 +24,6 @@ import '../../styles/blog.css';
 
 <head>
 <title>Novas Blog</title>
-<link rel="stylesheet" href="/styles/dark.css">
 <meta name="viewport" content="width=device-width" />
 
 

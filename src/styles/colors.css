@@ -1,0 +1,70 @@
+:root {
+--bg: #e9e6f2;
+--bg0: #dcd9e6;
+--bg1: #d3d0df;
+--bg2: #cbc7d9;
+--bg3: #c3bfd3;
+--bg4: #bbb8cc;
+
+--fg: #15121a;
+--fg0: #28242f;
+--fg1: #312d38;
+--fg2: #3a3642;
+--fg3: #453e4c;
+--fg4: #524a5a;
+
+--aqua: #5e9595;
+--blue: #5c67a3;
+--gray: #867b97;
+--green: #68a368;
+--orange: #e08f47;
+--purple: #a16492;
+--red: #d24b4b;
+--yellow: #e0a94a;
+
+--bright-aqua: #5ababa;
+--bright-blue: #6a6aff;
+--bright-gray: #ab9cb0;
+--bright-green: #90cf50;
+--bright-orange: #ffa24c;
+--bright-purple: #d374b5;
+--bright-red: #ff6666;
+--bright-yellow: #f8d16a;
+}
+
+@media (prefers-color-scheme: dark) {
+:root{
+--bg:#15121a;
+--bg0:#2d2933;
+--bg1:#36323d;
+--bg2:#403b47;
+--bg3:#403b47;
+--bg4:#534d5b;
+
+--fg:#dfdce6;
+--fg0:#dfdee3;
+--fg1:#cfced5;
+--fg2:#c0bec8;
+--fg3:#b1aeba;
+--fg4:#a29fad;
+
+--aqua:#5b9b9b;
+--blue:#505a9b;
+--gray:#7f7391;
+--green:#5a9b5a;
+--orange:#d88a3c;
+--purple:#9b5a88;
+--red:#cc4444;
+--yellow:#d9a136;
+
+--bright-aqua:#5fcfcf;
+--bright-blue:#5c5cff;
+--bright-gray:#9c8ea2;
+--bright-green:#8bc34a;
+--bright-orange:#f39042;
+--bright-purple:#c26aa7;
+--bright-red:#ff5a5a;
+--bright-yellow:#f6c657;
+}
+
+}

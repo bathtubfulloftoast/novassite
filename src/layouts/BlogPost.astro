@@ -9,7 +9,8 @@ type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
-import '../styles/blog.css';
+import '/src/styles/blog.css';
+import '/src/styles/colors.css';
 
 ---
 
@@ -18,7 +19,6 @@ import '../styles/blog.css';
 
 <head>
 <title>{title}</title>
-<link rel="stylesheet" href="/styles/dark.css">
 <meta name="viewport" content="width=device-width" />
 
 
