@@ -62,6 +62,7 @@ const recenttracks = myJson.recenttracks.track;
 
 //const maxtracks = recenttracks.length;
 //const trackid = Math.floor(Math.random() * maxtracks);
+let trackid = null;
 trackid = 0;
 
 const trackname = myJson.recenttracks.track?.[trackid].name || "";
@@ -78,6 +79,7 @@ const coverid = basename(image);
 const coveridnoext = getFilenameWithoutExtension(coverid);
 
 const censored = names.includes(coveridnoext);
+let censorurl = null;
 
 if(censored) {
 censorurl = `&censored=10`;

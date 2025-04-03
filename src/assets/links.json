@@ -92,7 +92,7 @@
       "id":"randomsite"
     },
         {
-      "title": "take me to a random site!",
+      "title": "button that wont explode you i promise",
       "source": "youdied.gif",
       "url": "/misc/explode",
       "id":"explodebutton"
@@ -141,6 +141,11 @@
       "title": "HATSUNE MIKU!!?",
       "source": "miku.gif",
       "url": "https://www.fortnite.com/item-shop/bundles/hatsune-miku-bundle-54bd0fcf?lang=en-US"
+    },
+        {
+      "title": "HIT IT GMAN!",
+      "source": "gdance.gif",
+      "url": "/secret/gdance.mp4"
     },
     {
       "title": "selfhosted ftw",
