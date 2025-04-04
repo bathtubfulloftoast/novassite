@@ -37,8 +37,8 @@ const imageBlobUrl = await fetchBlob(imageUrl);
 const audioBlobUrl = await fetchBlob(audioUrl);
 
 const imageElement = document.createElement('video');
-imageElement.src = imageBlobUrl;
 const audioElement = document.createElement('audio');
+imageElement.src = imageBlobUrl;
 audioElement.src = audioBlobUrl;
 
 imageElement.style.height = "100vh";
@@ -53,8 +53,8 @@ document.body.style.backgroundColor="#000";
 document.body.appendChild(audioElement);
 document.body.appendChild(imageElement);
 
-imageElement.play();
 audioElement.play();
+imageElement.play();
 
 imageElement.addEventListener('ended', (event) => {
 imageElement.remove();
