@@ -183,7 +183,7 @@ const coverid = basename(image);
 
 const cdnurl = `https://cdn.novassite.net/albumcovers/?size=16&format=webp&file=${coverid}&noerror`;
 
-  text += `<i>${funnierdate}</i> <a href="${fmurl}" target="blank"><img style="border-radius:2px;width:16px;height:16px;" src="${cdnurl}" onerror="this.onerror=null;this.src='/media/missing16.jpeg'" "> <span title="${trackname}" class='pastsong'>${trackname}</span> - <span title="${artist}" class='pastartist'>${artist}</span><br>`;
+  text += `<i>${funnierdate}</i> <a href="${fmurl}" target="blank"><img style="border-radius:2px;width:16px;height:16px;" src="${cdnurl}" onerror="this.onerror=null;this.src='/media/missing16.jpeg'" "> <span title="${trackname}" class='pastsong'>${trackname}</span> - <span title="${artist}" class='pastartist'>${artist}</span></a><br>`;
 }
 // that error handling is fucking ass LMAO
 }
