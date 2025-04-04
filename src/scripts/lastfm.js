@@ -86,7 +86,7 @@ censorurl = `&censored=10`;
 }
 
 const cdnurl = `https://cdn.novassite.net/albumcovers/?size=800&format=webp&file=${coverid}${censorurl}&noerror`;
-console.log(`track: ${trackname}\nalbum: ${albumname}\nartist: ${artist}\ncover: ${cdnurl}\ncoverid: ${coverid}\ncensored: ${censored}`);
+//console.log(`track: ${trackname}\nalbum: ${albumname}\nartist: ${artist}\ncover: ${cdnurl}\ncoverid: ${coverid}\ncensored: ${censored}`);
 
 var coverimage = document.getElementById("cover");
 coverimage.src = cdnurl;
