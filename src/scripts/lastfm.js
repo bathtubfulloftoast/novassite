@@ -79,12 +79,10 @@ const coverid = basename(image);
 const coveridnoext = getFilenameWithoutExtension(coverid);
 
 const censored = names.includes(coveridnoext);
-let censorurl = null;
+let censorurl = "";
 
 if(censored) {
 censorurl = `&censored=10`;
-} else {
-censorurl = "";
 }
 
 const cdnurl = `https://cdn.novassite.net/albumcovers/?size=800&format=webp&file=${coverid}${censorurl}&noerror`;
