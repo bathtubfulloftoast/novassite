@@ -17,20 +17,23 @@ function shuffle(array) {
     return array; // Add this line to return the shuffled array
 }
 
-
 export async function GET() {
     const filePath = path.resolve("src/assets/splashes.txt"); // Adjust based on your project structure
+    const splashhead = path.resolve("src/assets/splasheader.txt"); // Adjust based on your project structure
+
     try {
+        const header = await fs.readFile(splashhead, "utf-8");
         const text = await fs.readFile(filePath, "utf-8");
-        const splashes = text.split("\n").map(name => name.trim()).filter(name => name);
+        const splashes = text.split("\n")
+        .map(name => name.trim())
+        .filter(name => name)
+        .map((name, index) => (index+1).toString().padStart(3, " ") + " | " + name);
 
-        // all of this is to make sure people arent downloading thousands of splashes
-        const shuffled = shuffle(splashes);
-        const sliced = shuffled.slice(0,250);
-        const textContent = sliced.join("\n");
 
+        const newsplashes = splashes.join("\n");
+        const textContent = header+"\n"+newsplashes;
         return new Response(textContent);
     } catch (error) {
-        return new Response("Error: File not found");
+        return new Response(error);
     }
 }

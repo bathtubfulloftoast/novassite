@@ -1,6 +1,26 @@
+---
+import '/src/styles/colors.css';
+import '/src/styles/misc.css';
+---
+<head>
+<title>CoolMessage</title>
+<style is:global>
+body {
+overflow:hidden;
+word-wrap: break-word;
+word-break: break-word;
+max-width: 100vw;
+}
+h1 {
+font-size:3vw;
+}
+</style>
+</head>
+<div id="content" class="center-screen">
 start typing!
 <br>
 caveats:<br>no arrow key support<br>cant select all text
+</div>
 
 <script>
 let coolstring = "";
@@ -21,6 +41,6 @@ displaystring = coolstring.replace(/</g,"&lt;");
 displaystring = displaystring.replace(/>/g,"&gt;");
 displaystring = displaystring.replace(/(?:\r\n|\r|\n)/g, '<br>');
 
-document.body.innerHTML = `<h1>${displaystring}</h1>`;
+document.getElementById("content").innerHTML = `<h1>${displaystring}</h1>`;
 });
 </script>
