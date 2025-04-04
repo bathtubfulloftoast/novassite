@@ -1,0 +1,26 @@
+start typing!
+<br>
+caveats:<br>no arrow key support<br>cant select all text
+
+<script>
+let coolstring = "";
+
+document.addEventListener('keydown', function(event) {
+  
+if (event.key == "Backspace") {
+coolstring = coolstring.slice(0,-1);
+} else if (event.key == "Enter") {
+coolstring += `\n`;
+}else if (event.key.length === 1) {
+coolstring += event.key;
+} else {
+console.log(event.key);
+}
+var displaystring = "";
+displaystring = coolstring.replace(/</g,"&lt;");
+displaystring = displaystring.replace(/>/g,"&gt;");
+displaystring = displaystring.replace(/(?:\r\n|\r|\n)/g, '<br>');
+
+document.body.innerHTML = `<h1>${displaystring}</h1>`;
+});
+</script>
