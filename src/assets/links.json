@@ -222,7 +222,7 @@
   ],
   [
     {
-      "title": "email",
+      "title": "E-Mail",
       "source": "fa-solid fa-envelope",
       "url": "mailto:mail@novassite.net"
     },
@@ -232,92 +232,92 @@
       "url": "/discord/user/#471806482648924174"
     },
     {
-      "title": "telegram",
+      "title": "Telegram",
       "source": "fa-brands fa-telegram",
       "url": "https://t.me/bathtubfulloftoast"
     },
     {
-      "title": "bluesky",
+      "title": "Bluesky",
       "source": "fa-brands fa-bluesky",
       "url": "https://bsky.app/profile/novassite.net"
     },
     {
-      "title": "reddit",
+      "title": "Reddit",
       "source": "fa-brands fa-reddit-alien",
       "url": "https://www.reddit.com/user/bathtuboftoast"
     },
     {
-      "title": "instagram (private)",
+      "title": "Instagram",
       "source": "fa-brands fa-instagram",
       "url": "https://www.instagram.com/bathtubfulloftoast"
     },
     {
-      "title": "tumblr",
+      "title": "Tumblr",
       "source": "fa-brands fa-tumblr",
       "url": "https://bathtuboftoast.tumblr.com"
     },
     {
-      "title": "pintrest",
+      "title": "Pintrest",
       "source": "fa-brands fa-pinterest",
       "url": "https://pinterest.com/bathtubfulloftoast"
     },
     {
-      "title": "youtube",
+      "title": "YouTube",
       "source": "fa-brands fa-youtube",
       "url": "https://www.youtube.com/@bathtubfulloftoast"
     },
     {
-      "title": "tiktok",
+      "title": "Tiktok",
       "source": "fa-brands fa-tiktok",
       "url": "https://www.tiktok.com/@bathtuboftoast"
     },
     {
-      "title": "github",
+      "title": "Github",
       "source": "fa-brands fa-github",
       "url": "https://github.com/bathtubfulloftoast"
     },
     {
-      "title": "steam",
+      "title": "Steam",
       "source": "fa-brands fa-steam",
       "url": "https://steamcommunity.com/id/BathtubFullOfToast"
     },
     {
-      "title": "roblox",
+      "title": "Roblox",
       "source": "fa-solid fa-square",
       "url": "https://www.roblox.com/users/823958816/profile"
     },
     {
-      "title": "xbox",
+      "title": "Xbox",
       "source": "fa-brands fa-xbox",
       "url": "https://www.xbox.com/en-US/play/user/AliceProto"
     },
     {
-      "title": "twitch",
+      "title": "Twitch",
       "source": "fa-brands fa-twitch",
       "url": "https://www.twitch.tv/bathtubfulloftoast"
     },
     {
-      "title": "bandcamp",
+      "title": "Bandcamp",
       "source": "fa-brands fa-bandcamp",
       "url": "https://bandcamp.com/bathtubfulloftoast"
     },
     {
-      "title": "last.fm",
+      "title": "Last.fm",
       "source": "fa-brands fa-lastfm",
       "url": "https://www.last.fm/user/bathtuboftoast"
     },
     {
-      "title": "toyhouse",
+      "title": "ToyHouse",
       "source": "fa-solid fa-house",
       "url": "https://toyhou.se/bathtubfulloftoast"
     },
     {
-      "title": "soundcloud",
+      "title": "SoundCloud",
       "source": "fa-brands fa-soundcloud",
       "url": "https://soundcloud.com/bathtuboftoast"
     },
     {
-      "title": "spotify playlist",
+      "title": "Spotify Playlist",
       "source": "fa-brands fa-spotify",
       "url": "https://open.spotify.com/playlist/0pc4fuq77d4egrwZcLu44w?si=ccded8b77965485e"
     },
@@ -327,17 +327,17 @@
       "url": "https://buymeacoffee.com/bathtubfulloftoast"
     },
     {
-      "title": "newgrounds",
+      "title": "Newgrounds",
       "source": "fa-solid fa-skull-crossbones",
       "url": "https://awrootb33r.newgrounds.com"
     },
     {
-      "title": "beatleader",
+      "title": "BeatLeader",
       "source": "fa-solid fa-box",
       "url": "https://beatleader.xyz/u/76561198853505045"
     },
     {
-      "title": "spacehey",
+      "title": "SpaceHey",
       "source": "fa-solid fa-user-large",
       "url": "https://spacehey.com/bathtuboftoast"
     }
