@@ -17,8 +17,9 @@ font-size:3vw;
 </style>
 </head>
 <div id="content" class="center-screen">
-start typing!
+start typing
 <br>
+press delete to clear all text<br><br>
 caveats:<br>no arrow key support<br>cant select all text
 </div>
 
@@ -29,6 +30,8 @@ document.addEventListener('keydown', function(event) {
   
 if (event.key == "Backspace") {
 coolstring = coolstring.slice(0,-1);
+} else if (event.key == "Delete") {
+coolstring = "";
 } else if (event.key == "Enter") {
 coolstring += `\n`;
 }else if (event.key.length === 1) {
