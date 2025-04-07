@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
         document.getElementById("location").innerHTML = `Weather for ${location}`;
         document.getElementById("location").href=`https://openweathermap.org/city/${cityid}`;
+        document.getElementById("cloudsecret").href="https://github.com/bathtubfulloftoast/novassite/tree/main/public/media/weather";
 
         document.getElementById("wdes").innerHTML = desc;
         document.getElementById("temps").innerHTML = `${tempf}&deg;F|${tempc}&deg;C<br>`;
