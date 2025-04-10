@@ -2,21 +2,17 @@ import 'dotenv/config';
 
 let cache = {};
 
-export async function handler(event, context) {
+export default async function lastfmHandler(req, res) {
     const API_KEY = process.env.DISCORD_API_KEY;
-    const userid = event.queryStringParameters.userid;
+    const userid = req.query.userid;
     const CACHE_DURATION = 86400000;
 
-    // Check if we have cached data for this user and it's still valid
-    if (cache[userid] && (Date.now() - cache[userid].timestamp < CACHE_DURATION)) {
-        const remainingTime = CACHE_DURATION - (Date.now() - cache[userid].timestamp);
-        return {
-            statusCode: 200,
-            body: JSON.stringify({
-                ...cache[userid].data,
-                cache_remaining_ms: remainingTime, // Include remaining cache time
-            }),
-        };
+    if (cache[userid]?.timestamp && (Date.now() - cache[userid].timestamp < CACHE_DURATION)) {
+        const remaining = CACHE_DURATION - (Date.now() - cache[userid].timestamp);
+        return res.status(200).json({
+            ...cache[userid].data,
+            cache_remaining_ms: remaining,
+        });
     }
 
     const url = `https://discord.com/api/v10/users/${userid}`;
@@ -29,26 +25,19 @@ export async function handler(event, context) {
                 'Content-Type': 'application/json; charset=utf-8',
             },
         });
-
         const data = await response.json();
 
-        // Store response in cache with a timestamp
+
         cache[userid] = {
             data,
             timestamp: Date.now(),
         };
 
-        return {
-            statusCode: 200,
-            body: JSON.stringify({
-                ...data,
-                cache_remaining_ms: CACHE_DURATION, // Since it's a fresh fetch, full duration remains
-            }),
-        };
+        res.status(200).json({
+            ...data,
+            cache_remaining_ms: CACHE_DURATION,
+        });
     } catch (error) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: "Failed to fetch data" }),
-        };
+        res.status(500).json({ error: 'Failed to fetch data' });
     }
 }
