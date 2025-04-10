@@ -6,7 +6,7 @@ import openweatherAPI from './functions/openweather.js';
 import qrAPI from './functions/qr.js';
 import discorduserAPI from './functions/discord.js';
 
-const port = 8080;
+const port = 4321;
 
 const app = express();
 const base = '/';
