@@ -26,7 +26,7 @@ export async function GET() {
 
         // all of this is to make sure people arent downloading thousands of splashes
         const shuffled = shuffle(splashes);
-        const sliced = shuffled.slice(0,250);
+        const sliced = shuffled.slice(0,150);
         const textContent = sliced.join("\n");
 
         return new Response(textContent);
