@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async function() {
   function thanksgiving(theyear) {
     const lastOfNov = new Date(theyear, 10, 30).getDay();
     const turkyDay = (lastOfNov >= 4 ? 34 : 27) - lastOfNov;
-    return `10/${turkyDay}`;
+    return `11/${turkyDay}`;
   }
 // stolen from https://forum.freecodecamp.org/t/how-to-calculate-when-is-thanks-giving-day-in-javascript/247187/3
 
