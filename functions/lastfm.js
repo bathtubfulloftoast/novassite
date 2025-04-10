@@ -2,50 +2,36 @@ import 'dotenv/config';
 
 let cache = {};
 
-export async function handler(event, context) {
+export default async function lastfmHandler(req, res) {
     const API_KEY = process.env.LASTFM_API_KEY;
     const USER = "bathtuboftoast";
     const MAXFM = "10";
-    const CACHE_DURATION = 29000;
+    const CACHE_DURATION = 30000;
 
-    // Check if we have cached data for this user and it's still valid
-    if (cache && (Date.now() - cache.timestamp < CACHE_DURATION)) {
-        const remainingTime = CACHE_DURATION - (Date.now() - cache.timestamp);
-        return {
-            statusCode: 200,
-            body: JSON.stringify({
-                ...cache.data,
-                cache_remaining_ms: remainingTime, // Include remaining cache time
-            }),
-        };
+    if (cache.timestamp && (Date.now() - cache.timestamp < CACHE_DURATION)) {
+        const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);
+        return res.status(200).json({
+            ...cache.data,
+            cache_remaining_ms: remaining,
+        });
     }
 
     const url = `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USER}&api_key=${API_KEY}&format=json&limit=${MAXFM}`;
 
     try {
-        const response = await fetch(url, {
-            method: 'GET',
-        });
-
+        const response = await fetch(url);
         const data = await response.json();
 
-        // Store response in cache with a timestamp
         cache = {
             data,
             timestamp: Date.now(),
         };
 
-        return {
-            statusCode: 200,
-            body: JSON.stringify({
-                ...data,
-                cache_remaining_ms: CACHE_DURATION, // Since it's a fresh fetch, full duration remains
-            }),
-        };
+        res.status(200).json({
+            ...data,
+            cache_remaining_ms: CACHE_DURATION,
+        });
     } catch (error) {
-        return {
-            statusCode: 500,
-            body: JSON.stringify({ error: "Failed to fetch data" }),
-        };
+        res.status(500).json({ error: 'Failed to fetch data' });
     }
 }

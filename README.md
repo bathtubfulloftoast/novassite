@@ -1,12 +1,13 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/94b89afa-2e50-49ab-94db-46dca3418353/deploy-status)](https://app.netlify.com/sites/novassite/deploys)
-
 # novassite.net
 the official repo for Novas Site
 
 ## How to run
 
-first run ``npm install``
-if you want to run the server side functions [install netlify cli](https://docs.netlify.com/cli/get-started/)
+first run ``npm install`` to install required dependencies
+
+next install ``npm run build`` to build the site itself
+
+finally run ``node server.js`` to run the server itself
 
 
 then run one of these
@@ -14,11 +15,11 @@ then run one of these
 | Command | What it does |
 | -------- | ------- |
 | npm run build | builds astro |
-| npm run preview | preview built site |
+| npm run preview | preview built site without server functions |
 | npm run dev | astro dev mode |
-| netlify dev | netlify dev mode (like astro dev mode but with server side stuff) |
+| node server.js | run the server with node |
 
 
 ## TODO
-- [ ] Redo Front Page
-- [ ] Make other shit more concise
+- [ ] Add blogposts to front page
+- [ ] not manually declare every api thing

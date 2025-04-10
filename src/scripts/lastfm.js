@@ -53,7 +53,7 @@ return cachedCensoredIds;
 
 const mainsong = async () => {
 const names = await censoredids();
-const response = await fetch('/.netlify/functions/lastfm');
+const response = await fetch('/api/lastfm');
 // doesnt have to be my specific thing this is just to hide my api key from you bastards
 // also my own rate limiting and error handling fuck yuo
 const myJson = await response.json();
