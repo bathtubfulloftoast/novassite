@@ -8,8 +8,3 @@ pnpm-debug.log*
 .env
 .env.production
 .DS_Store
-.idea/
-defaultsrc/
-
-# Local Netlify folder
-.netlify

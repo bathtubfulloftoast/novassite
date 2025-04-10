@@ -46,7 +46,7 @@ const fallbacks = [
 "https://romsfun.com/",
 "https://store.steampowered.com/app/449040/Jesus_Christ_RPG_Trilogy/",
 "https://unknownworlds.com",
-"https://www.fortnite.com/item-shop/bundles/hatsune-miku-bundle-54bd0fcf",
+"https://en.wikipedia.org/wiki/Hatsune_Miku",
 "https://www.mcdonalds.com/us/en-us/product/chicken-mcnuggets-40-piece.html",
 "https://www.mcdonalds.com/us/en-us/product/mccrispy-chicken-sandwich.html",
 "https://www.pinterest.com/pin/411094272257118490/",
@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     async function geturl() {
         try {
-            const response = await fetch('/.netlify/functions/qr');
+            const response = await fetch('/api/qr');
 
             if (!response.ok) {
                 throw new Error('Network response was not okay');
