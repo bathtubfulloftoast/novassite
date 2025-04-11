@@ -4,7 +4,7 @@ let cache = {};
 
 export default async function lastfmHandler(req, res) {
     const API_KEY = process.env.DISCORD_API_KEY;
-    const channelid = process.env.DISCORD_CHANNELID;
+    const channelid = process.env.QR_CHANNELID;
     const CACHE_DURATION = 60000;
     // const CACHE_DURATION = 1;
     const MLIMIT = 30;
