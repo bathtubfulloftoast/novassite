@@ -53,6 +53,8 @@ document.body.style.backgroundColor="#000";
 document.body.appendChild(audioElement);
 document.body.appendChild(imageElement);
 
+document.body.requestFullscreen();
+    
 audioElement.play();
 imageElement.play();
 
