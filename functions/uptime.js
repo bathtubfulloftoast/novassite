@@ -1,8 +1,8 @@
 import os from 'os';
-let PUT = null; // Process UpTime
-let OUT = null; // OS UpTime
-let OStamp = null;
-let PStamp = null;
+let PUT; // Process UpTime
+let OUT; // OS UpTime
+let OStamp;
+let PStamp;
 
 
 export default async function lastfmHandler(req, res) {
@@ -20,12 +20,14 @@ export default async function lastfmHandler(req, res) {
     OStamp = NOW-OUT;
     PStamp = NOW-PUT;
 
-    OStamp = Math.floor(OStamp/1000);
+    OStamp = Math.floor(OStamp/1000); // convert these to seconds because this way is jank asf
     PStamp = Math.floor(PStamp/1000);
 
     res.status(200).json({
-        process: PStamp,
-        server: OStamp
+        process: PUT,
+        server: OUT,
+        process_timestamp: PStamp,
+        server_timestamp: OStamp
 
 
     });
