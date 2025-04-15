@@ -12,7 +12,7 @@ export default async function lastfmHandler(req, res) {
         const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);
         return res.status(200).json({
             ...cache.data,
-            cache_remaining_ms: remaining,
+            cache_remaining: Math.floor(remaining/1000),
         });
     }
 
@@ -29,7 +29,7 @@ export default async function lastfmHandler(req, res) {
 
         res.status(200).json({
             ...data,
-            cache_remaining_ms: CACHE_DURATION,
+            cache_remaining: Math.floor(CACHE_DURATION/1000),
         });
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch data' });
