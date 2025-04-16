@@ -6,9 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>nickname</title>
 
-<link id="tabicon" rel="icon">
-
-
 <style>
 body {
 /* banner shit below :D */
@@ -167,7 +164,12 @@ fetch(url)
     coverimage.src = '/media/avatar.png'; // Fallback image
 };
 
-      document.getElementById("tabicon").href = `https://cdn.discordapp.com/avatars/${userid}/${avatarid}?size=16`;
+const tabicon = document.createElement('link');
+tabicon.rel = "icon";
+tabicon.href = `https://cdn.discordapp.com/avatars/${userid}/${avatarid}?size=16`;
+
+
+document.head.appendChild(tabicon);
     } else {
       coverimage.src = `/media/avatar.png`;
     }
