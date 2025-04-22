@@ -7,6 +7,10 @@ export default async function lastfmHandler(req, res) {
     const userid = req.query.userid;
     const CACHE_DURATION = 86400000;
 
+    if (!userid) {
+        return res.status(400).json({ error: 'no userid set' });
+    }
+
     if (cache[userid]?.timestamp && (Date.now() - cache[userid].timestamp < CACHE_DURATION)) {
         const remaining = CACHE_DURATION - (Date.now() - cache[userid].timestamp);
         return res.status(200).json({

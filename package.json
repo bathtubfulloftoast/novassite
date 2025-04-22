@@ -16,6 +16,7 @@
     "astro": "^5.5.2",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
-    "express-ip": "^1.0.4"
+    "express-ip": "^1.0.4",
+    "node-device-detector": "^2.2.0"
   }
 }

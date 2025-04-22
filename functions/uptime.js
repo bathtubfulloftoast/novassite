@@ -27,7 +27,7 @@ export default async function lastfmHandler(req, res) {
         process: PUT,
         server: OUT,
         process_timestamp: PStamp,
-        server_timestamp: OStamp
+        server_timestamp: OStamp,
 
 
     });
