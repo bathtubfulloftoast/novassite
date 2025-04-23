@@ -26,6 +26,11 @@ caveats:<br>no arrow key support<br>cant select all text
 <script>
 let coolstring = "";
 
+let hash = window.location.hash; // Get the hash from the URL
+let hashValue = hash.substring(1); // Remove the '#' character
+
+coolstring = hashValue;
+
 document.addEventListener('keydown', function(event) {
   
 if (event.key == "Backspace") {
