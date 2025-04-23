@@ -34,7 +34,7 @@ export function getDevice() {
 
 const platform = os.platform(); // linux
 const architecture = os.arch(); // x64
-const platform = os.machine(); // x86_64
+const cpuplatform = os.machine(); // x86_64
 const hostname = os.hostname(); //supernova
 const cpumodel = os.cpus()?.[0].model; // AMD Ryzen 7 5700U with Radeon Graphics
 const device = getDevice();
@@ -53,7 +53,7 @@ return new Response(
 `hostname: ${hostname}
 os: ${distro}
 architecture: ${architecture}
-platform: ${platform}
+platform: ${cpuplatform}
 cpu: ${cpumodel}
 ram: ${memory}
 device: ${device}`
