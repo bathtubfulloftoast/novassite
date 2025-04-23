@@ -5,7 +5,7 @@ let cache = {};
 export default async function lastfmHandler(req, res) {
     const API_KEY = process.env.DISCORD_API_KEY;
     const CHANNELID = process.env.INVITE_CHANNELID;
-    const TIMELIMIT = 30; // time limit in minutes
+    const TIMELIMIT = 5; // time limit in minutes
 
     const CACHE_DURATION = (TIMELIMIT * 60000);
 
@@ -30,7 +30,7 @@ export default async function lastfmHandler(req, res) {
                 "max_age": (TIMELIMIT * 60),
                 "max_uses": 1,
                 "temporary": false,
-                "unique": false
+                "unique": true
             }),
         });
 
