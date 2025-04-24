@@ -15,6 +15,7 @@ export function formatBytes(bytes, decimals = 2) {
     return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`
 }
 // https://stackoverflow.com/questions/15900485/correct-way-to-convert-size-in-bytes-to-kb-mb-gb-in-javascript
+// me when im lazy
 
 export function getLinuxDistro() {
     try {
@@ -45,11 +46,11 @@ export function getDevice() {
     }
 }
 
-const platform = os.platform(); // linux
-const architecture = os.arch(); // x64
-const cpuplatform = os.machine(); // x86_64
-const hostname = os.hostname(); //supernova
-const cpumodel = os.cpus()?.[0].model; // AMD Ryzen 7 5700U with Radeon Graphics
+const platform = os.platform() ?? "Unknown OS"; // linux
+const architecture = os.arch() ?? "no architecture"; // x64 (i dont think its possible for these to be blank but yknow if someone gets node on the newest architecture and wants to test my site we good)
+const cpuplatform = os.machine() ?? "no architecture"; // x86_64
+const hostname = os.hostname() ?? "Computer"; //supernova
+const cpumodel = os.cpus()?.[0]?.model ?? "Unknown CPU"; // AMD Ryzen 7 5700U with Radeon Graphics
 const device = getDevice();
 const memory = os.totalmem(); // returned in bytes 
 
