@@ -9,7 +9,16 @@ export default async function lastfmHandler(req, res) {
 
     if (!userid) {
         return res.status(400).json({ error: 'no userid set' });
+    } else if (/[^0-9]/.test(userid)) {
+        return res.status(400).json({ error: 'not a valid userid please remove letters' });
+    } else if (userid.length < 17) {
+        return res.status(400).json({ error: 'userid too short' });
+    } else if (userid.length > 20) {
+        return res.status(400).json({ error: 'userid too long' });
     }
+    // from what ive seen human userids are 18 characters long and bot userids are 19 characters long
+    // i dont think theres anything properly saying this but uh yeah
+
 
     if (cache[userid]?.timestamp && (Date.now() - cache[userid].timestamp < CACHE_DURATION)) {
         const remaining = CACHE_DURATION - (Date.now() - cache[userid].timestamp);

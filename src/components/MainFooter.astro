@@ -20,8 +20,8 @@ const currentdate = mm + '/' + dd + '/' + yyyy + ' ' + hours + ':' + minutes + '
 
 let distro;
 
-const architecture = os.arch(); // x64
-const platform = os.platform(); // linux
+const architecture = os.arch() ?? "Unknown Architecture"; // x64
+const platform = os.platform() ?? "Unknown Platform"; // linux
 
 function getLinuxDistro() {
     try {

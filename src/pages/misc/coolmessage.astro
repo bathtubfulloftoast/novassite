@@ -29,7 +29,18 @@ let coolstring = "";
 let hash = window.location.hash; // Get the hash from the URL
 let hashValue = hash.substring(1); // Remove the '#' character
 
+if (hashValue) {
+
 coolstring = hashValue;
+
+var displaystring = "";
+displaystring = coolstring.replace(/%3C/g,"&lt;");
+displaystring = displaystring.replace(/%3E/g,"&gt;");
+displaystring = displaystring.replace(/%20/g," ");
+
+document.getElementById("content").innerHTML = `<h1>${displaystring}</h1>`;
+
+} else {
 
 document.addEventListener('keydown', function(event) {
   
@@ -51,4 +62,6 @@ displaystring = displaystring.replace(/(?:\r\n|\r|\n)/g, '<br>');
 
 document.getElementById("content").innerHTML = `<h1>${displaystring}</h1>`;
 });
+
+};
 </script>
