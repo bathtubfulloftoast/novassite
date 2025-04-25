@@ -18,8 +18,3 @@ then run one of these
 | npm run preview | preview built site without server functions |
 | npm run dev | astro dev mode |
 | node server.js | run the server with node |
-
-
-## TODO
-- [ ] Add blogposts to front page
-- [ ] not manually declare every api thing
