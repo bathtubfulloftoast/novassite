@@ -82,7 +82,7 @@ const censored = names.includes(coveridnoext);
 let censorurl = "";
 
 if(censored) {
-censorurl = `&censored=10`;
+censorurl = `&censored=40`;
 }
 
 const cdnurl = `https://cdn.novassite.net/albumcovers/?size=800&format=webp&file=${coverid}${censorurl}&noerror`;
@@ -97,9 +97,9 @@ coverimage.onerror = function () {
 document.getElementById("mainfmlink").href=fmurl; 
 document.getElementById("mainfmlink").title=`${trackname} by ${artist}`; 
 
-document.getElementById("trackname").innerHTML=trackname; 
-document.getElementById("albumname").innerHTML=albumname; 
-document.getElementById("artistname").innerHTML=artist; 
+document.getElementById("trackname").innerHTML=trackname;
+document.getElementById("albumname").innerHTML=albumname;
+document.getElementById("artistname").innerHTML=artist;
 
 document.getElementById("poweredby").href=`https://www.last.fm/user/${fmuser}`; 
 
