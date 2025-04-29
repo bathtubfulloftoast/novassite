@@ -85,7 +85,7 @@ if(censored) {
 censorurl = `&censored=40`;
 }
 
-const cdnurl = `https://cdn.novassite.net/albumcovers/?size=800&format=webp&file=${coverid}${censorurl}&noerror`;
+const cdnurl = `https://cdn.novassite.net/albumcovers/${coverid}?size=800&format=webp${censorurl}`;
 //console.log(`track: ${trackname}\nalbum: ${albumname}\nartist: ${artist}\ncover: ${cdnurl}\ncoverid: ${coverid}\ncensored: ${censored}`);
 
 var coverimage = document.getElementById("cover");
@@ -181,7 +181,7 @@ let funnierdate = funnydate.replace(/!/g, "&nbsp;");
 
 const coverid = basename(image);
 
-const cdnurl = `https://cdn.novassite.net/albumcovers/?size=16&format=webp&file=${coverid}&noerror`;
+const cdnurl = `https://cdn.novassite.net/albumcovers/${coverid}?size=16&format=webp`;
 
   text += `<i>${funnierdate}</i> <a href="${fmurl}" target="blank"><img style="border-radius:2px;width:16px;height:16px;" src="${cdnurl}" onerror="this.onerror=null;this.src='/media/missing16.jpeg'" "> <span title="${trackname}" class='pastsong'>${trackname}</span> - <span title="${artist}" class='pastartist'>${artist}</span></a><br>`;
 }
