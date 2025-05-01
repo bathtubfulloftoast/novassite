@@ -82,7 +82,7 @@ const censored = names.includes(coveridnoext);
 let censorurl = "";
 
 if(censored) {
-censorurl = `&censored=40`;
+censorurl = `&censored=20`;
 }
 
 const cdnurl = `https://cdn.novassite.net/albumcovers/${coverid}?size=800&format=webp${censorurl}`;
