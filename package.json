@@ -14,9 +14,11 @@
     "@astrojs/rss": "^4.0.11",
     "@astrojs/sitemap": "^3.2.1",
     "astro": "^5.5.2",
+    "body-parser": "^2.2.0",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "express-ip": "^1.0.4",
-    "node-device-detector": "^2.2.0"
+    "node-device-detector": "^2.2.0",
+    "sqlite3": "^5.1.7"
   }
 }
