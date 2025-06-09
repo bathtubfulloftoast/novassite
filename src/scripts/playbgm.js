@@ -39,6 +39,7 @@ async function createaudio() {
     audioElement.src = audioBlobUrl;
     audioElement.loop = true;
     audioElement.id = "bgmusic";
+    audioElement.volume = 0.05;
 
 
     document.body.appendChild(audioElement);
