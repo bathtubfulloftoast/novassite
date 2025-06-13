@@ -10,7 +10,7 @@
       "source": "ray.png",
       "url": "https://ray.novassite.net"
     },
-        {
+    {
       "title": "hoe",
       "source": "toviah.gif",
       "url": "https://toyhou.se/Toviah"
@@ -94,13 +94,13 @@
       "title": "take me to a random site!",
       "source": "randomsite.gif",
       "url": "/misc/RandomSite",
-      "id":"randomsite"
+      "id": "randomsite"
     },
-        {
+    {
       "title": "button that wont explode you i promise",
       "source": "youdied.gif",
       "url": "/misc/explode",
-      "id":"explodebutton"
+      "id": "explodebutton"
     },
     {
       "title": "inspiration for the look :D",
@@ -116,6 +116,11 @@
       "title": "gordon freeman spotted in georgia",
       "source": "but_half-lie2.png",
       "url": "https://hl2.sh"
+    },
+    {
+      "title": "Git hosting for the queers",
+      "source": "gitgay.png",
+      "url": "https://git.gay/"
     },
     {
       "title": "gaben@valvesoftware.com",
@@ -147,7 +152,7 @@
       "source": "miku.gif",
       "url": "https://www.youtube.com/watch?v=6qmUTclZhUo"
     },
-        {
+    {
       "title": "HIT IT GMAN!",
       "source": "gdance.gif",
       "url": "/secret/gdance.mp4"
