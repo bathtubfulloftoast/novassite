@@ -1,0 +1,13 @@
+body {
+background:#000;
+color:#fff;
+}
+
+p {
+word-wrap: break-word;
+white-space: pre-wrap;
+}
+
+blink {
+color:green;
+}

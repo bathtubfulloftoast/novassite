@@ -1,0 +1,54 @@
+---
+import Layout from '/src/layouts/Layout.astro';
+---
+<Layout>
+<h1 style="color:red;font-size:50px;text-align:center;">YOU DIED.</h1>
+<br><br><br>
+<p>due to a mix of criminal negligence and general stupidity you end up falling down a cliff tumbling into a comically sharp pit of rocks.
+oops!
+<a href="/main">try again</a></p>
+</Layout>
+
+<script>
+
+const audioUrl = "/media/ruff fetch sting.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 0.5;
+
+
+    document.body.appendChild(audioElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+audioElement.remove();
+});
+
+};
+
+createaudio();
+
+</script>
