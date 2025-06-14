@@ -1,21 +1,6 @@
-hook: text based with a few links
-
-you walk along the forest lost and confused, all of a sudden you find yourself in a town(?) the buildings seem to be limited and all of them are named after a "Nova"
-which building do you enter?
-you knock on the door of the only house you see which option do you chose?
-
-play diff music depending on what page you're in
-posibly change the hook to be a sign based on where you are
-
-&lt; House
-Store &gt;
-|
-|
-|
-
-etc.
-
-apartment complex can host badges and links..
+scrap text adventure concept
+make main page with links to the other garbage
+keep qr code thing as TV
 
 links:
 about me (can link to weather?)
