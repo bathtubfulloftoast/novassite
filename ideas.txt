@@ -2,6 +2,9 @@ scrap text adventure concept
 make main page with links to the other garbage
 keep qr code thing as TV
 
+recent activity:
+shows recent music, games, discord activity
+
 links:
 about me (can link to weather?)
 hobbies
