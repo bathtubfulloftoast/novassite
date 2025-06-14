@@ -1,24 +1,20 @@
-hook: text based with a few links
+---
+import Layout from '/src/layouts/Layout.astro';
+---
+<style>
+@-moz-document url-prefix() {
 
-you walk along the forest lost and confused, all of a sudden you find yourself in a town(?) the buildings seem to be limited and all of them are named after a "Nova"
-which building do you enter?
-you knock on the door of the only house you see which option do you chose?
+.hasfirefox {
+display:none;
+}
 
-play diff music depending on what page you're in
-posibly change the hook to be a sign based on where you are
+}
 
-&lt; House
-Store &gt;
-|
-|
-|
+</style>
+<Layout>
+<p>this website is best experienced on a 1080p monitor in the firefox browser with autoplay enabled.
+if you dont have those then fuck you lmao
+<span class="hasfirefox"><a href="https://getfirefox.com">please download firefox.</a><br><br></span>
 
-etc.
-
-links:
-about me (can link to weather?)
-hobbies
-favorite things
-current interests (links to top 10 last.fm songs of year) (and recent games on steam)
-blog
-last.fm current tracks are in an mp3 player type menu?
+<a href="/main">continue on the adventure</a></p>
+</Layout>

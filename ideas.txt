@@ -1,0 +1,27 @@
+hook: text based with a few links
+
+you walk along the forest lost and confused, all of a sudden you find yourself in a town(?) the buildings seem to be limited and all of them are named after a "Nova"
+which building do you enter?
+you knock on the door of the only house you see which option do you chose?
+
+play diff music depending on what page you're in
+posibly change the hook to be a sign based on where you are
+
+&lt; House
+Store &gt;
+|
+|
+|
+
+etc.
+
+apartment complex can host badges and links..
+
+links:
+about me (can link to weather?)
+hobbies
+favorite things
+current interests (links to top 10 last.fm songs of year) (and recent games on steam)
+blog
+last.fm current tracks are in an mp3 player type menu?
+[watch tv] (random qr thing)
