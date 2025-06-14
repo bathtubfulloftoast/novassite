@@ -1,9 +1,13 @@
 import 'dotenv/config';
 
-import { Client, GatewayIntentBits } from 'discord.js';
+import { Client, GatewayIntentBits,ActivityType } from 'discord.js';
 
 const API_KEY = process.env.DISCORD_BOT_TOKEN;
 
+var now = new Date();
+var day = String(now.getDate());
+var month = String(now.getMonth() + 1); //January is 0!
+var year = now.getFullYear();
 
 const client = new Client({
     intents: [
@@ -16,6 +20,13 @@ const client = new Client({
 
 client.once('ready', () => {
     console.log(`Logged in as ${client.user.tag}`);
+    client.user.setPresence({
+        activities: [
+            { name: `site running since ${month}/${day}/${year}`, type: ActivityType.Custom },
+        ],
+        status: 'online'
+    });
+
 });
 
 client.login(API_KEY);
