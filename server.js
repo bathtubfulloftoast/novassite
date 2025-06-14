@@ -3,6 +3,7 @@ import expressip from 'express-ip';
 import bodyParser from 'body-parser'
 import { handler as ssrHandler } from './dist/server/entry.mjs';
 import registerAPIRoutes from './api.js';
+import './discordBot.js';
 
 const port = 4321;
 
