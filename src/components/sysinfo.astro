@@ -1,0 +1,58 @@
+---
+import os from 'os';
+
+
+var now = new Date();
+var dd = String(now.getDate()).padStart(2, '0');
+var mm = String(now.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = now.getFullYear();
+
+var hours = String((now.getHours())).padStart(2, '0');
+
+var minutes = String((now.getMinutes()) % 60).padStart(2, '0');
+let seconds = now.getSeconds();
+
+const currentTimeZone = '(' + new Date().toString().match(/\(([A-Za-z\s].*)\)/)[1] + ')';
+
+const year = new Date().getFullYear();
+const copyright = `Novas Site ©${year}`;
+const currentdate = mm + '/' + dd + '/' + yyyy + ' ' + hours + ':' + minutes + ' '+ currentTimeZone;
+
+let distro;
+
+const architecture = os.arch() ?? "Unknown Architecture"; // x64
+const platform = os.platform() ?? "Unknown Platform"; // linux
+
+function getLinuxDistro() {
+    try {
+        const releaseInfo = fs.readFileSync('/etc/os-release', 'utf-8');
+        const match = releaseInfo.match(/^NAME="([^"]*)"/m);
+        return match ? match[1] : 'Generic Linux';
+    } catch (err) {
+        return 'Generic Linux';
+    }
+}
+
+function getDevice() {
+    try {
+        const releaseInfo = fs.readFileSync('/sys/devices/virtual/dmi/id/product_name', 'utf-8');
+        return releaseInfo ?? 'Unknown Device';
+    } catch (err) {
+        return 'Unknown Device';
+    }
+}
+
+if(platform == "linux") {
+    distro = getLinuxDistro();
+} else {
+    distro = platform;
+}
+
+const device = getDevice();
+
+---
+<div class="blurb">
+<b>System Info:</b><br>
+compiled on {currentdate}<br>
+compiled on <a href="/deviceinfo.txt" target="_top">{device} using {distro} {architecture}</a>
+</div>
