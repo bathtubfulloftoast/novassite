@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function() {
 
 async function grabdiscord() {
-const response = await fetch('/api/discord');
+const response = await fetch('/discord.json');
 let data = await response.json();
 
 var now = new Date().getTime();
@@ -45,22 +45,31 @@ const activitytype = document.createElement('b');
 activitytype.innerHTML = `${item.name}:<br>`;
 
 const activityinfo = document.createElement('span');
+activityinfo.innerHTML = `${item.details}<br>${item.state}<br>`;
 
+const activitytime = document.createElement('span');
 
-// Update the count down every 1 second
-var distance = now - startime;
+function updateTime() {
+    const now = new Date();
+    const distance = now - startime;
 
-// Time calculations for days, hours, minutes and seconds
-var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    const hours = Math.floor((distance / (1000 * 60 * 60)));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-const timepassed = hours + "h " + minutes + "m " + seconds + "s ";
+    const timepassed = `${hours}h ${minutes}m ${seconds}s`;
+    activitytime.innerHTML = timepassed;
 
+}
 
-activityinfo.innerHTML = `${item.details}<br>${item.state}<br>${timepassed}`;
-activityinfo.className = "activityinfo";
+// Initial time fill
+updateTime();
+
+// Update every second
+const intervalId = setInterval(updateTime, 1000);
+
+// Optional: Store intervalId in case you need to stop it later (e.g., when removing the activity)
+activityinfo.dataset.intervalId = intervalId;
 
 
 if(lareimg) {
@@ -81,7 +90,7 @@ activityimg.title = item.assets.largeText?? "a discord activity";
 infowrap.appendChild(activityimg);
 
 activityimg.onerror = function () {
-    activityimg.src = '/media/missing_activity.webp'; // Fallback image
+activityimg.src = '/media/missing_activity.webp';
 };
 
 }
@@ -89,6 +98,8 @@ activityimg.onerror = function () {
 
 blurbwrap.appendChild(activitytype);
 infowrap.appendChild(activityinfo);
+activityinfo.appendChild(activitytime);
+
 activitylist.appendChild(blurbwrap);
 blurbwrap.appendChild(infowrap);
 

@@ -4,13 +4,13 @@ import '/src/styles/desktop.css';
 
 ---
 
-<div class="center-screen">
+<div class="center-screen" id="window">
 <div class="window" style="display:inline-block">
   <div class="title-bar">
     <div class="title-bar-text" id="splash">Nova's Profile</div>
     <div class="title-bar-controls">
-      <button style="cursor:pointer" aria-label="Minimize" onclick="location.href='/death';"></button>
-      <button style="cursor:pointer" aria-label="Maximize" onclick="location.href='/death';"></button>
+      <button style="cursor:pointer" aria-label="Minimize" onclick='document.getElementById("window").remove()'></button>
+      <button style="cursor:pointer" aria-label="Maximize" onclick="location.href='/profile';"></button>
       <button style="cursor:pointer" aria-label="Close" onclick="location.href='/death';"></button>
     </div>
   </div>
