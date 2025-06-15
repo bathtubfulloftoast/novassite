@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function() {
 
 async function grabdiscord() {
-const response = await fetch('/discord.json');
+const response = await fetch('/api/discord');
 let data = await response.json();
 
 var now = new Date().getTime();
@@ -45,7 +45,8 @@ const activitytype = document.createElement('b');
 activitytype.innerHTML = `${item.name}:<br>`;
 
 const activityinfo = document.createElement('span');
-activityinfo.innerHTML = `${item.details}<br>${item.state}<br>`;
+activityinfo.innerHTML = `${item.details||""}<br>${item.state||""}<br>`;//god the restriction to not force a name and item here godddddd
+// GOOOODDDDDDD
 
 const activitytime = document.createElement('span');
 
