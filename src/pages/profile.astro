@@ -1,21 +1,142 @@
 ---
 import '/src/styles/userpage.css';
 import '/src/styles/colors.css';
+
+import links from '/src/assets/links.json';
+const badges = links[0] ?? [];
+const stamps = links[1] ?? [];
+
 ---
+<head>
+<title>Nova's Profile</title>
+<meta name="viewport" content="width=device-width">
+</head>
 
 <div class="top">
 <img id="pfp" src="/media/pfp.png">
 
 <span id="username">Nova</span><br>
-<span id="status">I love women</span><br><br>
+<span id="status">I love women</span><br>
+
+<span id="creationdate">Account Created: 06/09/2007</span><br><br>
 
 <div><img id="onlineimg" src="/blank.gif" class="sprite offline">
 <span id="online">Offline</span>
 
 <img src="/blank.gif" class="sprite friend">
-<a id="addfriend" href="/media/secrets/g dance.mp4">Add Friend<a>
+<a id="addfriend" href="/media/secrets/g dance.mp4" target="_blank">Add Friend</a>
+</div>
+</div>
+
+<div class="bottom">
+<div class="interests">
+<b>Interests</b><br><br>
+
+General:<br>
+Girls
+<br><br>
+Current Fav Music:<br>
+<span id="topsongs">
+i HATE music.
+<br>
+</span>
+<br>
+
+Recent Music:<br>
+<span id="recentsongs">
+i said i HATE music.
+<br>
+</span>
+<br>
+
+Fav Games:<br>
+Minecraft<br>
+Deltarune
+<br><br>
+
+Fav Movies:<br>
+Scott Pilgrim VS. The World<br>
+A Minecraft Movie<br>
+The Truman Show
+<br><br>
+
+Fav Shows:<br>
+Smiling Friends<br>
+Invader Zim<br>
+Adventure Time<br>
+Regular Show
+<br><br>
+</div>
+
+<div class="blurbs">
+
+<div class="blurb">
+<b>About Me:</b><br>
+hey there, im alice/nova and im an <span id="age">age</span> old developer doing random shit<br>
+i enjoy hacking consoles and messing with technology<br>
+this site is entirely self developed, you can find the source on <a target="_top" href="https://github.com/bathtubfulloftoast/novassite">github</a> or <a target="_top" href="https://git.gay/bathtubfulloftoast/novassite">git.gay</a>
+</div>
+
+<div class="blurb">
+<b>More of Me:</b><br>
+<a href="/qr" target="_top">random thing</a><br>
+<a href="//wiki.novassite.net" target="_top">wiki</a><br>
+<a href="https://cdn.novassite.net/dump/" target="_top">file dump</a><br>
+
+</div>
+
+<div class="blurb">
+<b>Badges:</b><br><br>
+<div class="badges">
+<section id="badges">
+    {badges.map((item) => (
+        <a title={item.title} href={item.url} target="_blank">
+            <img decoding="async" loading="lazy" id={item.id} src={`/media/badges/${item.source}`} alt={item.title} />
+        </a>
+    ))}
+</section>
+</div>
+</div>
+
+<div class="blurb">
+<b>Stamps:</b><br><br>
+<div class="badges">
+<section id="stamps">
+    {stamps.map((item) => (
+        <a title={item.title} href={item.url} target="_blank">
+            <img decoding="async" loading="lazy" id={item.id} src={`/media/stamps/${item.source}`} alt={item.title} />
+        </a>
+    ))}
+</section>
+</div>
+</div>
+
+
+
 </div>
 
 </div>
 
 <script src="/src/scripts/discordprofile.js"></script>
+<script src="/src/scripts/topfm.js"></script>
+<script src="/src/scripts/recentfm.js"></script>
+<script src="/src/scripts/randomsite.js"></script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', async function() {
+    const birthTimestamp = 1181368800 * 1000; // Convert Unix timestamp to milliseconds
+    const currentTimestamp = Date.now();
+
+    // Calculate the difference in milliseconds
+    const timeDifference = currentTimestamp - birthTimestamp;
+
+    // Convert milliseconds to years
+    const years = timeDifference / (1000 * 60 * 60 * 24 * 365.25);
+
+// Display the age
+const currentAge = `${Math.floor(years)} year`;
+document.getElementById("age").innerHTML = currentAge;
+});
+</script>
+

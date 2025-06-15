@@ -1,0 +1,85 @@
+<head>
+
+<title>Internal Error</title>
+
+<!-- Detect Enter -->
+<script>
+document.addEventListener("keypress", function(event) {
+  if (event.keyCode == 13) {
+history.back()
+
+  }
+});
+</script>
+
+<style>
+body {
+font-size:2vw;
+background-color:#0000a8;
+color:white;
+font-family:Windows
+}
+
+.center-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+.blink {
+  animation: blinker 1s step-start infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+@font-face {
+  font-family: Windows;
+  src: url("/fonts/Windows-Regular.ttf");
+}
+h1 {
+  font-family: Windows;
+}
+
+a {
+  text-decoration: none;
+}
+a:link,
+a:visited {
+  color: white;
+}
+a:hover {
+  color: white;
+}
+
+</style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+ <div class="center-screen">
+
+<p style="border: 3px solid #a9a9a9;width:160;background-color:#a9a9a9;color:#0000a8">NovOS</p>
+<p style="text-align:left">A fatal exception has occured in the server
+<br>
+The current session has been terminated
+<br><br>
+* Press enter to be be taken back.
+<br>
+* Press CTRL+R to refresh your browser.
+<br>
+
+
+<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Click here for more information.</a>
+</p>
+<p style="text-align:center;cursor:pointer"><a onclick="history.back()">Press enter to continue <span class="blink">_</span></a></p>
+
+</body>

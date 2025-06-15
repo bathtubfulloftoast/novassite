@@ -49,10 +49,59 @@ image-rendering: pixelated;
 .idle {background-position: -48px 0px;}
 .friend {background-position: -64px 0px;}
 
+a {
+text-decoration:none;
+}
+a:link, a:visited {
+color:var(--aqua);
+}
+
+a:hover {
+color:var(--bright-aqua);
+}
 #addfriend {
 color:var(--bright-green);
-text-decoration:none;
 }
 #addfriend:hover {
 color:var(--green);
+}
+
+#creationdate {
+color:var(--fg4);
+font-size:14px;
+}
+
+.bottom {
+width:91vw;
+display:block;
+margin:auto;
+margin-top:20px;
+}
+
+.bottom .interests {
+background:var(--bg2);
+width:35%;
+float:left;
+padding:5px;
+
+}
+
+.bottom .blurbs {
+display:block;
+margin-left:20px;
+width: 59%;
+float:right;
+}
+
+.blurbs .blurb {
+background:var(--bg4);
+padding:10px;
+margin-bottom:15px;
+overflow:hidden;
+}
+
+.badges img {
+-ms-interpolation-mode: nearest-neighbor;
+image-rendering: crisp-edges;
+image-rendering: pixelated;
 }
