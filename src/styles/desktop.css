@@ -1,0 +1,16 @@
+body {
+background:url("/media/wallpaper.jpg");
+overflow:hidden;
+background-repeat: no-repeat;
+background-size: cover;
+height:100vh;
+width:100vw;
+}
+
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
