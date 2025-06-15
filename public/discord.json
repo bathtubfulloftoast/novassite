@@ -1,0 +1,60 @@
+{
+  "id": "471806482648924174",
+  "bot": false,
+  "username": "bathtubfulloftoast",
+  "nickname": "💊Dr. RetroFlow💉",
+  "status": "online",
+  "clientstatus": {
+    "web": "online",
+    "mobile": "online"
+  },
+  "avatar": "d3f01a48e0bab43be35b538f08f7564f",
+  "creationtime": 1532557831204,
+  "discriminator": "0",
+  "tag": "bathtubfulloftoast",
+  "activities": [
+    {
+      "name": "Custom Status",
+      "type": 4,
+      "url": null,
+      "details": null,
+      "state": "YOU CLICK ON CUTE ICONS I EXECUTE COMMANDS | #blindbaddies",
+      "applicationId": null,
+      "timestamps": null,
+      "party": null,
+      "syncId": null,
+      "assets": null,
+      "flags": 0,
+      "emoji": null,
+      "buttons": [],
+      "createdTimestamp": 1749939176985
+    },
+    {
+      "name": "YouTube",
+      "type": 3,
+      "url": null,
+      "details": "Youtube Ads Are Out of Control",
+      "state": "penguinz0",
+      "applicationId": "463097721130188830",
+      "timestamps": {
+        "start": "2025-06-14T22:18:34.000Z",
+        "end": "2025-06-14T22:27:53.000Z"
+      },
+      "party": null,
+      "syncId": null,
+      "assets": {
+        "largeText": null,
+        "smallText": "Playing",
+        "largeImage": "mp:external/FUdUBMxG2BNec1MBoNfd0rdd63fC4LxzCLzNLaQRDA4/https/pd.premid.app/jL1IilWSih.png",
+        "smallImage": "mp:external/9G3ORPjJBkZweVQv_5PO3E_oKzm_CT8Zc4xI-z_Sqnw/https/cdn.rcd.gg/PreMiD/resources/play.png"
+      },
+      "flags": 0,
+      "emoji": null,
+      "buttons": [
+        "Watch Video",
+        "View Channel"
+      ],
+      "createdTimestamp": 1749939786628
+    }
+  ]
+}
