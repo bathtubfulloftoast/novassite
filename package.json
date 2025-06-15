@@ -20,6 +20,7 @@
     "express": "^5.1.0",
     "express-ip": "^1.0.4",
     "node-device-detector": "^2.2.0",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "xp.css": "^0.2.6"
   }
 }

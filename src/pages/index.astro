@@ -1,2 +1,23 @@
-<iframe src="/profile" width="800px" height="600px;">
-</iframe>
+---
+import "xp.css/dist/XP.css";
+import '/src/styles/desktop.css';
+
+---
+
+<div class="center-screen">
+<div class="window" style="display:inline-block">
+  <div class="title-bar">
+    <div class="title-bar-text" id="splash">Nova's Profile</div>
+    <div class="title-bar-controls">
+      <button style="cursor:pointer" aria-label="Minimize" onclick="location.href='/death';"></button>
+      <button style="cursor:pointer" aria-label="Maximize" onclick="location.href='/death';"></button>
+      <button style="cursor:pointer" aria-label="Close" onclick="location.href='/death';"></button>
+    </div>
+  </div>
+  <div class="window-body">
+<iframe src="/profile" width="800px" height="600px;" frameBorder="0"></iframe>
+</div>
+</div>
+</div>
+
+<script src="/src/scripts/splash.js"></script>
