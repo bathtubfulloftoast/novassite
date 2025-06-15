@@ -6,10 +6,12 @@ import links from '/src/assets/links.json';
 const badges = links[0] ?? [];
 const stamps = links[1] ?? [];
 
+import Footer from '/src/components/sysinfo.astro';
 ---
 <head>
 <title>Nova's Profile</title>
 <meta name="viewport" content="width=device-width">
+<meta charset="UTF-8" />
 </head>
 
 <div class="top">
@@ -113,6 +115,7 @@ this site is entirely self developed, you can find the source on <a target="_top
 </div>
 </div>
 
+    <Footer />
 
 
 </div>
