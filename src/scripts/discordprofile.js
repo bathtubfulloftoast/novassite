@@ -4,6 +4,8 @@ async function grabdiscord() {
 const response = await fetch('/api/discord');
 let data = await response.json();
 
+var now = new Date().getTime();
+
 
 const nickname = data.nickname;
 const username = data.username;
@@ -21,6 +23,75 @@ for (var item of data.activities) {
 if (item.type == 4) {
 document.getElementById("status").innerHTML = item.state;
 break;
+}
+}
+
+const activitylist = document.getElementById("activities");
+
+
+for (var item of data.activities) {
+if (item.type !== 4) {
+
+const startime = new Date(item.createdTimestamp);
+const lareimg = item.assets.largeImage;
+
+const blurbwrap = document.createElement('div');
+blurbwrap.className = "blurb";
+
+const infowrap = document.createElement('div');
+infowrap.className = "infowrap";
+
+const activitytype = document.createElement('b');
+activitytype.innerHTML = `${item.name}:<br>`;
+
+const activityinfo = document.createElement('span');
+
+
+// Update the count down every 1 second
+var distance = now - startime;
+
+// Time calculations for days, hours, minutes and seconds
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+const timepassed = hours + "h " + minutes + "m " + seconds + "s ";
+
+
+activityinfo.innerHTML = `${item.details}<br>${item.state}<br>${timepassed}`;
+activityinfo.className = "activityinfo";
+
+
+if(lareimg) {
+const activityimg = document.createElement('img');
+
+if(lareimg.startsWith("spotify:")) {
+const spotifysplit = lareimg.split(":", 2);
+activityimg.src = `https://i.scdn.co/image/`+spotifysplit[1];
+
+} else if(lareimg.startsWith("mp:external/")) {
+const spotifysplit = lareimg.split("mp:external/", 2);
+activityimg.src = `https://media.discordapp.net/external/`+spotifysplit[1];
+} else {
+activityimg.src = `https://cdn.discordapp.com/app-assets/${item.applicationId}/${lareimg}.png?size=256`;
+}
+activityimg.className = "activityimg";
+activityimg.title = item.assets.largeText?? "a discord activity";
+infowrap.appendChild(activityimg);
+
+activityimg.onerror = function () {
+    activityimg.src = '/media/missing_activity.webp'; // Fallback image
+};
+
+}
+
+
+blurbwrap.appendChild(activitytype);
+infowrap.appendChild(activityinfo);
+activitylist.appendChild(blurbwrap);
+blurbwrap.appendChild(infowrap);
+
 }
 }
 
