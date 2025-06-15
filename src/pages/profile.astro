@@ -5,6 +5,7 @@ import '/src/styles/colors.css';
 import links from '/src/assets/links.json';
 const badges = links[0] ?? [];
 const stamps = links[1] ?? [];
+const socials = links[2] ?? [];
 
 import Footer from '/src/components/sysinfo.astro';
 ---
@@ -68,6 +69,13 @@ Invader Zim<br>
 Adventure Time<br>
 Regular Show
 <br><br>
+
+Socials:<br>
+<section id="socials">
+    {socials.map((item) => (
+        <a title={item.title} href={item.url} target="_blank">{item.title}</a><br>
+    ))}
+</section>
 </div>
 
 <div class="blurbs">
