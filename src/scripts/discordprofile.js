@@ -1,15 +1,21 @@
 document.addEventListener("DOMContentLoaded", async function() {
 
 async function grabdiscord() {
-const response = await fetch('/discord.json');
+const response = await fetch('/api/discord');
 let data = await response.json();
 
 
 const nickname = data.nickname;
+const username = data.username;
+
 const userid = data.id;
 const avatarid = data.avatar;
 const onlinestatus = data.status;
 
+const creationdate = new Date(data.creationtime);
+var day = String(creationdate.getDate()).padStart(2, '0');
+var month = String(creationdate.getMonth() + 1).padStart(2, '0');
+var year = creationdate.getFullYear();
 
 for (var item of data.activities) {
 if (item.type == 4) {
@@ -19,14 +25,10 @@ break;
 }
 
 document.getElementById("username").innerHTML = nickname;
+document.getElementById("username").title = `${username} on discord`;
 
+document.getElementById("creationdate").innerHTML = `Account Created: ${month}/${day}/${year}`;
 
-document.getElementById("addfriend").href = `https://discord.com/users/${userid}`;
-
-document.getElementById("addfriend").addEventListener("click", function(event) {
-event.preventDefault();
-window.top.location.href = `https://discord.com/users/${userid}`;
-});
 
 
 var coverimage = document.getElementById("pfp");
@@ -52,6 +54,10 @@ onlineimg.className += " offline";
 onlinetext.innerHTML = "Offline";
 }
 
+document.getElementById("addfriend").href = `https://discord.com/users/${userid}`;
+
+
+document.title = nickname;
 }
 
 
