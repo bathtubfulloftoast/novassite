@@ -104,4 +104,23 @@ overflow:hidden;
 -ms-interpolation-mode: nearest-neighbor;
 image-rendering: crisp-edges;
 image-rendering: pixelated;
+margin:2px;
 }
+
+.blurb .activityinfo {
+    display:block;
+
+}
+.blurb .activityimg {
+width:100px;
+margin-right:10px;
+
+}
+
+.infowrap {
+    margin-top:10px;
+    display: flex;
+    align-items: left;
+}
+
+
