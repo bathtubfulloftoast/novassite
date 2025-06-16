@@ -21,3 +21,39 @@ import '/src/styles/desktop.css';
 </div>
 
 <script src="/src/scripts/splash.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+const width = window.screen.width;
+const height = window.screen.height;
+
+
+const warningScreen = document.createElement('div');
+warningScreen.className = "warningscreen";
+warningScreen.id = "warningscreen";
+warningScreen.innerHTML = "this site is recommended to be used with a displays that are 1920x1080<br>it seems your display doesnt fit the bar.<br>you can either clear this warning continuing as normal but with some display problems, or go to the profile screen with the pretense itl look weird.<br><button id='warning-remove'>GO AWAY</button> <button id='warning-profile'>profile screen</button>";
+
+
+async function screensize() {
+if (width<1500) {
+document.body.appendChild(warningScreen);
+}
+}
+
+screensize()
+
+
+document.getElementById("warning-remove").addEventListener("click", function(event) {
+event.preventDefault();
+// document.cookie = "warningscreen=ignore";
+document.getElementById("warningscreen").remove();
+
+});
+
+document.getElementById("warning-profile").addEventListener("click", function(event) {
+event.preventDefault();
+// document.cookie = "warningscreen=profile";
+window.location.replace("/profile");
+});
+
+});
+</script>
