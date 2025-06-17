@@ -51,4 +51,5 @@ const currentdate = `${mm}/${dd}`;
   const splashText = holidays[currentdate] || cachedsplash;
 
   document.getElementById("splash").innerHTML = splashText;
+  document.title = splashText;
 });
