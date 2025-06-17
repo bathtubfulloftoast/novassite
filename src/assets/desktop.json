@@ -1,0 +1,98 @@
+[
+  {
+    "filename": "speen.gif",
+    "icon": "speen.gif",
+    "id": "speen",
+    "left": 10,
+    "top": 10,
+    "hover": "tomthewolff (made model)"
+  },
+  {
+    "filename": "Pinkie Pied.jpg",
+    "icon": "fluttershit.gif",
+    "id": "pinkie",
+    "left": 5,
+    "top": 100,
+    "hover": "dexterdaybreaker (gave image)"
+  },
+  {
+    "filename": "Azure.png",
+    "icon": "azure.gif",
+    "id": "azure",
+    "left": 10,
+    "top": 200,
+    "hover": "Azure Comet (is the image)"
+  },
+  {
+    "filename": "i remember.txt",
+    "icon": "remember.gif",
+    "id": "remember",
+    "left": 728,
+    "top": 472,
+    "hover": "canni (gave image)"
+  },
+  {
+    "filename": "lancer",
+    "icon": "lancer.gif",
+    "id": "lancer",
+    "left": 10,
+    "top": 300,
+    "hover": "lancer"
+  },
+  {
+    "filename": "Among Us",
+    "icon": "among.gif",
+    "id": "amongus",
+    "left": 10,
+    "top": 400,
+    "hover": "DeadlyAidan (made amongus)"
+  },
+  {
+    "filename": "eepy.jpg",
+    "icon": "eepster.gif",
+    "id": "eepster",
+    "left": 10,
+    "top": 500,
+    "hover": "ZoruDied (gave image)"
+  },
+  {
+    "filename": "rock.jpg",
+    "icon": "gettingyou.gif",
+    "id": "gettingyou",
+    "left": 10,
+    "top": 600,
+    "hover": "Bobbi (gave image)"
+  },
+  {
+    "filename": "girl...",
+    "icon": "girl.gif",
+    "id": "enid",
+    "left": 10,
+    "top": 700,
+    "hover": "Vivian (is Gay)"
+  },
+  {
+    "filename": "FUCKYOU.FUCK",
+    "icon": "GIRLY.gif",
+    "id": "teengirl",
+    "left": 97,
+    "top": 10,
+    "hover": "Jules (made song)"
+  },
+  {
+    "filename": "howmany.txt",
+    "icon": "liberals.gif",
+    "id": "liberals",
+    "left": 110,
+    "top": 100,
+    "hover": "Riff (Played tf2)"
+  },
+    {
+    "filename": "sponge.jpg",
+    "icon": "spaunch.gif",
+    "id": "spaunch",
+    "left": 110,
+    "top": 200,
+    "hover": "Toasty (Took Photo)"
+  }
+]

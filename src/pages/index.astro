@@ -2,10 +2,22 @@
 import "xp.css/dist/XP.css";
 import '/src/styles/desktop.css';
 
+import desktop from '/src/assets/desktop.json';
+const icons = desktop;
 ---
-
+<head>
+<title>NovasDesktop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico">
+<meta name="generator" content={Astro.generator} />
+<meta content="Novas Site" property="og:title" />
+<meta content="Novas Desktop, free for all to see!" property="og:description" />
+<meta content="/media/embeds/main.png" property="og:image" />
+<meta content="#6b0059" data-react-helmet="true" name="theme-color" />
+<meta charset="UTF-8" />
+</head>
 <div class="center-screen" id="window">
-<div class="window" style="display:inline-block">
+<div class="window" style="display:inline-block;z-index:5">
   <div class="title-bar">
     <div class="title-bar-text" id="splash">Nova's Profile</div>
     <div class="title-bar-controls">
@@ -20,6 +32,24 @@ import '/src/styles/desktop.css';
 </div>
 </div>
 
+
+
+<section id="icons">
+{icons.map((item) => (
+<div class="icon" style={`left: ${item.left}px; top: ${item.top}px;`} id={item.id}>
+<img src={`/media/icons/${item.icon}`} /><br>
+{item.filename}
+</div>
+))}
+</section>
+
+
+<div class="taskbar">
+<a id="start" style="cursor:pointer"><img src="/media/start.gif"></a> <!-- no href because it adds select box -->
+</div>
+
+
+
 <script src="/src/scripts/splash.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", async function() {
@@ -30,7 +60,7 @@ const height = window.screen.height;
 const warningScreen = document.createElement('div');
 warningScreen.className = "warningscreen";
 warningScreen.id = "warningscreen";
-warningScreen.innerHTML = "this site is recommended to be used with a displays that are 1920x1080<br>it seems your display doesnt fit the bar.<br>you can either clear this warning continuing as normal but with some display problems, or go to the profile screen with the pretense itl look weird.<br><button id='warning-remove'>GO AWAY</button> <button id='warning-profile'>profile screen</button>";
+warningScreen.innerHTML = "this site is recommended to be used with a displays that are 1080p<br>it seems your display doesnt fit the bar.<br>this site <i>can</i> work on 720p displays but its not really intended.<br>if youre on mobile youre cursed to look at an ugly website.<br>you can either clear this warning continuing as normal but with some display problems, or go to the profile screen with the pretense itl look weird.<br><button id='warning-remove'>GO AWAY</button> <button id='warning-profile'>profile screen</button>";
 
 
 async function screensize() {
@@ -55,5 +85,59 @@ event.preventDefault();
 window.location.replace("/profile");
 });
 
+});
+</script>
+
+<script>
+
+const audioUrl = "/media/fart.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 0.5;
+
+
+    document.body.appendChild(audioElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+audioElement.remove();
+});
+
+};
+
+document.getElementById("start").addEventListener("click", function(event) {
+event.preventDefault();
+createaudio()
+});
+
+</script>
+
+<script>
+document.getElementById("speen").addEventListener("click", function(event) {
+event.preventDefault();
+ alert("I am an alert box!");
 });
 </script>
