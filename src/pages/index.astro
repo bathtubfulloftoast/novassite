@@ -60,7 +60,7 @@ const height = window.screen.height;
 const warningScreen = document.createElement('div');
 warningScreen.className = "warningscreen";
 warningScreen.id = "warningscreen";
-warningScreen.innerHTML = "this site is recommended to be used with a displays that are 1080p<br>it seems your display doesnt fit the bar.<br>this site <i>can</i> work on 720p displays but its not really intended.<br>if youre on mobile youre cursed to look at an ugly website.<br>you can either clear this warning continuing as normal but with some display problems, or go to the profile screen with the pretense itl look weird.<br><button id='warning-remove'>GO AWAY</button> <button id='warning-profile'>profile screen</button>";
+warningScreen.innerHTML = "this site is meant for desktops that are 1080p<br>it seems you are not that.<br>if youre on mobile expect EVERYTHING to be broken<br>if youre on desktop with a screen that isnt 1080p expect less issues.<br><button id='warning-remove'>GO AWAY</button> <button id='warning-profile'>profile screen</button>";
 
 
 async function screensize() {
@@ -634,5 +634,12 @@ createaudio();
 document.getElementById("yayl").addEventListener("click", function(event) {
 event.preventDefault();
 window.open("https://gamejolt.com/games/YaYL/818150", '_blank');// i have to advertize i asked people for icons and they delivered im sorry
+})
+</script>
+
+<script>
+document.getElementById("remember").addEventListener("click", function(event) {
+event.preventDefault();
+window.open("https://youtu.be/P_nvW4TeF3M", '_blank');// I FUCKING FORGOT I HAD ONE JOB TO NOT FORGET AND I FORGOT FUCK
 })
 </script>
