@@ -1,0 +1,44 @@
+@font-face { font-family: SetoFont; src: url('/fonts/setofont.woff'); }
+
+body {
+background:var(--bg);
+color:var(--fg);
+text-align:center;
+font-family:SetoFont;
+}
+button,input[type="submit"] {
+background:var(--red);
+color:var(--fg);
+border:none;
+cursor:pointer;
+}
+button:active,input[type="submit"]:active {
+background:var(--bright-red);
+}
+
+input[type="text"],textarea {
+background:var(--bg0);
+border:1px solid var(--fg3);
+border-radius:0.2em;
+color:var(--fg)
+}
+
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+}
+
+a {
+text-decoration:none;
+}
+
+a:link,a:visited {
+color:var(--aqua)
+}
+
+a:hover {
+color:var(--bright-aqua);
+}

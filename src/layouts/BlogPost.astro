@@ -1,0 +1,43 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+
+import '/src/styles/blog.css';
+import '/src/styles/colors.css';
+
+---
+
+<html lang="en">
+<meta charset="utf-8" />
+
+<head>
+<title>{title}</title>
+<meta name="viewport" content="width=device-width" />
+
+
+<meta content={title} property="og:title" />
+<meta content={description} property="og:description" />
+<meta content="/media/embeds/main.png" property="og:image" />
+<meta content="#6b0059" data-react-helmet="true" name="theme-color" />
+</head>
+
+<body>
+<div class="topbox">
+<h1>{title}</h1>
+<h2>{description}</h2>
+
+<FormattedDate date={pubDate} />
+<p><a href="/blog">Back</a></p>
+</div>
+
+<hr />
+<div class="content"><slot /></div>
+</body>
+</html>

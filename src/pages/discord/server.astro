@@ -1,0 +1,139 @@
+<head>
+<title>Server Invite</title>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+<meta content="Novas Server Invite" property="og:title" />
+<meta content="JOIN MY DISCORD SERVER" property="og:description" />
+<meta content="#5865f2" data-react-helmet="true" name="theme-color" />
+
+<style>
+body {
+background-color:#0f0f11;
+background-image:var(--background-url);
+font-family: 'Trebuchet MS', sans-serif;
+
+}
+.box {
+color:#fff;
+background:#393a41;
+text-align:center;
+padding:15px;
+width:25vw;
+border-radius:1em;
+border:1px #4c4c54 solid;
+overflow:hidden;
+}
+.center-screen {
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+min-height: 100vh;
+}
+
+.box img {
+border-radius:2em;
+max-width:90%;
+}
+
+.box b{
+ font-size:20px;
+}
+
+.box i {
+color:#dedede;
+}
+
+button {
+background:#5865f2;
+color:#fff;
+border:1px #6571f3 solid;
+border-radius:12px;
+font-size:19px;
+padding:7px;
+cursor:pointer;
+}
+
+button:hover {
+background:#4e5bd9;
+}
+
+@media screen and (max-width: 1280px){
+.box {
+background:transparent;
+border:none;
+width:100vw;
+}
+
+body {
+background:#393a41;
+}
+
+}
+</style>
+</head>
+
+<div class="center-screen">
+<div class="box">
+<img id="servericon" src="/media/avatar.png"><br><br>
+<i>You've been invited to join</i><br>
+<b id="servername">Server Name</b><br>
+<span id="description"></span>
+<span id="members"></span><br>
+<br>
+<button id="accept">Accept Invite</button>
+</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+
+    async function weather() {
+        const response = await fetch('/api/invite');
+        let data = await response.json();
+
+        const code = data.code;
+        const name = data.guild.name;
+        const description = data.guild.description;
+
+        const guildid = data.guild.id;
+        const iconid = data.guild.icon;
+        const splashid = data.guild.splash;
+
+        const totalmemb = data.profile.member_count;
+        const onlinememb = data.profile.online_count;
+
+
+const icon = `https://cdn.discordapp.com/icons/${guildid}/${iconid}.webp?size=256`;
+const splash = `https://cdn.discordapp.com/splashes/${guildid}/${splashid}.webp?size=2048`;
+const invite = `https://discord.com/invite/${code}`;
+
+var servericon = document.getElementById("servericon");
+
+if (iconid) {
+servericon.src = icon;
+servericon.onerror = function () {
+servericon.src = '/media/avatar.png'; // Fallback image
+}};
+
+document.getElementById("accept").addEventListener("click", function(event) {
+window.location.replace(invite);
+});
+
+document.getElementById("servername").innerHTML = name;
+document.getElementById("members").innerHTML = `<div style="background:#dfe0e2;width:10px;height:10px;display:inline-block;vertical-align:baseline;border-radius:100%;"></div> ${totalmemb} members <div style="background:#40a258;width:10px;height:10px;display:inline-block;vertical-align:baseline;border-radius:100%;margin-left:5px;"></div> ${onlinememb} online`; //me when i hardcode divs
+if(description) {
+document.getElementById("description").innerHTML = `&quot;${description}&quot;<br>`;
+}
+
+document.title = name;
+
+document.documentElement.style.setProperty("--background-url", `url(${splash})`);
+}
+
+
+
+await weather();
+});
+</script>
