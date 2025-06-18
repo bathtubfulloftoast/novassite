@@ -115,6 +115,7 @@ async function createaudio() {
     const audioElement = document.createElement('audio');
     audioElement.src = audioBlobUrl;
     audioElement.volume = 0.5;
+    audioElement.id = "shartmenu";
 
 
     document.body.appendChild(audioElement);
@@ -130,7 +131,9 @@ audioElement.remove();
 
 document.getElementById("start").addEventListener("click", function(event) {
 event.preventDefault();
-createaudio()
+if(!document.getElementById("shartmenu")) {
+createaudio(); //ive removed the ability to spam im sorgy.
+}
 });
 
 </script>
@@ -172,6 +175,7 @@ async function createaudio() {
 audioElement.addEventListener('ended', (event) => {
 window.open("https://youtu.be/FSHq5I8I0Wk?t=3", '_blank'); // SPINN1!!!1\
 // also fuck you no spamming
+audioElement.remove();
 });
 
 };
@@ -228,6 +232,8 @@ async function createaudio() {
 
 audioElement.addEventListener('ended', (event) => {
 window.open("https://youtu.be/b1Vjorjlon4", '_blank'); // i will be reusing this code again out of sheer laziness fuck you
+audioElement.remove();
+
 });
 
 };
@@ -272,7 +278,6 @@ async function createaudio() {
 
     const imageElement = document.createElement('img');
     imageElement.src = "/media/icons/azure.gif";
-    imageElement.id = "azureimg";
     imageElement.style.position = "absolute";
     imageElement.style.left = 0;
     imageElement.style.top = 0;
@@ -480,4 +485,154 @@ createaudio();
 
 //this code has become illegible.
 // idc tho thats an issue for me in the future lmao
+
+//fuck you.
+</script>
+
+<script>
+const audioUrl = "/media/lobotomy.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 0.2;
+
+
+    const container = document.createElement('div');
+    container.style.position = "absolute";
+    container.style.left = 0;
+    container.style.top = 0;
+    container.style.zIndex = 150;
+    container.style.width = "100vw";
+    container.style.height = "100vw";
+    container.style.background = "white";
+
+
+
+    document.body.appendChild(audioElement);
+    document.body.appendChild(container);
+
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+audioElement.remove();
+container.remove();
+
+});
+};
+
+document.getElementById("gettingyou").addEventListener("click", function(event) {
+event.preventDefault();
+createaudio();
+});
+
+</script>
+
+<script>
+document.getElementById("enid").addEventListener("click", function(event) {
+event.preventDefault();
+window.open("https://www.youtube.com/results?search_query=enid+ok+ko+fancam", '_blank');
+})
+</script>
+
+<script>
+document.getElementById("teengirl").addEventListener("click", function(event) {
+event.preventDefault();
+window.open("https://www.reddit.com/R/girlyteengirlhate/", '_blank');
+})
+</script>
+
+<script>
+document.getElementById("spaunch").addEventListener("click", function(event) {
+event.preventDefault();
+window.open("https://github.com/trakBan/spongebob-cli", '_blank');
+})
+</script>
+
+<script>
+const audioUrl = "/media/love.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 0.5;
+    audioElement.id = "azureaudio";
+
+
+    const imageElement = document.createElement('img');
+    imageElement.src = "/media/icons/full/winning smile.png";
+    imageElement.style.position = "absolute";
+    imageElement.style.left = 0;
+    imageElement.style.top = 0;
+    imageElement.style.zIndex = 150;
+    imageElement.style.width = "100vw";
+    imageElement.style.height = "100vh";
+
+
+    document.body.appendChild(audioElement);
+    document.body.appendChild(imageElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+audioElement.remove();
+imageElement.remove();
+});
+};
+
+document.getElementById("charmer").addEventListener("click", function(event) {
+event.preventDefault();
+
+createaudio();
+
+});
+
+</script>
+
+<script>
+document.getElementById("yayl").addEventListener("click", function(event) {
+event.preventDefault();
+window.open("https://gamejolt.com/games/YaYL/818150", '_blank');// i have to advertize i asked people for icons and they delivered im sorry
+})
 </script>
