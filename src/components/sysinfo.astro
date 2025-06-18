@@ -22,6 +22,7 @@ let distro;
 
 const architecture = os.arch() ?? "Unknown Architecture"; // x64
 const platform = os.platform() ?? "Unknown Platform"; // linux
+const hostname = os.hostname() ?? "Computer"; //supernova
 
 function getLinuxDistro() {
     try {
@@ -51,12 +52,8 @@ if(platform == "linux") {
 const device = getDevice();
 
 ---
-<div class="footer">
-<div>
-<span>{copyright}</span><br>
-<a href="mailto:mail@novassite.net">mail@novassite.net</a><br>
-made with <span style="color:red">&lt;3</span><br>
+<div class="blurb">
+<b>System Info:</b><br>
 compiled on {currentdate}<br>
-compiled on <a href="/deviceinfo.txt" >{device} using {distro} {architecture}</a>
-</div>
+compiled on <a href="/deviceinfo.txt" target="_top">{hostname} using {distro} {architecture}</a>
 </div>

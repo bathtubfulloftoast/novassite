@@ -1,0 +1,126 @@
+@font-face { font-family: SetoFont; src: url('/fonts/setofont.woff'); }
+
+body {
+background-color:var(--bg);
+color:var(--fg);
+font-family:SetoFont;
+}
+
+.top {
+width:90vw;
+background:var(--bg1);
+padding:10px;
+display:block;
+margin:auto;
+height:150px;
+overflow:hidden;
+}
+
+
+
+.top #pfp {
+height:95%;
+float:left;
+margin-right:15px;
+background-color:var(--bg4);
+border-radius:15px;
+}
+
+.top #username {
+font-size:40px;
+margin-bottom:10px;
+display:inline-block;
+font-weight: bold;
+}
+
+
+.sprite {
+width:16px;
+height:16px;
+background:url("/media/sprites.gif");
+-ms-interpolation-mode: nearest-neighbor;
+image-rendering: crisp-edges;
+image-rendering: pixelated;
+}
+
+.online {background-position: 0px 0px;}
+.dnd {background-position: -16px 0px;}
+.offline {background-position: -32px 0px;}
+.idle {background-position: -48px 0px;}
+.friend {background-position: -64px 0px;}
+
+a {
+text-decoration:none;
+}
+a:link, a:visited {
+color:var(--aqua);
+}
+
+a:hover {
+color:var(--bright-aqua);
+}
+#addfriend {
+color:var(--bright-green);
+}
+#addfriend:hover {
+color:var(--green);
+}
+
+#creationdate {
+color:var(--fg4);
+font-size:14px;
+}
+
+.bottom {
+width:91vw;
+display:block;
+margin:auto;
+margin-top:20px;
+}
+
+.bottom .interests {
+background:var(--bg2);
+width:35%;
+float:left;
+padding:5px;
+
+}
+
+.bottom .blurbs {
+display:block;
+margin-left:20px;
+width: 59%;
+float:right;
+}
+
+.blurbs .blurb {
+background:var(--bg4);
+padding:10px;
+margin-bottom:15px;
+overflow:hidden;
+}
+
+.badges img {
+-ms-interpolation-mode: nearest-neighbor;
+image-rendering: crisp-edges;
+image-rendering: pixelated;
+margin:2px;
+}
+
+.blurb .activityinfo {
+    display:block;
+
+}
+.blurb .activityimg {
+width:100px;
+margin-right:10px;
+border-radius:12px;
+}
+
+.infowrap {
+    margin-top:10px;
+    display: flex;
+    align-items: left;
+}
+
+
