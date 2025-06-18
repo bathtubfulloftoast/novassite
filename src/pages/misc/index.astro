@@ -1,0 +1,26 @@
+---
+import '/src/styles/colors.css';
+import '/src/styles/misc.css';
+
+const basePath = "./";
+
+const files = Object.keys(import.meta.glob('./**/*.astro', { eager: true }));
+
+// Convert file paths to valid Astro routes
+const routes = files.map(file => {
+  return file
+    .replace('./', '') // Change base path
+    .replace('/index.astro', '/') // Convert index files to folder paths
+    .replace('.astro', '') // Remove .astro extension
+    .replace('/', ''); // Remove .astro extension
+});
+
+
+---
+
+<h1>list of miscellaneous projects</h1>
+
+{routes.map(route => (
+  <a href={"/misc/" + route}>{route}</a><br>
+))}
+

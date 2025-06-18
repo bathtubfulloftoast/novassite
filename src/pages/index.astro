@@ -1,201 +1,638 @@
 ---
-import { Image } from 'astro:assets';
-import Layout from '/src/layouts/Layout.astro';
-import Footer from '/src/components/MainFooter.astro';
+import "xp.css/dist/XP.css";
+import '/src/styles/desktop.css';
 
-import logo from '/src/assets/SILLY.png';
-import approval from '/src/assets/aproval.webp';
+import desktop from '/src/assets/desktop.json';
+const icons = desktop;
+---
+<head>
+<title>NovasDesktop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico">
+<meta name="generator" content={Astro.generator} />
+<meta content="Novas Site" property="og:title" />
+<meta content="Novas Desktop, free for all to see!" property="og:description" />
+<meta content="/media/embeds/main.png" property="og:image" />
+<meta content="#6b0059" data-react-helmet="true" name="theme-color" />
+<meta charset="UTF-8" />
+</head>
+<div class="center-screen" id="window">
+<div class="window" style="display:inline-block;z-index:5">
+  <div class="title-bar">
+    <div class="title-bar-text" id="splash">Nova's Profile</div>
+    <div class="title-bar-controls">
+      <button style="cursor:pointer" aria-label="Minimize" onclick='document.getElementById("window").remove()'></button>
+      <button style="cursor:pointer" aria-label="Maximize" onclick="location.href='/profile';"></button>
+      <button style="cursor:pointer" aria-label="Close" onclick="location.href='/death';"></button>
+    </div>
+  </div>
+  <div class="window-body">
+<iframe src="/profile" width="800px" height="600px;" frameBorder="0"></iframe>
+</div>
+</div>
+</div>
 
-import links from '/src/assets/links.json';
 
-const badges = links[0] ?? [];
-const stamps = links[1] ?? [];
-const socialLinks = links[2] ?? [];
 
-const basePath = "/misc"; // Adjust this to match your deployment path
+<section id="icons">
+{icons.map((item) => (
+<div class="icon" style={`left: ${item.left}px; top: ${item.top}px;`} id={item.id}>
+<img src={`/media/icons/${item.icon}`} /><br>
+{item.filename}
+</div>
+))}
+</section>
 
-// Import all files, including those inside subfolders
-const files = Object.keys(import.meta.glob('./misc/**/*.astro', { eager: true }));
 
-// Convert file paths to valid Astro routes
-const routes = files.map(file => {
-  return file
-    .replace('./misc', '') // Change base path
-    .replace('/index.astro', '/') // Convert index files to folder paths
-    .replace('.astro', '') // Remove .astro extension
-    .replace('/', ''); // Remove .astro extension
+<div class="taskbar">
+<a id="start" style="cursor:pointer"><img src="/media/start.gif"></a> <!-- no href because it adds select box -->
+</div>
+
+
+
+<script src="/src/scripts/splash.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+const width = window.screen.width;
+const height = window.screen.height;
+
+
+const warningScreen = document.createElement('div');
+warningScreen.className = "warningscreen";
+warningScreen.id = "warningscreen";
+warningScreen.innerHTML = "this site is recommended to be used with a displays that are 1080p<br>it seems your display doesnt fit the bar.<br>this site <i>can</i> work on 720p displays but its not really intended.<br>if youre on mobile youre cursed to look at an ugly website.<br>you can either clear this warning continuing as normal but with some display problems, or go to the profile screen with the pretense itl look weird.<br><button id='warning-remove'>GO AWAY</button> <button id='warning-profile'>profile screen</button>";
+
+
+async function screensize() {
+if (width<1500) {
+document.body.appendChild(warningScreen);
+}
+}
+
+screensize()
+
+
+document.getElementById("warning-remove").addEventListener("click", function(event) {
+event.preventDefault();
+// document.cookie = "warningscreen=ignore";
+document.getElementById("warningscreen").remove();
+
 });
 
-// this is so fucked kill me
-// this is so bodged but it works rn so fuck off
+document.getElementById("warning-profile").addEventListener("click", function(event) {
+event.preventDefault();
+// document.cookie = "warningscreen=profile";
+window.location.replace("/profile");
+});
 
-const birthTimestamp = 1181368800 * 1000; // Convert the Unix timestamp to milliseconds
-const currentTimestamp = Date.now();
-
-// Calculate the difference in milliseconds
-const timeDifference = currentTimestamp - birthTimestamp;
-
-// Convert milliseconds to years
-const years = timeDifference / (1000 * 60 * 60 * 24 * 365.25); // Approximate years (365.25 to account for leap years)
-
-// Display the age
-const currentAge = `${Math.floor(years)} year`;
-
-//compile my real birthday but also have it work client side too so i dont have to recompile every year :D
----
-
-<Layout>
-
-<div class="topbox">
-<Image id="sitelogo" loading="eager" src={logo} alt="novas site logo" class="lefticon" height="200" format="png"/><h1 id="headtext" class="headtext"> Novas Site</h1>
-</div>
-<div class="mobilebox"><p id="splash" class="splash">SPLASH!</p></div>
-
-<div id="maininfo" class="box">
-<b>hey there!</b><br>
-you can call me alice or nova,
-i go by <span class="trans">she/her</span>.<br>
-im a <span id="age">{currentAge}</span> old ametuer web developer
-and i enjoy jailbreaking and doing things im not supposed to.<br>
-this site is entirely self developed<br>
-you can find the source code on <a href="https://github.com/bathtubfulloftoast/novassite">github</a><br>
-or if you dont like microsoft theres a mirror at <a href="https://git.gay/bathtubfulloftoast/novassite">git.gay</a><br>
-<a id="playbgm" href="#">by the way, is there any music playing?</a>
-</div>
-
-<div class="box">
-<b>Main Projects</b><br>
-Here are the main projects ive been working on, or just things i like to host and want to give special attention to
-<br><a href="/blog">Blog</a>
-<br><a href="//cdn.novassite.net/dump/">Random Files</a>
-<!--<br><a href="/guestbook">Guest Book</a>-->
-<br><a href="//wiki.novassite.net">Character Wiki</a>
-<br><a href="/qr">Random Thing</a> (usually a redirect)
-<br><a href="/discord/server">Discord Server</a>
-</div>
-
-<div class="box">
-<b>Side Projects</b><br>
-
-some of the random single-file side projects ive decided to make<br>
-<details>
-<summary>Show Projects</summary>
-{routes.map(route => (
-  <a href={basePath + "/" + route}>{route}</a><br>
-))}
-</details>
-
-</div>
-
-<div class="box">
-<div class="weatherparent">
-<div class="weather">
-<div><h1><a id="location">Weather for Location</a></h1></div>
-<div><h2 id="wdes">cloudy</h2></div>
-<div><h3 id="temps">45&deg;F</h3></div>
-</div>
-<div class="weathericon">
-<a id="cloudsecret" href="/secret/clouds.mp4"><img id="wico" src="/media/weather/256/03d.png"></a>
-</div>
-</div>
-<i><a href="https://openweathermap.org/" target="blank">powered by openweathermap</a></i>
-</div>
-
-<div style="text-align:center" class="box">
-<b>What Music am I Listening to?</b><br><br>
-<div class="lastfm">
-<a id="mainfmlink"  target="blank">
-<div class="albumcover">
-<img id="cover" src="/media/missing512.jpeg">
-</div>
-<h2 class="musicinfo" >
-<span id="trackname" style="font-size:30px">A Song</span>
-<br>
-<span id="albumname" style="font-size:25px">On An Album</span>
-<br>
-<span id="artistname" style="font-size:20px">By An Artist</span>
-</h2></a>
-<div id="nowplaying">now loading...</div>
-</div>
-<div style="margin-top:5px;margin-bottom:-10px;"><i><a id="poweredby" href="https://www.last.fm" target="blank">powered by last.fm</a></i></div>
-</div>
-
-<div class="box">
-<b>What WAS i listening to?</b><br>
-<span id="previoustracks">
-<i>[1d]</i> <img style="border-radius:2px;width:16px;height:16px;" src="/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
-<i>[2d]</i> <img style="border-radius:2px;width:16px;height:16px;" src="/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
-<i>[3d]</i> <img style="border-radius:2px;width:16px;height:16px;" src="/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
-<i>[4d]</i> <img style="border-radius:2px;width:16px;height:16px;" src="/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
-<i>[5d]</i> <img style="border-radius:2px;width:16px;height:16px;" src="/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
-<i>[6d]</i> <img style="border-radius:2px;width:16px;height:16px;" src="/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
-<i>[7d]</i> <img style="border-radius:2px;width:16px;height:16px;" src="/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
-<i>[8d]</i> <img style="border-radius:2px;width:16px;height:16px;" src="/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
-<i>[9d]</i> <img style="border-radius:2px;width:16px;height:16px;" src="/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
-<i>[9d]</i> <img style="border-radius:2px;width:16px;height:16px;" src="/media/missing16.jpeg"> <span class='pastsong'>track</span> - <span  class='pastartist'>artist</span><br>
-</span>
-<div style="margin-top:10px;"><!-- I NEED ANOTHER MOTHERFUCKING DIV I JUST WANT IT TO BE A FEW PIXELS LOWER WHAT TH E FUCK -->
-<i id="goals" style="display:block">listened to 10000000000 songs :D</i></div>
-</div>
-<div class="box" style="text-align:center">
-<Image src={approval} alt="Aliceflow Aproved" />
-</div>
-
-
-<div style="text-align:center" class="box">
-<div  style="margin-bottom:5px;"><b>Badges :3</b></div><br> <!-- WHY DO I HAVE TO CREATE A DIV FOR EVERYTHING GOD DAMNIT -->
-<div class="banners">
-<section id="badges">
-    {badges.map((item) => (
-        <a title={item.title} href={item.url} target="_blank">
-            <img decoding="async" loading="lazy" id={item.id} src={`/media/badges/${item.source}`} alt={item.title} />
-        </a>
-    ))}
-</section>
-</div>
-</div>
-
-
-<div style="text-align:center" class="box">
-<div style="margin-bottom:5px;"><b>Stamps :0</b></div><br> <!-- WHY DO I HAVE TO CREATE A DIV FOR EVERYTHING GOD DAMNIT -->
-<div class="banners">
-<section id="stamps">
-    {stamps.map((item) => (
-        <a title={item.title} href={item.url} target="_blank">
-            <img decoding="async" loading="lazy" src={`/media/stamps/${item.source}`} alt={item.title} />
-        </a>
-    ))}
-</section>
-</div>
-</div>
-
-<div class="box">
-<div class="links">
-<section id="links">
-    {socialLinks.map((item) => (
-        <div class="link">
-            <a href={item.url}>
-                <i title={item.title} class={item.source}>{item.title}</i>
-            </a>
-        </div>
-    ))}
-</section>
-</div>
-</div>
-    <Footer />
-
-</Layout>
-<script is:inline src="https://kit.fontawesome.com/3c882d8d47.js" crossorigin="anonymous"></script>
-<script src="/src/scripts/splash.js"></script>
-<script src="/src/scripts/openweather.js"></script>
-<script src="/src/scripts/randomsite.js"></script>
-<script src="/src/scripts/lastfm.js"></script>
-<script src="/src/scripts/playbgm.js"></script>
-
-<script is:inline src="/oneko.js"></script>
-
-<script src="/src/scripts/age.js"></script>
+});
+</script>
 
 <script>
-document.cookie = "alicesnote=Alice Wuz Here :3";
+
+const audioUrl = "/media/sfx/fart.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 0.5;
+    audioElement.id = "shartmenu";
+
+
+    document.body.appendChild(audioElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+audioElement.remove();
+});
+
+};
+
+document.getElementById("start").addEventListener("click", function(event) {
+event.preventDefault();
+if(!document.getElementById("shartmenu")) {
+createaudio(); //ive removed the ability to spam im sorgy.
+}
+});
+
+</script>
+
+<script>
+const audioUrl = "/media/sfx/speen.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 0.2;
+    audioElement.id = "speenaudio";
+
+
+    document.body.appendChild(audioElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+window.open("https://youtu.be/FSHq5I8I0Wk?t=3", '_blank'); // SPINN1!!!1\
+// also fuck you no spamming
+audioElement.remove();
+});
+
+};
+
+document.getElementById("speen").addEventListener("click", function(event) {
+event.preventDefault();
+if(!document.getElementById("speenaudio")) {
+createaudio();
+}
+});
+
+</script>
+
+<script>
+document.getElementById("douchebag").addEventListener("click", function(event) {
+event.preventDefault();
+window.open("https://youtu.be/Hw1ncADC9KM", '_blank');
+})
+</script>
+
+<script>
+const audioUrl = "/media/sfx/fun.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 0.2;
+    audioElement.id = "pinkieaudio";
+
+
+    document.body.appendChild(audioElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+window.open("https://youtu.be/b1Vjorjlon4", '_blank'); // i will be reusing this code again out of sheer laziness fuck you
+audioElement.remove();
+
+});
+
+};
+
+document.getElementById("pinkie").addEventListener("click", function(event) {
+event.preventDefault();
+if(!document.getElementById("pinkieaudio")) {
+createaudio();
+}
+});
+
+</script>
+
+<script>
+const audioUrl = "/media/sfx/vineboom.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 0.2;
+    audioElement.id = "azureaudio";
+
+
+    const imageElement = document.createElement('img');
+    imageElement.src = "/media/icons/azure.gif";
+    imageElement.style.position = "absolute";
+    imageElement.style.left = 0;
+    imageElement.style.top = 0;
+    imageElement.style.zIndex = 150;
+    imageElement.style.width = "100vw";
+    imageElement.style.height = "100vh";
+
+
+    document.body.appendChild(audioElement);
+    document.body.appendChild(imageElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+audioElement.remove();
+imageElement.remove();
+window.open("https://azurecomettttt.carrd.co/", '_blank');
+});
+};
+
+document.getElementById("azure").addEventListener("click", function(event) {
+event.preventDefault();
+
+createaudio();
+
+});
+
+</script>
+
+<script>
+const audioUrl = "/media/sfx/splat.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 0.5;
+
+
+    document.body.appendChild(audioElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+audioElement.remove();
+});
+
+};
+
+document.getElementById("lancer").addEventListener("click", function(event) {
+createaudio();
+
+});
+
+</script>
+
+<script>
+document.getElementById("amongus").addEventListener("click", function(event) {
+event.preventDefault();
+window.open("https://youtu.be/Ns3YxbIhTRM", '_blank');// sus, sus...
+})
+</script>
+
+<script>
+const audioUrl = "/media/sfx/mimi.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 0.2;
+    audioElement.id = "pinkieaudio";
+
+
+    document.body.appendChild(audioElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+audioElement.remove();
+});
+
+};
+
+document.getElementById("eepster").addEventListener("click", function(event) {
+event.preventDefault();
+if(!document.getElementById("pinkieaudio")) {
+createaudio();
+}
+});
+
+</script>
+
+
+<script>
+const audioUrl = "/media/sfx/tf2notif.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 0.5;
+    audioElement.id = "liberalaudio";
+
+
+    const imageElement = document.createElement('img');
+    imageElement.src = "/media/icons/full/liberals.png";
+    imageElement.id = "liberalsimg";
+    imageElement.style.zIndex = 151;
+    imageElement.style.width = "100vw";
+    imageElement.style.position = "fixed";
+    imageElement.style.top = "30vh";
+
+
+    const container = document.createElement('div');
+    container.id = "liberalcontainer";
+    container.style.position = "absolute";
+    container.style.left = 0;
+    container.style.top = 0;
+    container.style.zIndex = 150;
+    container.style.width = "100vw";
+    container.style.height = "100vw";
+    container.style.background = "black";
+
+
+
+    document.body.appendChild(audioElement);
+    document.body.appendChild(container);
+
+    container.appendChild(imageElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+audioElement.remove();
+container.remove();
+
+});
+};
+
+document.getElementById("liberals").addEventListener("click", function(event) {
+event.preventDefault();
+
+createaudio();
+
+});
+
+//this code has become illegible.
+// idc tho thats an issue for me in the future lmao
+
+//fuck you.
+</script>
+
+<script>
+const audioUrl = "/media/sfx/lobotomy.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 0.2;
+
+
+    const container = document.createElement('div');
+    container.style.position = "absolute";
+    container.style.left = 0;
+    container.style.top = 0;
+    container.style.zIndex = 150;
+    container.style.width = "100vw";
+    container.style.height = "100vw";
+    container.style.background = "white";
+
+
+
+    document.body.appendChild(audioElement);
+    document.body.appendChild(container);
+
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+audioElement.remove();
+container.remove();
+
+});
+};
+
+document.getElementById("gettingyou").addEventListener("click", function(event) {
+event.preventDefault();
+createaudio();
+});
+
+</script>
+
+<script>
+document.getElementById("enid").addEventListener("click", function(event) {
+event.preventDefault();
+window.open("https://www.youtube.com/results?search_query=enid+ok+ko+fancam", '_blank');
+})
+</script>
+
+<script>
+document.getElementById("teengirl").addEventListener("click", function(event) {
+event.preventDefault();
+window.open("https://www.reddit.com/R/girlyteengirlhate/", '_blank');
+})
+</script>
+
+<script>
+document.getElementById("spaunch").addEventListener("click", function(event) {
+event.preventDefault();
+window.open("https://github.com/trakBan/spongebob-cli", '_blank');
+})
+</script>
+
+<script>
+const audioUrl = "/media/sfx/love.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 0.5;
+    audioElement.id = "azureaudio";
+
+
+    const imageElement = document.createElement('img');
+    imageElement.src = "/media/icons/full/winning smile.png";
+    imageElement.style.position = "absolute";
+    imageElement.style.left = 0;
+    imageElement.style.top = 0;
+    imageElement.style.zIndex = 150;
+    imageElement.style.width = "100vw";
+    imageElement.style.height = "100vh";
+
+
+    document.body.appendChild(audioElement);
+    document.body.appendChild(imageElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+audioElement.remove();
+imageElement.remove();
+});
+};
+
+document.getElementById("charmer").addEventListener("click", function(event) {
+event.preventDefault();
+
+createaudio();
+
+});
+
+</script>
+
+<script>
+document.getElementById("yayl").addEventListener("click", function(event) {
+event.preventDefault();
+window.open("https://gamejolt.com/games/YaYL/818150", '_blank');// i have to advertize i asked people for icons and they delivered im sorry
+})
 </script>

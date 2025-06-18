@@ -51,31 +51,5 @@ const currentdate = `${mm}/${dd}`;
   const splashText = holidays[currentdate] || cachedsplash;
 
   document.getElementById("splash").innerHTML = splashText;
-
-  if (currentdate === "12/25") {
-    const colorscheme = document.createElement('link');
-    colorscheme.rel = "stylesheet";
-    colorscheme.href = "/themes/christmas.css";
-
-
-  document.getElementById("maininfo").innerHTML = `<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/aAkMkVFwAoo?si=6eDoCjmqpsaj2e39" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`;
-  document.getElementById("headtext").innerHTML = "CHRISTMAS";
-  document.getElementById("sitelogo").remove();
-  document.head.appendChild(colorscheme);
-
-
-  }
-
-  if (currentdate === "10/31") {
-    const colorscheme = document.createElement('link');
-    colorscheme.rel = "stylesheet";
-    colorscheme.href = "/themes/halloween.css";
-
-
-    document.getElementById("maininfo").innerHTML = `<b>BLEHHH!!</b><br>i am nova!!!<br>i am a spooky vampire!!!<br>im several centuries worth of old....<br>I WILL DRINK YOUR BLOODDDD!!!`;
-    document.getElementById("headtext").innerHTML = "Spooky Site";
-    document.head.appendChild(colorscheme);
-
-
-  }
+  document.title = splashText;
 });

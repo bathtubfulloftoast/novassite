@@ -30,3 +30,15 @@ color:var(--fg)
     text-align: center;
     min-height: 100vh;
 }
+
+a {
+text-decoration:none;
+}
+
+a:link,a:visited {
+color:var(--aqua)
+}
+
+a:hover {
+color:var(--bright-aqua);
+}

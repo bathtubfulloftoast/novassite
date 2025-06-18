@@ -131,7 +131,7 @@ let hash = window.location.hash; // Get the hash from the URL
 let hashValue = hash.substring(1); // Remove the '#' character
 
 // Construct the URL with the userid query parameter
-let url = `/api/discord?userid=${hashValue}`;
+let url = `/api/discord-user?userid=${hashValue}`;
 
 // Use fetch to get data from that URL
 fetch(url)
