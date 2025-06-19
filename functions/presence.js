@@ -3,7 +3,7 @@ import { client } from '../discordBot.js';
 let cache = {};
 
 export default async function presenceHandler(req, res) {
-    const CACHE_DURATION = 120000;
+    const CACHE_DURATION = 60000;
     const userId = '471806482648924174';
     const guild = client.guilds.cache.get('1264262104043618336');
 
