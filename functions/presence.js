@@ -3,7 +3,7 @@ import { client } from '../discordBot.js';
 let cache = {};
 
 export default async function presenceHandler(req, res) {
-    const CACHE_DURATION = 60000;
+    const CACHE_DURATION = 5000; //im lowering it to 5 seconds because discord doesnt get as pissy with rate limiting. (also it updates fucky?)
     const userId = '471806482648924174';
     const guild = client.guilds.cache.get('1264262104043618336');
 
