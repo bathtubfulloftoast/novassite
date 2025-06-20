@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         weathericon.src = `/media/weather/128/${wicon}.png`;
 
         const activitytype = document.createElement("b");
-        activitytype.innerHTML = `Weather:<br>`;
+        activitytype.innerHTML = `Local Weather:<br>`;
 
         const activityinfo = document.createElement("span");
         activityinfo.innerHTML = `<b>${desc}</b><br>${tempf}&deg;F | ${tempc}&deg;C`;
