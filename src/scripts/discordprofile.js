@@ -101,7 +101,7 @@ if (endTime) {
     const ctime = lh === "00" ? `${cm}:${cs}` : `${ch}:${cm}:${cs}`;
     const ltime = lh === "00" ? `${lm}:${ls}` : `${lh}:${lm}:${ls}`;
 
-activitytime.innerHTML = `<progress style="300px" value="${current}" max="${legnth}"></progress><br>${ctime} - ${ltime}`;
+activitytime.innerHTML = `<progress style="width:300px" value="${current}" max="${legnth}"></progress><br>${ctime} - ${ltime}`;
 } else {
     activitytime.innerHTML = timepassed;
 }
