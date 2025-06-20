@@ -4,6 +4,7 @@ body {
 background-color:var(--bg);
 color:var(--fg);
 font-family:SetoFont;
+font-size:15px; /*i know its 16 by default shut up*/
 }
 
 .top {
@@ -100,6 +101,9 @@ margin-bottom:15px;
 overflow:hidden;
 }
 
+.blurb progress {
+width:100%;
+}
 .badges img {
 -ms-interpolation-mode: nearest-neighbor;
 image-rendering: crisp-edges;
