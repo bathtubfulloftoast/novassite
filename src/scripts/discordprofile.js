@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 async function grabdiscord() {
 const response = await fetch('/api/discord');
+// const response = await fetch('/discord.json');
+
 let data = await response.json();
 
 var now = new Date().getTime();
