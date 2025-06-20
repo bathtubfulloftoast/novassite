@@ -355,9 +355,27 @@ createaudio();
 </script>
 
 <script>
+const amongusvideos = [
+"https://youtu.be/Ns3YxbIhTRM",
+"https://youtu.be/yIHa5cjuTBk",
+"https://youtu.be/PShRULA8sOY",
+"https://youtu.be/6yvfU8xK_VQ",
+"https://youtu.be/GYtBoxGB6Wo",
+"https://youtu.be/KByREO4gB0M",
+"https://youtu.be/oZ-51rj2_WI",
+"https://youtu.be/4kzxy8eIjLI",
+"https://youtu.be/SB0jgNzKMSo"
+];
+const max = amongusvideos.length;
+
+
+
 document.getElementById("amongus").addEventListener("click", function(event) {
 event.preventDefault();
-window.open("https://youtu.be/Ns3YxbIhTRM", '_blank');// sus, sus...
+const id = Math.floor(Math.random() * max);
+let url = amongusvideos[id];
+
+window.open(url, '_blank');// sus sus...
 })
 </script>
 
