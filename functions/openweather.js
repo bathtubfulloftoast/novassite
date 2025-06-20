@@ -5,7 +5,7 @@ let cache = {};
 export default async function lastfmHandler(req, res) {
     const API_KEY = process.env.OPENWEATHER_API_KEY;
     const CITYID = "5476913";
-    const CACHE_DURATION = 120000;
+    const CACHE_DURATION = 3600000;
 
     if (cache.timestamp && (Date.now() - cache.timestamp < CACHE_DURATION)) {
         const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);

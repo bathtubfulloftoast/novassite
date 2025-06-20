@@ -1,11 +1,13 @@
+import 'dotenv/config';
+
 import { client } from '../discordBot.js';
 
 let cache = {};
 
 export default async function presenceHandler(req, res) {
-    const CACHE_DURATION = 120000; // the issue was with how i was handling the video math (doing creation time instead of now... time..)
-    const userId = '471806482648924174';
-    const guild = client.guilds.cache.get('1264262104043618336');
+    const CACHE_DURATION = 34567; // keep tweaking the time because AAHHHHH
+    const userId = process.env.PRESENCE_USERID;
+    const guild = client.guilds.cache.get(process.env.PRESENCE_GUILDID);
 
     // Check for valid cache
     if (cache.timestamp && (Date.now() - cache.timestamp < CACHE_DURATION)) {
