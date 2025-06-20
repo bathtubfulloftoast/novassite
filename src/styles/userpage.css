@@ -119,6 +119,7 @@ margin:2px;
 width:100px;
 margin-right:10px;
 border-radius:12px;
+background:var(--bg2);
 }
 
 .infowrap {
