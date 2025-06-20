@@ -123,4 +123,11 @@ border-radius:12px;
     align-items: left;
 }
 
+#status {
+display:inline-block;
+width:75%;
+text-overflow: ellipsis;
+overflow:hidden;
+word-wrap: break-word;
 
+}
