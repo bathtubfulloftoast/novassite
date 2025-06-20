@@ -27,50 +27,92 @@ break;
 }
 
 const activitylist = document.getElementById("activities");
+activitylist.innerHTML = "";
 
 
-for (var item of data.activities) {
+for (const item of data.activities) {
 if (item.type !== 4) {
+const createdTime = new Date(item.createdTimestamp);
+const startTime = item.timestamps?.start
+? new Date(item.timestamps.start)
+: null;
+const endTime = item.timestamps?.end
+? new Date(item.timestamps.end)
+: null;
 
-const startime = new Date(item.createdTimestamp);
-const lareimg = item.assets.largeImage;
+const lareimg = item.assets?.largeImage;
 
-const blurbwrap = document.createElement('div');
+const blurbwrap = document.createElement("div");
 blurbwrap.className = "blurb";
 
-const infowrap = document.createElement('div');
+const infowrap = document.createElement("div");
 infowrap.className = "infowrap";
 
-const activitytype = document.createElement('b');
+const activitytype = document.createElement("b");
 activitytype.innerHTML = `${item.name}:<br>`;
 
-const activityinfo = document.createElement('span');
-activityinfo.innerHTML = `${item.details||""}<br>${item.state||""}<br>`;//god the restriction to not force a name and item here godddddd
-// GOOOODDDDDDD
+const activityinfo = document.createElement("span");
+activityinfo.innerHTML = `${item.details || ""}<br>${
+    item.state || ""
+}<br>`;
 
-const activitytime = document.createElement('span');
+const activitytime = document.createElement("span");
 
-function updateTime() {
-    const now = new Date();
-    const distance = now - startime;
+function updateActivityTime() {
+const now = new Date();
+const distance = now - createdTime;
 
-    const hours = Math.floor((distance / (1000 * 60 * 60)));
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+const ph = Math.floor(distance / (1000 * 60 * 60));
+const pm = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+const ps = Math.floor((distance % (1000 * 60)) / 1000);
 
-    const timepassed = `${hours}h ${minutes}m ${seconds}s`;
+const timepassed = `${ph}h ${pm}m ${ps}s`;
+
+if (endTime) {
+    const legnth = endTime - startTime;
+    let current = now - startTime;
+
+    if (current > legnth) {
+        current = legnth;
+    }
+
+    const lh = String(
+        Math.floor(legnth / (1000 * 60 * 60))
+    ).padStart(2, "0");
+    const lm = String(
+        Math.floor((legnth % (1000 * 60 * 60)) / (1000 * 60))
+    ).padStart(2, "0");
+    const ls = String(
+        Math.floor((legnth % (1000 * 60)) / 1000)
+    ).padStart(2, "0");
+
+    const ch = String(
+        Math.floor(current / (1000 * 60 * 60))
+    ).padStart(2, "0");
+    const cm = String(
+        Math.floor((current % (1000 * 60 * 60)) / (1000 * 60))
+    ).padStart(2, "0");
+    const cs = String(
+        Math.floor((current % (1000 * 60)) / 1000)
+    ).padStart(2, "0");
+
+    const ctime = lh === "00" ? `${cm}:${cs}` : `${ch}:${cm}:${cs}`;
+    const ltime = lh === "00" ? `${lm}:${ls}` : `${lh}:${lm}:${ls}`;
+
+activitytime.innerHTML = `<progress value="${current}" max="${legnth}"></progress><br>${ctime} - ${ltime}`;
+} else {
     activitytime.innerHTML = timepassed;
-
+}
 }
 
-// Initial time fill
-updateTime();
+updateActivityTime();
+setInterval(updateActivityTime, 1000);
+
+// Initial call
+updateActivityTime();
 
 // Update every second
-const intervalId = setInterval(updateTime, 1000);
-
-// Optional: Store intervalId in case you need to stop it later (e.g., when removing the activity)
-activityinfo.dataset.intervalId = intervalId;
+setInterval(updateActivityTime, 1000);
 
 
 if(lareimg) {
