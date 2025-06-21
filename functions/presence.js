@@ -4,6 +4,8 @@ import { client } from '../discordBot.js';
 
 let cache = {};
 
+// if you want this thing for yourself use lanyard.\ni selfhost this because i prefer the control.\nhttps://lanyard.eggsy.xyz/
+
 export default async function presenceHandler(req, res) {
     const CACHE_DURATION = 34567; // keep tweaking the time because AAHHHHH
     const userId = process.env.PRESENCE_USERID;

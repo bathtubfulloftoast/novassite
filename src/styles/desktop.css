@@ -33,7 +33,7 @@ overflow:scroll;
 
 .taskbar {
 display:block;
-width:200%;
+width:100vw;
 height:25px;
 position:absolute;
 left:0px;
@@ -72,4 +72,16 @@ z-index:2;
 .icon img {
 width:64px;
 height:64px;
+}
+
+.taskbar .time {
+float:right;
+width:80px;
+height:25px;
+border-left:2px solid #1fb0ef;
+background:#0f8fea;
+text-align:center;
+font-size:16px;
+line-height: 25px;
+color:white;
 }
