@@ -18,8 +18,8 @@ const icons = desktop;
 </head>
 
 
-<div class="center-screen" id="window" >
-<div style="display:inline-block;z-index:5;padding:0px;margin:0px">
+<div class="center-screen"  >
+<div style="display:inline-block;z-index:5;padding:0px;margin:0px" id="window">
   <div class="title-bar">
     <div class="title-bar-text"><img src="/favicon.ico" height="16px" style="vertical-align: text-top;"> <span id="splash">Nova's Profile</span></div>
     <div class="title-bar-controls">
@@ -50,8 +50,11 @@ const icons = desktop;
 <div class="time" id="time">11:24 PM</div>
 </div>
 
-
-
+<span style="background:#fff">welcome to boundary break where we basically take the camera anywhere we want</span><br>
+<video src="/media/secrets/electroricardo.mp4" preload="none" controls></video>
+<br>
+watch as hit star ricardo milos does a funny dance with a funnier backing track!<br>
+there is nothing else about this video worth mentioning
 <script src="/src/scripts/splash.js"></script>
 
 <script>
@@ -131,7 +134,7 @@ async function createaudio() {
 
     const audioElement = document.createElement('audio');
     audioElement.src = audioBlobUrl;
-    audioElement.volume = 0.5;
+    audioElement.volume = 0.2;
     audioElement.id = "shartmenu";
 
 
@@ -350,7 +353,7 @@ async function createaudio() {
 
     const audioElement = document.createElement('audio');
     audioElement.src = audioBlobUrl;
-    audioElement.volume = 0.5;
+    audioElement.volume = 0.2;
 
 
     document.body.appendChild(audioElement);
@@ -549,7 +552,7 @@ async function createaudio() {
 
     const audioElement = document.createElement('audio');
     audioElement.src = audioBlobUrl;
-    audioElement.volume = 0.2;
+    audioElement.volume = 0.03;
 
 
     const container = document.createElement('div');
@@ -673,8 +676,58 @@ window.open("https://gamejolt.com/games/YaYL/818150", '_blank');// i have to adv
 </script>
 
 <script>
+const audioUrl = "/media/sfx/MEGALOVANIA.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 1;
+
+
+    const imageElement = document.createElement('img');
+    imageElement.src = "/media/BLUE.PNG";
+    imageElement.style.position = "absolute";
+    imageElement.style.left = 0;
+    imageElement.style.top = 0;
+    imageElement.style.zIndex = 150;
+    imageElement.style.width = "100vw";
+    imageElement.style.height = "100vh";
+
+
+    document.body.appendChild(audioElement);
+    document.body.appendChild(imageElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+window.open("https://youtu.be/P_nvW4TeF3M", '_blank');
+window.location.reload();
+});
+};
+
 document.getElementById("remember").addEventListener("click", function(event) {
 event.preventDefault();
-window.open("https://youtu.be/P_nvW4TeF3M", '_blank');// I FUCKING FORGOT I HAD ONE JOB TO NOT FORGET AND I FORGOT FUCK
-})
+createaudio();
+});
+
 </script>
