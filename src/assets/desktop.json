@@ -118,5 +118,29 @@
     "left": 110,
     "top": 500,
     "comment": "whys your ego so massive?"
+  },
+  {
+    "filename": "femtanyl.mp3",
+    "icon": "femt.gif",
+    "id": "femt",
+    "left": 110,
+    "top": 600,
+    "comment": "make a big mac ^.^"
+  },
+  {
+    "filename": "deltar.une",
+    "icon": "delta.gif",
+    "id": "deltarune",
+    "left": 110,
+    "top": 700,
+    "comment": "lqrf (gave image)"
+  },
+  {
+    "filename": "food.house",
+    "icon": "foodhouse.gif",
+    "id": "foodhouse",
+    "left": 210,
+    "top": 10,
+    "comment": "if you can get anthony to review two house ill add that"
   }
 ]
