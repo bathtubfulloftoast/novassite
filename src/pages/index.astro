@@ -475,7 +475,6 @@ async function createaudio() {
     const audioElement = document.createElement('audio');
     audioElement.src = audioBlobUrl;
     audioElement.volume = 0.5;
-    audioElement.id = "liberalaudio";
 
 
     const imageElement = document.createElement('img');
@@ -552,7 +551,7 @@ async function createaudio() {
 
     const audioElement = document.createElement('audio');
     audioElement.src = audioBlobUrl;
-    audioElement.volume = 0.03;
+    audioElement.volume = 0.08;
 
 
     const container = document.createElement('div');
@@ -730,4 +729,172 @@ event.preventDefault();
 createaudio();
 });
 
+</script>
+
+<script>
+const audioUrl = "/media/sfx/buddy.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 0.3;
+
+
+    const imageElement = document.createElement('img');
+    imageElement.src = "/media/icons/full/delta.png";
+    imageElement.style.position = "absolute";
+    imageElement.style.left = 0;
+    imageElement.style.top = 0;
+    imageElement.style.zIndex = 150;
+    imageElement.style.width = "100vw";
+    imageElement.style.height = "100vh";
+
+
+    document.body.appendChild(audioElement);
+    document.body.appendChild(imageElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+imageElement.remove();
+audioElement.remove();
+});
+};
+
+document.getElementById("deltarune").addEventListener("click", function(event) {
+event.preventDefault();
+createaudio();
+});
+
+</script>
+
+<script>
+const katamari = "/media/sfx/katamari intro.ogg";
+const fuck = "/media/sfx/fuckthat.ogg"; //ey... fucj that...
+const murder = "/media/sfx/murderevery1intro.ogg";
+
+
+let katamariBlob = null;
+let fuckBlob = null; // blob hater fuck that guy
+let murderBlob = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    katamariBlob = await fetchBlob(katamari);
+    fuckBlob = await fetchBlob(fuck);
+    murderBlob = await fetchBlob(murder);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const katamariBlob = await fetchBlob(katamari);
+    const fuckBlob = await fetchBlob(fuck);
+    const murderBlob = await fetchBlob(murder);
+
+    const katamariElement = document.createElement('audio');
+    katamariElement.src = katamariBlob;
+    katamariElement.volume = 0.3;
+
+    const fuckElement = document.createElement('audio');
+    fuckElement.src = fuckBlob;
+    fuckElement.volume = 0.3;
+
+    const murderElement = document.createElement('audio');
+    murderElement.src = murderBlob;
+    murderElement.volume = 0.3;
+
+    const femtIMG = document.createElement('img');
+    femtIMG.src = "/media/icons/femt.gif";
+    femtIMG.style.position = "absolute";
+    femtIMG.style.left = 0;
+    femtIMG.style.top = 0;
+    femtIMG.style.zIndex = 150;
+    femtIMG.style.width = "100vw";
+    femtIMG.style.height = "100vh";
+
+    const loveSICK = document.createElement('img');
+    loveSICK.src = "/media/LOVESICK.png";
+    loveSICK.id = "liberalsimg";
+    loveSICK.style.zIndex = 151;
+    loveSICK.style.height = "100vh";
+
+
+    const container = document.createElement('div');
+    container.style.position = "absolute";
+    container.style.left = 0;
+    container.style.top = 0;
+    container.style.zIndex = 150;
+    container.style.width = "100vw";
+    container.style.height = "100vw";
+    container.style.background = "black";
+    container.style.textAlign = "center";
+
+    document.body.appendChild(katamariElement);
+    document.body.appendChild(fuckElement);
+    document.body.appendChild(murderElement);
+
+    document.body.appendChild(femtIMG);
+
+
+    katamariElement.play();
+
+katamariElement.addEventListener('ended', (event) => {
+katamariElement.remove();
+fuckElement.play();
+});
+
+fuckElement.addEventListener('ended', (event) => {
+fuckElement.remove();
+document.body.appendChild(container);
+container.appendChild(loveSICK);
+femtIMG.remove();
+murderElement.play();
+});
+
+murderElement.addEventListener('ended', (event) => {
+murderElement.remove();
+container.remove();
+});
+};
+
+document.getElementById("femt").addEventListener("click", function(event) {
+event.preventDefault();
+createaudio();
+});
+
+</script>
+
+<script>
+document.getElementById("foodhouse").addEventListener("click", function(event) {
+event.preventDefault();
+window.open("https://youtu.be/aeufEIA2qYE?t=39", '_blank');// waiting for a funny review of two house if anyone can give that to me my life is yours
+})
 </script>
