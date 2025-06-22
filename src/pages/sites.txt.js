@@ -26,7 +26,7 @@ export async function GET() {
         const string = shuffled.join("\n");
         const textContent = btoa(string);
 
-        return new Response(textContent);
+        return new Response(`hey if youre on this list and you dont want to be contact me at mail@novassite.net\n${textContent}`);
     } catch (error) {
         return new Response("Error: File not found");
     }
