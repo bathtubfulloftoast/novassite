@@ -3,7 +3,9 @@ let cachedSites = null;
 async function getSites() {
     if (!cachedSites) {
         const response = await fetch('/sites.txt');
-        const encodedtext = await response.text();
+        const responsetext = await response.text();
+        const lines = responsetext.split("\n").map(name => name.trim()).filter(name => name);
+        const encodedtext = lines[1];
         const text = atob(encodedtext);
         cachedSites = text.split("\n").map(name => name.trim()).filter(name => name);
     }
