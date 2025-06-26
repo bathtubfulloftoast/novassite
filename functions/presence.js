@@ -4,10 +4,12 @@ import { client } from '../discordBot.js';
 
 let cache = {};
 
-// if you want this thing for yourself use lanyard.\ni selfhost this because i prefer the control.\nhttps://lanyard.eggsy.xyz/
+// if you want this thing for yourself use lanyard.
+// i selfhost this because i prefer the control.
+// https://lanyard.eggsy.xyz/
 
 export default async function presenceHandler(req, res) {
-    const CACHE_DURATION = 34567; // keep tweaking the time because AAHHHHH
+    const CACHE_DURATION = 35000;
     const userId = process.env.PRESENCE_USERID;
     const guild = client.guilds.cache.get(process.env.PRESENCE_GUILDID);
 
