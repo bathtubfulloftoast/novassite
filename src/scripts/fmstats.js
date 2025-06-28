@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         document.getElementById("fmstats").innerHTML = `${totalscrobbs} total scrobbles<br>
         im only ${away} away from ${target}!<br>
         thats around ${final} worth of music...<br>
-        itl take about ${daysNeededText} to reach my goal<br>
+        itl take me about ${daysNeededText} to reach my goal<br>
         (with an average of ${songsPerDay} songs per day)`;
 
     }
