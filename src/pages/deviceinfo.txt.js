@@ -39,8 +39,15 @@ export function getPrettyDistro() {
 
 export function getDevice() {
     try {
-        const releaseInfo = fs.readFileSync('/sys/devices/virtual/dmi/id/product_name', 'utf-8');
-        return releaseInfo ?? 'Unknown Device';
+        if (fs.existsSync('/sys/firmware/devicetree/base/model')) {
+            return fs.readFileSync('/sys/firmware/devicetree/base/model', 'utf-8').trim();
+        }
+
+        if (fs.existsSync('/sys/devices/virtual/dmi/id/product_name')) {
+            return fs.readFileSync('/sys/devices/virtual/dmi/id/product_name', 'utf-8').trim();
+        }
+
+        return 'Unknown Device';
     } catch (err) {
         return 'Unknown Device';
     }
