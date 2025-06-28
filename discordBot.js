@@ -29,7 +29,9 @@ client.once('ready', () => {
 
 });
 
-client.login(API_KEY);
+setTimeout(() => {
+    client.login(API_KEY);
+}, 5000);
 
 // 👇 ADD THIS LINE
 // dont fucking tell me what to do
