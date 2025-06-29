@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function() {
 
     async function weather() {
-        const response = await fetch('/api/fmrecent');
+        const response = await fetch('/api/fm-recent');
         // const response = await fetch('/weather.json');
 
         let data = await response.json();
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
         document.getElementById("fmstats").innerHTML = `${totalscrobbs} total scrobbles<br>
         im only ${away} away from ${target}!<br>
-        thats around ${final} worth of music...<br>
+        thats about ${final} worth of music...<br>
         itl take me about ${daysNeededText} to reach my goal<br>
         (with an average of ${songsPerDay} songs per day)`;
 

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function() {
 
 async function weather() {
-    const response = await fetch('/api/fmtop');
+    const response = await fetch('/api/fm-top');
     let data = await response.json();
 
 
