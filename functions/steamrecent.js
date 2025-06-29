@@ -5,7 +5,7 @@ let cache = {};
 export default async function lastfmHandler(req, res) {
     const API_KEY = process.env.STEAM_API_KEY;
     const STEAMID = "76561198853505045";
-    const CACHE_DURATION = 60000;
+    const CACHE_DURATION = 7200000;
 
     if (cache.timestamp && (Date.now() - cache.timestamp < CACHE_DURATION)) {
         const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);
