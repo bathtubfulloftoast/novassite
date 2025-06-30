@@ -903,7 +903,7 @@ window.open("https://youtu.be/aeufEIA2qYE?t=39", '_blank');// waiting for a funn
 </script>
 
 <script>
-const amongusvideos = [
+const sauce = [
 "0tdyU_gW6WE",
 "1qVRxy9fuTU",
 "3YGst2a--t8",
@@ -968,10 +968,21 @@ const amongusvideos = [
 "hiRacdl02w4",
 "Q16KpquGsIc",
 "f8tGW5B43o8",
+"w6bIKJHiaLo",
+"F7nmBtSYdlg",
+"CwWvNA5eJxw",
+"Ja5BDtMybBA",
+"7XvUCC9-y50",
+"BeLTb17dioM",
+"5haJCngMP1I",
+"sJXag2HYT94",
+"0SPjy9o20QQ",
+"x3NhDbzD_zw",
+"JkaMIFqm5cI",
 ];
 // note to self dont add anything that reminds you of the awful reality and lack of creativity that consumes the modern world
 
-const max = amongusvideos.length;
+const max = sauce.length;
 
 
 const audioUrl = "/media/sfx/ytp.ogg";
@@ -1009,7 +1020,7 @@ async function createaudio() {
 
 audioElement.addEventListener('ended', (event) => {
 const id = Math.floor(Math.random() * max);
-let url = 'https://youtu.be/'+amongusvideos[id];
+let url = 'https://youtu.be/'+sauce[id];
 // this was the first code to optimize storing the video links
 // i feel bad for it because im not renaming the code fuck you
 
