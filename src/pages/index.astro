@@ -378,15 +378,15 @@ createaudio();
 
 <script>
 const amongusvideos = [
-"https://youtu.be/Ns3YxbIhTRM",
-"https://youtu.be/yIHa5cjuTBk",
-"https://youtu.be/PShRULA8sOY",
-"https://youtu.be/6yvfU8xK_VQ",
-"https://youtu.be/GYtBoxGB6Wo",
-"https://youtu.be/KByREO4gB0M",
-"https://youtu.be/oZ-51rj2_WI",
-"https://youtu.be/4kzxy8eIjLI",
-"https://youtu.be/SB0jgNzKMSo"
+"Ns3YxbIhTRM",
+"yIHa5cjuTBk",
+"PShRULA8sOY",
+"6yvfU8xK_VQ",
+"GYtBoxGB6Wo",
+"KByREO4gB0M",
+"oZ-51rj2_WI",
+"4kzxy8eIjLI",
+"SB0jgNzKMSo"
 ];
 const max = amongusvideos.length;
 
@@ -395,7 +395,7 @@ const max = amongusvideos.length;
 document.getElementById("amongus").addEventListener("click", function(event) {
 event.preventDefault();
 const id = Math.floor(Math.random() * max);
-let url = amongusvideos[id];
+let url = 'https://youtu.be/'+amongusvideos[id];
 
 window.open(url, '_blank');// sus sus...
 })
@@ -900,4 +900,130 @@ document.getElementById("foodhouse").addEventListener("click", function(event) {
 event.preventDefault();
 window.open("https://youtu.be/aeufEIA2qYE?t=39", '_blank');// waiting for a funny review of two house if anyone can give that to me my life is yours
 })
+</script>
+
+<script>
+const amongusvideos = [
+"0tdyU_gW6WE",
+"1qVRxy9fuTU",
+"3YGst2a--t8",
+"3hPLhIUtoD4",
+"6-DLSjIpMmA",
+"6Ajhzlq42f0",
+"7KMTeJdazK4",
+"9BaWt_BrYUg",
+"BCPkXp9K0D0",
+"CYXJYQZ3FX0",
+"FuX5_OWObA0",
+"GTh5J0HsIAg",
+"Hijh2ox9CEg",
+"HmzGmmq0Jms",
+"Jl6lee2wyPQ",
+"Kl8EiGLJOCk",
+"NagoHr74Jko",
+"PGJKeESLBpQ",
+"PGfhtLrwiKo",
+"U4eVHaeYahU",
+"UUbS6UjkfBM",
+"U_CaPYe5kEs",
+"VZ3DEnvJ464",
+"VoWRSM2_DF0",
+"X0pEBE_eYdU",
+"XBMg5s_TZWk",
+"Y-dMSstLDqM",
+"YDQ3mvd64Uc",
+"YidRNvL535I",
+"ZI4LGTXscR4",
+"ZsUoefdaoo0",
+"Zv-XNlE1s8E",
+"b8HO6hba9ZE",
+"bfBO5dGlmrE",
+"c9ilXkkwGu4",
+"dZyxheCtYx8",
+"ddWJatRxfz8",
+"eGrg6JHlByw",
+"ePw3wZxdGio",
+"f8tGW5B43o8",
+"fU3jfk-O7L0",
+"iV0aIfJPT-w",
+"klwIOSCJFSA",
+"lFl1_3Eq__0",
+"lGJBUauU-CE",
+"lSc-t9YBvkk",
+"rG_Ue3t17l0",
+"rjRV0G6qWgw",
+"ruM7pRYjCH0",
+"rzLIUgnKY40",
+"t9HUyHmLFzA",
+"tcjCfJbYAzg",
+"upf_xYgkBIQ",
+"iV0aIfJPT-w",
+"mAQDkPrM1uI",
+"2XvILfdj52Q",
+"_wYQAGANgL0",
+"AWDeOiZHPhY",
+"vcPvbojUmuw",
+"kBKr8YLuVgs",
+"lRpxecLkUHQ",
+"hiRacdl02w4",
+"Q16KpquGsIc",
+"f8tGW5B43o8",
+];
+// note to self dont add anything that reminds you of the awful reality and lack of creativity that consumes the modern world
+
+const max = amongusvideos.length;
+
+
+const audioUrl = "/media/sfx/ytp.ogg";
+
+
+let audioBlobUrl = null;
+
+
+async function fetchBlob(url) {
+    const response = await fetch(url);
+    const blob = await response.blob();
+    return URL.createObjectURL(blob);
+}
+
+async function preloadBlobs() {
+    audioBlobUrl = await fetchBlob(audioUrl);
+}
+
+preloadBlobs();
+
+async function createaudio() {
+
+    const audioBlobUrl = await fetchBlob(audioUrl);
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioBlobUrl;
+    audioElement.volume = 0.5;
+    audioElement.id = "ytpaudio";
+
+
+    document.body.appendChild(audioElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+const id = Math.floor(Math.random() * max);
+let url = 'https://youtu.be/'+amongusvideos[id];
+// this was the first code to optimize storing the video links
+// i feel bad for it because im not renaming the code fuck you
+
+window.open(url, '_blank');
+audioElement.remove();
+});
+
+};
+
+document.getElementById("tarsh").addEventListener("click", function(event) {
+event.preventDefault();
+if(!document.getElementById("ytpaudio")) {
+createaudio();
+}
+});
+
 </script>
