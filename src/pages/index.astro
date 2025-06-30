@@ -979,13 +979,24 @@ const sauce = [
 "0SPjy9o20QQ",
 "x3NhDbzD_zw",
 "JkaMIFqm5cI",
+"dQNN4Lvmja8",
+"n6TdJ8-reM0",
+"3Nv2GDsz-58",
+"AM2SRY0ea9c",
+"yJQrx5Ulq7M",
+"4xYvF2CCHG0",
+"rNe-gK22LV4",
+"8t9LtVCHo1A",
+"Yxm2W0hDTIs",
+"GxW31NhNiUo",
+"0VZ4rQtLZQs",
 ];
 // note to self dont add anything that reminds you of the awful reality and lack of creativity that consumes the modern world
 
 const max = sauce.length;
 
 
-const audioUrl = "/media/sfx/ytp.ogg";
+const audioUrl = "/media/YTP.webm";
 
 
 let audioBlobUrl = null;
@@ -1007,11 +1018,17 @@ async function createaudio() {
 
     const audioBlobUrl = await fetchBlob(audioUrl);
 
-    const audioElement = document.createElement('audio');
+    const audioElement = document.createElement('video');
     audioElement.src = audioBlobUrl;
     audioElement.volume = 0.5;
     audioElement.id = "ytpaudio";
-
+    audioElement.style.position = "absolute";
+    audioElement.style.left = 0;
+    audioElement.style.top = 0;
+    audioElement.style.zIndex = 150;
+    audioElement.style.width = "100vw";
+    audioElement.style.height = "100vh";
+    audioElement.style.background = "#000";
 
     document.body.appendChild(audioElement);
 
