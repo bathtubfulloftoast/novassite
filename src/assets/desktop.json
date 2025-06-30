@@ -150,5 +150,13 @@
     "left": 10,
     "top": 10,
     "comment": "i hope she made lotsa spaghetti!!"
+  },
+  {
+    "filename": "CLICKME.txt",
+    "icon": "text.gif",
+    "id": "readme",
+    "left": 210,
+    "top": 200,
+    "comment": "aah"
   }
 ]
