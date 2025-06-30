@@ -38,13 +38,14 @@ export function getPrettyDistro() {
 }
 
 export function getDevice() {
+    const regex = /[^a-zA-Z0-9 \-.,#_\[\]\{\}!@\$%\^&\*\(\)`~\/\?\\\|=\+]/g;
     try {
         if (fs.existsSync('/sys/firmware/devicetree/base/model')) {
-            return fs.readFileSync('/sys/firmware/devicetree/base/model', 'utf-8').trim();
+            return fs.readFileSync('/sys/firmware/devicetree/base/model', 'utf-8').trim().replace(regex, '');
         }
 
         if (fs.existsSync('/sys/devices/virtual/dmi/id/product_name')) {
-            return fs.readFileSync('/sys/devices/virtual/dmi/id/product_name', 'utf-8').trim();
+            return fs.readFileSync('/sys/devices/virtual/dmi/id/product_name', 'utf-8').trim().replace(regex, '');
         }
 
         return 'Unknown Device';
