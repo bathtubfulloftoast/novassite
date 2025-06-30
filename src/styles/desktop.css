@@ -1,11 +1,13 @@
 body {
-background:url("/media/wallpaper.gif");
+background-color:#c949d6;
+background-image:url("/media/wallpaper.png");
 overflow:hidden;
 background-repeat: no-repeat;
-background-size: 100% 100%;
+background-size: 50%;
 height:100vh;
 width:100vw;
-image-rendering: pixelated;
+background-position: center bottom;
+
 }
 
 .center-screen {
@@ -58,6 +60,8 @@ background-image: linear-gradient(
 );
 overflow:hidden;
 z-index:10;
+image-rendering: pixelated;
+
 }
 
 .icon {
@@ -72,6 +76,7 @@ z-index:2;
 .icon img {
 width:64px;
 height:64px;
+image-rendering: pixelated;
 }
 
 .taskbar .time {
