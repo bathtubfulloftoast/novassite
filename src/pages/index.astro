@@ -991,6 +991,9 @@ const sauce = [
 "f-Zb1MojVoM", // [YTP] Crustal Poopsy Sales Sales Profits Sales
 "Ivim1WSCFgY", // family man pilot YTP
 "R0btD4cpEVU", // [YTP] Man Loses His Sausage
+"0XoaeeSeGvA", // [YTP] For Goodness Sake
+"IQfbFRNgXPY", // [YTP] Jerry Rigger and the Forbidden Phone
+"kzCpyY9PW4k", // Nightcore - Are You Gonna Eat That? - Rhett & Link
 ];
 // note to self dont add anything that reminds you of the awful reality and lack of creativity that consumes the modern world
 
@@ -1038,7 +1041,10 @@ async function createaudio() {
 
 audioElement.addEventListener('ended', (event) => {
 const id = Math.floor(Math.random() * max);
-let url = 'https://www.youtube.com/watch?v='+sauce[id];
+// let url = 'https://www.youtube.com/watch?v='+sauce[id]; // regular player (slower cause youtube hates everyone)
+// let url = 'https://inv.nadeko.net/watch?v='+sauce[id]; // invidious instance (ad free and not bloated) [regular people wouldn't care and it doesnt support the original creators]
+let url = 'https://www.youtube.com/embed/'+sauce[id]+'?autoplay=true'; // youtube embed (faster supports the creators) [loves to not work any time a video is mildly anything (eg: age restricted {doesnt have to be actually age restricted} or affected by copyright in any way)]
+
 // this was the first code to optimize storing the video links
 // i feel bad for it because im not renaming the code fuck you
 
@@ -1059,42 +1065,44 @@ createaudio();
 
 
 <script>
-const audioUrl = "/media/sfx/HAH.ogg";
-
-
-let audioBlobUrl = null;
-
-
-async function fetchBlob(url) {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
-}
-
-async function preloadBlobs() {
-    audioBlobUrl = await fetchBlob(audioUrl);
-}
-
-preloadBlobs();
+let counter = 0;
 
 async function createaudio() {
+counter = counter+1
 
-    const audioBlobUrl = await fetchBlob(audioUrl);
+    const HAHElement = document.createElement('audio');
 
-    const audioElement = document.createElement('audio');
-    audioElement.src = audioBlobUrl;
-    audioElement.volume = 0.2;
-    audioElement.id = "laughaudio";
+    if(counter == 1) {
+    HAHElement.src = "/media/sfx/stupid1.ogg";
+    } else if (counter == 2 ){
+    HAHElement.src = "/media/sfx/HAH2.ogg";
+    } else if (counter == 3){
+    HAHElement.src = "/media/sfx/stopnow3.ogg";
+    } else if (counter == 4){
+    HAHElement.src = "/media/sfx/saidstop4.ogg";
+    } else if (counter == 5){
+    HAHElement.src = "/media/sfx/stopit5.ogg";
+    } else if (counter == 6){
+    HAHElement.src = "/media/sfx/saidstop6.ogg";
+    } else if (counter == 7){
+    HAHElement.src = "/media/sfx/wonttalk7.ogg";
+    } else {
+    HAHElement.src = "/media/sfx/witchlaugh.ogg";
+    }
+    HAHElement.volume = 0.2;
+    HAHElement.id = "laughaudio";
 
 
-    document.body.appendChild(audioElement);
+    if (counter !== 8) {
+    document.body.appendChild(HAHElement);
+    HAHElement.play();
+    }
 
 
-    audioElement.play();
-
-audioElement.addEventListener('ended', (event) => {
-audioElement.remove();
+HAHElement.addEventListener('ended', (event) => {
+HAHElement.remove();
 });
+
 
 };
 
