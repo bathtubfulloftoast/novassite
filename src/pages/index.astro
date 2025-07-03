@@ -34,11 +34,12 @@ const icons = desktop;
 </div>
 </div>
 
+<div class="bnuy"></div>
 
 <div class="icons">
 {icons.map((item) => (
 <div class="icon" id={item.id}>
-<img src={`/media/icons/${item.icon}`} /><br>
+<img src={`/media/icons/${item.icon}`} alt={item.filename} /><br>
 {item.filename}
 </div>
 ))}
@@ -564,6 +565,7 @@ async function createaudio() {
     container.style.width = "100vw";
     container.style.height = "100vw";
     container.style.background = "white";
+    container.style.cursor = "none";
 
 
 
