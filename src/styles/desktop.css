@@ -65,7 +65,6 @@ image-rendering: pixelated;
 }
 
 .icon {
-position:absolute;
 display:block;
 text-align:center;
 color:#000;
@@ -77,6 +76,21 @@ z-index:2;
 width:64px;
 height:64px;
 image-rendering: pixelated;
+}
+
+.icons {
+position:absolute;
+left:0px;
+top:0px;
+display:flex;
+flex-direction:column;
+flex-wrap:wrap;
+height:calc(100% - 5px);
+column-gap:10px;
+align-content:flex-start;
+row-gap:10px;
+margin-top:10px;
+/* https://github.com/removetooth/riffs-awesome-website */
 }
 
 .taskbar .time {

@@ -35,14 +35,14 @@ const icons = desktop;
 </div>
 
 
-
+<div class="icons">
 {icons.map((item) => (
-<div class="icon" style={`left: ${item.left}px; top: ${item.top}px;`} id={item.id}>
+<div class="icon" id={item.id}>
 <img src={`/media/icons/${item.icon}`} /><br>
 {item.filename}
 </div>
 ))}
-
+</div>
 
 <div class="taskbar">
 <div style="float:left"><a id="start" style="cursor:pointer;"><img src="/media/start.gif"></a></div> <!-- no href because it adds select box -->
@@ -722,7 +722,8 @@ async function createaudio() {
 
 audioElement.addEventListener('ended', (event) => {
 window.open("https://youtu.be/P_nvW4TeF3M", '_blank');
-window.location.reload();
+audioElement.remove();
+imageElement.remove();
 });
 };
 
@@ -994,6 +995,8 @@ const sauce = [
 "0XoaeeSeGvA", // [YTP] For Goodness Sake
 "IQfbFRNgXPY", // [YTP] Jerry Rigger and the Forbidden Phone
 "kzCpyY9PW4k", // Nightcore - Are You Gonna Eat That? - Rhett & Link
+"3MnrAw8Icfs", // YouTube Poop: The Sky Had A Weegee!
+"3XE6zA9D8uY", // Youtube poop-haunted house of weegee!
 ];
 // note to self dont add anything that reminds you of the awful reality and lack of creativity that consumes the modern world
 
