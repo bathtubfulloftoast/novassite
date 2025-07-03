@@ -1,162 +1,122 @@
 [
   {
+    "filename": "\"The Bin\"",
+    "icon": "tarsh.gif",
+    "id": "tarsh",
+    "comment": "i hope she made lotsa spaghetti!!"
+  },
+  {
     "filename": "speen.gif",
     "icon": "speen.gif",
     "id": "speen",
-    "left": 210,
-    "top": 100,
     "comment": "tomthewolff (made model) [i rendered it]"
   },
   {
     "filename": "Pinkie Pied.fun",
     "icon": "fluttershit.gif",
     "id": "pinkie",
-    "left": 5,
-    "top": 100,
     "comment": "dexterdaybreaker (gave image)"
   },
   {
     "filename": "Azure.png",
     "icon": "azure.gif",
     "id": "azure",
-    "left": 10,
-    "top": 200,
     "comment": "Azure Comet (is the image)"
   },
   {
     "filename": "i remember.txt",
     "icon": "remember.gif",
     "id": "remember",
-    "left": 728,
-    "top": 472,
     "comment": "canni (gave image)"
   },
   {
     "filename": "lancer",
     "icon": "lancer.gif",
     "id": "lancer",
-    "left": 10,
-    "top": 300,
     "comment": "lancer"
   },
   {
     "filename": "Among Us",
     "icon": "among.gif",
     "id": "amongus",
-    "left": 10,
-    "top": 400,
     "comment": "DeadlyAidan (made amongus)"
   },
   {
     "filename": "eepy.mimi",
     "icon": "eepster.gif",
     "id": "eepster",
-    "left": 10,
-    "top": 500,
     "comment": "ZoruDied (gave image)"
   },
   {
     "filename": "rock.jpg",
     "icon": "gettingyou.gif",
     "id": "gettingyou",
-    "left": 10,
-    "top": 600,
     "comment": "Bobbi (gave image)"
   },
   {
     "filename": "girl.gay",
     "icon": "girl.gif",
     "id": "enid",
-    "left": 10,
-    "top": 700,
     "comment": "Vivian (is Gay)"
   },
   {
     "filename": "FUCKYOU.FUCK",
     "icon": "GIRLY.gif",
     "id": "teengirl",
-    "left": 97,
-    "top": 10,
     "comment": "Jules (made song)"
   },
   {
     "filename": "joemany.txt",
     "icon": "liberals.gif",
     "id": "liberals",
-    "left": 110,
-    "top": 100,
     "comment": "Riff (Played tf2)"
   },
   {
     "filename": "sponge.jpg",
     "icon": "spaunch.gif",
     "id": "spaunch",
-    "left": 110,
-    "top": 200,
     "comment": "Toasty (Took Photo)"
   },
   {
     "filename": "charmer.love",
     "icon": "winning smile.gif",
     "id": "charmer",
-    "left": 110,
-    "top": 300,
     "comment": "Storm (autistic)"
   },
   {
     "filename": "YAYL.AD",
     "icon": "yayl.gif",
     "id": "yayl",
-    "left": 110,
-    "top": 400,
     "comment": "WHO POSTED MY NUDES ON TWITTER DOT COM??? (veniadev)"
   },
   {
     "filename": "douche.link",
     "icon": "douche.gif",
     "id": "douchebag",
-    "left": 110,
-    "top": 500,
     "comment": "whys your ego so massive?"
   },
   {
     "filename": "femtanyl.mp3",
     "icon": "femt.gif",
     "id": "femt",
-    "left": 110,
-    "top": 600,
     "comment": "make a big mac ^.^"
   },
   {
     "filename": "deltar.une",
     "icon": "delta.gif",
     "id": "deltarune",
-    "left": 110,
-    "top": 700,
     "comment": "lqrf (gave image)"
   },
   {
     "filename": "food.house",
     "icon": "foodhouse.gif",
     "id": "foodhouse",
-    "left": 210,
-    "top": 10,
     "comment": "if you can get anthony to review two house ill add that"
-  },
-  {
-    "filename": "\"The Bin\"",
-    "icon": "tarsh.gif",
-    "id": "tarsh",
-    "left": 10,
-    "top": 10,
-    "comment": "i hope she made lotsa spaghetti!!"
   },
   {
     "filename": "CLICKME.txt",
     "icon": "text.gif",
     "id": "readme",
-    "left": 210,
-    "top": 200,
     "comment": "aah"
   }
 ]
