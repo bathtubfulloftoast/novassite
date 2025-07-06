@@ -22,7 +22,7 @@ playtimeformat = Math.round(playtime/60)+"H";
 playtimeformat = `${playtime}M`;
 }
 
-text += `${playtimeformat} | <a href="https://store.steampowered.com/app/${appid}" target="_blank">${gamename}</a><br>`;
+text += `<a href="https://store.steampowered.com/app/${appid}" target="_blank">${gamename}</a> | ${playtimeformat}<br>`;
 }
 
 
