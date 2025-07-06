@@ -1,6 +1,7 @@
 ---
 import "xp.css/dist/XP.css";
 import '/src/styles/desktop.css';
+import '/src/styles/colors.css';
 
 import desktop from '/src/assets/desktop.json';
 const icons = desktop;
@@ -40,7 +41,7 @@ const icons = desktop;
 {icons.map((item) => (
 <div class="icon" id={item.id}>
 <img src={`/media/icons/${item.icon}`} alt={item.filename} /><br>
-{item.filename}
+<span>{item.filename}</span>
 </div>
 ))}
 </div>
