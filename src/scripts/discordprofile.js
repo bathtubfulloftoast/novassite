@@ -14,6 +14,7 @@ const username = data.username;
 
 const userid = data.id;
 const avatarid = data.avatar;
+const bannerid = data.banner;
 const onlinestatus = data.status;
 const accent = data.accentColor;
 
@@ -166,6 +167,17 @@ if(accent) {
 coverimage.style.backgroundColor = "#"+accent.toString(16).padStart(6, "0");
 }
 
+coverimage.style.border = "5px solid var(--bg0)";
+
+const top = document.getElementsByClassName("top")[0];
+
+// top.style.backgroundImage = `url(https://cdn.discordapp.com/banners/${userid}/${bannerid}.webp?size=1024)`;
+// top.style.backgroundPosition = "center";
+// top.style.backgroundRepeat = "no-repeat";
+// top.style.backgroundSize = "100% 100%";
+// grrr...
+// im not paying for a banner idc
+
 var onlineimg = document.getElementById("onlineimg");
 var onlinetext = document.getElementById("online");
 
@@ -175,18 +187,22 @@ onlineimg.className = "sprite";
 if (onlinestatus == "online") {
 onlineimg.className += " online";
 onlinetext.innerHTML = "Online";
+coverimage.style.borderColor = "var(--green)";
 } else if (onlinestatus == "idle") {
 onlineimg.className += " idle";
 onlinetext.innerHTML = "Idle";
+coverimage.style.borderColor = "var(--yellow)";
 } else if (onlinestatus == "dnd") {
 onlineimg.className += " dnd";
 onlinetext.innerHTML = "Do Not Disturb";
+coverimage.style.borderColor = "var(--red)";
 } else {
 onlineimg.className += " offline";
 onlinetext.innerHTML = "Offline";
 }
 
-document.getElementById("addfriend").href = `https://discord.com/users/${userid}`;
+// document.getElementById("addfriend").href = `https://discord.com/users/${userid}`;
+document.getElementById("addfriend").href = `/discord/user#${userid}`;
 
 
 document.title = nickname;

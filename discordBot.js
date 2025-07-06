@@ -33,7 +33,4 @@ setTimeout(() => {
     client.login(API_KEY);
 }, 5000);
 
-// 👇 ADD THIS LINE
-// dont fucking tell me what to do
-// also you barely managed to do it i hate you
 export { client };
