@@ -15,6 +15,7 @@ const username = data.username;
 const userid = data.id;
 const avatarid = data.avatar;
 const onlinestatus = data.status;
+const accent = data.accentColor;
 
 const creationdate = new Date(data.creationtime);
 var day = String(creationdate.getDate()).padStart(2, '0');
@@ -160,6 +161,10 @@ document.getElementById("creationdate").innerHTML = `Account Created: ${month}/$
 
 var coverimage = document.getElementById("pfp");
 coverimage.src = `https://cdn.discordapp.com/avatars/${userid}/${avatarid}.webp?size=512`;
+
+if(accent) {
+coverimage.style.backgroundColor = "#"+accent.toString(16).padEnd(6, "0");
+}
 
 var onlineimg = document.getElementById("onlineimg");
 var onlinetext = document.getElementById("online");

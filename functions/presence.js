@@ -28,6 +28,8 @@ export default async function presenceHandler(req, res) {
             return res.status(404).json({ error: 'Presence not found for user' });
         }
 
+        const fullUser = await member.user.fetch(); // litterally just for grabbing the accent color.
+
         const data = {
             id: member.user.id,
             bot: member.user.bot,
@@ -36,6 +38,8 @@ export default async function presenceHandler(req, res) {
             status: member.presence.status,
             clientstatus: member.presence.clientStatus,
             avatar: member.user.avatar,
+            banner: member.user.banner,
+            accentColor: fullUser.accentColor,
             creationtime: member.user.createdTimestamp,
             discriminator: member.user.discriminator,
             tag: member.user.tag,
