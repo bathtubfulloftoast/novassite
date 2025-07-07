@@ -1,0 +1,56 @@
+import { SlashCommandBuilder } from 'discord.js';
+let result = "";
+
+export default {
+    data: new SlashCommandBuilder()
+    .setName('getloot')
+    .setDescription('get loot'),
+    async execute(interaction) {
+
+const username = interaction.client.user.username;
+const interacter = interaction.user.username;// im keeping this typo i dont care
+
+const loot = [
+`${username} grabs whatever you were holding right from your hand`,
+`${username} gives you a baby found off the street`,
+`${username} gives you a piece of moon rock (cardboard painted gray)`,
+`${username} shows you alice stealing loot from Rayna Bot\nshe shoos both of you away`,
+`${username} gives you a little version of itself`,
+`${username} takes a soul from an innocent bystander in order to give it to you`,
+"you get nothing.",
+"you get a single shoe on your fishing line",
+"https://cdn.novassite.net/tom.png",
+`${username} gives you some fiber supplements`,
+"random cat (random cat)",
+"bluey dvd box set (full series)",
+"embed fail",
+"wooly yoshi exploshi",
+"skillet CD (common)",
+`${username} gives you a bluesky invite code (its trying its best)`,
+`${username} hands you a controller to its 2000 in 1 console`,
+`${username} kidnaps jack black for you`,
+`${username} says you're alike, ${username} says you have the same hair.`,
+"skrillex appears and signs your forehead without being asked to",
+`${username} awaits your downfall`,
+"loot llama fortnite wiki page",
+`${username} stabs your evil clone named ${interacter}`,
+`${username} takes a wallet and hands you 20 dollars (it doesnt have a job)`,
+`${username} hands you ***THE*** silent hill`,
+"crush. kill. destroy. swag.",
+`${username} pulls your ear close to its mouth\nit says nothing.`,
+`${username} eats an entire hotdog in one bite`,
+"when you at the when you you when you when wheeeen when you youre your when",
+`you ask ${username} what the weather is\nit doesnt know and is offended you asked.`,
+`${username} shows you a funny video on its phone`,
+"*you're"
+]
+
+const max = loot.length;
+const id = Math.floor(Math.random() * max);
+result = loot[id];
+
+await interaction.reply({ content: result});
+await console.log(`command getloot has been run by ${interaction.user.tag}`);
+},
+};
+

@@ -63,9 +63,14 @@ client.on(Events.InteractionCreate, async interaction => {
 
 await loadCommands();
 
+
+if (process.argv.includes('--nowait')) {
+client.login(API_KEY);
+} else {
 setTimeout(() => {
-    client.login(API_KEY);
+client.login(API_KEY);
 }, 5000);
-// client.login(API_KEY);
+}
+
 
 export { client };
