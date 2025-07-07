@@ -32,13 +32,13 @@ PStamp = Math.floor(PStamp/1000);
         let data = await response.json();
 
         const MessageEmbed = {
-            "description": `info about ${interaction.client.user.tag}`,
+            "description": `info about the server hosting \`\`${interaction.client.user.tag}\`\``,
             "title": interaction.client.user.username,
             "image": {
                 "url": ""
             },
             "thumbnail": {
-                "url": `https://cdn.discordapp.com/avatars/${interaction.client.user.id}/${interaction.client.user.avatar}`
+                "url": `https://cdn.discordapp.com/avatars/${interaction.client.user.id}/${interaction.client.user.avatar}.webp?size=512`
             },
             "color": 5184100,
             "fields": [
@@ -57,7 +57,7 @@ PStamp = Math.floor(PStamp/1000);
 
 
         await interaction.reply({ embeds: [MessageEmbed], flags: MessageFlags.Ephemeral});
-        await console.log(`command ping has been run by ${interaction.user.tag}`);
+        await console.log(`command sysinfo has been run by ${interaction.user.tag}`);
 
 
     },
