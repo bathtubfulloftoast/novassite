@@ -113,7 +113,7 @@ position:absolute;
 z-index:1;
 background-image:url("/media/wallpaper.png");
 width:100vw;
-height:calc(100vh - 25px);
+height:calc(100vh - 30px);
 left:0px;
 top:0px;
 background-size: 60vh;

@@ -63,9 +63,9 @@ client.on(Events.InteractionCreate, async interaction => {
 
 await loadCommands();
 
-// setTimeout(() => {
-//     client.login(API_KEY);
-// }, 5000);
-client.login(API_KEY);
+setTimeout(() => {
+    client.login(API_KEY);
+}, 5000);
+// client.login(API_KEY);
 
 export { client };
