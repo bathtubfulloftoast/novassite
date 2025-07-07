@@ -163,6 +163,10 @@ document.getElementById("creationdate").innerHTML = `Account Created: ${month}/$
 var coverimage = document.getElementById("pfp");
 coverimage.src = `https://cdn.discordapp.com/avatars/${userid}/${avatarid}.webp?size=512`;
 
+coverimage.onerror = function () {
+    coverimage.src = '/media/pfp.png';
+};
+
 if(accent) {
 coverimage.style.backgroundColor = "#"+accent.toString(16).padStart(6, "0");
 }
