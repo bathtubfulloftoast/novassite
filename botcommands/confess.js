@@ -2,18 +2,6 @@ import { SlashCommandBuilder } from 'discord.js';
 import { EmbedBuilder } from 'discord.js';
 import { MessageFlags } from 'discord.js';
 import wait from 'node:timers/promises';
-// okay i need to copy and paste the client bs from the index to get channels to work.
-// fuck okay dude??
-// rude much?????????????????
-// const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
-// const Discord = require('discord.js');
-// const client = new Client({ intents: [GatewayIntentBits.Guilds] });
-// nvm i couldnt understand that so its a confession command now lolz
-
-// these are some really old comments loll
-
-
-
 
 export default {
    data: new SlashCommandBuilder()

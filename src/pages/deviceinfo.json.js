@@ -69,16 +69,17 @@ if(platform == "linux") {
 }
 
 export async function GET() {
-    try {
-return new Response(
-`hostname: ${hostname}
-os: ${distro}
-architecture: ${architecture}
-platform: ${cpuplatform}
-cpu: ${cpumodel}
-ram: ${formatBytes(memory)}
-device: ${device}`
-);
+const data = {
+    hostname: hostname,
+    os: distro,
+    architecture: architecture,
+    platform: cpuplatform,
+    cpu: cpumodel,
+    ram: formatBytes(memory),
+    device: device,
+}
+try {
+return new Response(JSON.stringify(data));
     } catch (error) {
         return new Response(error);
     }
