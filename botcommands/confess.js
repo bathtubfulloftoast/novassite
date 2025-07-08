@@ -22,7 +22,7 @@ export default {
 
         const MessageEmbed = {
           "description": `${input}`,
-          "color": 0,
+          "color": Math.round(Math.random() * 16777215),
           "author": {
             "name": "Somebody Confessed..."
           },
