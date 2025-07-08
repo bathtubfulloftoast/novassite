@@ -53,7 +53,8 @@ const loot = [
 `july 27th 1972`,
 `${username} hands you a torrent file for the truman show blu ray 1080p`,
 `${username} asks your opinion on the ${interacter} show\nits shortly dragged away by two men.`,
-"uhhhhhhhhhhhhhhhhh"
+"uhhhhhhhhhhhhhhhhh",
+"harrison ford"
 ]
 
 const max = loot.length;
