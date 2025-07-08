@@ -46,6 +46,14 @@ const endTime = item.timestamps?.end
 
 const lareimg = item.assets?.largeImage;
 
+let shareurl = "";
+const syncid = item.syncId;
+if(item.name == "Spotify") {
+shareurl = `https://open.spotify.com/track/${syncid}`;
+}
+// this code is shit lol
+
+
 const blurbwrap = document.createElement("div");
 blurbwrap.className = "blurb";
 
@@ -56,9 +64,12 @@ const activitytype = document.createElement("b");
 activitytype.innerHTML = `${item.name}:<br>`;
 
 const activityinfo = document.createElement("span");
-activityinfo.innerHTML = `${item.details || ""}<br>${
-    item.state || ""
-}<br>`;
+if (shareurl) {
+activityinfo.innerHTML = `<a href="${shareurl}" target="_top">${item.details || ""}<br>${item.state || ""}</a><br>`;
+// if else my beloved
+} else {
+activityinfo.innerHTML = `${item.details || ""}<br>${item.state || ""}<br>`;
+}
 
 const activitytime = document.createElement("span");
 
