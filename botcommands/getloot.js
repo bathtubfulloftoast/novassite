@@ -42,7 +42,18 @@ const loot = [
 "when you at the when you you when you when wheeeen when you youre your when",
 `you ask ${username} what the weather is\nit doesnt know and is offended you asked.`,
 `${username} shows you a funny video on its phone`,
-"*you're"
+"*you're",
+"37.15951770237133, -93.29615485610407",
+`${username} tells you (${interacter}-san) that your drinking problem is getting worse`,
+`${username} makes a reference to the infamous ${interacter}`,
+`${username} doesnt care what you think.`,
+`${username} shows you a billboard with your face on it`,
+"gay people tomorrow morning 10 am",
+"HATSUNE MIKU???",
+`july 27th 1972`,
+`${username} hands you a torrent file for the truman show blu ray 1080p`,
+`${username} asks your opinion on the ${interacter} show\nits shortly dragged away by two men.`,
+"uhhhhhhhhhhhhhhhhh"
 ]
 
 const max = loot.length;
