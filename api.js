@@ -1,4 +1,4 @@
-// import openweatherAPI from './functions/openweather.js';
+import openweatherAPI from './functions/openweather.js';
 import qrAPI from './functions/qr.js';
 // import discordinviteAPI from './functions/invite.js';
 import uptime from './functions/uptime.js';
@@ -9,7 +9,7 @@ import discorduser from './functions/discorduser.js';
 import steam from './functions/steamrecent.js';
 
 export default function registerAPIRoutes(app) {
-// app.get('/api/openweather', openweatherAPI);
+app.get('/api/openweather', openweatherAPI);
 app.get('/api/qr', qrAPI);
 // app.get('/api/discord-invite', discordinviteAPI);
 app.get('/api/uptime', uptime);
