@@ -1,50 +1,26 @@
 document.addEventListener("DOMContentLoaded", async function() {
+const response = await fetch('/api/openweather');
+// const response = await fetch('/openweather.json');
 
-    async function weather() {
-        const response = await fetch('/api/openweather');
-        // const response = await fetch('/weather.json');
+let data = await response.json();
 
-        let data = await response.json();
+const location = data.name;
+const cityid = data.id;
 
-        const location = data.name;
-        const cityid = data.id;
+const desc = data.weather?.[0].description;
+const wicon = data.weather?.[0].icon;
 
-        const desc = data.weather?.[0].description;
-        const wicon = data.weather?.[0].icon;
+const temp = data.main.temp;
+const tempf = Math.round(temp);
+const tempc = Math.round((temp - 32) * (5/9));
 
-        const temp = data.main.temp;
-        const tempf = Math.round(temp);
-        const tempc = Math.round((temp - 32) * (5/9));
+var weatherimage = document.getElementById("wimg");
+var weatherlink = document.getElementById("wlnk");
 
-        const activitylist = document.getElementById("weather");
-        activitylist.innerHTML = "";
+document.getElementById("wtmp").innerHTML = `${tempf}&deg;F`;
+weatherlink.title = tempc+"°C"; // stupid
 
-        const blurbwrap = document.createElement("div");
-        blurbwrap.className = "blurb";
+weatherimage.src = `/media/weather/16/${wicon}.png`;
+weatherlink.href = `https://openweathermap.org/city/${cityid}`;
 
-        const infowrap = document.createElement("div");
-        infowrap.className = "infowrap";
-
-        const weathericon = document.createElement("img");
-        weathericon.className = "activityimg";
-        weathericon.src = `/media/weather/128/${wicon}.png`;
-
-        const activitytype = document.createElement("b");
-        activitytype.innerHTML = `Local Weather:<br>`;
-
-        const activityinfo = document.createElement("span");
-        activityinfo.innerHTML = `<b>${desc}</b><br>${tempf}&deg;F | ${tempc}&deg;C`;
-
-        blurbwrap.appendChild(activitytype);
-
-        activitylist.appendChild(blurbwrap);
-        blurbwrap.appendChild(infowrap);
-
-        infowrap.appendChild(weathericon);
-        infowrap.appendChild(activityinfo);
-
-    }
-
-
-    await weather();
 });

@@ -120,3 +120,11 @@ background-size: 60vh;
 background-repeat: no-repeat;
 background-position: 20px bottom ;
 }
+
+a {
+text-decoration:none;
+}
+
+a:link, a:visited {
+color:white;
+}
