@@ -24,7 +24,7 @@ const loot = [
 "random cat (random cat)",
 "bluey dvd box set (full series)",
 "embed fail",
-"wooly yoshi exploshi",
+"double yoshi exploshi",
 "skillet CD (common)",
 `${username} gives you a bluesky invite code (its trying its best)`,
 `${username} hands you a controller to its 2000 in 1 console`,
@@ -54,8 +54,20 @@ const loot = [
 `${username} hands you a torrent file for the truman show blu ray 1080p`,
 `${username} asks your opinion on the ${interacter} show\nits shortly dragged away by two men.`,
 "uhhhhhhhhhhhhhhhhh",
-"harrison ford"
+"harrison ford",
+`${username} shows you an old waterpark wristband as if its in an exclusive club.`,
+`${username} spills its glass of milk...\nit cries.`,
+`${username} tells you it was on an episode of destroy build destroy`,
+`${username} gives you a cupcake`, // :3
+`you get an exclusive golden ${username} (only available at gamestop)`,
+btoa(interacter),
+`${username} makes a very funny topical reference`,
+"an orange slowly rolls toward you",
+`${username} orders "another medium"\nit looks at you with a smile hoping you get the reference`,
+`${username} grounds you for `+Math.round(Math.random() * 999999999)+" years",
+`${username} touches a gross puddle on the floor`,
 ]
+
 
 const max = loot.length;
 const id = Math.floor(Math.random() * max);
