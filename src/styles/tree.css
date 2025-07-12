@@ -1,0 +1,43 @@
+body {
+background:var(--bg0);
+color:var(--fg);
+text-align:center;
+}
+
+.link {
+    background:var(--bg2);
+    border:var(--bg4) 3px solid;
+    border-radius:1em;
+    margin:auto;
+    text-align:center;
+    font-size:40px;
+    margin-bottom:15px;
+    display:inline-block;
+    padding:10px;
+    transition: transform 0.2s ease;
+    cursor:pointer;
+}
+
+.link:hover {
+transform: scale(1.2);
+}
+
+a {
+text-decoration:none;
+}
+
+a:link, a:visited {
+color:var(--bright-aqua);
+}
+
+#pfp {
+width:256px;
+background:var(--bg1);
+border-radius:100%;
+border:var(--bg4) 5px solid;
+}
+
+.links {
+margin-top:25px;
+}
+

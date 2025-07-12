@@ -228,122 +228,117 @@
   [
     {
       "title": "E-Mail",
-      "source": "fa-solid fa-envelope",
+      "source": "bi bi-envelope",
       "url": "mailto:mail@novassite.net"
     },
     {
       "title": "Discord",
-      "source": "fa-brands fa-discord",
-      "url": "https://discord.com/users/471806482648924174"
+      "source": "bi bi-discord",
+      "url": "https://novassite.net/discord/user/#471806482648924174"
     },
     {
       "title": "Telegram",
-      "source": "fa-brands fa-telegram",
+      "source": "bi bi-telegram",
       "url": "https://t.me/bathtubfulloftoast"
     },
     {
       "title": "Bluesky",
-      "source": "fa-brands fa-bluesky",
+      "source": "bi bi-bluesky",
       "url": "https://bsky.app/profile/novassite.net"
     },
     {
       "title": "Reddit",
-      "source": "fa-brands fa-reddit-alien",
+      "source": "bi bi-reddit",
       "url": "https://www.reddit.com/user/bathtuboftoast"
     },
     {
       "title": "Instagram",
-      "source": "fa-brands fa-instagram",
+      "source": "bi bi-instagram",
       "url": "https://www.instagram.com/bathtubfulloftoast"
     },
     {
       "title": "Tumblr",
-      "source": "fa-brands fa-tumblr",
+      "source": "bi bi-link-45deg",
       "url": "https://bathtuboftoast.tumblr.com"
     },
     {
       "title": "Pintrest",
-      "source": "fa-brands fa-pinterest",
+      "source": "bi bi-pinterest",
       "url": "https://pinterest.com/bathtubfulloftoast"
     },
     {
       "title": "YouTube",
-      "source": "fa-brands fa-youtube",
+      "source": "bi bi-youtube",
       "url": "https://www.youtube.com/@bathtubfulloftoast"
     },
     {
       "title": "Tiktok",
-      "source": "fa-brands fa-tiktok",
+      "source": "bi bi-tiktok",
       "url": "https://www.tiktok.com/@bathtuboftoast"
     },
     {
       "title": "Github",
-      "source": "fa-brands fa-github",
+      "source": "bi bi-github",
       "url": "https://github.com/bathtubfulloftoast"
     },
     {
       "title": "Steam",
-      "source": "fa-brands fa-steam",
+      "source": "bi bi-steam",
       "url": "https://steamcommunity.com/id/BathtubFullOfToast"
     },
     {
       "title": "Roblox",
-      "source": "fa-solid fa-square",
+      "source": "bi bi-link-45deg",
       "url": "https://www.roblox.com/users/823958816/profile"
     },
     {
       "title": "Xbox",
-      "source": "fa-brands fa-xbox",
+      "source": "bi bi-xbox",
       "url": "https://www.xbox.com/en-US/play/user/AliceProto"
     },
     {
       "title": "Twitch",
-      "source": "fa-brands fa-twitch",
+      "source": "bi bi-twitch",
       "url": "https://www.twitch.tv/bathtubfulloftoast"
     },
     {
       "title": "Bandcamp",
-      "source": "fa-brands fa-bandcamp",
+      "source": "bi bi-link-45deg",
       "url": "https://bandcamp.com/bathtubfulloftoast"
     },
     {
       "title": "Last.fm",
-      "source": "fa-brands fa-lastfm",
+      "source": "bi bi-link-45deg",
       "url": "https://www.last.fm/user/bathtuboftoast"
     },
     {
       "title": "ToyHouse",
-      "source": "fa-solid fa-house",
+      "source": "bi bi-link-45deg",
       "url": "https://toyhou.se/bathtubfulloftoast"
     },
     {
       "title": "SoundCloud",
-      "source": "fa-brands fa-soundcloud",
+      "source": "bi bi-link-45deg",
       "url": "https://soundcloud.com/bathtuboftoast"
     },
     {
       "title": "Spotify Playlist",
-      "source": "fa-brands fa-spotify",
+      "source": "bi bi-spotify",
       "url": "https://open.spotify.com/playlist/0pc4fuq77d4egrwZcLu44w?si=ccded8b77965485e"
     },
     {
-      "title": "buymeacoffee",
-      "source": "fa-solid fa-dollar-sign",
-      "url": "https://buymeacoffee.com/bathtubfulloftoast"
-    },
-    {
       "title": "Newgrounds",
-      "source": "fa-solid fa-skull-crossbones",
+      "source": "bi bi-link-45deg",
       "url": "https://awrootb33r.newgrounds.com"
     },
     {
       "title": "BeatLeader",
-      "source": "fa-solid fa-box",
+      "source": "bi bi-link-45deg",
       "url": "https://beatleader.xyz/u/76561198853505045"
     },
     {
       "title": "SpaceHey",
-      "source": "fa-solid fa-user-large",
+      "source": "bi bi-link-45deg",
       "url": "https://spacehey.com/bathtuboftoast"
     }
   ]

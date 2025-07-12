@@ -1,0 +1,72 @@
+---
+import "bootstrap-icons/font/bootstrap-icons.min.css";
+
+import links from '/src/assets/links.json';
+const socials = links[2] ?? [];
+
+import '/src/styles/colors.css';
+import '/src/styles/tree.css';
+
+---
+
+<head>
+<title>Novas Links</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico">
+<meta name="generator" content={Astro.generator} />
+<meta content="Novas Links" property="og:title" />
+<meta content="every link to all my socials!" property="og:description" />
+<meta content="/media/embeds/main.png" property="og:image" />
+<meta content="#6b0059" data-react-helmet="true" name="theme-color" />
+<meta charset="UTF-8" />
+</head>
+
+<img id="pfp" src="/media/pfp.png">
+<h1 id="name">Nova</h1>
+<h2 id="splash">"you know what they say, all toasters toast toast!"</h2>
+<b id="warning">youve been ridirected to a version of the site more well suited to fit your screen<br>if youre on mobile check this site out on a pc!</b>
+
+<div class="links">
+<div class="link"><a title="Main Site" href="/#fromtree" target="_top"><i class="bi bi-house-door-fill"></i> Main Site</a></div><br>
+
+{socials.map((item) => (
+<div class="link"><a title={item.title} href={item.url} target="_blank"><i class={item.source}></i> {item.title}</a></div><br>
+))}
+</div>
+
+<script>
+let hash = window.location.hash; // Get the hash from the URL
+let hashValue = hash.substring(1); // Remove the '#' character
+
+if (hashValue !== "warn") {
+document.getElementById("warning").remove();
+}
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+
+const response = await fetch('/api/discord');
+// const response = await fetch('/discord.json');
+let data = await response.json();
+
+const nickname = data.nickname;
+const avatarid = data.avatar;
+const userid = data.id;
+
+var coverimage = document.getElementById("pfp");
+coverimage.src = `https://cdn.discordapp.com/avatars/${userid}/${avatarid}.webp?size=512`;
+
+document.getElementById("name").innerHTML = nickname;
+
+for (var item of data.activities) {
+if (item.type == 4) {
+document.getElementById("splash").innerHTML = "&quot;"+item.state+"&quot;";
+break;
+}
+}
+
+});
+
+</script>
