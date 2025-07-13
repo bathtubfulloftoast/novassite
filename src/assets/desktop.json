@@ -66,6 +66,12 @@
     "comment": "Jules (made song)"
   },
   {
+    "filename": "SML.wiki",
+    "icon": "sml.png",
+    "id": "smlwiki",
+    "comment": "he said not not twice... he wanted to die."
+  },
+  {
     "filename": "joemany.txt",
     "icon": "liberals.gif",
     "id": "liberals",
@@ -112,7 +118,8 @@
     "icon": "foodhouse.gif",
     "id": "foodhouse",
     "comment": "if you can get anthony to review two house ill add that"
-  },  {
+  },
+  {
     "filename": "creek.flow",
     "icon": "aproval.webp",
     "id": "creekflow",
