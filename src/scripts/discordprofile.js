@@ -175,7 +175,7 @@ var coverimage = document.getElementById("pfp");
 coverimage.src = `https://cdn.discordapp.com/avatars/${userid}/${avatarid}.webp?size=512`;
 
 coverimage.onerror = function () {
-    coverimage.src = '/media/pfp.png';
+coverimage.src = '/media/pfp.png';
 };
 
 if(accent) {

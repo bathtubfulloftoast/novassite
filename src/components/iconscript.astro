@@ -2,27 +2,10 @@
 const audioUrl = "/media/sfx/speen.ogg";
 
 
-let audioBlobUrl = null;
-
-
-async function fetchBlob(url) {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
-}
-
-async function preloadBlobs() {
-    audioBlobUrl = await fetchBlob(audioUrl);
-}
-
-preloadBlobs();
-
 async function createaudio() {
 
-    const audioBlobUrl = await fetchBlob(audioUrl);
-
     const audioElement = document.createElement('audio');
-    audioElement.src = audioBlobUrl;
+    audioElement.src = audioUrl;
     audioElement.volume = 0.2;
     audioElement.id = "speenaudio";
 
@@ -60,27 +43,13 @@ window.open("https://youtu.be/Hw1ncADC9KM", '_blank');
 const audioUrl = "/media/sfx/fun.ogg";
 
 
-let audioBlobUrl = null;
-
-
-async function fetchBlob(url) {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
-}
-
-async function preloadBlobs() {
-    audioBlobUrl = await fetchBlob(audioUrl);
-}
-
-preloadBlobs();
 
 async function createaudio() {
 
-    const audioBlobUrl = await fetchBlob(audioUrl);
+
 
     const audioElement = document.createElement('audio');
-    audioElement.src = audioBlobUrl;
+    audioElement.src = audioUrl;
     audioElement.volume = 0.2;
     audioElement.id = "pinkieaudio";
 
@@ -111,27 +80,13 @@ createaudio();
 const audioUrl = "/media/sfx/vineboom.ogg";
 
 
-let audioBlobUrl = null;
-
-
-async function fetchBlob(url) {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
-}
-
-async function preloadBlobs() {
-    audioBlobUrl = await fetchBlob(audioUrl);
-}
-
-preloadBlobs();
 
 async function createaudio() {
 
-    const audioBlobUrl = await fetchBlob(audioUrl);
+
 
     const audioElement = document.createElement('audio');
-    audioElement.src = audioBlobUrl;
+    audioElement.src = audioUrl;
     audioElement.volume = 0.2;
     audioElement.id = "azureaudio";
 
@@ -172,27 +127,13 @@ createaudio();
 const audioUrl = "/media/sfx/splat.ogg";
 
 
-let audioBlobUrl = null;
-
-
-async function fetchBlob(url) {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
-}
-
-async function preloadBlobs() {
-    audioBlobUrl = await fetchBlob(audioUrl);
-}
-
-preloadBlobs();
 
 async function createaudio() {
 
-    const audioBlobUrl = await fetchBlob(audioUrl);
+
 
     const audioElement = document.createElement('audio');
-    audioElement.src = audioBlobUrl;
+    audioElement.src = audioUrl;
     audioElement.volume = 0.2;
 
 
@@ -243,27 +184,13 @@ window.open(url, '_blank');// sus sus...
 const audioUrl = "/media/sfx/mimi.ogg";
 
 
-let audioBlobUrl = null;
-
-
-async function fetchBlob(url) {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
-}
-
-async function preloadBlobs() {
-    audioBlobUrl = await fetchBlob(audioUrl);
-}
-
-preloadBlobs();
 
 async function createaudio() {
 
-    const audioBlobUrl = await fetchBlob(audioUrl);
+
 
     const audioElement = document.createElement('audio');
-    audioElement.src = audioBlobUrl;
+    audioElement.src = audioUrl;
     audioElement.volume = 0.2;
     audioElement.id = "eepyaudio";
 
@@ -293,27 +220,13 @@ createaudio();
 const audioUrl = "/media/sfx/tf2notif.ogg";
 
 
-let audioBlobUrl = null;
-
-
-async function fetchBlob(url) {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
-}
-
-async function preloadBlobs() {
-    audioBlobUrl = await fetchBlob(audioUrl);
-}
-
-preloadBlobs();
 
 async function createaudio() {
 
-    const audioBlobUrl = await fetchBlob(audioUrl);
+
 
     const audioElement = document.createElement('audio');
-    audioElement.src = audioBlobUrl;
+    audioElement.src = audioUrl;
     audioElement.volume = 0.5;
 
 
@@ -370,27 +283,13 @@ createaudio();
 const audioUrl = "/media/sfx/lobotomy.ogg";
 
 
-let audioBlobUrl = null;
-
-
-async function fetchBlob(url) {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
-}
-
-async function preloadBlobs() {
-    audioBlobUrl = await fetchBlob(audioUrl);
-}
-
-preloadBlobs();
 
 async function createaudio() {
 
-    const audioBlobUrl = await fetchBlob(audioUrl);
+
 
     const audioElement = document.createElement('audio');
-    audioElement.src = audioBlobUrl;
+    audioElement.src = audioUrl;
     audioElement.volume = 0.08;
 
 
@@ -452,27 +351,13 @@ window.open("https://github.com/trakBan/spongebob-cli", '_blank');
 const audioUrl = "/media/sfx/love.ogg";
 
 
-let audioBlobUrl = null;
-
-
-async function fetchBlob(url) {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
-}
-
-async function preloadBlobs() {
-    audioBlobUrl = await fetchBlob(audioUrl);
-}
-
-preloadBlobs();
 
 async function createaudio() {
 
-    const audioBlobUrl = await fetchBlob(audioUrl);
+
 
     const audioElement = document.createElement('audio');
-    audioElement.src = audioBlobUrl;
+    audioElement.src = audioUrl;
     audioElement.volume = 0.5;
 
 
@@ -518,27 +403,13 @@ window.open("https://gamejolt.com/games/YaYL/818150", '_blank');// i have to adv
 const audioUrl = "/media/sfx/MEGALOVANIA.ogg";
 
 
-let audioBlobUrl = null;
-
-
-async function fetchBlob(url) {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
-}
-
-async function preloadBlobs() {
-    audioBlobUrl = await fetchBlob(audioUrl);
-}
-
-preloadBlobs();
 
 async function createaudio() {
 
-    const audioBlobUrl = await fetchBlob(audioUrl);
+
 
     const audioElement = document.createElement('audio');
-    audioElement.src = audioBlobUrl;
+    audioElement.src = audioUrl;
     audioElement.volume = 1;
 
 
@@ -576,27 +447,13 @@ createaudio();
 const audioUrl = "/media/sfx/buddy.ogg";
 
 
-let audioBlobUrl = null;
-
-
-async function fetchBlob(url) {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
-}
-
-async function preloadBlobs() {
-    audioBlobUrl = await fetchBlob(audioUrl);
-}
-
-preloadBlobs();
 
 async function createaudio() {
 
-    const audioBlobUrl = await fetchBlob(audioUrl);
+
 
     const audioElement = document.createElement('audio');
-    audioElement.src = audioBlobUrl;
+    audioElement.src = audioUrl;
     audioElement.volume = 0.3;
 
 
@@ -635,41 +492,18 @@ const fuck = "/media/sfx/fuckthat.ogg"; //ey... fucj that...
 const murder = "/media/sfx/murderevery1intro.ogg";
 
 
-let katamariBlob = null;
-let fuckBlob = null; // blob hater fuck that guy
-let murderBlob = null;
-
-
-async function fetchBlob(url) {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
-}
-
-async function preloadBlobs() {
-    katamariBlob = await fetchBlob(katamari);
-    fuckBlob = await fetchBlob(fuck);
-    murderBlob = await fetchBlob(murder);
-}
-
-preloadBlobs();
-
 async function createaudio() {
 
-    const katamariBlob = await fetchBlob(katamari);
-    const fuckBlob = await fetchBlob(fuck);
-    const murderBlob = await fetchBlob(murder);
-
     const katamariElement = document.createElement('audio');
-    katamariElement.src = katamariBlob;
+    katamariElement.src = katamari;
     katamariElement.volume = 0.3;
 
     const fuckElement = document.createElement('audio');
-    fuckElement.src = fuckBlob;
+    fuckElement.src = fuck;
     fuckElement.volume = 0.3;
 
     const murderElement = document.createElement('audio');
-    murderElement.src = murderBlob;
+    murderElement.src = murder;
     murderElement.volume = 0.3;
 
     const femtIMG = document.createElement('img');
@@ -849,27 +683,13 @@ const max = sauce.length;
 const audioUrl = "/media/YTP.webm";
 
 
-let audioBlobUrl = null;
-
-
-async function fetchBlob(url) {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
-}
-
-async function preloadBlobs() {
-    audioBlobUrl = await fetchBlob(audioUrl);
-}
-
-preloadBlobs();
 
 async function createaudio() {
 
-    const audioBlobUrl = await fetchBlob(audioUrl);
+
 
     const audioElement = document.createElement('video');
-    audioElement.src = audioBlobUrl;
+    audioElement.src = audioUrl;
     audioElement.volume = 0.5;
     audioElement.id = "ytpaudio";
     audioElement.style.position = "absolute";
@@ -965,27 +785,13 @@ createaudio();
 const audioUrl = "/media/sfx/creeky.ogg";
 
 
-let audioBlobUrl = null;
-
-
-async function fetchBlob(url) {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
-}
-
-async function preloadBlobs() {
-    audioBlobUrl = await fetchBlob(audioUrl);
-}
-
-preloadBlobs();
 
 async function createaudio() {
 
-    const audioBlobUrl = await fetchBlob(audioUrl);
+
 
     const audioElement = document.createElement('audio');
-    audioElement.src = audioBlobUrl;
+    audioElement.src = audioUrl;
     audioElement.volume = 0.5;
 
 
@@ -1025,27 +831,13 @@ createaudio();
 const audioUrl = "/media/brooklyn.mp4";
 
 
-let audioBlobUrl = null;
-
-
-async function fetchBlob(url) {
-    const response = await fetch(url);
-    const blob = await response.blob();
-    return URL.createObjectURL(blob);
-}
-
-async function preloadBlobs() {
-    audioBlobUrl = await fetchBlob(audioUrl);
-}
-
-preloadBlobs();
 
 async function createaudio() {
 
-const audioBlobUrl = await fetchBlob(audioUrl);
+
 
 const audioElement = document.createElement('video');
-audioElement.src = audioBlobUrl;
+audioElement.src = audioUrl;
 audioElement.volume = 0.5;
 audioElement.style.position = "absolute";
 audioElement.style.left = 0;

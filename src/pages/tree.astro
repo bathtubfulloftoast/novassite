@@ -28,7 +28,7 @@ import '/src/styles/tree.css';
 <b id="warning">youve been ridirected to a version of the site more well suited to fit your screen<br>if youre on mobile check this site out on a pc!</b>
 
 <div class="links">
-<div class="link"><a title="Main Site" href="/#fromtree" target="_top"><i class="bi bi-house-door-fill"></i> Main Site</a></div><br>
+<div class="link"><a title="Main Page" href="/#fromtree" target="_top"><i class="bi bi-house-door-fill"></i> Main Site</a></div><br>
 
 {socials.map((item) => (
 <div class="link"><a title={item.title} href={item.url} target="_blank"><i class={item.source}></i> {item.title}</a></div><br>
@@ -54,9 +54,15 @@ let data = await response.json();
 const nickname = data.nickname;
 const avatarid = data.avatar;
 const userid = data.id;
+const onlinestatus = data.status;
+const accent = data.accentColor;
 
 var coverimage = document.getElementById("pfp");
 coverimage.src = `https://cdn.discordapp.com/avatars/${userid}/${avatarid}.webp?size=512`;
+
+coverimage.onerror = function () {
+coverimage.src = '/media/pfp.png';
+};
 
 document.getElementById("name").innerHTML = nickname;
 
@@ -65,6 +71,22 @@ if (item.type == 4) {
 document.getElementById("splash").innerHTML = "&quot;"+item.state+"&quot;";
 break;
 }
+}
+
+coverimage.style.border = "5px solid var(--bg2)";
+
+if(accent) {
+coverimage.style.backgroundColor = "#"+accent.toString(16).padStart(6, "0");
+} else {
+coverimage.style.backgroundColor = "var(--bg3)";
+}
+
+if (onlinestatus == "online") {
+coverimage.style.borderColor = "var(--green)";
+} else if (onlinestatus == "idle") {
+coverimage.style.borderColor = "var(--yellow)";
+} else if (onlinestatus == "dnd") {
+coverimage.style.borderColor = "var(--red)";
 }
 
 });
