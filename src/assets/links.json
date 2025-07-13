@@ -313,12 +313,12 @@
     },
     {
       "title": "ToyHouse",
-      "source": "bi bi-link-45deg",
+      "source": "bi bi-house-door",
       "url": "https://toyhou.se/bathtubfulloftoast"
     },
     {
       "title": "SoundCloud",
-      "source": "bi bi-link-45deg",
+      "source": "bi bi-cloud",
       "url": "https://soundcloud.com/bathtuboftoast"
     },
     {
@@ -338,7 +338,7 @@
     },
     {
       "title": "SpaceHey",
-      "source": "bi bi-link-45deg",
+      "source": "bi bi-person-fill",
       "url": "https://spacehey.com/bathtuboftoast"
     }
   ]
