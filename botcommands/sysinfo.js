@@ -57,7 +57,7 @@ PStamp = Math.floor(PStamp/1000);
 
 
         await interaction.reply({ embeds: [MessageEmbed], flags: MessageFlags.Ephemeral});
-        await console.log(`command sysinfo has been run by ${interaction.user.tag}`);
+        await console.log(`[Discord] command sysinfo has been run by ${interaction.user.tag}`);
 
 
     },

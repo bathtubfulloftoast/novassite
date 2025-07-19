@@ -23,7 +23,7 @@ const MessageEmbed = {
 }
 
 if(member.guild.id == GUILDID) {
-console.log(`${member.user.username} joined the server.`);
+console.log(`[Discord] ${member.user.username} joined the server.`);
 client.channels.cache.get(JCHANNEL).send({embeds: [MessageEmbed],content: `Welcome to **${member.guild.name}** <@${member.user.id}>!`});
 }
 });

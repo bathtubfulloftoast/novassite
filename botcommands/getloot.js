@@ -77,7 +77,7 @@ const id = Math.floor(Math.random() * max);
 result = loot[id];
 
 await interaction.reply({ content: result});
-await console.log(`command getloot has been run by ${interaction.user.tag}`);
+await console.log(`[Discord] command getloot has been run by ${interaction.user.tag}`);
 },
 };
 

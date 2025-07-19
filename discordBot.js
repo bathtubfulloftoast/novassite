@@ -5,6 +5,7 @@ import path from 'path';
 import { pathToFileURL, fileURLToPath } from 'url';
 import { MemberJoin } from './botevents/memberjoin.js';
 import { MemberLeave } from './botevents/memberleave.js';
+import { MessageCreate } from './botevents/messagecreate.js';
 
 const API_KEY = process.env.DISCORD_API_KEY;
 
@@ -15,7 +16,9 @@ const client = new Client({
     intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildPresences,
-        GatewayIntentBits.GuildMembers
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.MessageContent
     ]
 });
 
@@ -77,5 +80,6 @@ client.login(API_KEY);
 
 MemberJoin(client);
 MemberLeave(client);
+MessageCreate(client);
 
 export { client };

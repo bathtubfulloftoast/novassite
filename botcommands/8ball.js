@@ -42,7 +42,7 @@ const id = Math.floor(Math.random() * max);
 result = loot[id];
 
 await interaction.reply({ content: `<@${interaction.user.id}> asks the 8 ball\n\`\`${input}\`\`\nthe ball answers \`\`${result}\`\``});
-await console.log(`command getloot has been run by ${interaction.user.tag}`);
+await console.log(`[Discord] command getloot has been run by ${interaction.user.tag}`);
 },
 };
 

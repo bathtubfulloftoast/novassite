@@ -19,7 +19,7 @@ const filename = result.name;
 const fileurl = `https://cdn.novassite.net/cool/${filename}`;
 
 await interaction.reply({ content: fileurl});
-await console.log(`command coolimage has been run by ${interaction.user.tag}`);
+await console.log(`[Discord] command coolimage has been run by ${interaction.user.tag}`);
 },
 };
 
