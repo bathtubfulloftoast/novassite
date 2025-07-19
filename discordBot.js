@@ -3,6 +3,9 @@ import { Client, GatewayIntentBits, Collection, ActivityType, Events } from 'dis
 import { readdir } from 'fs/promises';
 import path from 'path';
 import { pathToFileURL, fileURLToPath } from 'url';
+import { MemberJoin } from './botevents/memberjoin.js';
+import { MemberLeave } from './botevents/memberleave.js';
+
 const API_KEY = process.env.DISCORD_API_KEY;
 
 const __filename = fileURLToPath(import.meta.url);
@@ -72,5 +75,7 @@ client.login(API_KEY);
 }, 5000);
 }
 
+MemberJoin(client);
+MemberLeave(client);
 
 export { client };
