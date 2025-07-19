@@ -3,6 +3,7 @@ import { Client, GatewayIntentBits, Collection, ActivityType, Events } from 'dis
 import { readdir } from 'fs/promises';
 import path from 'path';
 import { pathToFileURL, fileURLToPath } from 'url';
+
 import { MemberJoin } from './botevents/memberjoin.js';
 import { MemberLeave } from './botevents/memberleave.js';
 import { MessageCreate } from './botevents/messagecreate.js';
@@ -46,7 +47,7 @@ async function loadCommands() {
 client.once('ready', () => {
     const now = new Date();
 
-    console.log(`Logged in as ${client.user.tag}`);
+    console.log(`[Discord] Logged in as ${client.user.tag}`);
     client.user.setPresence({
         activities: [{ name: `:3`, type: ActivityType.Custom }],
         status: 'online'
