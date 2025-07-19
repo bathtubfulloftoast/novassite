@@ -1,0 +1,37 @@
+import { Events } from 'discord.js';
+
+export function MessageCreate(client) {
+  client.on(Events.MessageCreate, message => {
+    if (message.author.bot) return;
+
+    function sendmessage(content) {
+      client.channels.cache.get(message.channelId).send(content);
+    }
+
+    const responses = [
+      { keywords: ["crazy"], response: "crazy?" },
+      { keywords: ["massive"], response: "you know what else is massive?" },
+      { keywords: ["doing it"], response: "im doing it are you?" },
+      { keywords: ["nova"], response: "you rang?" },
+      { keywords: ["invincible"], response: "https://tenor.com/view/invulnerable-gif-22484955" },
+      { keywords: ["buck bumble"], response: "https://www.ebay.com/sch/i.html?_nkw=buck+bumble+n64" },
+      { keywords: ["kys"], response: msg => `<@${msg.author.id}> youre so nice :D` },
+      { keywords: ["kms"], response: "<https://988lifeline.org/>" },
+      { keywords: ["chrome", "brave br", "degoo", "chromium", "vivaldi","opera", "ungoog", "microsoft edge", "samsung br", "samsung in"], response: "https://youtu.be/TuK5mlW9svQ?t=6"}, // chrome hate lol
+      { keywords: ["skibidi","sigma","alpha","beta"], response: "what was that?"},
+    ];
+
+    const content = message.content.toLowerCase();
+
+    for (const entry of responses) {
+      if (entry.keywords.some(kw => content.includes(kw))) {
+        const output = typeof entry.response === "function"
+          ? entry.response(message)
+          : entry.response;
+        sendmessage(output);
+        console.log(`[Discord] Replied to ${message.author.username} saying "${message.content}"`);
+        break;
+      }
+    }
+  });
+}
