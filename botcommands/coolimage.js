@@ -1,4 +1,5 @@
-import { SlashCommandBuilder } from 'discord.js';
+import { SlashCommandBuilder, AttachmentBuilder } from 'discord.js';
+import fs from 'fs';
 
 export default {
     data: new SlashCommandBuilder()
@@ -6,19 +7,24 @@ export default {
     .setDescription('get a cool ass image'),
     async execute(interaction) {
 
+const dir = 'public/cool';
+const fileList = fs.readdirSync(dir);
 
-const response = await fetch('http://192.168.0.30:5000/cool?json');
-let data = await response.json();
-
-const loot = data.paths;
-
-const max = loot.length;
+const max = fileList.length;
 const id = Math.floor(Math.random() * max);
-const result = loot[id];
-const filename = result.name;
-const fileurl = `https://cdn.novassite.net/cool/${filename}`;
 
-await interaction.reply({ content: fileurl});
+const image = fileList[id];
+
+let filematch = image.match(/(?:\/|\\)?([^\/\\]+)\.(\w+)$/);
+let filext = filematch?.[2];
+
+const file = new AttachmentBuilder(dir+"/"+image);
+file.setName("image."+filext);
+file.setDescription("a cool image");
+
+await interaction.reply({content: image,files: [file]});
+// await interaction.reply({content:file});
+
 await console.log(`[Discord] command coolimage has been run by ${interaction.user.tag}`);
 },
 };
