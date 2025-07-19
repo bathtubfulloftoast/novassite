@@ -17,8 +17,8 @@ export function MessageCreate(client) {
       { keywords: ["buck bumble"], response: "https://www.ebay.com/sch/i.html?_nkw=buck+bumble+n64" },
       { keywords: ["kys"], response: msg => `<@${msg.author.id}> youre so nice :D` },
       { keywords: ["kms"], response: "<https://988lifeline.org/>" },
-      { keywords: ["chrome", "brave br", "degoo", "chromium", "vivaldi","opera", "ungoog", "microsoft edge", "samsung br", "samsung in"], response: "https://youtu.be/TuK5mlW9svQ?t=6"}, // chrome hate lol
-      { keywords: ["skibidi","sigma","alpha","beta"], response: "what was that?"},
+      { keywords: ["chrome", "brave br", "degoo", "chromium", "vivaldi","opera", "ungoog", "edge", "samsung br", "samsung in"], response: "https://youtu.be/TuK5mlW9svQ?t=6"}, // chrome hate lol
+      { keywords: ["skibidi","sigma","alpha","beta","goon"], response: "what was that?"},
     ];
 
     const content = message.content.toLowerCase();
