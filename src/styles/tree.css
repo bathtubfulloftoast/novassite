@@ -2,6 +2,7 @@ body {
 background:var(--bg0);
 color:var(--fg);
 text-align:center;
+font-family: Arial, sans-serif;
 }
 
 .link {

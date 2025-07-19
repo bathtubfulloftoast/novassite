@@ -66,6 +66,9 @@ btoa(interacter),
 `${username} orders "another medium"\nit looks at you with a smile hoping you get the reference`,
 `${username} grounds you for `+Math.round(Math.random() * 999999999)+" years",
 `${username} touches a gross puddle on the floor`,
+"old glass of milk",
+"new glass of milk",
+"potion\n(plastic water bottle with dirt in it)"
 ]
 
 
