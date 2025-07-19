@@ -4,8 +4,15 @@ export function MessageCreate(client) {
   client.on(Events.MessageCreate, message => {
     if (message.author.bot) return;
 
+
+
     function sendmessage(content) {
       client.channels.cache.get(message.channelId).send(content);
+    }
+
+    if (message.mentions.has(client.user)) {
+    message.react("🦌");
+    console.log(`[Discord] deer reacted ${message.author.username}`);
     }
 
     const responses = [
@@ -23,6 +30,8 @@ export function MessageCreate(client) {
       { keywords: ["deltarune"], response: "tomorrow?" },
       { keywords: ["gentoo","ubuntu","arch","linux","debian","raspbian","steamos", "redha", "red ha","freebsd","free bsd"], response: "neeeeerd" },
       { keywords: ["yip"], response: "YIPPPIEEEEE" },
+      { keywords: ["based"], response: "BASED ON WHAT" },
+
 
 
     ];
