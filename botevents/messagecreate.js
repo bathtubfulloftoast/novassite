@@ -15,10 +15,16 @@ export function MessageCreate(client) {
       { keywords: ["nova"], response: "you rang?" },
       { keywords: ["invincible"], response: "https://tenor.com/view/invulnerable-gif-22484955" },
       { keywords: ["buck bumble"], response: "https://www.ebay.com/sch/i.html?_nkw=buck+bumble+n64" },
-      { keywords: ["kys"], response: msg => `<@${msg.author.id}> youre so nice :D` },
-      { keywords: ["kms"], response: "<https://988lifeline.org/>" },
+      { keywords: ["kys", "kill y"], response: msg => `<@${msg.author.id}> youre so nice :D` },
+      { keywords: ["kms", "kill m"], response: "<https://988lifeline.org/>" },
       { keywords: ["chrome", "brave br", "degoo", "chromium", "vivaldi","opera", "ungoog", "edge", "samsung br", "samsung in"], response: "https://youtu.be/TuK5mlW9svQ?t=6"}, // chrome hate lol
-      { keywords: ["skibidi","sigma","alpha","beta","goon"], response: "what was that?"},
+      { keywords: ["skibidi","sigma","alpha","beta","goon","sus","amongus","among us"], response: "what was that?" },
+      { keywords: ["starwalker"], response: "this reference is                                                pissing me off" },
+      { keywords: ["deltarune"], response: "tomorrow?" },
+      { keywords: ["gentoo","ubuntu","arch","linux","debian","raspbian","steamos", "redha", "red ha","freebsd","free bsd"], response: "neeeeerd" },
+      { keywords: ["yip"], response: "YIPPPIEEEEE" },
+
+
     ];
 
     const content = message.content.toLowerCase();
