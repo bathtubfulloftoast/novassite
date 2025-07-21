@@ -4,8 +4,12 @@
 body {
 background-color:var(--bg);
 color:var(--fg);
-font-family: SetoFont,"NotoEmoji", serif;
+font-family: SetoFont;
 font-size:15px; /*i know its 16 by default shut up*/
+}
+
+.emoji {
+font-family:NotoEmoji;
 }
 
 .top {
