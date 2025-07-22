@@ -8,5 +8,4 @@ pnpm-debug.log*
 .env
 .env.production
 .DS_Store
-guestbook/
-nova.db
+webcam.jpg
