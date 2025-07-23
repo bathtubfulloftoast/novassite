@@ -9,6 +9,10 @@ export function UserLogger(client) {
 client.on("userUpdate", async (oldMember, newMember) => {
 const now = new Date();
 
+if(newMember.bot) {
+return;
+}
+
 if(oldMember.globalName !== newMember.globalName) {
 const MessageEmbed = {
   "title": "Global Nickname Changed",

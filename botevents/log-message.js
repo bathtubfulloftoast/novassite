@@ -8,6 +8,10 @@ export function MessageLogger(client) {
 client.on(Events.MessageDelete, message => {
 const now = new Date();
 
+if(message.author.bot) {
+return;
+}
+
 if(message.guildId == GUILDID) {
 const MessageEmbed = {
     "title": `Message deleted in <#${message.channelId}>`,

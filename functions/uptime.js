@@ -1,4 +1,6 @@
 import os from 'os';
+import colors from 'colors';
+
 let PUT; // Process UpTime
 let OUT; // OS UpTime
 let OStamp;
@@ -31,4 +33,6 @@ export default async function lastfmHandler(req, res) {
 
 
     });
+
+console.log(`${colors.green("[Site]")} function uptime ran`);
 }
