@@ -1,4 +1,5 @@
 import { SlashCommandBuilder, MessageFlags, EmbedBuilder} from 'discord.js';
+import colors from 'colors';
 import os from 'os';
 let PUT; // Process UpTime
 let OUT; // OS UpTime

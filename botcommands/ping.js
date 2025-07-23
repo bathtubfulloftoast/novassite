@@ -1,5 +1,5 @@
-import { SlashCommandBuilder } from 'discord.js';
-import { MessageFlags } from 'discord.js';
+import { SlashCommandBuilder,MessageFlags } from 'discord.js';
+import colors from 'colors';
 
 export default {
     data: new SlashCommandBuilder()

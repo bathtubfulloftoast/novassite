@@ -1,4 +1,5 @@
 import { SlashCommandBuilder, AttachmentBuilder } from 'discord.js';
+import colors from 'colors';
 import fs from 'fs';
 
 export default {
