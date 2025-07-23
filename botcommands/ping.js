@@ -6,7 +6,7 @@ export default {
     .setName('ping')
     .setDescription('pong'),
     async execute(interaction) {
-        await console.log(`[Discord] command ping has been run by ${interaction.user.tag}`);
+        await console.log(`${colors.cyan("[Discord]")} command ping has been run by ${interaction.user.tag}`);
 
         await interaction.reply({ content: `pong`, flags: MessageFlags.Ephemeral});
 

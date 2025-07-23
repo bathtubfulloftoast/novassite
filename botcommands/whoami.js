@@ -38,7 +38,7 @@ const MessageEmbed = {
 
 
         await interaction.reply({content:"did you forget who you are?\ni get that happens to the best of us.", embeds: [MessageEmbed], flags: MessageFlags.Ephemeral});
-        await console.log(`[Discord] command ping has been run by ${interaction.user.tag}`);
+        await console.log(`${colors.cyan("[Discord]")} command ping has been run by ${interaction.user.tag}`);
 
 
     },

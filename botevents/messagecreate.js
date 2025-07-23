@@ -1,4 +1,5 @@
 import { Events } from 'discord.js';
+import colors from 'colors';
 
 export function MessageCreate(client) {
   client.on(Events.MessageCreate, message => {
@@ -12,7 +13,7 @@ export function MessageCreate(client) {
 
     if (message.mentions.has(client.user)) {
     message.react("🦌");
-    console.log(`[Discord] deer reacted ${message.author.username}`);
+    console.log(`${colors.cyan("[Discord]")} deer reacted ${message.author.username}`);
     }
 
     const responses = [
@@ -31,9 +32,7 @@ export function MessageCreate(client) {
       { keywords: ["gentoo","ubuntu","arch","linux","debian","raspbian","steamos", "redha", "red ha","freebsd","free bsd"], response: "neeeeerd" },
       { keywords: ["yip"], response: "YIPPPIEEEEE" },
       { keywords: ["based"], response: "BASED ON WHAT" },
-
-
-
+      { keywords: ["fish"], response: "you know what that means" },
     ];
 
     const content = message.content.toLowerCase();
@@ -44,7 +43,7 @@ export function MessageCreate(client) {
           ? entry.response(message)
           : entry.response;
         sendmessage(output);
-        console.log(`[Discord] Replied to ${message.author.username} saying "${message.content}"`);
+        console.log(`${colors.cyan("[Discord]")} Replied to ${message.author.username} saying "${message.content}"`);
         break;
       }
     }

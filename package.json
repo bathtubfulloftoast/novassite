@@ -16,11 +16,13 @@
     "astro": "^5.5.2",
     "body-parser": "^2.2.0",
     "bootstrap-icons": "^1.13.1",
+    "colors": "^1.4.0",
     "discord.js": "^14.20.0",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "express-ip": "^1.0.4",
     "node-device-detector": "^2.2.0",
+    "node-webcam": "^0.8.2",
     "sqlite3": "^5.1.7",
     "xp.css": "^0.2.6"
   }
