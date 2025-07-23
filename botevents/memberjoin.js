@@ -1,4 +1,5 @@
 import {EmbedBuilder} from 'discord.js';
+import colors from 'colors';
 
 const JCHANNEL = process.env.JOINCHANNEL;
 const GUILDID = process.env.PRESENCE_GUILDID;
@@ -23,7 +24,7 @@ const MessageEmbed = {
 }
 
 if(member.guild.id == GUILDID) {
-console.log(`[Discord] ${member.user.username} joined the server.`);
+console.log(`${colors.cyan("[Discord]")} ${member.user.username} joined the server.`);
 client.channels.cache.get(JCHANNEL).send({embeds: [MessageEmbed],content: `Welcome to **${member.guild.name}** <@${member.user.id}>!`});
 }
 });

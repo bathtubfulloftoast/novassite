@@ -25,7 +25,7 @@ file.setDescription("a cool image");
 await interaction.reply({content: image,files: [file]});
 // await interaction.reply({content:file});
 
-await console.log(`[Discord] command coolimage has been run by ${interaction.user.tag}`);
+await console.log(`${colors.cyan("[Discord]")} command coolimage has been run by ${interaction.user.tag}`);
 },
 };
 

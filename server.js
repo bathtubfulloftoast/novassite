@@ -1,6 +1,7 @@
 import express from 'express';
 import expressip from 'express-ip';
 import bodyParser from 'body-parser'
+import colors from 'colors';
 import { handler as ssrHandler } from './dist/server/entry.mjs';
 import registerAPIRoutes from './api.js';
 import './discordBot.js';
@@ -20,5 +21,5 @@ app.use((req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`[Site] Server running at http://localhost:${port}`);
+    console.log(`${colors.green("[Site]")} Server running at http://localhost:${port}`);
 });

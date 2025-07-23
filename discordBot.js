@@ -1,4 +1,6 @@
 import 'dotenv/config';
+import colors from 'colors';
+
 import { Client, GatewayIntentBits, Collection, ActivityType, Events } from 'discord.js';
 import { readdir } from 'fs/promises';
 import path from 'path';
@@ -7,6 +9,10 @@ import { pathToFileURL, fileURLToPath } from 'url';
 import { MemberJoin } from './botevents/memberjoin.js';
 import { MemberLeave } from './botevents/memberleave.js';
 import { MessageCreate } from './botevents/messagecreate.js';
+
+import { MessageLogger } from './botevents/log-message.js';
+import { MemberLogger } from './botevents/log-member.js';
+import { UserLogger } from './botevents/log-user.js';
 
 const API_KEY = process.env.DISCORD_API_KEY;
 
@@ -47,7 +53,7 @@ async function loadCommands() {
 client.once('ready', () => {
     const now = new Date();
 
-    console.log(`[Discord] Logged in as ${client.user.tag}`);
+    console.log(`${colors.blue("[Discord]")} Logged in as ${client.user.tag}`);
     client.user.setPresence({
         activities: [{ name: `:3`, type: ActivityType.Custom }],
         status: 'online'
@@ -82,5 +88,9 @@ client.login(API_KEY);
 MemberJoin(client);
 MemberLeave(client);
 MessageCreate(client);
+
+MessageLogger(client);
+MemberLogger(client);
+UserLogger(client);
 
 export { client };

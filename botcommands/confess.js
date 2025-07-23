@@ -33,7 +33,7 @@ export default {
 
 
 
-    await console.log(`[Discord] command confess has been run by ${interaction.user.tag} and they said "${input}"`);
+    await console.log(`${colors.cyan("[Discord]")} command confess has been run by ${interaction.user.tag} and they said "${input}"`);
     await interaction.channel.send({embeds: [MessageEmbed]});
     await interaction.reply({ content: `Your Confession Has Been Posted`, flags: MessageFlags.Ephemeral});
     // no logging the confess command

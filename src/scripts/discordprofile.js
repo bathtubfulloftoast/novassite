@@ -99,7 +99,7 @@ const endTime = item.timestamps?.end
 ? new Date(item.timestamps.end)
 : null;
 
-const lareimg = item.assets?.largeImage;
+const lareimg = item.assets?.largeImage??"null";
 
 let shareurl = "";
 const syncid = item.syncId;
