@@ -1,4 +1,5 @@
 import { SlashCommandBuilder } from 'discord.js';
+import colors from 'colors';
 let result = "";
 
 export default {

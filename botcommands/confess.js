@@ -1,7 +1,7 @@
 import { SlashCommandBuilder } from 'discord.js';
 import { EmbedBuilder } from 'discord.js';
 import { MessageFlags } from 'discord.js';
-import wait from 'node:timers/promises';
+import colors from 'colors';
 
 export default {
    data: new SlashCommandBuilder()

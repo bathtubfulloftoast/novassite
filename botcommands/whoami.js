@@ -1,4 +1,5 @@
 import { SlashCommandBuilder, MessageFlags, EmbedBuilder} from 'discord.js';
+import colors from 'colors';
 
 export default {
     data: new SlashCommandBuilder()
