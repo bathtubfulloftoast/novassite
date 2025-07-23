@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import colors from 'colors';
 
 import { client } from '../discordBot.js';
 
@@ -59,4 +60,5 @@ export default async function presenceHandler(req, res) {
         console.error('Error fetching presence:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
+console.log(`${colors.green("[Site]")} grabbed discord presence`);
 }

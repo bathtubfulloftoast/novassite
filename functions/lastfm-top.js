@@ -1,4 +1,5 @@
 import 'dotenv/config';
+import colors from 'colors';
 
 let cache = {};
 
@@ -34,4 +35,5 @@ export default async function lastfmHandler(req, res) {
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch data' });
     }
+console.log(`${colors.green("[Site]")} grabbed top songs from last.fm`);
 }
