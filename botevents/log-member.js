@@ -18,16 +18,10 @@ const MessageEmbed = {
   },
   "color": 3447003,
   "description": `Before: ${oldMember.nickname}\nAfter: ${newMember.nickname}`,
-  "fields": [
-    {
-      "name": "Time",
-      "value": `<t:${Math.floor(now/1000)}:f>`
-    },
-    {
-      "name": "User ID",
-      "value": newMember.user.id
-    }
-  ]
+  "footer": {
+    "text": newMember.id
+  },
+  "timestamp": now.toISOString()
 }
 
 client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${newMember.user.id}> changed their server nickname`});
@@ -43,16 +37,10 @@ const MessageEmbed = {
     "icon_url": `https://cdn.discordapp.com/avatars/${newMember.user.id}/${newMember.user.avatar}.webp`
   },
   "color": 3447003,
-  "fields": [
-    {
-      "name": "Time",
-      "value": `<t:${Math.floor(now/1000)}:f>`
-    },
-    {
-      "name": "User ID",
-      "value": newMember.user.id
-    }
-  ],
+  "footer": {
+    "text": newMember.id
+  },
+  "timestamp": now.toISOString(),
   "thumbnail": {
     "url": `https://cdn.discordapp.com/guilds/${newMember.guild.id}/users/${newMember.user.id}/avatars/${newMember.avatar}.webp?size=1024`
   }
@@ -69,16 +57,10 @@ const MessageEmbed = {
     "icon_url": `https://cdn.discordapp.com/avatars/${newMember.user.id}/${newMember.user.avatar}.webp`
   },
   "color": 3447003,
-  "fields": [
-    {
-      "name": "Time",
-      "value": `<t:${Math.floor(now/1000)}:f>`
-    },
-    {
-      "name": "User ID",
-      "value": newMember.user.id
-    }
-  ],
+  "footer": {
+    "text": newMember.id
+  },
+  "timestamp": now.toISOString(),
   "image": {
     "url": `https://cdn.discordapp.com/guilds/${newMember.guild.id}/users/${newMember.user.id}/banners/${newMember.banner}.webp?size=4096`
   }
