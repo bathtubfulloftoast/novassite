@@ -10,7 +10,7 @@ let cache = {};
 // https://lanyard.eggsy.xyz/
 
 export default async function presenceHandler(req, res) {
-    const CACHE_DURATION = 35000;
+    const CACHE_DURATION = 15000;
     const userId = process.env.PRESENCE_USERID;
     const guild = client.guilds.cache.get(process.env.PRESENCE_GUILDID);
 
