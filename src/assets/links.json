@@ -232,104 +232,9 @@
       "url": "mailto:mail@novassite.net"
     },
     {
-      "title": "Discord",
-      "source": "bi bi-discord",
-      "url": "https://novassite.net/discord/user/#471806482648924174"
-    },
-    {
-      "title": "Telegram",
-      "source": "bi bi-telegram",
-      "url": "https://t.me/bathtubfulloftoast"
-    },
-    {
-      "title": "Bluesky",
-      "source": "bi bi-bluesky",
-      "url": "https://bsky.app/profile/novassite.net"
-    },
-    {
-      "title": "Reddit",
-      "source": "bi bi-reddit",
-      "url": "https://www.reddit.com/user/bathtuboftoast"
-    },
-    {
-      "title": "Instagram",
-      "source": "bi bi-instagram",
-      "url": "https://www.instagram.com/bathtubfulloftoast"
-    },
-    {
-      "title": "Tumblr",
-      "source": "bi bi-link-45deg",
-      "url": "https://bathtuboftoast.tumblr.com"
-    },
-    {
-      "title": "Pintrest",
-      "source": "bi bi-pinterest",
-      "url": "https://pinterest.com/bathtubfulloftoast"
-    },
-    {
-      "title": "YouTube",
-      "source": "bi bi-youtube",
-      "url": "https://www.youtube.com/@bathtubfulloftoast"
-    },
-    {
-      "title": "Tiktok",
-      "source": "bi bi-tiktok",
-      "url": "https://www.tiktok.com/@bathtuboftoast"
-    },
-    {
-      "title": "Github",
-      "source": "bi bi-github",
-      "url": "https://github.com/bathtubfulloftoast"
-    },
-    {
-      "title": "Steam",
-      "source": "bi bi-steam",
-      "url": "https://steamcommunity.com/id/BathtubFullOfToast"
-    },
-    {
-      "title": "Roblox",
-      "source": "bi bi-link-45deg",
-      "url": "https://www.roblox.com/users/823958816/profile"
-    },
-    {
-      "title": "Xbox",
-      "source": "bi bi-xbox",
-      "url": "https://www.xbox.com/en-US/play/user/AliceProto"
-    },
-    {
-      "title": "Twitch",
-      "source": "bi bi-twitch",
-      "url": "https://www.twitch.tv/bathtubfulloftoast"
-    },
-    {
       "title": "Bandcamp",
       "source": "bi bi-link-45deg",
       "url": "https://bandcamp.com/bathtubfulloftoast"
-    },
-    {
-      "title": "Last.fm",
-      "source": "bi bi-link-45deg",
-      "url": "https://www.last.fm/user/bathtuboftoast"
-    },
-    {
-      "title": "ToyHouse",
-      "source": "bi bi-house-door",
-      "url": "https://toyhou.se/bathtubfulloftoast"
-    },
-    {
-      "title": "SoundCloud",
-      "source": "bi bi-cloud",
-      "url": "https://soundcloud.com/bathtuboftoast"
-    },
-    {
-      "title": "Spotify Playlist",
-      "source": "bi bi-spotify",
-      "url": "https://open.spotify.com/playlist/0pc4fuq77d4egrwZcLu44w?si=ccded8b77965485e"
-    },
-    {
-      "title": "Newgrounds",
-      "source": "bi bi-link-45deg",
-      "url": "https://awrootb33r.newgrounds.com"
     },
     {
       "title": "BeatLeader",
@@ -337,9 +242,104 @@
       "url": "https://beatleader.xyz/u/76561198853505045"
     },
     {
+      "title": "Bluesky",
+      "source": "bi bi-bluesky",
+      "url": "https://bsky.app/profile/novassite.net"
+    },
+    {
+      "title": "Discord",
+      "source": "bi bi-discord",
+      "url": "https://novassite.net/discord/user/#471806482648924174"
+    },
+    {
+      "title": "Github",
+      "source": "bi bi-github",
+      "url": "https://github.com/bathtubfulloftoast"
+    },
+    {
+      "title": "Instagram",
+      "source": "bi bi-instagram",
+      "url": "https://www.instagram.com/bathtubfulloftoast"
+    },
+    {
+      "title": "Last.fm",
+      "source": "bi bi-link-45deg",
+      "url": "https://www.last.fm/user/bathtuboftoast"
+    },
+    {
+      "title": "Newgrounds",
+      "source": "bi bi-link-45deg",
+      "url": "https://awrootb33r.newgrounds.com"
+    },
+    {
+      "title": "Pintrest",
+      "source": "bi bi-pinterest",
+      "url": "https://pinterest.com/bathtubfulloftoast"
+    },
+    {
+      "title": "Reddit",
+      "source": "bi bi-reddit",
+      "url": "https://www.reddit.com/user/bathtuboftoast"
+    },
+    {
+      "title": "Roblox",
+      "source": "bi bi-link-45deg",
+      "url": "https://www.roblox.com/users/823958816/profile"
+    },
+    {
+      "title": "SoundCloud",
+      "source": "bi bi-cloud",
+      "url": "https://soundcloud.com/bathtuboftoast"
+    },
+    {
       "title": "SpaceHey",
       "source": "bi bi-person-fill",
       "url": "https://spacehey.com/bathtuboftoast"
+    },
+    {
+      "title": "Spotify Playlist",
+      "source": "bi bi-spotify",
+      "url": "https://open.spotify.com/playlist/0pc4fuq77d4egrwZcLu44w?si=ccded8b77965485e"
+    },
+    {
+      "title": "Steam",
+      "source": "bi bi-steam",
+      "url": "https://steamcommunity.com/id/BathtubFullOfToast"
+    },
+    {
+      "title": "Telegram",
+      "source": "bi bi-telegram",
+      "url": "https://t.me/bathtubfulloftoast"
+    },
+    {
+      "title": "Tiktok",
+      "source": "bi bi-tiktok",
+      "url": "https://www.tiktok.com/@bathtuboftoast"
+    },
+    {
+      "title": "ToyHouse",
+      "source": "bi bi-house-door",
+      "url": "https://toyhou.se/bathtubfulloftoast"
+    },
+    {
+      "title": "Tumblr",
+      "source": "bi bi-link-45deg",
+      "url": "https://bathtuboftoast.tumblr.com"
+    },
+    {
+      "title": "Twitch",
+      "source": "bi bi-twitch",
+      "url": "https://www.twitch.tv/bathtubfulloftoast"
+    },
+    {
+      "title": "Xbox",
+      "source": "bi bi-xbox",
+      "url": "https://www.xbox.com/en-US/play/user/AliceProto"
+    },
+    {
+      "title": "YouTube",
+      "source": "bi bi-youtube",
+      "url": "https://www.youtube.com/@bathtubfulloftoast"
     }
   ]
 ]
