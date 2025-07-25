@@ -22,16 +22,10 @@ const MessageEmbed = {
   },
   "color": 3447003,
   "description": `Before: ${oldMember.globalName}\nAfter: ${newMember.globalName}`,
-  "fields": [
-    {
-      "name": "Time",
-      "value": `<t:${Math.floor(now/1000)}:f>`
-    },
-    {
-      "name": "User ID",
-      "value": newMember.id
-    }
-  ]
+  "footer": {
+    "text": newMember.id
+  },
+  "timestamp": now.toISOString()
 }
 
 client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${newMember.id}> changed their global nickname`});
@@ -47,16 +41,10 @@ const MessageEmbed = {
   },
   "color": 3447003,
   "description": `Before: ${oldMember.username}\nAfter: ${newMember.username}`,
-  "fields": [
-    {
-      "name": "Time",
-      "value": `<t:${Math.floor(now/1000)}:f>`
-    },
-    {
-      "name": "User ID",
-      "value": newMember.id
-    }
-  ]
+  "footer": {
+    "text": newMember.id
+  },
+  "timestamp": now.toISOString()
 }
 
 client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${newMember.id}> changed their username`});
@@ -71,19 +59,13 @@ const MessageEmbed = {
     "icon_url": `https://cdn.discordapp.com/avatars/${newMember.id}/${newMember.avatar}.webp`
   },
   "color": 3447003,
-  "fields": [
-    {
-      "name": "Time",
-      "value": `<t:${Math.floor(now/1000)}:f>`
-    },
-    {
-      "name": "User ID",
-      "value": newMember.id
-    }
-  ],
   "thumbnail": {
     "url": `https://cdn.discordapp.com/avatars/${newMember.id}/${newMember.avatar}.webp?size=1024`
-  }
+  },
+  "footer": {
+    "text": newMember.id
+  },
+  "timestamp": now.toISOString()
 }
 
 client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${newMember.id}> changed their personal avatar`});
@@ -91,27 +73,22 @@ console.log(`${colors.cyan("[Discord]")} ${oldMember.username} changed their ava
 }
 
 if(oldMember.banner !== newMember.banner) {
-    const MessageEmbed = {
+const MessageEmbed = {
   "title": "User Avatar Changed",
   "author": {
     "name": newMember.username,
     "icon_url": `https://cdn.discordapp.com/avatars/${newMember.id}/${newMember.avatar}.webp`
   },
   "color": 3447003,
-  "fields": [
-    {
-      "name": "Time",
-      "value": `<t:${Math.floor(now/1000)}:f>`
-    },
-    {
-      "name": "User ID",
-      "value": newMember.id
-    }
-  ],
+  "fields": [],
   "image": {
     "url": `https://cdn.discordapp.com/banners/${newMember.id}/${newMember.banner}.webp?size=1024`
-  }
-}
+  },
+  "footer": {
+    "text": newMember.id
+  },
+  "timestamp": now.toISOString()
+};
 
 client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${newMember.id}> changed their personal banner`});
 console.log(`${colors.cyan("[Discord]")} ${oldMember.username} changed their banner`);
