@@ -45,7 +45,7 @@ const MessageEmbed = {
     "url": `https://cdn.discordapp.com/guilds/${newMember.guild.id}/users/${newMember.user.id}/avatars/${newMember.avatar}.webp?size=1024`
   }
 }
-client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${message.author.id}> changed their server avatar`});
+client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${oldMember.user.id}> changed their server avatar`});
 console.log(`$${colors.cyan("[Discord]")} {oldMember.user.username} changed their server avatar`);
 }
 
@@ -65,7 +65,7 @@ const MessageEmbed = {
     "url": `https://cdn.discordapp.com/guilds/${newMember.guild.id}/users/${newMember.user.id}/banners/${newMember.banner}.webp?size=4096`
   }
 }
-client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${message.author.id}> changed their server banner`});
+client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${newMember.user.id}> changed their server banner`});
 console.log(`${colors.cyan("[Discord]")} ${oldMember.user.username} changed their server banner`);
 }
 }

@@ -199,7 +199,13 @@ activityimg.src = `https://media.discordapp.net/external/`+spotifysplit[1];
 activityimg.src = `https://cdn.discordapp.com/app-assets/${item.applicationId}/${lareimg}.png?size=256`;
 }
 activityimg.className = "activityimg";
-activityimg.title = item.assets.largeText?? "a discord activity";
+
+if (item.assets) {
+activityimg.title = item.assets.largeText ?? "a discord activity";
+} else {
+activityimg.title = "a discord activity";
+}
+
 infowrap.appendChild(activityimg);
 
 activityimg.onerror = function () {
