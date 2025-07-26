@@ -1,4 +1,5 @@
 import {EmbedBuilder,Events} from 'discord.js';
+import { WebHook } from './webhook.js';
 import colors from 'colors';
 
 const LCHANNEL = process.env.LOGCHANNEL;
@@ -7,6 +8,9 @@ const GUILDID = process.env.PRESENCE_GUILDID;
 export function MessageLogger(client) {
 client.on(Events.MessageDelete, message => {
 const now = new Date();
+
+const hookname = `${client.user.username} Logger`;
+const hookavi = `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp?size=1024`;
 
 if(message.author.bot) {
 return;
@@ -41,7 +45,8 @@ const MessageEmbed = {
         }
     ]
 };
-client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${message.author.id}>'s message was deleted`});
+
+WebHook(client,LCHANNEL,`<@${message.author.id}>'s message was deleted`,[MessageEmbed],hookname,hookavi);
 console.log(`${colors.cyan("[Discord]")} ${message.author.username} deleted a message.`);
 }
 });

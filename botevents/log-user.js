@@ -1,4 +1,5 @@
 import {EmbedBuilder,Events} from 'discord.js';
+import { WebHook } from './webhook.js';
 import colors from 'colors';
 
 const LCHANNEL = process.env.LOGCHANNEL;
@@ -8,6 +9,9 @@ export function UserLogger(client) {
 
 client.on("userUpdate", async (oldMember, newMember) => {
 const now = new Date();
+
+const hookname = `${client.user.username} Logger`;
+const hookavi = `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp?size=1024`;
 
 if(newMember.bot) {
 return;
@@ -28,7 +32,7 @@ const MessageEmbed = {
   "timestamp": now.toISOString()
 }
 
-client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${newMember.id}> changed their global nickname`});
+WebHook(client,LCHANNEL,`<@${newMember.id}> changed their global nickname`,[MessageEmbed],hookname,hookavi);
 console.log(`${colors.cyan("[Discord]")} ${oldMember.username} changed their global nickname`);
 }
 
@@ -47,7 +51,7 @@ const MessageEmbed = {
   "timestamp": now.toISOString()
 }
 
-client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${newMember.id}> changed their username`});
+WebHook(client,LCHANNEL,`<@${newMember.id}> changed their username`,[MessageEmbed],hookname,hookavi);
 console.log(`${colors.cyan("[Discord]")} ${oldMember.username} changed their username to ${newMember.username}`);
 }
 
@@ -68,7 +72,7 @@ const MessageEmbed = {
   "timestamp": now.toISOString()
 }
 
-client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${newMember.id}> changed their personal avatar`});
+WebHook(client,LCHANNEL,`<@${newMember.id}> changed their personal avatar`,[MessageEmbed],hookname,hookavi);
 console.log(`${colors.cyan("[Discord]")} ${oldMember.username} changed their avatar`);
 }
 
@@ -90,7 +94,7 @@ const MessageEmbed = {
   "timestamp": now.toISOString()
 };
 
-client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${newMember.id}> changed their personal banner`});
+WebHook(client,LCHANNEL,`<@${newMember.id}> changed their personal banner`,[MessageEmbed],hookname,hookavi);
 console.log(`${colors.cyan("[Discord]")} ${oldMember.username} changed their banner`);
 }
 
