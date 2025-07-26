@@ -28,7 +28,7 @@ export function MessageReply(client) {
       { keywords: ["skibidi","sigma","alpha","beta","goon","amongus","among us"], response: "what was that?" },
       { keywords: ["starwalker"], response: "this reference is                                                pissing me off" },
       { keywords: ["deltarune"], response: "tomorrow?" },
-      { keywords: ["gentoo","ubuntu","arch","linux","debian","raspbian","steamos", "redha", "red ha","freebsd","free bsd", "thinkpad"], response: "neeeeerd" },
+      { keywords: ["gentoo","ubuntu","arch","linux","debian","raspbian","steamos", "redha", "red ha","freebsd","free bsd", "thinkpad","kde","plasma"], response: "neeeeerd" },
       { keywords: ["yip"], response: "YIPPPIEEEEE" },
       { keywords: ["based"], response: "BASED ON WHAT" },
       { keywords: ["fish"], response: "you know what that means" },

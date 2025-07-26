@@ -1,4 +1,5 @@
 import {EmbedBuilder,Events} from 'discord.js';
+import { WebHook } from './webhook.js';
 import colors from 'colors';
 
 const LCHANNEL = process.env.LOGCHANNEL;
@@ -6,6 +7,9 @@ const GUILDID = process.env.PRESENCE_GUILDID;
 
 export function MemberLogger(client) {
 client.on("guildMemberUpdate", async (oldMember, newMember) => {
+const hookname = `${client.user.username} Logger`;
+const hookavi = `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp?size=1024`;
+
 const now = new Date();
 
 if(newMember.guild.id == GUILDID) {
@@ -17,14 +21,14 @@ const MessageEmbed = {
     "icon_url": `https://cdn.discordapp.com/avatars/${newMember.user.id}/${newMember.user.avatar}.webp`
   },
   "color": 3447003,
-  "description": `Before: ${oldMember.nickname}\nAfter: ${newMember.nickname}`,
+  "description": `Before: ${oldMember.nickname??oldMember.user.globalName}\nAfter: ${newMember.nickname??newMember.user.globalName}`,
   "footer": {
     "text": newMember.id
   },
   "timestamp": now.toISOString()
 }
 
-client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${newMember.user.id}> changed their server nickname`});
+WebHook(client,LCHANNEL,`<@${newMember.user.id}> changed their server nickname`,[MessageEmbed],hookname,hookavi);
 console.log(`${colors.cyan("[Discord]")} ${oldMember.user.username} changed their nickname`);
 }
 
@@ -45,7 +49,8 @@ const MessageEmbed = {
     "url": `https://cdn.discordapp.com/guilds/${newMember.guild.id}/users/${newMember.user.id}/avatars/${newMember.avatar}.webp?size=1024`
   }
 }
-client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${oldMember.user.id}> changed their server avatar`});
+
+WebHook(client,LCHANNEL,`<@${oldMember.user.id}> changed their server avatar`,[MessageEmbed],hookname,hookavi);
 console.log(`$${colors.cyan("[Discord]")} {oldMember.user.username} changed their server avatar`);
 }
 
@@ -65,7 +70,8 @@ const MessageEmbed = {
     "url": `https://cdn.discordapp.com/guilds/${newMember.guild.id}/users/${newMember.user.id}/banners/${newMember.banner}.webp?size=4096`
   }
 }
-client.channels.cache.get(LCHANNEL).send({embeds: [MessageEmbed],content: `<@${newMember.user.id}> changed their server banner`});
+
+WebHook(client,LCHANNEL,`<@${newMember.user.id}> changed their server banner`,[MessageEmbed],hookname,hookavi);
 console.log(`${colors.cyan("[Discord]")} ${oldMember.user.username} changed their server banner`);
 }
 }

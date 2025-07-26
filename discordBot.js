@@ -13,7 +13,6 @@ import { MessageReply } from './botevents/reply.js';
 import { MessageLogger } from './botevents/log-message.js';
 import { MemberLogger } from './botevents/log-member.js';
 import { UserLogger } from './botevents/log-user.js';
-// import { ServerOnline } from './botevents/online.js';
 
 const API_KEY = process.env.DISCORD_API_KEY;
 
@@ -86,7 +85,6 @@ client.login(API_KEY);
 }, 5000);
 }
 
-// ServerOnline(client);
 MemberJoin(client);
 MemberLeave(client);
 MessageReply(client);
