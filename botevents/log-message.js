@@ -9,7 +9,7 @@ export function MessageLogger(client) {
 client.on(Events.MessageDelete, message => {
 const now = new Date();
 
-const hookname = `${client.user.username} Logger`;
+const hookname = `${client.user.username} Logs`;
 const hookavi = `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp?size=1024`;
 
 if(message.author.bot) {

@@ -10,7 +10,7 @@ export function UserLogger(client) {
 client.on("userUpdate", async (oldMember, newMember) => {
 const now = new Date();
 
-const hookname = `${client.user.username} Logger`;
+const hookname = `${client.user.username} Logs`;
 const hookavi = `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp?size=1024`;
 
 if(newMember.bot) {
@@ -25,7 +25,7 @@ const MessageEmbed = {
     "icon_url": `https://cdn.discordapp.com/avatars/${newMember.id}/${newMember.avatar}.webp`
   },
   "color": 3447003,
-  "description": `Before: ${oldMember.globalName}\nAfter: ${newMember.globalName}`,
+  "description": `Before: ${oldMember.globalName??oldMember.username}\nAfter: ${newMember.globalName??newMember.username}`,
   "footer": {
     "text": newMember.id
   },

@@ -7,7 +7,7 @@ const GUILDID = process.env.PRESENCE_GUILDID;
 
 export function MemberLogger(client) {
 client.on("guildMemberUpdate", async (oldMember, newMember) => {
-const hookname = `${client.user.username} Logger`;
+const hookname = `${client.user.username} Logs`;
 const hookavi = `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp?size=1024`;
 
 const now = new Date();
