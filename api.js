@@ -8,6 +8,7 @@ import lastfmRecent from './functions/lastfm-recent.js';
 import discorduser from './functions/discorduser.js';
 import steam from './functions/steamrecent.js';
 import webcam from './functions/webcam.js';
+import botinfo from './functions/botinfo.js';
 
 export default function registerAPIRoutes(app) {
 app.get('/api/openweather', openweatherAPI);
@@ -20,5 +21,6 @@ app.get('/api/fm-recent', lastfmRecent);
 app.get('/api/discord-user', discorduser);
 app.get('/api/steam-recent', steam);
 app.get('/api/webcam', webcam);
+app.get('/api/bot', botinfo);
 
 }
