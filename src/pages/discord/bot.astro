@@ -1,0 +1,158 @@
+<head>
+<title>Swag Bot</title>
+<style is:global>
+body {
+padding:0px;
+margin:0px;
+background:#1a1a1e;
+color:#fff;
+overflow-x:hidden;
+}
+
+.header {
+background:#121214;
+margin:none;
+display:block;
+padding:10px;
+width:100vw;
+text-align:center;
+}
+
+#pfp {
+display:inline-block;
+background:#1d1d1e;
+width:128px;
+height:128px;
+border-radius:100%;
+vertical-align:middle;
+border: solid 3px #222225;
+}
+
+.name {
+display:inline-block;
+text-align:center;
+margin-top:10px;
+line-height:10px;
+}
+
+.box {
+display:inline-block;
+background:#242429;
+padding:10px;
+border: 3px solid #323237;
+border-radius:1em;
+}
+
+.command {
+background:#242429;
+border:2px solid #323237;
+padding:5px;
+margin:10px;
+border-radius:0.5em;
+display:inline-block;
+}
+
+.command b {
+font-size:30px;
+}
+
+.command span {
+font-size:20px;
+color:#767676;
+}
+
+.commands {
+margin:10px;
+}
+
+hr {
+border: 1px solid #242428;
+margin: -10px -10px 20px;
+margin-top:20px;
+}
+
+#status {
+color:#767676;
+}
+
+</style>
+</head>
+
+<div class="header">
+<img id="pfp" src="/media/avatar.png"><br><div class="name"><h1 id="name">Swag#6969</h1><p id="status">cool status</p></div>
+<hr>
+<div class="box" id="servercount">in 2 servers</div> <div class="box" id="commandcount">has 2 commands</div>
+</div>
+
+<div>
+<div class="commands">
+<h1>Commands</h1>
+
+<div id="commands">
+<div class="command">
+<b>/Command</b><br>
+<span>command description</span>
+</div>
+
+</div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+
+    async function weather() {
+        const response = await fetch('/api/bot');
+        // const response = await fetch('/bot.json');
+        let data = await response.json();
+
+        const userid = data.user.id;
+        const avatarid = data.user.avatar;
+        const username = data.user.username;
+        const tag = data.user.discriminator;
+
+
+for (var item of data.activities) {
+if (item.type == 4) {
+document.getElementById("status").innerHTML = item.state;
+break;
+}
+}
+
+
+document.getElementById("name").innerHTML = `${username}#${tag}`;
+document.title = username;
+document.getElementById("commandcount").innerHTML = `has ${data.commands.length} commands`;
+document.getElementById("servercount").innerHTML = `in ${data.guildcount} servers`;
+
+
+const pfp = document.getElementById("pfp");
+pfp.src = `https://cdn.discordapp.com/avatars/${userid}/${avatarid}.webp?size=1024`;
+
+pfp.onerror = function () {
+pfp.src = '/media/avatar.png'; // Fallback image
+};
+
+document.getElementById("commands").innerHTML = "";
+for (const item of data.commands) {
+const commandwrap = document.getElementById("commands");
+
+const command = document.createElement("div");
+command.className = "command";
+
+const commandname = document.createElement("b");
+commandname.innerHTML = `/${item.data.name}<br>`;
+
+const commandesc = document.createElement("span");
+commandesc.innerHTML = `${item.data.description}`;
+
+
+commandwrap.appendChild(command);
+command.appendChild(commandname);
+command.appendChild(commandesc);
+
+}
+}
+await weather();
+});
+</script>
