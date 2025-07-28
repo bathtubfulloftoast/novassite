@@ -39,7 +39,7 @@ const loot = [
 ]
 
 const max = loot.length;
-const id = Math.floor(Math.random() * max);
+const id = Math.floor(Math.random() * max+1);
 result = loot[id];
 
 await interaction.reply({ content: `<@${interaction.user.id}> asks the 8 ball\n\`\`${input}\`\`\nthe ball answers \`\`${result}\`\``});

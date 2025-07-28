@@ -8,7 +8,9 @@ export default {
     async execute(interaction) {
         await console.log(`${colors.cyan("[Discord]")} command ping has been run by ${interaction.user.tag}`);
 
-        await interaction.reply({ content: `pong`, flags: MessageFlags.Ephemeral});
+        const delay = Date.now() - interaction.createdTimestamp;
+
+        await interaction.reply({ content: `Pong!\n\`\`Latency: ${delay}ms\`\``, flags: MessageFlags.Ephemeral});
 
     },
 };
