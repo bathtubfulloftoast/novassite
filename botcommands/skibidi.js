@@ -4,15 +4,12 @@ import sharp from 'sharp';
 import color from 'color';
 
 let image = "";
+let unfortunate = "";
 
 export default {
     data: new SlashCommandBuilder()
-    .setName('tomscott')
-    .setDescription('where is that pesky brit?')
-    .addAttachmentOption(option => option
-    .setName('attachment')
-    .setDescription('Attachment File')
-    .setRequired(false))
+    .setName('skibidi')
+    .setDescription('be the skibidi...')
     .addUserOption(option =>
     option.setName('user')
     .setDescription('Attachment User')
@@ -20,39 +17,32 @@ export default {
 
 async execute(interaction) {
 await console.log(`${colors.cyan("[Discord]")} command tomscott has been run by ${interaction.user.tag}`);
-const attachedfile =  interaction.options.getAttachment('attachment');
 const attacheduser =  interaction.options.getUser('user');
 
 try {
-if(attachedfile) {
-if(attachedfile.contentType.startsWith("image/")) {
-image = await fetch(attachedfile.url);
-} else {
-return await interaction.reply({content:"toms scott is dead.\n(invalid filetype please send an image)", flags: MessageFlags.Ephemeral});
-}
-}
-
-else if (attacheduser) {
+if (attacheduser) {
 image = await fetch(`https://cdn.discordapp.com/avatars/${attacheduser.id}/${attacheduser.avatar}.webp?size=1024`);
+unfortunate = attacheduser.id;
 }
 
 else {
 image = await fetch(`https://cdn.discordapp.com/avatars/${interaction.user.id}/${interaction.user.avatar}.webp?size=1024`);
+unfortunate = interaction.user.id;
 }
 
     const buffer = await image.arrayBuffer();
     const imagebuffer = Buffer.from(buffer);
 
     // Load base and overlay images
-    const baseImage = sharp(imagebuffer).resize({width:800, height:600,fit:"fill"}).flatten({background:"#ffffff"});
-    const overlayImage = sharp('public/bot/tom.png');
+    const overlayImage = sharp(imagebuffer).resize({width:350, height:350,fit:"contain"});
+    const baseImage = sharp('public/bot/toilet.webp');
 
     // Get metadata of overlay image
     const overlayMetadata = await overlayImage.metadata();
     const overlayBuffer = await overlayImage.toBuffer();
 
-    const left = 0; // Bottom-left means x = 0
-    const top = 600 - overlayMetadata.height; // y = total height - overlay height
+    const left = 395; // Bottom-left means x = 0
+    const top = 179; // y = total height - overlay height
 
     const final = await baseImage
     .composite([
@@ -66,13 +56,13 @@ image = await fetch(`https://cdn.discordapp.com/avatars/${interaction.user.id}/$
     .toBuffer();
 
     const file = await new AttachmentBuilder(final);
-    file.setName("tom.jpg");
-    file.setDescription("tom in a place");
+    file.setName("skibidi.jpg");
+    file.setDescription("a fate worse than death");
 
-    await interaction.reply({files:[file]});
+    await interaction.reply({content: `<@${unfortunate}> has been skibidi'd`,files:[file]});
 
 } catch (err) {
-await interaction.reply({content:"toms scott is dead.\n(command failed to run)", flags: MessageFlags.Ephemeral});
+await interaction.reply({content:"command failed to run", flags: MessageFlags.Ephemeral});
 console.error("Error:", err);
 }
 

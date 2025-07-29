@@ -8,7 +8,7 @@ export default {
     .setDescription('get a cool ass image'),
     async execute(interaction) {
 
-const dir = 'public/cool';
+const dir = 'public/bot/cool';
 const fileList = fs.readdirSync(dir);
 
 const max = fileList.length;
