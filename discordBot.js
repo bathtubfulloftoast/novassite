@@ -33,22 +33,35 @@ client.commands = new Collection();
 
 async function loadCommands() {
     const commandsPath = path.join(__dirname, 'botcommands');
-    const files = await readdir(commandsPath);
 
-    for (const file of files) {
-        if (!file.endsWith('.js')) continue;
+    async function getAllCommandFiles(dir) {
+        const entries = await readdir(dir, { withFileTypes: true });
+        const files = await Promise.all(entries.map(async entry => {
+            const fullPath = path.join(dir, entry.name);
+            if (entry.isDirectory()) {
+                return getAllCommandFiles(fullPath);
+            } else if (entry.isFile() && fullPath.endsWith('.js')) {
+                return fullPath;
+            }
+            return null;
+        }));
+        return files.flat().filter(Boolean);
+    }
 
-        const filePath = path.join(commandsPath, file);
+    const files = await getAllCommandFiles(commandsPath);
+
+    for (const filePath of files) {
         const fileUrl = pathToFileURL(filePath).href;
         const command = (await import(fileUrl)).default;
 
         if (command?.data?.name && typeof command.execute === 'function') {
             client.commands.set(command.data.name, command);
         } else {
-            console.warn(`Invalid command file: ${file}`);
+            console.warn(`Invalid command file: ${filePath}`);
         }
     }
 }
+
 
 client.once('ready', () => {
     const now = new Date();
