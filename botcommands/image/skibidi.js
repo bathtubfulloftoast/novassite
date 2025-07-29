@@ -16,17 +16,17 @@ export default {
     .setRequired(false)),
 
 async execute(interaction) {
-await console.log(`${colors.cyan("[Discord]")} command tomscott has been run by ${interaction.user.tag}`);
+await console.log(`${colors.cyan("[Discord]")} command skibidi has been run by ${interaction.user.tag}`);
 const attacheduser =  interaction.options.getUser('user');
 
 try {
 if (attacheduser) {
-image = await fetch(`https://cdn.discordapp.com/avatars/${attacheduser.id}/${attacheduser.avatar}.webp?size=1024`);
+image = await fetch(`https://cdn.discordapp.com/avatars/${attacheduser.id}/${attacheduser.avatar}.webp?size=512`);
 unfortunate = attacheduser.id;
 }
 
 else {
-image = await fetch(`https://cdn.discordapp.com/avatars/${interaction.user.id}/${interaction.user.avatar}.webp?size=1024`);
+image = await fetch(`https://cdn.discordapp.com/avatars/${interaction.user.id}/${interaction.user.avatar}.webp?size=512`);
 unfortunate = interaction.user.id;
 }
 

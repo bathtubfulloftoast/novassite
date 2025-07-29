@@ -13,17 +13,38 @@ const __dirname = path.dirname(__filename);
 const commands = [];
 
 const commandsPath = path.join(__dirname, 'botcommands');
-const commandFiles = (await fs.readdir(commandsPath)).filter(file => file.endsWith('.js'));
+
+/**
+ * Recursively read all .js files in a directory
+ */
+async function getAllCommandFiles(dir) {
+	const entries = await fs.readdir(dir, { withFileTypes: true });
+	const files = await Promise.all(entries.map(async entry => {
+		const res = path.resolve(dir, entry.name);
+		if (entry.isDirectory()) {
+			return getAllCommandFiles(res);
+		} else if (entry.isFile() && res.endsWith('.js')) {
+			return res;
+		}
+		return null;
+	}));
+	return files.flat().filter(Boolean);
+}
+
+const commandFiles = await getAllCommandFiles(commandsPath);
 
 for (const file of commandFiles) {
-	const commandPath = path.join(commandsPath, file);
-	const commandModule = await import(pathToFileURL(commandPath));
-	const command = commandModule.default;
+	try {
+		const commandModule = await import(pathToFileURL(file));
+		const command = commandModule.default;
 
-	if (command?.data) {
-		commands.push(command.data.toJSON());
-	} else {
-		console.warn(`Command ${file} missing .data`);
+		if (command?.data) {
+			commands.push(command.data.toJSON());
+		} else {
+			console.warn(`Command ${file} missing .data`);
+		}
+	} catch (err) {
+		console.error(`Failed to load command ${file}:`, err);
 	}
 }
 
@@ -35,7 +56,7 @@ const rest = new REST({ version: '10' }).setToken(token);
 
 		const data = await rest.put(
 			Routes.applicationCommands(clientId),
-				{ body: commands }
+									{ body: commands }
 		);
 
 		console.log(`Successfully reloaded ${data.length} application (/) commands.`);
