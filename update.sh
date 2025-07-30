@@ -1,0 +1,38 @@
+#!/bin/bash
+
+clear
+printf 'What do you want to update?\n(Site Bot Reset All)\n(S/B/R/A)'
+read updans
+
+clear
+pm2 stop novassite
+if [ "$updans" != "${updans#[Ss]}" ] ;then
+echo "only updating site"
+git pull
+npm run build
+npm i
+
+elif [ "$updans" != "${updans#[Bb]}" ] ;then
+echo "only updating bot"
+git pull
+npm i
+node deploy-commands.js
+
+elif [ "$updans" != "${updans#[Rr]}" ] ;then
+printf "THIS WILL RESET THE GIT REPO OVERWRITING ANY LOCAL CHANGES\nare you sure you wish to reset?\n(y/N)"
+read resetans
+if [ "$resetans" != "${resetans#[Yy]}" ] ;then
+echo "resetting."
+git reset --hard
+git pull
+fi
+
+else
+echo "updating everything."
+git pull
+npm i
+npm run build
+node deploy-commands.js
+fi
+
+pm2 start novassite
