@@ -33,7 +33,7 @@ image = await fetch(`https://cdn.discordapp.com/avatars/${interaction.user.id}/$
     const baseimage = await sharp(imagebuffer);
 
     const scaleBuffer = await baseimage
-    .resize({ width: 100, height: 100, fit: "fill",kernel: sharp.kernel.nearest  })
+    .resize({ width: 16, height: 16, fit: "fill",kernel: sharp.kernel.nearest  })
     .toBuffer();
 
     const censored = sharp(scaleBuffer);

@@ -8,25 +8,25 @@ let unfortunate = "";
 
 export default {
     data: new SlashCommandBuilder()
-    .setName('short')
-    .setDescription('declare someone as SHORT')
+    .setName('fire')
+    .setDescription('set someone alight.')
     .addUserOption(option =>
     option.setName('user')
-    .setDescription('Attachment User')
+    .setDescription('BURN THEM BURN THEM BURN THEM')
     .setRequired(false)),
 
 async execute(interaction) {
-await console.log(`${colors.cyan("[Discord]")} command short has been run by ${interaction.user.tag}`);
+await console.log(`${colors.cyan("[Discord]")} command fire has been run by ${interaction.user.tag}`);
 const attacheduser =  interaction.options.getUser('user');
 
 try {
 if (attacheduser) {
-image = await fetch(`https://cdn.discordapp.com/avatars/${attacheduser.id}/${attacheduser.avatar}.webp?size=1024`);
+image = await fetch(`https://cdn.discordapp.com/avatars/${attacheduser.id}/${attacheduser.avatar}.webp?size=512`);
 unfortunate = attacheduser.id;
 }
 
 else {
-image = await fetch(`https://cdn.discordapp.com/avatars/${interaction.user.id}/${interaction.user.avatar}.webp?size=1024`);
+image = await fetch(`https://cdn.discordapp.com/avatars/${interaction.user.id}/${interaction.user.avatar}.webp?size=512`);
 unfortunate = interaction.user.id;
 }
 
@@ -34,15 +34,15 @@ unfortunate = interaction.user.id;
     const imagebuffer = Buffer.from(buffer);
 
     // Load base and overlay images
-    const overlayImage = sharp(imagebuffer).resize({width:600, height:268,fit:"fill"});
-    const baseImage = sharp('public/bot/SHORT.png');
+    const overlayImage = sharp(imagebuffer).resize({width:300, height:300,fit:"contain"}).ensureAlpha(0.5);
+    const baseImage = sharp('public/bot/BURN.jpg').resize({width:800,height:500,fit:"fill"});
 
     // Get metadata of overlay image
     const overlayMetadata = await overlayImage.metadata();
     const overlayBuffer = await overlayImage.toBuffer();
 
-    const left = 0; // Bottom-left means x = 0
-    const top = 532; // y = total height - overlay height
+    const left = 258; // Bottom-left means x = 0
+    const top = 93; // y = total height - overlay height
 
     const final = await baseImage
     .composite([
@@ -56,10 +56,10 @@ unfortunate = interaction.user.id;
     .toBuffer();
 
     const file = await new AttachmentBuilder(final);
-    file.setName("SHORT.jpg");
-    file.setDescription("youre fucking SHORT.");
+    file.setName("BURN DOT JPEG.JPEG");
+    file.setDescription("BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN BURN");
 
-    await interaction.reply({content: `<@${unfortunate}> is fucking ***SHORT***`,files:[file]});
+    await interaction.reply({content: `<@${unfortunate}> has been set alight.`,files:[file]});
 
 } catch (err) {
 await interaction.reply({content:"command failed to run", flags: MessageFlags.Ephemeral});
