@@ -93,8 +93,8 @@ for (let i = 0; i < lines.length; i++) {
         .toBuffer();
 
         const file = await new AttachmentBuilder(final);
-        file.setName("interview.jpg");
-        file.setDescription("a deer being asked some pressing questions.");
+        file.setName("point.jpg");
+        file.setDescription("haha IDIOT");
 
         await interaction.reply({content:`<@${unfortunate}> has been declared as <@${unfortunate}>`, files:[file]});
 
