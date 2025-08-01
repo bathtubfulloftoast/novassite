@@ -25,6 +25,7 @@ this is for if i lose my .env file lol
 
 | Key | What it does | where to get |
 | -------- | ------- | ------- |
+| PORT | port for the website | idk your brain? (80 is the default for http) |
 | STEAM_API_KEY | steam API key | https://steamcommunity.com/dev/apikey |
 | LASTFM_API_KEY | Last.FM API Key | https://www.last.fm/api/authentication |
 | OPENWEATHER_API_KEY | Open Weather Map API Key | https://home.openweathermap.org/api_keys |
