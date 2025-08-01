@@ -1,6 +1,8 @@
 import { SlashCommandBuilder,EmbedBuilder,MessageFlags,AttachmentBuilder } from 'discord.js';
 import colors from 'colors';
 
+let afil;
+
 export default {
    data: new SlashCommandBuilder()
 		.setName('confess')
@@ -18,8 +20,7 @@ export default {
         const input = interaction.options.getString('confession');
         const file = interaction.options.getAttachment('attachment') ?? '';
 
-        const afil = new AttachmentBuilder(file.attachment);
-        afil.setName(file.name);
+
 
         const MessageEmbed = {
           "description": `${input}`,
@@ -27,7 +28,13 @@ export default {
           "author": {
             "name": "Somebody Confessed..."
           },
-          "image": {
+        }
+
+        if(file) {
+        afil = new AttachmentBuilder(file.attachment);
+        afil.setName(file.name);
+
+        MessageEmbed.image = {
             "url": (`attachment://${file.name}`)
           }
         }
@@ -35,7 +42,11 @@ export default {
 
 
     await console.log(`${colors.cyan("[Discord]")} command confess has been run by ${interaction.user.tag} and they said "${input}"`);
+    if(file) {
     await interaction.channel.send({embeds: [MessageEmbed],files:[afil]});
+    } else {
+    await interaction.channel.send({embeds: [MessageEmbed]});
+    }
     await interaction.reply({ content: `Your Confession Has Been Posted`, flags: MessageFlags.Ephemeral});
 
 
