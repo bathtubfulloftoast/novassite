@@ -32,6 +32,8 @@ export function MessageReply(client) {
       { keywords: ["yip"], response: "YIPPPIEEEEE" },
       { keywords: ["based"], response: "BASED ON WHAT" },
       { keywords: ["fish"], response: "you know what that means" },
+      { keywords: ["goated"], response: "with the sauce?" },
+
     ];
 
     const content = message.content.toLowerCase();
