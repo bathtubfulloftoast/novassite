@@ -8,15 +8,15 @@ let unfortunate = "";
 
 export default {
     data: new SlashCommandBuilder()
-    .setName('shower')
-    .setDescription('force someone to take a shower')
+    .setName('piss')
+    .setDescription('piss on someone.')
     .addUserOption(option =>
     option.setName('user')
-    .setDescription('SMELLY User')
+    .setDescription('Attachment User')
     .setRequired(false)),
 
 async execute(interaction) {
-await console.log(`${colors.cyan("[Discord]")} command shower has been run by ${interaction.user.tag}`);
+await console.log(`${colors.cyan("[Discord]")} command piss has been run by ${interaction.user.tag}`);
 const attacheduser =  interaction.options.getUser('user');
 
 try {
@@ -34,32 +34,27 @@ unfortunate = interaction.user.id;
     const imagebuffer = Buffer.from(buffer);
 
     // Load base and overlay images
-    const overlayImage = sharp(imagebuffer).resize({width:300, height:300,fit:"fill"}).rotate(-20, {background: { r: 0, g: 0, b: 0, alpha: 0 }});
-    const baseImage = sharp('public/bot/showerman.jpg');//dont bully this dude for the love of god i will kill you
+    const overlayImage = sharp("public/bot/shine.png").resize({width:800, height:800,fit:"fill"});
+    const baseImage = sharp(imagebuffer).resize({width:800,height:800,fit:"fill"}).gamma(2,1).tint({ r: 158, g: 158, b: 36 });
 
     // Get metadata of overlay image
     const overlayMetadata = await overlayImage.metadata();
     const overlayBuffer = await overlayImage.toBuffer();
 
-    const left = 127;
-    const top = 70;
-
     const final = await baseImage
     .composite([
         {
             input: overlayBuffer,
-            top: top,
-            left: left,
         },
     ])
     .toFormat("jpg")
     .toBuffer();
 
     const file = await new AttachmentBuilder(final);
-    file.setName("Stinky.jpg");
-    file.setDescription("youre fucking SMELLY.");
+    file.setName("piss.jpg");
+    file.setDescription("peepee lol");
 
-    await interaction.reply({content: `<@${unfortunate}> is taking a shower (good for them!)`,files:[file]});
+    await interaction.reply({content: `<@${unfortunate}> has been pissed on.`,files:[file]});
 
 } catch (err) {
 await interaction.reply({content:"command failed to run", flags: MessageFlags.Ephemeral});

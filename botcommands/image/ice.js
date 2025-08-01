@@ -8,25 +8,25 @@ let unfortunate = "";
 
 export default {
     data: new SlashCommandBuilder()
-    .setName('shower')
-    .setDescription('force someone to take a shower')
+    .setName('freeze')
+    .setDescription('freeze someone')
     .addUserOption(option =>
     option.setName('user')
-    .setDescription('SMELLY User')
+    .setDescription('FREEZE THEM FREEZE THEM FREEZE THEM')
     .setRequired(false)),
 
 async execute(interaction) {
-await console.log(`${colors.cyan("[Discord]")} command shower has been run by ${interaction.user.tag}`);
+await console.log(`${colors.cyan("[Discord]")} command ice has been run by ${interaction.user.tag}`);
 const attacheduser =  interaction.options.getUser('user');
 
 try {
 if (attacheduser) {
-image = await fetch(`https://cdn.discordapp.com/avatars/${attacheduser.id}/${attacheduser.avatar}.webp?size=1024`);
+image = await fetch(`https://cdn.discordapp.com/avatars/${attacheduser.id}/${attacheduser.avatar}.webp?size=128`);
 unfortunate = attacheduser.id;
 }
 
 else {
-image = await fetch(`https://cdn.discordapp.com/avatars/${interaction.user.id}/${interaction.user.avatar}.webp?size=1024`);
+image = await fetch(`https://cdn.discordapp.com/avatars/${interaction.user.id}/${interaction.user.avatar}.webp?size=128`);
 unfortunate = interaction.user.id;
 }
 
@@ -34,32 +34,30 @@ unfortunate = interaction.user.id;
     const imagebuffer = Buffer.from(buffer);
 
     // Load base and overlay images
-    const overlayImage = sharp(imagebuffer).resize({width:300, height:300,fit:"fill"}).rotate(-20, {background: { r: 0, g: 0, b: 0, alpha: 0 }});
-    const baseImage = sharp('public/bot/showerman.jpg');//dont bully this dude for the love of god i will kill you
+    const overlayImage = sharp(imagebuffer).resize({width:100, height:100,fit:"fill"}).ensureAlpha(0.5);
+    const baseImage = sharp('public/bot/FREEZE.jpg').resize({width:100,height:100,fit:"fill"});
 
     // Get metadata of overlay image
     const overlayMetadata = await overlayImage.metadata();
     const overlayBuffer = await overlayImage.toBuffer();
 
-    const left = 127;
-    const top = 70;
 
-    const final = await baseImage
+    const almostdone = await baseImage
     .composite([
         {
             input: overlayBuffer,
-            top: top,
-            left: left,
         },
     ])
-    .toFormat("jpg")
     .toBuffer();
 
-    const file = await new AttachmentBuilder(final);
-    file.setName("Stinky.jpg");
-    file.setDescription("youre fucking SMELLY.");
+    const final = await sharp(almostdone).resize({width:800,height:800}).toBuffer();
 
-    await interaction.reply({content: `<@${unfortunate}> is taking a shower (good for them!)`,files:[file]});
+
+    const file = await new AttachmentBuilder(final);
+    file.setName("FREEZE DOT.JPEG");
+    file.setDescription("FREEZE FREEZE FREEZE FREEZE FREEZE FREEZE FREEZE FREEZE FREEZE FREEZE FREEZE FREEZE FREEZE FREEZE FREEZE FREEZE FREEZE ");
+
+    await interaction.reply({content: `<@${unfortunate}> has been set afroze.`,files:[file]});
 
 } catch (err) {
 await interaction.reply({content:"command failed to run", flags: MessageFlags.Ephemeral});

@@ -8,7 +8,7 @@ let unfortunate = "";
 
 export default {
     data: new SlashCommandBuilder()
-    .setName('fire')
+    .setName('burn')
     .setDescription('set someone alight.')
     .addUserOption(option =>
     option.setName('user')
