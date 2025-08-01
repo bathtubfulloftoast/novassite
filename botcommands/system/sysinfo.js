@@ -1,6 +1,8 @@
 import { SlashCommandBuilder, MessageFlags, EmbedBuilder} from 'discord.js';
 import colors from 'colors';
+import 'dotenv/config';
 import os from 'os';
+const port = process.env.PORT;
 let PUT; // Process UpTime
 let OUT; // OS UpTime
 let OStamp;
@@ -29,7 +31,7 @@ PStamp = now-PUT;
 OStamp = Math.floor(OStamp/1000); // convert these to seconds because this way is jank asf
 PStamp = Math.floor(PStamp/1000);
 
-        const response = await fetch('http://localhost:4321/deviceinfo.json');
+        const response = await fetch(`http://localhost:${port}/deviceinfo.json`);
         let data = await response.json();
 
         const MessageEmbed = {

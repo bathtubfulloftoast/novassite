@@ -5,8 +5,9 @@ import colors from 'colors';
 import { handler as ssrHandler } from './dist/server/entry.mjs';
 import registerAPIRoutes from './api.js';
 import './discordBot.js';
+import 'dotenv/config';
 
-const port = 4321;
+const port = process.env.PORT;
 
 const app = express();
 const base = '/';

@@ -1,4 +1,3 @@
-import 'dotenv/config';
 import colors from 'colors';
 
 import { client } from '../discordBot.js';
