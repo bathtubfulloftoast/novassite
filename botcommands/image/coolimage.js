@@ -1,6 +1,7 @@
 import { SlashCommandBuilder, AttachmentBuilder } from 'discord.js';
 import colors from 'colors';
 import fs from 'fs';
+import sharp from 'sharp';
 
 export default {
     data: new SlashCommandBuilder()
@@ -19,8 +20,12 @@ const image = fileList[id];
 let filematch = image.match(/(?:\/|\\)?([^\/\\]+)\.(\w+)$/);
 let filext = filematch?.[2];
 
-const file = new AttachmentBuilder(dir+"/"+image);
-file.setName("image."+filext);
+let coolimagefile = dir+"/"+image;
+
+const output = await sharp(coolimagefile).resize({ width: 800, height: 800,fit:"inside",withoutEnlargement:true }).toFormat("webp").toBuffer();
+
+const file = new AttachmentBuilder(output);
+file.setName("image.webp");
 file.setDescription("a cool image");
 
 await interaction.reply({content: image,files: [file]});
