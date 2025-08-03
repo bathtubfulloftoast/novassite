@@ -88,7 +88,6 @@ async function createaudio() {
     const audioElement = document.createElement('audio');
     audioElement.src = audioUrl;
     audioElement.volume = 0.2;
-    audioElement.id = "azureaudio";
 
 
     const imageElement = document.createElement('img');
@@ -771,4 +770,112 @@ createaudio();
 
 });
 
+</script>
+
+<script>
+const audioUrl = "/media/rotten.webm";
+
+
+
+async function createaudio() {
+
+
+
+const audioElement = document.createElement('video');
+audioElement.src = audioUrl;
+audioElement.volume = 0.5;
+audioElement.style.position = "absolute";
+audioElement.style.left = 0;
+audioElement.style.top = 0;
+audioElement.style.zIndex = 150;
+audioElement.style.width = "100vw";
+audioElement.style.height = "100vh";
+audioElement.style.objectFit = "cover";
+
+document.body.appendChild(audioElement);
+
+audioElement.play();
+
+
+audioElement.addEventListener('ended', (event) => {
+// window.open('https://smlwiki.com', '_blank');
+audioElement.remove();
+});
+
+};
+
+document.getElementById("wearenumberone").addEventListener("click", function(event) {
+event.preventDefault();
+createaudio();
+
+});
+
+</script>
+
+<script>
+async function createAudio() {
+    const audioElement = document.createElement('audio');
+    audioElement.src = "/media/sfx/ps1.ogg";
+    audioElement.id = "windows93audio";
+    audioElement.volume = 0.5;
+    // audioElement.playbackRate = 1;
+
+    const imageElement = document.createElement('img');
+    imageElement.src = "/media/93logo.png";
+    imageElement.style.zIndex = 151;
+
+    const CONTAINER = document.createElement('div');
+    CONTAINER.style.zIndex = 150;
+    CONTAINER.style.width = "100vw";
+    CONTAINER.style.height = "100vh";
+    CONTAINER.style.position = "absolute";
+    CONTAINER.style.left = 0;
+    CONTAINER.style.top = 0;
+    CONTAINER.style.display = "flex";
+    CONTAINER.style.justifyContent = "center";
+    CONTAINER.style.alignItems = "center";
+    CONTAINER.style.backgroundColor = "#000";
+    CONTAINER.style.opacity = "0";
+    CONTAINER.style.transition = "opacity 7s ease-in-out";
+
+    CONTAINER.appendChild(imageElement);
+    document.body.appendChild(CONTAINER);
+    document.body.appendChild(audioElement);
+
+    // Force a reflow before setting opacity to 1
+    void CONTAINER.offsetHeight; // this line ensures the opacity transition is triggered
+
+    // Now trigger the fade-in
+    requestAnimationFrame(() => {
+        CONTAINER.style.opacity = "1";
+    });
+
+    // Wait for audio to start
+    try {
+        await audioElement.play();
+    } catch (err) {
+        console.error("Audio playback failed:", err);
+    }
+
+    // Cleanup after audio ends
+    audioElement.addEventListener('ended', () => {
+        audioElement.remove();
+        CONTAINER.remove();
+        window.open('https://www.windows93.net/', '_blank');
+    });
+}
+
+document.getElementById("windows93").addEventListener("click", (event) => {
+    event.preventDefault();
+    if (!document.getElementById("windows93audio")) {
+        createAudio();
+    }
+});
+</script>
+
+<script>
+document.getElementById("nosurname").addEventListener("click", (event) => {
+event.preventDefault();
+window.open('https://www.youtube.com/@MelodyNosurname/', '_blank');
+});
 </script>

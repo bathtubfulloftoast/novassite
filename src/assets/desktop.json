@@ -72,6 +72,12 @@
     "comment": "he said not not twice... he wanted to die."
   },
   {
+    "filename": "WeAre#1",
+    "icon": "rotten.png",
+    "id": "wearenumberone",
+    "comment": "who is number one?"
+  },
+  {
     "filename": "joemany.txt",
     "icon": "liberals.gif",
     "id": "liberals",
@@ -120,10 +126,22 @@
     "comment": "if you can get anthony to review two house ill add that"
   },
   {
+    "filename": "melody.nosurname",
+    "icon": "melody.png",
+    "id": "nosurname",
+    "comment": "faggot?"
+  },
+  {
     "filename": "creek.flow",
     "icon": "aproval.webp",
     "id": "creekflow",
     "comment": "shoutouts to jules for making me for a nickel"
+  },
+  {
+    "filename": "windows.93",
+    "icon": "93.png",
+    "id": "windows93",
+    "comment": "no comment"
   },
   {
     "filename": "CLICKME.txt",
