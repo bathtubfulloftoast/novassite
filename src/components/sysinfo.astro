@@ -55,5 +55,50 @@ const device = getDevice();
 <div class="blurb">
 <b>System Info:</b><br>
 compiled on {currentdate}<br>
-compiled on <a href="/deviceinfo.json" target="_top">{hostname} using {distro} {architecture}</a>
+compiled on <a href="/deviceinfo.json" target="_top">{hostname} using {distro} {architecture}</a><br>
+<a id="version" target="_top">uhhh update</a>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+
+let response = "error: response unset";
+let counter = 0;
+let found = false;
+
+async function weather() {
+const commitResponse = await fetch('/commitID.txt');
+const currentCommit = await commitResponse.text();
+// const currentCommit = "541b863ca5e89c49500a4ec86b53a9dee7bfd4d5";
+
+const githubResponse = await fetch('https://api.github.com/repos/bathtubfulloftoast/novassite/commits');
+// const githubResponse = await fetch('/commits.json');
+const hubCommit = await githubResponse.json();
+
+console.log()
+
+for (var item of hubCommit) {
+counter++;
+if (item.sha === currentCommit) {
+found = true;
+break;
+}
+}
+
+if(found) {
+if(counter != 1) {
+response = `outdated version: ${currentCommit.slice(0, 7)} ${counter-1} commit${(counter-1 > 1 ? 's' : '')} behind current version ${hubCommit[0].sha.slice(0,7)}`;
+}
+else if (counter == 1) {
+response = `current version: ${currentCommit.slice(0, 7)}`;
+}
+} else {
+response = `development version: ${currentCommit.slice(0, 7)}`;
+}
+
+document.getElementById("version").innerHTML = response;
+document.getElementById("version").href = `https://github.com/bathtubfulloftoast/novassite/commit/${currentCommit}`;
+}
+await weather();
+});
+</script>
