@@ -13,8 +13,9 @@ document.getElementById("topsongs").innerHTML = text;
 function myFunction(item, index) {
 const trackname = item.name || "";
 const trackurl = item.url || "";
+const plays = item.playcount || "";
 
-text += `<a href="${trackurl}" target="_blank">${trackname}</a><br>`;
+text += `<a href="${trackurl}" target="_blank">${trackname}</a> | ${plays}P<br>`;
 }
 
 
