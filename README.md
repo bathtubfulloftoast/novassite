@@ -19,7 +19,7 @@ then run one of these
 | npm run dev | astro dev mode |
 | node server.js | run the server with node |
 
-# .env
+## .env
 
 this is for if i lose my .env file lol
 
