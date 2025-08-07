@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", async function() {
 
     async function weather() {
-        const discordResponse = await fetch('/api/fm-recent');
+        const discordResponse = await fetch('/api/discord');
         // const fmResponse = await fetch('/fm-recent.json');
-        const discordData = await fmResponse.json();
+        const discordData = await discordResponse.json();
 
 
         const status = discordData.status;
