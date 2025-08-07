@@ -87,13 +87,13 @@ break;
 
 if(found) {
 if(counter != 1) {
-response = `outdated version: ${currentCommit.slice(0, 7)} ${counter-1} commit${(counter-1 > 1 ? 's' : '')} behind current version ${hubCommit[0].sha.slice(0,7)}`;
+response = `sites is on outdated version: ${currentCommit.slice(0, 7)} ${counter-1} commit${(counter-1 > 1 ? 's' : '')} behind current version ${hubCommit[0].sha.slice(0,7)}`;
 }
 else if (counter == 1) {
-response = `current version: ${currentCommit.slice(0, 7)}`;
+response = `site is on current version: ${currentCommit.slice(0, 7)}`;
 }
 } else {
-response = `development version: ${currentCommit.slice(0, 7)}`;
+response = `site is on development version: ${currentCommit.slice(0, 7)} latest public release is ${hubCommit[0].sha.slice(0,7)}`;
 }
 
 document.getElementById("version").innerHTML = response;

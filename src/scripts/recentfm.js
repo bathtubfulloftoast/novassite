@@ -6,16 +6,18 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 
         let text = "";
-        const lastfew = data.recenttracks.track.slice(-5);
 
-        lastfew.forEach(myFunction);
+        data.recenttracks.track.forEach(myFunction);
         document.getElementById("recentsongs").innerHTML = text;
 
         function myFunction(item, index) {
-            const trackname = item.name || "";
-            const trackurl = item.url || "";
+            const trackname = item.name || "no name";
+            const trackurl = item.url || "https://www.last.fm";
+            const nowplaying = item?.['@attr']?.nowplaying;
 
+            if(!nowplaying) {
             text += `<a href="${trackurl}" target="_blank">${trackname}</a><br>`;
+            }
         }
 
 
