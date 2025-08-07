@@ -82,7 +82,7 @@ document.getElementById("time").innerHTML = `${hours}:${minutes} ${ampm}`;
 
 <script>
 document.addEventListener("DOMContentLoaded", async function() {
-const width = window.screen.width;
+const width = window.outerWidth;
 let hash = window.location.hash;
 let hashValue = hash.substring(1);
 
