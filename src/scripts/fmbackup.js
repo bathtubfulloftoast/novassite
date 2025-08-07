@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         const activityimg = document.createElement('img');
 
 
-        if(status == "offline") {
+        if(status !== "online") {
         const fmResponse = await fetch('/api/fm-recent');
         // const fmResponse = await fetch('/fm-recent.json');
         const fmData = await fmResponse.json();
