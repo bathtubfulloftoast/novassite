@@ -20,7 +20,7 @@ const loot = [
 `${username} takes a soul from an innocent bystander in order to give it to you`,
 "you get nothing.",
 "you get a single shoe on your fishing line",
-"https://cdn.novassite.net/tom.png",
+"<https://novassite.net/bot/tom.png>",
 `${username} gives you some fiber supplements`,
 "random cat (random cat)",
 "bluey dvd box set (full series)",
