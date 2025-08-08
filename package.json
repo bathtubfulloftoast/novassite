@@ -23,6 +23,7 @@
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
     "express-ip": "^1.0.4",
+    "marked": "^16.1.2",
     "node-device-detector": "^2.2.0",
     "node-webcam": "^0.8.2",
     "sharp": "^0.34.3",

@@ -32,8 +32,11 @@ export default async function lastfmHandler(req, res) {
             ...data,
             cache_remaining: Math.floor(CACHE_DURATION/1000),
         });
+        console.log(`${colors.green("[Site]")} grabbed top songs from last.fm`);
+
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch data' });
+        console.log(`${colors.red("[ERROR]")} faield to grab top songs from last.fm`);
+
     }
-console.log(`${colors.green("[Site]")} grabbed top songs from last.fm`);
 }

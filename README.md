@@ -21,16 +21,39 @@ then run one of these
 
 ## .env
 
-this is for if i lose my .env file lol
+this is where all the api keys and other config goes
+
+the only things with proper error handling is an unset discord bot token and an unset port
+
+everything else will just shit itself.
+
+### example
+
+an easy example config for you to copy and paste
+
+```
+PORT=8080
+STEAM_API_KEY=
+LASTFM_API_KEY=
+OPENWEATHER_API_KEY=
+QR_CHANNELID=
+PRESENCE_USERID=
+PRESENCE_GUILDID=
+DISCORD_API_KEY=
+DISCORD_BOT_CLIENTID=
+JOINCHANNEL=
+LOGCHANNEL=
+```
+
+### explanation
 
 | Key | What it does | where to get |
 | -------- | ------- | ------- |
-| PORT | port for the website | idk your brain? (80 is the default for http) |
+| PORT | port for the website | right above this |
 | STEAM_API_KEY | steam API key | https://steamcommunity.com/dev/apikey |
 | LASTFM_API_KEY | Last.FM API Key | https://www.last.fm/api/authentication |
 | OPENWEATHER_API_KEY | Open Weather Map API Key | https://home.openweathermap.org/api_keys |
 | QR_CHANNELID | Discord Channel ID that will grab qr code content | https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID |
-| INVITE_CHANNELID | Discord Channel ID that  you will be invited to| https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID |
 | PRESENCE_USERID | Primary User ID that will be assumed to be websites owner. | https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID |
 | PRESENCE_GUILDID | Primary Guild ID that will be used to grab any/all info | https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID |
 | DISCORD_API_KEY | Discord Bot Token | no guide avalible officially???? |

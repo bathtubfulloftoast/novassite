@@ -35,9 +35,12 @@ export default async function presenceHandler(req, res) {
             ...data,
             cache_remaining: Math.floor(CACHE_DURATION / 1000),
         });
+        console.log(`${colors.green("[Site]")} grabbed bot info`);
+
     } catch (error) {
         console.error('Error fetching presence:', error);
         res.status(500).json({ error: 'Internal server error' });
+        console.log(`${colors.red("[ERROR]")} unable to grab bot info (are you logged in yet?)`);
+
     }
-    console.log(`${colors.green("[Site]")} grabbed bot info`);
 }
