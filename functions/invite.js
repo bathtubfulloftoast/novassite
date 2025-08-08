@@ -47,8 +47,9 @@ export default async function lastfmHandler(req, res) {
             ...data,
             cache_remaining: Math.round(CACHE_DURATION / 1000),
         });
+        console.log(`${colors.green("[Site]")} generated discord invite`);
     } catch (error) {
         res.status(500).json({ error: error });
+        console.log(`${colors.red("[ERROR]")} unable to generate discord invite`);
     }
-console.log(`${colors.green("[Site]")} generated discord invite`);
 }

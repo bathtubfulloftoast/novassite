@@ -51,8 +51,11 @@ export default async function lastfmHandler(req, res) {
             ...data,
             cache_remaining: Math.floor(CACHE_DURATION/1000),
         });
+        console.log(`${colors.green("[Site]")} grabbed info for discord userid ${userid}`);
+
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch data' });
+        console.log(`${colors.red("[ERROR]")} unable to grab info for userid ${userid}`);
+
     }
-console.log(`${colors.green("[Site]")} grabbed info for discord userid ${userid}`);
 }

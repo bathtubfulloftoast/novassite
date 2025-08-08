@@ -89,6 +89,11 @@ client.on(Events.InteractionCreate, async interaction => {
 
 await loadCommands();
 
+function botLogin() {
+if(!API_KEY) {
+console.log(`${colors.red("[ERROR]")} no bot token set for discord bot`);
+return;
+};
 
 if (process.argv.includes('--nowait')) {
 client.login(API_KEY);
@@ -97,6 +102,8 @@ setTimeout(() => {
 client.login(API_KEY);
 }, 5000);
 }
+}
+botLogin();
 
 MemberJoin(client);
 MemberLeave(client);

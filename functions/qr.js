@@ -59,8 +59,11 @@ export default async function lastfmHandler(req, res) {
             ...data,
             cache_remaining: Math.floor(CACHE_DURATION/1000),
         });
+        console.log(`${colors.green("[Site]")} function qrcode ran`);
+
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch data' });
+        console.log(`${colors.red("[ERROR]")} function qrcode failed to run`);
+
     }
-console.log(`${colors.green("[Site]")} function qrcode ran`);
 }
