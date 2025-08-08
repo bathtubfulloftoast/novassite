@@ -15,7 +15,7 @@ const trackname = item.name || "";
 const trackurl = item.url || "";
 const plays = item.playcount || "";
 
-text += `<a href="${trackurl}" target="_blank">${trackname}</a> | ${plays}P<br>`;
+text += `<a href="${trackurl}" target="_blank">${trackname}</a> | ${plays} Plays<br>`;
 }
 
 
