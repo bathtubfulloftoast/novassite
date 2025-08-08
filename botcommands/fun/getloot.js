@@ -76,7 +76,9 @@ btoa(interacter),
 `${username} uses beam of exploding ${interacter} that only explodes ${interacter}`,
 `you get a call on your phone thats just breathing\nthe caller ID is ${username}`,
 "single plate",
-`${username} kicks you in the shins and runs away`
+`${username} kicks you in the shins and runs away`,
+`${username} plunges a knife right into your chest.`,
+"lawsuit"
 ]
 
 
