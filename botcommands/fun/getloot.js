@@ -69,7 +69,14 @@ btoa(interacter),
 `${username} touches a gross puddle on the floor`,
 "old glass of milk",
 "new glass of milk",
-"potion\n(plastic water bottle with dirt in it)"
+"potion\n(plastic water bottle with dirt in it)",
+`${username} smacks you square in the face.`,
+`${username} tells you "its all about the game."`,
+`${username} makes you listen to a song thats over 20 minutes long`,
+`${username} uses beam of exploding ${interacter} that only explodes ${interacter}`,
+`you get a call on your phone thats just breathing\nthe caller ID is ${username}`,
+"single plate",
+`${username} kicks you in the shins and runs away`
 ]
 
 
