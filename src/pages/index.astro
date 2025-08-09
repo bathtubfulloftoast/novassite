@@ -145,4 +145,40 @@ createaudio(); //ive removed the ability to spam im sorgy.
 
 </script>
 
+<div id="loadingImg" style="background:#000;color:#fff;position:absolute;left:0;top:0;width:100vw;height:100vh;z-index:200;display:flex;align-items:center;text-align:center;justify-content:center;"><img style="width:35vh;image-rendering: pixelated;" src="/loading.webp" class="fadein" ></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+
+async function weather() {
+    const response = await fetch('/ping');
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = "/media/sfx/vistabeta.ogg";
+    audioElement.volume = 1;
+    document.body.appendChild(audioElement);
+
+audioElement.addEventListener('ended', (event) => {
+audioElement.remove();
+});
+
+    if (response.ok) {
+    await new Promise(r => setTimeout(r, 7000));
+    document.getElementById("loadingImg").style.opacity = 0;
+    document.getElementById("loadingImg").style.transition = "opacity 2s ease-in-out";
+    audioElement.play();
+
+    await new Promise(r => setTimeout(r, 2000));
+    document.getElementById("loadingImg").remove();
+
+    }
+
+
+
+}
+await weather();
+});
+</script>
+
+
 <IScript />

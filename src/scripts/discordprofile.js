@@ -178,12 +178,6 @@ activitytime.innerHTML = `<progress style="width:300px" value="${current}" max="
 updateActivityTime();
 setInterval(updateActivityTime, 1000);
 
-// Initial call
-updateActivityTime();
-
-// Update every second
-setInterval(updateActivityTime, 1000);
-
 
 if(lareimg) {
 const activityimg = document.createElement('img');
