@@ -151,7 +151,7 @@ createaudio(); //ive removed the ability to spam im sorgy.
 document.addEventListener("DOMContentLoaded", async function() {
 
 async function weather() {
-    const response = await fetch('/ping');
+    const response = await fetch('/ping',{method: "POST"});
 
     const audioElement = document.createElement('audio');
     audioElement.src = "/media/sfx/vistabeta.ogg";
@@ -163,7 +163,7 @@ audioElement.remove();
 });
 
     if (response.ok) {
-    await new Promise(r => setTimeout(r, 7000));
+    await new Promise(r => setTimeout(r, 5000));
     document.getElementById("loadingImg").style.opacity = 0;
     document.getElementById("loadingImg").style.transition = "opacity 2s ease-in-out";
     audioElement.play();
@@ -171,6 +171,13 @@ audioElement.remove();
     await new Promise(r => setTimeout(r, 2000));
     document.getElementById("loadingImg").remove();
 
+    }
+    else if (response.status == 404) {
+    document.getElementById("loadingImg").remove();
+    } else {
+    document.getElementById("loadingImg").innerHTML = `<h1>HTTP error code ${response.status}</h1>`;
+    console.log("ping wasnt 200 or 404 dumping response.");
+    console.log(response);
     }
 
 
