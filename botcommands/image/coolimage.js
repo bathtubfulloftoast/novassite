@@ -1,4 +1,4 @@
-import { SlashCommandBuilder, AttachmentBuilder } from 'discord.js';
+import { SlashCommandBuilder, AttachmentBuilder, EmbedBuilder } from 'discord.js';
 import colors from 'colors';
 import fs from 'fs';
 import sharp from 'sharp';
@@ -22,13 +22,22 @@ let filext = filematch?.[2];
 
 let coolimagefile = dir+"/"+image;
 
-const output = await sharp(coolimagefile).resize({ width: 800, height: 800,fit:"inside",withoutEnlargement:true }).toFormat("webp").toBuffer();
+const output = await sharp(coolimagefile).resize({ width: 500, height: 500,fit:"inside",withoutEnlargement:true }).toFormat("webp").toBuffer();
 
 const file = new AttachmentBuilder(output);
 file.setName("image.webp");
 file.setDescription("a cool image");
 
-await interaction.reply({content: image,files: [file]});
+const MessageEmbed = {
+    "title": image,
+    "url": `https://novassite.net/bot/cool/${image}`,
+    "image": {
+        "url": "attachment://image.webp"
+    },
+    "color": 0
+};
+
+await interaction.reply({embeds: [MessageEmbed],files: [file]});
 // await interaction.reply({content:file});
 
 await console.log(`${colors.cyan("[Discord]")} command coolimage has been run by ${interaction.user.tag}`);
