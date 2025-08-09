@@ -78,7 +78,13 @@ btoa(interacter),
 "single plate",
 `${username} kicks you in the shins and runs away`,
 `${username} plunges a knife right into your chest.`,
-"lawsuit"
+"lawsuit",
+"thatpony**pools** informs you about a new pool cleaning robot that shes reviewing for her youtube channel",
+'thatpony**yules** puts you onto the "hot new shit"\n(a 24 hour yule log video by a random tech channel)',
+"that**train**jules rambles on about thomas the tank engine for an uncomfortable amount of time\n(for her youre pretty interested all things considered)",
+'thatpony**cools** does a sick kickflip then proceeds to drink a monster energy while saying "radical"',
+"thatpony**spools** talks about her new 3d printer... filaments.",
+"thatpony**duels** challenges you to a jousting duel."
 ]
 
 
