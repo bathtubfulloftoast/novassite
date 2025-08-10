@@ -4,14 +4,14 @@ let imageBlobUrl = null;
 let audioBlobUrl = null;
 
 function countdown() {
-var timeleft = 5;
+var timeleft = 3;
 document.getElementById("countdown").style.color="#fff";
 
 var downloadTimer = setInterval(function(){
     if(timeleft <= 0){
         clearInterval(downloadTimer);
         document.getElementById("countdown").innerHTML = "<b>page will refresh</b>";
-        window.location.reload();
+        window.location.replace("/");
     } else {
         document.getElementById("countdown").innerHTML = "the page will refresh in "+timeleft + " seconds";
     }
@@ -67,7 +67,7 @@ document.body.innerHTML = '<h1>you have exploded.</h1><br><p id="countdown"></p>
 document.title='SPLODED.';
 document.body.style.color="#ff0000";
 document.body.style.textAlign="center";
-// countdown();
+countdown();
 });
 }
 
