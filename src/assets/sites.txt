@@ -95,7 +95,6 @@ dexterdaybreaker.neocities.org
 dheinemann.com
 dimden.dev
 doskel.net
-DSKLwiki
 dotnom.com
 dragon-vi.be
 drakonic.zone
@@ -175,6 +174,7 @@ larvaecandy.carrd.co
 lattemacchiato.dev
 lavate.ch
 lavender.software
+lavender.vu
 lawriecape.co.uk
 lenooby09.tech
 lensdeer.neocities.org
