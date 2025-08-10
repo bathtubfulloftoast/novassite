@@ -252,6 +252,18 @@
       "url": "https://novassite.net/discord/user/#471806482648924174"
     },
     {
+      "title": "E621",
+      "source": "bi bi-link-45deg",
+      "url": "https://e621.net/posts?tags=nova_%28bathtubfulloftoast%29",
+      "adult": true
+    },
+    {
+      "title": "FurAffinity",
+      "source": "bi bi-link-45deg",
+      "url": "https://www.furaffinity.net/user/bathtubfulloftoast",
+      "adult": true
+    },
+    {
       "title": "Github",
       "source": "bi bi-github",
       "url": "https://github.com/bathtubfulloftoast"
@@ -285,6 +297,12 @@
       "title": "Roblox",
       "source": "bi bi-link-45deg",
       "url": "https://www.roblox.com/users/823958816/profile"
+    },
+    {
+      "title": "Rule34",
+      "source": "bi bi-link-45deg",
+      "url": "https://rule34.xxx/index.php?page=post&s=list&tags=nova_%28bathtubfulloftoast%29",
+      "adult": true
     },
     {
       "title": "SoundCloud",
