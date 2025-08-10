@@ -88,7 +88,7 @@ top:0px;
 display:flex;
 flex-direction:column;
 flex-wrap:wrap;
-height:calc(100% - 5px);
+height:calc(100% - 40px);
 column-gap:10px;
 align-content:flex-start;
 row-gap:10px;
