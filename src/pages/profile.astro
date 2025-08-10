@@ -119,11 +119,11 @@ Inside Job
 <br><br>
 
 Socials:<br>
-<section id="socials">
-    {socials.map((item) => (
-        <a title={item.title} href={item.url} target="_blank">{item.title}</a><br>
-    ))}
-</section>
+{socials
+.filter(item => !item.adult)
+.map(item => (
+<a title={item.title} href={item.url} target="_blank">{item.title}</a><br>
+))}
 </div>
 
 <div class="blurbs">
