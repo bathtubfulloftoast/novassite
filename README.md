@@ -7,7 +7,7 @@ though 99% of the website is perfectly fine there are very few sections that sho
 
 i am a legal adult and i can and will have some things dedicated to adult topics on my website.
 
-since neither github nor git.gay have any way of age gating repos/directories i will say this upfront
+since neither github nor git.gay have any way of age gating repos i will say this upfront
 
 **IF YOU ARE A MINOR AVOID THESE PATHS**
 - public/media/NSFW
