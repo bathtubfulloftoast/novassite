@@ -7,7 +7,7 @@ export default async function lastfmHandler(req, res) {
     const API_KEY = process.env.LASTFM_API_KEY;
     const USER = "bathtuboftoast";
     const MAXFM = "5";
-    const CACHE_DURATION = 600000000; // 1 week
+    const CACHE_DURATION = 172800000; // 48 hours
 
     if (cache.timestamp && (Date.now() - cache.timestamp < CACHE_DURATION)) {
         const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);
