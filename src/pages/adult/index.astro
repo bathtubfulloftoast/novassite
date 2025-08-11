@@ -2,7 +2,7 @@
 import links from '/src/assets/links.json';
 const socials = links[2] ?? [];
 
-import '/src/styles/colors.css';
+import '/src/styles/gruvbox.css';
 ---
 <head>
 <title>Minors DNI...</title>
@@ -79,6 +79,12 @@ drawn by <a href="https://toyhou.se/Toviah">Toviah</a>
 </div>
 
 <div class="box">
+<h2>Check Out The Main Page!</h2>
+<a href="/">if youre here from another site please check out the actual well coded main page<br>
+<img nsrc="/media/wii.jpg"></a>
+</div>
+
+<div class="box">
 <h2>Adult Socials</h2>
 while some arent specifically NSFW i use these places specifically to interact with boobies.<br>
 
@@ -109,7 +115,6 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 const allImgs = document.querySelectorAll('img');
 allImgs.forEach(imageElement => {
-imageElement.src = "/media/NSFW/BLNT.webp";
 document.getElementById("rwarn").addEventListener("click", function(event) {
 event.preventDefault();
 imageElement.src = imageElement.getAttribute('nsrc');
