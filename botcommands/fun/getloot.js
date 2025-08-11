@@ -84,7 +84,16 @@ btoa(interacter),
 "that**train**jules rambles on about thomas the tank engine for an uncomfortable amount of time\n(for her youre pretty interested all things considered)",
 'thatpony**cools** does a sick kickflip then proceeds to drink a monster energy while saying "radical"',
 "thatpony**spools** talks about her new 3d printer... filaments.",
-"thatpony**duels** challenges you to a jousting duel."
+"thatpony**duels** challenges you to a jousting duel.",
+`${username} does a sick ass guitar riff and walks away.`,
+`${username} raises its fists.`,
+`${username} smiles wide.`,
+`${username} tucks you into bed`,
+"goodnight",
+"goodbye",
+`${username} brings its face closer to yours\nits face hits the window.`,
+`${username} dies`,
+"death"
 ]
 
 
