@@ -1,0 +1,165 @@
+---
+import links from '/src/assets/links.json';
+const socials = links[2] ?? [];
+
+import '/src/styles/colors.css';
+---
+<head>
+<title>Minors DNI...</title>
+<style>
+body {
+text-align:center;
+background:var(--bg0);
+color:var(--fg);
+}
+
+a {
+text-decoration:none;
+}
+
+a:link,a:visited {
+color:var(--aqua);
+}
+
+a:hover {
+color:var(--bright-aqua)
+}
+
+.box {
+display:block;
+background:var(--bg3);
+width:80vw;
+margin:auto;
+padding:5px;
+border-radius:2em;
+margin-bottom:15px;
+}
+
+img {
+max-width:50%;
+}
+
+video {
+max-width:60%;
+}
+
+.social {
+display:inline-block;
+background:var(--bg4);
+margin:5px;
+padding:2px;
+border-radius:5px;
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<div class="box">
+<h1>What is this page?</h1>
+while i try to be SFW on 99% of my internet spaces i do still interact with balls and breasts.<br>this page is an area where i can acknowledge my more adult presence on the internet and verify myself.
+</div>
+
+<div class="box">
+<h1>why make a point out of this?</h1>
+if you couldnt tell im a gay furry so i obviously suffer from mental illness and have some form of trauma.<br>
+as it stands currently i feel an extreme sense of fear and dread at the fact people could possibly find out i do <a href="javascript:void(0)" id="naughty">the naughty</a><br>
+this is mostly so i can de-stigmatize this for myself and be like every other furry on the internet<br>
+horny on main....<br>
+<video controls src="/media/NSFW/horny.mp4" preload="metadata" poster="/media/NSFW/horny.webm"></video>
+</div>
+
+<div class="box">
+<h2>NSFW Nova Reference Sheet</h2>
+this version of nova has been made purposefully more...<br>
+voluptuous... lets say...<br>
+this version is different to regular nova in several ways<br>
+more just being she conforms to sex universe rules where people just blush at public sex instead of thinking about calling the cops<br>
+<img nsrc="/media/NSFW/novaref.png"><br>
+drawn by <a href="https://toyhou.se/Toviah">Toviah</a>
+</div>
+
+<div class="box">
+<h2>Adult Socials</h2>
+while some arent specifically NSFW i use these places specifically to interact with boobies.<br>
+
+{socials
+.filter(item => item.adult)
+.map(item => (
+<div class="social"><a title={item.title} href={item.url} target="_blank">{item.title}</a></div>
+))}
+</div>
+
+<div style="background:#000;color:#fff;position:fixed;left:0;top:0;width:100%;height:100%;align-items:center;text-align:center;justify-content:center;display:flex;" id="popup"><div><h1>this page is for people that are 18 or older.<br>while i wont ask you to upload an ID i will still ask you to tell the truth</h1><button id="rwarn">i am 18 years of age</button> <button id="explodebutton">im a minor im sorry</button></div></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+const width = window.outerWidth;
+let hash = window.location.hash;
+
+if (width<1500) {
+window.location.replace("/tree");
+// i will not be optimizing this page for mobile nor do i care enough to
+}
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+
+const allImgs = document.querySelectorAll('img');
+allImgs.forEach(imageElement => {
+imageElement.src = "/media/NSFW/BLNT.webp";
+document.getElementById("rwarn").addEventListener("click", function(event) {
+event.preventDefault();
+imageElement.src = imageElement.getAttribute('nsrc');
+imageElement.removeAttribute('nsrc');
+// this will only load the image if the correct button is pressed.
+// this is to prevent porn from getting pushed into the cache and any network logs
+// also alice is saying this hi
+
+document.getElementById("popup").remove();
+document.title="V.I.P. area";
+
+});
+});
+});
+</script>
+
+<script src="/src/scripts/splode.js"></script>
+
+
+<script>
+const audioUrl = "/media/sfx/naughty.ogg";
+
+
+
+async function createaudio() {
+
+
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = audioUrl;
+    audioElement.volume = 0.5;
+    audioElement.id = "naughtio";
+
+
+    document.body.appendChild(audioElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', (event) => {
+audioElement.remove();
+});
+
+};
+
+document.getElementById("naughty").addEventListener("click", function(event) {
+event.preventDefault();
+if(!document.getElementById("naughtio")) {
+createaudio();
+}
+});
+
+</script>
