@@ -247,6 +247,12 @@
       "url": "https://bsky.app/profile/novassite.net"
     },
     {
+      "title": "Bluesky",
+      "source": "bi bi-bluesky",
+      "url": "https://bsky.app/profile/bathtubfulloftoast.bsky.social",
+      "adult": true
+    },
+    {
       "title": "Discord",
       "source": "bi bi-discord",
       "url": "https://novassite.net/discord/user/#471806482648924174"
