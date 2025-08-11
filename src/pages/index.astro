@@ -175,7 +175,9 @@ audioElement.remove();
     else if (response.status == 404) {
     document.getElementById("loadingImg").remove();
     } else {
-    document.getElementById("loadingImg").innerHTML = `<h1>HTTP error code ${response.status}</h1>`;
+    document.getElementById("loadingImg").innerHTML = `<div><h1>HTTP error code ${response.status}</h1><br><h2>exiting in 5 seconds.</h2></div>`;
+    await new Promise(r => setTimeout(r, 5000));
+    document.getElementById("loadingImg").remove();
     console.log("ping wasnt 200 or 404 dumping response.");
     console.log(response);
     }

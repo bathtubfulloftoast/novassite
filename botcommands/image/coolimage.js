@@ -28,9 +28,11 @@ const file = new AttachmentBuilder(output);
 file.setName("image.webp");
 file.setDescription("a cool image");
 
+const imageurl = image.replaceAll(" ", "%20");
+
 const MessageEmbed = {
     "title": image,
-    "url": `https://novassite.net/bot/cool/${image}`,
+    "url": `https://novassite.net/bot/cool/${imageurl}`,
     "image": {
         "url": "attachment://image.webp"
     },
