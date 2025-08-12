@@ -145,3 +145,19 @@ color:white;
     opacity: 1;
   }
 }
+
+/*.battery {
+width:17px;
+height:12px;
+-ms-interpolation-mode: nearest-neighbor;
+image-rendering: crisp-edges;
+image-rendering: pixelated;
+background:url("/media/battery.png");
+transform: scale(1.3);
+}
+
+.battery.highest {background-position: -1px -1px;}
+.battery.high {background-position: -19px -1px;}
+.battery.medium {background-position: -38px -1px;}
+.battery.low {background-position: -56px -1px;}
+.battery.charging {background-position: -74px -1px;}*/
