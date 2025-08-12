@@ -33,7 +33,7 @@ import '/src/styles/tree.css';
 {socials
 .filter(item => !item.adult)
 .map((item) => (
-<div class="link"><a title={item.title} href={item.url} target="_blank"><i class={item.source}></i> {item.title}</a></div><br>
+<div class="link"><a title={item.title} href={item.url} target="_blank"><i class={"bi bi-"+item.source}></i> {item.title}</a></div><br>
 ))}
 </div>
 

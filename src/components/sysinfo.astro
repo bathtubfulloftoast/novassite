@@ -1,5 +1,6 @@
 ---
 import os from 'os';
+import si from 'systeminformation';
 
 
 var now = new Date();
@@ -18,44 +19,26 @@ const year = new Date().getFullYear();
 const copyright = `Novas Site ©${year}`;
 const currentdate = mm + '/' + dd + '/' + yyyy + ' ' + hours + ':' + minutes + ' '+ currentTimeZone;
 
-let distro;
 
 const architecture = os.arch() ?? "Unknown Architecture"; // x64
-const platform = os.platform() ?? "Unknown Platform"; // linux
-const hostname = os.hostname() ?? "Computer"; //supernova
 
-function getLinuxDistro() {
+async function getOS() {
     try {
-        const releaseInfo = fs.readFileSync('/etc/os-release', 'utf-8');
-        const match = releaseInfo.match(/^NAME="([^"]*)"/m);
-        return match ? match[1] : 'Generic Linux';
-    } catch (err) {
-        return 'Generic Linux';
+        const data = await si.osInfo();
+        return data;
+    } catch (error) {
+        console.error(error);
+        return null;
     }
 }
 
-function getDevice() {
-    try {
-        const releaseInfo = fs.readFileSync('/sys/devices/virtual/dmi/id/product_name', 'utf-8');
-        return releaseInfo ?? 'Unknown Device';
-    } catch (err) {
-        return 'Unknown Device';
-    }
-}
-
-if(platform == "linux") {
-    distro = getLinuxDistro();
-} else {
-    distro = platform;
-}
-
-const device = getDevice();
+const operatingsystem = await getOS();
 
 ---
 <div class="blurb">
 <b>System Info:</b><br>
 compiled with {currentdate}<br>
-compiled on <a href="/deviceinfo.json" target="_top">{hostname} using {distro} {architecture}</a><br>
+compiled on <a href="/deviceinfo.json" target="_top">{operatingsystem.hostname} using {operatingsystem.distro} {operatingsystem.release} {architecture}</a><br>
 <a id="version" target="_top">uhhh update</a>
 </div>
 
