@@ -29,6 +29,7 @@
     "node-webcam": "^0.8.2",
     "sharp": "^0.34.3",
     "sqlite3": "^5.1.7",
+    "systeminformation": "^5.27.7",
     "xp.css": "^0.2.6"
   }
 }

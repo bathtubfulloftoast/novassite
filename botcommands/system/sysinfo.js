@@ -47,10 +47,10 @@ PStamp = Math.floor(PStamp/1000);
             "fields": [
                 {"name": "Server Powered On", "value": `<t:${OStamp}:R>`},
                 {"name": "Process Started", "value": `<t:${PStamp}:R>`},
-                {"name": "Device", "value": data.device},
-                {"name": "Hostname", "value": data.hostname},
-                {"name": "OS", "value": data.os},
-                {"name": "CPU", "value": data.cpu}
+                {"name": "Device", "value": data.system.model},
+                {"name": "Hostname", "value": data.os.hostname},
+                {"name": "OS", "value": data.os.distro+" "+data.os.release},
+                {"name": "CPU", "value": data.cpu.brand+" @"+data.cpu.speed+"GHZ"}
             ],
             "timestamp": now.toISOString(),
             "footer": {

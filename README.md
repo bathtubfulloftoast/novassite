@@ -12,6 +12,7 @@ since neither github nor git.gay have any way of age gating repos i will say thi
 **IF YOU ARE A MINOR AVOID THESE PATHS**
 - public/media/NSFW
 - src/pages/adult
+- public/bot/cool/clitoris.png */hj*
 
 everything else in this repo and on the site is entirely SFW
 

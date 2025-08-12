@@ -1,5 +1,6 @@
 import os from 'os';
 import fs from 'fs';
+import si from 'systeminformation';
 
 let distro;
 
@@ -16,26 +17,6 @@ export function formatBytes(bytes, decimals = 2) {
 }
 // https://stackoverflow.com/questions/15900485/correct-way-to-convert-size-in-bytes-to-kb-mb-gb-in-javascript
 // me when im lazy
-
-export function getLinuxDistro() {
-    try {
-        const releaseInfo = fs.readFileSync('/etc/os-release', 'utf-8');
-        const match = releaseInfo.match(/^NAME="([^"]*)"/m);
-        return match ? match[1] : 'Generic Linux';
-    } catch (err) {
-        return 'Generic Linux';
-    }
-}
-
-export function getPrettyDistro() {
-    try {
-        const releaseInfo = fs.readFileSync('/etc/os-release', 'utf-8');
-        const match = releaseInfo.match(/^PRETTY_NAME="([^"]*)"/m);
-        return match ? match[1] : 'Generic Linux';
-    } catch (err) {
-        return 'Generic Linux';
-    }
-}
 
 export function getDevice() {
     const regex = /[^a-zA-Z0-9 \-.,#_\[\]\{\}!@\$%\^&\*\(\)`~\/\?\\\|=\+]/g;
@@ -54,29 +35,131 @@ export function getDevice() {
     }
 }
 
+async function getCPU() {
+  try {
+    const data = await si.cpu();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
+async function getCPUTEMP() {
+    try {
+        const data = await si.cpuTemperature();
+        return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
+async function getOS() {
+    try {
+        const data = await si.osInfo();
+        return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
+async function getSYS() {
+    try {
+        const data = await si.system();
+        return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
+async function getBB() {
+    try {
+        const data = await si.baseboard();
+        return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
+async function getMEM() {
+    try {
+        const data = await si.mem();
+        return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
+async function getBATT() {
+    try {
+        const data = await si.battery();
+        return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
+async function getVBOX() {
+    try {
+        const data = await si.vboxInfo();
+        return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
 const platform = os.platform() ?? "Unknown OS"; // linux
 const architecture = os.arch() ?? "no architecture"; // x64 (i dont think its possible for these to be blank but yknow if someone gets node on the newest architecture and wants to test my site we good)
 const cpuplatform = os.machine() ?? "no architecture"; // x86_64
-const hostname = os.hostname() ?? "Computer"; //supernova
-const cpumodel = os.cpus()?.[0]?.model ?? "Unknown CPU"; // AMD Ryzen 7 5700U with Radeon Graphics
-const device = getDevice();
-const memory = os.totalmem(); // returned in bytes 
-
-if(platform == "linux") {
-    distro = getPrettyDistro();
-} else {
-    distro = platform;
-}
+const memory = await getMEM(); // returned in bytes
+const cpudata = await getCPU();
+const osinfo = await getOS();
+const sysinfo = await getSYS(); // OH MY GOD SHE SAID THE THING
+const bboard = await getBB();
+const cputemp = await getCPUTEMP();
+const batt = await getBATT();
 
 export async function GET() {
 const data = {
-    hostname: hostname,
-    os: distro,
     architecture: architecture,
-    platform: cpuplatform,
-    cpu: cpumodel,
-    ram: formatBytes(memory),
-    device: device,
+    ram: formatBytes(memory.total),
+    system: {
+    manufacturer:sysinfo.manufacturer,
+    model:sysinfo.model,
+    },
+    os: {
+    hostname: osinfo.hostname,
+    platform: osinfo.platform,
+    distro: osinfo.distro,
+    release: osinfo.release,
+    kernel: osinfo.kernel,
+    build: osinfo.build,
+    },
+    cpu: {
+    manufacturer:cpudata.manufacturer,
+    vendor:cpudata.vendor,
+    brand:cpudata.brand, // my BRand!?!?
+    speed:cpudata.speed, // in GHZ
+    cores:cpudata.cores,
+    processors:cpudata.processors,
+    temp:cputemp.main, // in Celsiusos
+    },
+    motherboard: {
+    manufacturer:bboard.manufacturer,
+    model:bboard.model,
+    },
+    battery: {
+    exists: batt.hasBattery,
+    capacity: batt.maxCapacity, // mWh
+    },
+    rpi: sysinfo.raspberry,
 }
 try {
 return new Response(JSON.stringify(data));

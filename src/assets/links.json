@@ -228,141 +228,141 @@
   [
     {
       "title": "E-Mail",
-      "source": "bi bi-envelope",
+      "source": "envelope",
       "url": "mailto:mail@novassite.net"
     },
     {
       "title": "Bandcamp",
-      "source": "bi bi-link-45deg",
+      "source": "link-45deg",
       "url": "https://bandcamp.com/bathtubfulloftoast"
     },
     {
       "title": "BeatLeader",
-      "source": "bi bi-link-45deg",
+      "source": "link-45deg",
       "url": "https://beatleader.xyz/u/76561198853505045"
     },
     {
       "title": "Bluesky",
-      "source": "bi bi-bluesky",
+      "source": "bluesky",
       "url": "https://bsky.app/profile/novassite.net"
     },
     {
       "title": "Bluesky",
-      "source": "bi bi-bluesky",
+      "source": "bluesky",
       "url": "https://bsky.app/profile/bathtubfulloftoast.bsky.social",
       "adult": true
     },
     {
       "title": "Discord",
-      "source": "bi bi-discord",
+      "source": "discord",
       "url": "https://novassite.net/discord/user/#471806482648924174"
     },
     {
       "title": "E621",
-      "source": "bi bi-link-45deg",
+      "source": "link-45deg",
       "url": "https://e621.net/posts?tags=nova_%28bathtubfulloftoast%29",
       "adult": true
     },
     {
       "title": "FurAffinity",
-      "source": "bi bi-link-45deg",
+      "source": "link-45deg",
       "url": "https://www.furaffinity.net/user/bathtubfulloftoast",
       "adult": true
     },
     {
       "title": "Github",
-      "source": "bi bi-github",
+      "source": "github",
       "url": "https://github.com/bathtubfulloftoast"
     },
     {
       "title": "Instagram",
-      "source": "bi bi-instagram",
+      "source": "instagram",
       "url": "https://www.instagram.com/bathtubfulloftoast"
     },
     {
       "title": "Last.fm",
-      "source": "bi bi-link-45deg",
+      "source": "link-45deg",
       "url": "https://www.last.fm/user/bathtuboftoast"
     },
     {
       "title": "Newgrounds",
-      "source": "bi bi-link-45deg",
+      "source": "link-45deg",
       "url": "https://awrootb33r.newgrounds.com"
     },
     {
       "title": "Pintrest",
-      "source": "bi bi-pinterest",
+      "source": "pinterest",
       "url": "https://pinterest.com/bathtubfulloftoast"
     },
     {
       "title": "Reddit",
-      "source": "bi bi-reddit",
+      "source": "reddit",
       "url": "https://www.reddit.com/user/bathtuboftoast"
     },
     {
       "title": "Roblox",
-      "source": "bi bi-link-45deg",
+      "source": "link-45deg",
       "url": "https://www.roblox.com/users/823958816/profile"
     },
     {
       "title": "Rule34",
-      "source": "bi bi-link-45deg",
+      "source": "link-45deg",
       "url": "https://rule34.xxx/index.php?page=post&s=list&tags=nova_%28bathtubfulloftoast%29",
       "adult": true
     },
     {
       "title": "SoundCloud",
-      "source": "bi bi-cloud",
+      "source": "cloud",
       "url": "https://soundcloud.com/bathtuboftoast"
     },
     {
       "title": "SpaceHey",
-      "source": "bi bi-person-fill",
+      "source": "person-fill",
       "url": "https://spacehey.com/bathtuboftoast"
     },
     {
       "title": "Spotify Playlist",
-      "source": "bi bi-spotify",
+      "source": "spotify",
       "url": "https://open.spotify.com/playlist/0pc4fuq77d4egrwZcLu44w?si=ccded8b77965485e"
     },
     {
       "title": "Steam",
-      "source": "bi bi-steam",
+      "source": "steam",
       "url": "https://steamcommunity.com/id/BathtubFullOfToast"
     },
     {
       "title": "Telegram",
-      "source": "bi bi-telegram",
+      "source": "telegram",
       "url": "https://t.me/bathtubfulloftoast"
     },
     {
       "title": "Tiktok",
-      "source": "bi bi-tiktok",
+      "source": "tiktok",
       "url": "https://www.tiktok.com/@bathtuboftoast"
     },
     {
       "title": "ToyHouse",
-      "source": "bi bi-house-door",
+      "source": "house-door",
       "url": "https://toyhou.se/bathtubfulloftoast"
     },
     {
       "title": "Tumblr",
-      "source": "bi bi-link-45deg",
+      "source": "link-45deg",
       "url": "https://bathtuboftoast.tumblr.com"
     },
     {
       "title": "Twitch",
-      "source": "bi bi-twitch",
+      "source": "twitch",
       "url": "https://www.twitch.tv/bathtubfulloftoast"
     },
     {
       "title": "Xbox",
-      "source": "bi bi-xbox",
+      "source": "xbox",
       "url": "https://www.xbox.com/en-US/play/user/AliceProto"
     },
     {
       "title": "YouTube",
-      "source": "bi bi-youtube",
+      "source": "youtube",
       "url": "https://www.youtube.com/@bathtubfulloftoast"
     }
   ]
