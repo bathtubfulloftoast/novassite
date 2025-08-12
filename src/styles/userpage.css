@@ -43,7 +43,7 @@ font-weight: bold;
 .sprite {
 width:16px;
 height:16px;
-background:url("/media/sprites.gif");
+background:url("/media/friends.gif");
 -ms-interpolation-mode: nearest-neighbor;
 image-rendering: crisp-edges;
 image-rendering: pixelated;
