@@ -45,15 +45,15 @@ async function getCPU() {
   }
 }
 
-async function getCPUTEMP() {
-    try {
-        const data = await si.cpuTemperature();
-        return data;
-    } catch (error) {
-        console.error(error);
-        return null;
-    }
-}
+// async function getCPUTEMP() {
+//     try {
+//         const data = await si.cpuTemperature();
+//         return data;
+//     } catch (error) {
+//         console.error(error);
+//         return null;
+//     }
+// }
 
 async function getOS() {
     try {
@@ -123,7 +123,7 @@ const cpudata = await getCPU();
 const osinfo = await getOS();
 const sysinfo = await getSYS(); // OH MY GOD SHE SAID THE THING
 const bboard = await getBB();
-const cputemp = await getCPUTEMP();
+// const cputemp = await getCPUTEMP();
 const batt = await getBATT();
 
 export async function GET() {
@@ -149,7 +149,7 @@ const data = {
     speed:cpudata.speed, // in GHZ
     cores:cpudata.cores,
     processors:cpudata.processors,
-    temp:cputemp.main, // in Celsiusos
+    // temp:cputemp.main, // in Celsiusos
     },
     motherboard: {
     manufacturer:bboard.manufacturer,
