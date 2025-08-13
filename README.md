@@ -48,6 +48,7 @@ an easy example config for you to copy and paste
 
 ```
 PORT=8080
+PROTOCOL=HTTP
 STEAM_API_KEY=
 LASTFM_API_KEY=
 OPENWEATHER_API_KEY=
@@ -62,9 +63,10 @@ LOGCHANNEL=
 
 ### explanation
 
-| Key | What it does | where to get |
+| Key | What it does | where to get/other info |
 | -------- | ------- | ------- |
-| PORT | port for the website | right above this |
+| PORT | port for the website | inf unset/invalid displays this page. |
+| PROTOCOL | sets the protocol to either http or https | if unset/invalid defaults to http |
 | STEAM_API_KEY | steam API key | https://steamcommunity.com/dev/apikey |
 | LASTFM_API_KEY | Last.FM API Key | https://www.last.fm/api/authentication |
 | OPENWEATHER_API_KEY | Open Weather Map API Key | https://home.openweathermap.org/api_keys |
