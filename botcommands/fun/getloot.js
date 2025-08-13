@@ -34,7 +34,7 @@ const loot = [
 "skrillex appears and signs your forehead without being asked to",
 `${username} awaits your downfall`,
 "loot llama fortnite wiki page",
-`${username} stabs your evil clone named ${interacter}`,
+`${username} stabs your evil clone named ${interacter.split("").reverse().join("")}`,
 `${username} takes a wallet and hands you 20 dollars (it doesnt have a job)`,
 `${username} hands you ***THE*** silent hill`,
 "crush. kill. destroy. swag.",
