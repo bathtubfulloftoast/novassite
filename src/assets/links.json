@@ -270,6 +270,11 @@
       "adult": true
     },
     {
+      "title": "git.gay",
+      "source": "git",
+      "url": "http://git.gay/bathtubfulloftoast"
+    },
+    {
       "title": "Github",
       "source": "github",
       "url": "https://github.com/bathtubfulloftoast"
