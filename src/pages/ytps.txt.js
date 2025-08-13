@@ -107,6 +107,7 @@ const sauce = [
 "b4dhm_CVm_0", // {YTP} ~ ultrasdf
 "0XKNEEqDHPk", // [YTP] potato
 "yEz0ypyaVO4", // Hampden Parks
+"Gxhiu0WPUuc", // nerd vs roflcopter
 ]
 
 function shuffle(array) {
