@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 let response = "error: response unset";
 let counter = 0;
 let found = false;
-let url = "https://github.com/bathtubfulloftoast/novassite";
+let url = "https://git.gay/bathtubfulloftoast/novassite";
 
 async function weather() {
 const commitResponse = await fetch('/commitID.txt');
@@ -80,15 +80,15 @@ break;
 if(found) {
 if(counter != 1) {
 response = `sites is on outdated version: ${currentCommit.slice(0, 7)} ${counter-1} commit${(counter-1 > 1 ? 's' : '')} behind current version ${hubCommit[0].sha.slice(0,7)}`;
-url = `https://github.com/bathtubfulloftoast/novassite/compare/${currentCommit}..${hubCommit[0].sha}`;
+url = `https://git.gay/bathtubfulloftoast/novassite/compare/${currentCommit}..${hubCommit[0].sha}`;
 }
 else if (counter == 1) {
 response = `site is on current version: ${currentCommit.slice(0, 7)}`;
-url = `https://github.com/bathtubfulloftoast/novassite/commit/${currentCommit}`;
+url = `https://git.gay/bathtubfulloftoast/novassite/commit/${currentCommit}`;
 }
 } else {
 response = `site is on development version: ${currentCommit.slice(0, 7)} latest public release is ${hubCommit[0].sha.slice(0,7)}`;
-url = `https://github.com/bathtubfulloftoast/novassite/commit/${hubCommit[0].sha}`;
+url = `https://git.gay/bathtubfulloftoast/novassite/commit/${hubCommit[0].sha}`;
 }
 
 document.getElementById("version").innerHTML = response;
