@@ -23,7 +23,7 @@ import '/src/styles/tree.css';
 </head>
 
 <img id="pfp" src="/media/pfp.png">
-<h1 id="name">Nova</h1>
+<h1 id="name">bathtubfulloftoast</h1>
 <h2 id="splash">"you know what they say, all toasters toast toast!"</h2>
 <b id="warning">youve been ridirected to a version of the site more well suited to fit your screen<br>if youre on mobile check this site out on a pc!</b>
 
@@ -53,6 +53,8 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 const response = await fetch('/api/discord');
 // const response = await fetch('/discord.json');
+// const response = await fetch('/ass.json');
+
 let data = await response.json();
 
 const nickname = data.nickname;
@@ -68,7 +70,9 @@ coverimage.onerror = function () {
 coverimage.src = '/media/pfp.png';
 };
 
+if(nickname) {
 document.getElementById("name").innerHTML = nickname;
+}
 
 for (var item of data.activities) {
 if (item.type == 4) {
