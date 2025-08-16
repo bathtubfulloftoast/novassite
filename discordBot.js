@@ -95,6 +95,12 @@ console.log(`${colors.red("[ERROR]")} no bot token set for discord bot`);
 return;
 };
 
+if (process.argv.includes('--nobot')) {
+console.log(`${colors.gray("[Discord]")} not logging into bot`);
+return;
+}
+
+
 if (process.argv.includes('--nowait')) {
 client.login(API_KEY);
 } else {
