@@ -102,3 +102,11 @@ ul {
 width:80vw;
 }
 }
+
+img {
+max-width:80%;
+}
+
+video {
+width:70%;
+}
