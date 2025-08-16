@@ -21,7 +21,7 @@ var opts = {
     verbose: false
 };
 
-await NodeWebcam.capture( "webcam", opts, function( err, data ) {
+await NodeWebcam.capture( "webcam_d", opts, function( err, data ) {
 const file = new AttachmentBuilder(data);
 file.setName("webcam.jpg");
 file.setDescription(now);

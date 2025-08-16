@@ -40,8 +40,6 @@ return;
 
 registerAPIRoutes(app);
 app.post('/ping', (req, res) => {res.send('☃')})
-app.get('/ping', (req, res) => {res.send('<head><title>&#9731;</title><link rel="icon" href="null"> </head><div style="display:flex;width:100vw;height:100vh;align-items:center;text-align:center;justify-content:center;"><h1 style="font-size:70vh">&#9731;</h1></div>')})
-
 
 app.use(base, express.static('dist/client/'));
 app.use(ssrHandler);

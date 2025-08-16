@@ -9,3 +9,5 @@ pnpm-debug.log*
 .env.production
 .DS_Store
 webcam.jpg
+webcam_s.jpg
+webcam_d.jpg
