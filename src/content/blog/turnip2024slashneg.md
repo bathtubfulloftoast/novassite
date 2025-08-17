@@ -2,6 +2,7 @@
 title: 'yeah.'
 description: 'were so entirely and utterly fucked'
 pubDate: '11/6/2024 7:27 AM'
+hidden: true
 ---
 hello.
 nothing special i dont have the energy.

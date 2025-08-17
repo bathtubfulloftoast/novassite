@@ -10,6 +10,14 @@ const stamps = links[1] ?? [];
 const socials = links[2] ?? [];
 
 import Footer from '/src/components/sysinfo.astro';
+
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+
 ---
 <head>
 <title>Nova's Profile</title>
@@ -101,7 +109,8 @@ Spider-Man: Homecoming<br>
 Spider-Man: Far From Home<!-- okay this one was sorta mid ima be fr --><br>
 Spider-Man: No Way Home<br>
 Into The Spider-Verse<br>
-Beyond the Spider-Verse
+Beyond the Spider-Verse<!--<br>
+Spider-Man: Brand New Day-->
 <br><br>
 
 Fav Shows:<br>
@@ -136,8 +145,20 @@ this site is entirely self developed, you can find the source on <a target="_top
 </div>
 
 <div class="blurb">
+<b>Latest Blog Posts:</b><br>
+{
+posts
+.filter(posts => !posts.hidden)
+.slice(0,5)
+.map((post) => (
+<a href={`/blog/${post.id}/`} target="blank">{post.data.title}</a><br>
+))
+}
+</div>
+
+<div class="blurb">
 <b>More of Me:</b><br>
-so alongside this site i run a <a href="//wiki.novassite.net" target="_top">wiki for my characters</a> i also have <a href="/misc" target="_top">a few other random projects</a> alongside a <a href="/blog" target="_top">blog</a> and dont forget the <a href="//cdn.novassite.net/dump" target="_top">file dump</a> oh and to make this site work so closely with <a href="/discord/server" target="_top">my discord</a> it runs as <a href="/discord/bot" target="_top">a bot</a> so check either of those out if you'd like!
+so alongside this site i run a <a href="//wiki.novassite.net" target="_top">wiki for my characters</a> i also have <a href="/misc" target="_top">a few other random projects</a> alongside a <a href="//cdn.novassite.net/dump" target="_top">file dump</a> oh and to make this site work so closely with <a href="/discord/server" target="_top">my discord</a> it runs as <a href="/discord/bot" target="_top">a bot</a> so check either of those out if you'd like!
 </div>
 
 <div class="blurb">
