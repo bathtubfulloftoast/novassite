@@ -45,7 +45,9 @@ import '/src/styles/colors.css';
 <section>
 
 {
-posts.map((post) => (
+posts
+.filter(posts => !posts.hidden)
+.map((post) => (
 <div class="box">
 <a href={`/blog/${post.id}/`}>
 <h2 class="title">{post.data.title}</h2>
