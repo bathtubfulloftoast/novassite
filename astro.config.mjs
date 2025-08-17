@@ -6,8 +6,8 @@ import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://novassite.net',
-    integrations: [
+site: 'https://novassite.net',
+integrations: [
 mdx(),
 sitemap({
 serialize(item) {
