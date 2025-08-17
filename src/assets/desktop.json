@@ -57,7 +57,8 @@
     "filename": "girl.gay",
     "icon": "girl.gif",
     "id": "enid",
-    "comment": "Vivian (is Gay)"
+    "comment": "Vivian (is Gay)",
+    "hidden": true
   },
   {
     "filename": "FUCKYOU.FUCK",
@@ -87,7 +88,8 @@
     "filename": "sponge.jpg",
     "icon": "spaunch.gif",
     "id": "spaunch",
-    "comment": "Toasty (Took Photo)"
+    "comment": "Toasty (Took Photo)",
+    "hidden": true
   },
   {
     "filename": "charmer.love",
@@ -99,7 +101,8 @@
     "filename": "YAYL.AD",
     "icon": "yayl.gif",
     "id": "yayl",
-    "comment": "WHO POSTED MY NUDES ON TWITTER DOT COM??? (veniadev)"
+    "comment": "WHO POSTED MY NUDES ON TWITTER DOT COM??? (veniadev)",
+    "hidden": true
   },
   {
     "filename": "douche.link",
@@ -129,13 +132,21 @@
     "filename": "melody.nosurname",
     "icon": "melody.png",
     "id": "nosurname",
-    "comment": "faggot?"
+    "comment": "faggot?",
+    "hidden": true
   },
   {
     "filename": "creek.flow",
     "icon": "aproval.webp",
     "id": "creekflow",
     "comment": "shoutouts to jules for making me for a nickel"
+  },
+  {
+    "filename": "not a.virus",
+    "icon": "dolphin.png",
+    "id": "virus",
+    "comment": "windows93.net",
+    "hidden": true
   },
   {
     "filename": "windows.93",

@@ -41,7 +41,9 @@ import IScript from '/src/components/iconscript.astro';
 <div class="bnuy"></div>
 
 <div class="icons">
-{icons.map((item) => (
+{icons
+.filter(item => !item.hidden)
+.map((item) => (
 <div class="icon" id={item.id}>
 <img src={`/media/icons/${item.icon}`} alt={item.filename} /><br>
 <span>{item.filename}</span>
