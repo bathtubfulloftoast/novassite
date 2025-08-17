@@ -17,6 +17,9 @@ return undefined;// they're secrets cmon
 if (/adult/.test(item.url)) {
 return undefined;
 }
+if (/snow/.test(item.url)) {
+return undefined;
+}
 return item;
 },
 }),
