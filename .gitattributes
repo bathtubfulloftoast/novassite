@@ -20,3 +20,5 @@ src/pages/adult export-ignore
 *.ttf binary
 *.ogg binary
 *.mp3 binary
+*.webm binary
+*.mp4 binary
