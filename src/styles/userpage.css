@@ -139,3 +139,8 @@ overflow:hidden;
 word-wrap: break-word;
 
 }
+
+.statusemoji {
+max-width:16px;
+max-height:16px;
+}

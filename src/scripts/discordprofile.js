@@ -80,7 +80,13 @@ var year = creationdate.getFullYear();
 
 for (var item of data.activities) {
 if (item.type == 4) {
-document.getElementById("status").innerHTML = wrapEmojis(item.state);
+if(item.emoji.imageURL) {
+document.getElementById("status").innerHTML = `<img src="${item.emoji.imageURL}?size=16" class="statusemoji"> ${item.state}`;
+} else if (!item.emoji.imageURL && item.emoji.name) {
+document.getElementById("status").innerHTML = `<span class="emoji">${item.emoji.name}</span> ${item.state}`
+} else {
+document.getElementById("status").innerHTML = item.state;
+}
 break;
 }
 }
