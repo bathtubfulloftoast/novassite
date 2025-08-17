@@ -40,6 +40,7 @@ return;
 
 registerAPIRoutes(app);
 app.post('/ping', (req, res) => {res.send('☃')})
+app.get('/ping', (req, res) => {res.redirect('/snow')})
 
 app.use(base, express.static('dist/client/'));
 app.use(ssrHandler);
