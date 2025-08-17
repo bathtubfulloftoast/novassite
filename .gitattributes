@@ -18,3 +18,5 @@ src/pages/adult export-ignore
 *.ico binary
 *.glb binary
 *.ttf binary
+*.ogg binary
+*.mp3 binary
