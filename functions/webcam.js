@@ -5,7 +5,7 @@ import fs from 'fs';
 let rcache;
 
 export default async function lastfmHandler(req, res) {
-const CACHE_DURATION = 60000;
+const CACHE_DURATION = 30000;
 
 var opts = {
     width: 480,
