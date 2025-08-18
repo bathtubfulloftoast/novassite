@@ -26,7 +26,7 @@ export default async function presenceHandler(req, res) {
     try {
         const member = await guild.members.fetch(userId);
         if (!member || !member.presence) {
-            return res.status(404).json({ error: 'Presence not found for user' });
+            return res.status(404).json({ error: 'Presence not found for user (theyre probably offline)' });
         }
 
         const fullUser = await member.user.fetch(); // litterally just for grabbing the accent color.
