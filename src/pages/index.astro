@@ -197,6 +197,7 @@ audioElement.remove();
     if (response.ok) {
     await new Promise(r => setTimeout(r, 5000));
     document.getElementById("loadingImg").style.opacity = 0;
+    document.getElementById("loadingImg").style.pointerEvents = "none";
     document.getElementById("loadingImg").style.transition = "opacity 2s ease-in-out";
     audioElement.play();
 
