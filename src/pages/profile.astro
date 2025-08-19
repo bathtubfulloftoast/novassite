@@ -26,17 +26,17 @@ const posts = (await getCollection('blog')).sort(
 </head>
 
 <div class="top">
-<img id="pfp" src="/media/pfp.png">
+<img fetchPriority="high" id="pfp" src="/media/pfp.png">
 
 <span id="username">Nova</span><br>
 <span id="status"><i style="color:var(--fg3)">away message:</i> its all about the game.</span><br>
 
 <span id="creationdate">Account Created: 06/09/2007</span><br><br>
 
-<div><img id="onlineimg" src="/blank.gif" class="sprite offline">
+<div><img fetchPriority="low" id="onlineimg" src="/blank.gif" class="sprite offline">
 <span id="online">Offline</span>
 
-<img src="/blank.gif" class="sprite friend">
+<img fetchPriority="low" src="/blank.gif" class="sprite friend">
 <a id="addfriend" href="/media/secrets/g dance.mp4" target="_blank">Add Friend</a>
 </div>
 </div>
@@ -174,7 +174,7 @@ itl take about 3 minutes to reach my goal<br>
 
 <div class="blurb">
 <b>Nintendo Wii:</b><br>
-<img src="/media/wii.jpg" height="100px" width="400px">
+<img fetchPriority="low" src="/media/wii.jpg" height="100px" width="400px">
 </div>
 
 <div class="blurb">
@@ -183,7 +183,7 @@ itl take about 3 minutes to reach my goal<br>
 <section id="badges">
     {badges.map((item) => (
         <a title={item.title} href={item.url} target="_blank">
-            <img decoding="async" loading="lazy" id={item.id} src={`/media/badges/${item.source}`} alt={item.title} />
+            <img decoding="async" loading="lazy" fetchPriority="low" id={item.id} src={`/media/badges/${item.source}`} alt={item.title} />
         </a>
     ))}
 </section>
@@ -196,7 +196,7 @@ itl take about 3 minutes to reach my goal<br>
 <section id="stamps">
     {stamps.map((item) => (
         <a title={item.title} href={item.url} target="_blank">
-            <img decoding="async" loading="lazy" id={item.id} src={`/media/stamps/${item.source}`} alt={item.title} />
+            <img decoding="async" loading="lazy" fetchPriority="low" id={item.id} src={`/media/stamps/${item.source}`} alt={item.title} />
         </a>
     ))}
 </section>
