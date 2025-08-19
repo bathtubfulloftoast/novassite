@@ -6,7 +6,6 @@ import '/src/styles/colors.css';
 import desktop from '/src/assets/desktop.json';
 const icons = desktop;
 
-import IScript from '/src/components/iconscript.astro';
 ---
 <head>
 <title>NovasDesktop</title>
@@ -68,8 +67,34 @@ watch as hit star ricardo milos does a funny dance with a funnier backing track!
 there is nothing else about this video worth mentioning<br>
 also if youre on mobile youre a cheater how dare you<br>
 edit your browsers css like the desktop users you CHEATER
+
+<div id="loadingImg" style="background:#000;color:#fff;position:absolute;left:0;top:0;width:100vw;height:100vh;z-index:200;display:flex;align-items:center;text-align:center;justify-content:center;"><img style="width:35vh;image-rendering: pixelated;opacity:0;" fetchPriority="high" src="/media/loading.webp" id="sickassloadingimage"></div>
+
 <script src="/src/scripts/splash.js"></script>
 <script src="/src/scripts/openweather.js"></script>
+
+<script src="/src/scripts/icons/amongus.js"></script>
+<script src="/src/scripts/icons/azure.js"></script>
+<script src="/src/scripts/icons/brooklyn.js"></script>
+<script src="/src/scripts/icons/charmer.js"></script>
+<script src="/src/scripts/icons/creekflow.js"></script>
+<script src="/src/scripts/icons/deltarune.js"></script>
+<script src="/src/scripts/icons/femt.js"></script>
+<script src="/src/scripts/icons/foodhouse.js"></script>
+<script src="/src/scripts/icons/fun.js"></script>
+<script src="/src/scripts/icons/girlyteengirl.js"></script>
+<script src="/src/scripts/icons/lancer.js"></script>
+<script src="/src/scripts/icons/liberal.js"></script>
+<script src="/src/scripts/icons/lobotomy.js"></script>
+<script src="/src/scripts/icons/mimi.js"></script>
+<script src="/src/scripts/icons/mrdouchebag.js"></script>
+<script src="/src/scripts/icons/remember.js"></script>
+<script src="/src/scripts/icons/rotten.js"></script>
+<script src="/src/scripts/icons/speen.js"></script>
+<script src="/src/scripts/icons/stupid.js"></script>
+<script src="/src/scripts/icons/win93.js"></script>
+<script src="/src/scripts/icons/ytps.js"></script>
+
 
 <script>
 let now = new Date();
@@ -150,8 +175,6 @@ createaudio(); //ive removed the ability to spam im sorgy.
 
 </script>
 
-<div id="loadingImg" style="background:#000;color:#fff;position:absolute;left:0;top:0;width:100vw;height:100vh;z-index:200;display:flex;align-items:center;text-align:center;justify-content:center;"><img style="width:35vh;image-rendering: pixelated;opacity:0;" fetchPriority="high" src="/media/loading.webp" id="sickassloadingimage"></div>
-
 <script>
 const loadimg = document.getElementById("sickassloadingimage"); // the name is only so long because its funny and wont be obfuscated on compile
 
@@ -203,12 +226,5 @@ loadimg.style.opacity = "1";
     }, { once: true });
   }
 });
-
-
-
-
-
-
 </script>
 
-<IScript />
