@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clear
-printf 'What do you want to update?\n(Site Bot Reset All)\n(S/B/R/A)'
+printf 'What do you want to update?\n(Site Bot Pull Reset All)\n(S/B/P/R/A)'
 read updans
 
 clear
@@ -17,6 +17,10 @@ echo "only updating bot"
 git pull
 npm i
 node deploy-commands.js
+
+elif [ "$updans" != "${updans#[Bb]}" ] ;then
+echo "just pulling update nothing else."
+git pull
 
 elif [ "$updans" != "${updans#[Rr]}" ] ;then
 printf "THIS WILL RESET THE GIT REPO OVERWRITING ANY LOCAL CHANGES\nare you sure you wish to reset?\n(y/N)"
