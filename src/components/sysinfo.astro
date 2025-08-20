@@ -65,7 +65,11 @@ async function getlinks() {
   return hubCommit;
 }
 
+if(commitResponse.ok) {
 hubCommit = await getlinks();
+} else {
+document.getElementById("version").remove();
+}
 
 
 
