@@ -16,6 +16,8 @@ import { UserLogger } from './botevents/log-user.js';
 
 const API_KEY = process.env.DISCORD_API_KEY;
 
+let loggedin = false;
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -67,14 +69,17 @@ const brows = [">",""]
 const eyes = [":",";"]
 const mouths = [")","(","<","3","]","[","O","/","|"]
 
+const randomface = (brows[Math.floor(Math.random() * brows.length)]+eyes[Math.floor(Math.random() * eyes.length)]+mouths[Math.floor(Math.random() * mouths.length)]);
+
 client.once('ready', () => {
     const now = new Date();
 
     console.log(`${colors.blue("[Discord]")} Logged in as ${client.user.tag}`);
     client.user.setPresence({
-        activities: [{ name: (brows[Math.floor(Math.random() * brows.length)]+eyes[Math.floor(Math.random() * eyes.length)]+mouths[Math.floor(Math.random() * mouths.length)]), type: ActivityType.Custom }],
+        activities: [{ name: randomface, type: ActivityType.Custom }],
         status: 'online'
     });
+    loggedin = true;
 });
 
 client.on(Events.InteractionCreate, async interaction => {
@@ -93,24 +98,23 @@ client.on(Events.InteractionCreate, async interaction => {
 
 await loadCommands();
 
-function botLogin() {
+async function botLogin() {
 if(!API_KEY) {
-console.log(`${colors.red("[ERROR]")} no bot token set for discord bot`);
-return;
+return console.log(`${colors.red("[ERROR]")} no bot token set for discord bot`);
 };
 
 if (process.argv.includes('--nobot')) {
-console.log(`${colors.gray("[Discord]")} not logging into bot`);
-return;
+return console.log(`${colors.gray("[Discord]")} not logging into bot`);
 }
 
 
 if (process.argv.includes('--nowait')) {
 client.login(API_KEY);
 } else {
-setTimeout(() => {
+while (!loggedin) {
+await new Promise(r => setTimeout(r, 5000));
 client.login(API_KEY);
-}, 5000);
+}
 }
 }
 botLogin();
