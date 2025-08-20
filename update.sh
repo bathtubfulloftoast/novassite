@@ -18,7 +18,7 @@ git pull
 npm i
 node deploy-commands.js
 
-elif [ "$updans" != "${updans#[Bb]}" ] ;then
+elif [ "$updans" != "${updans#[Pp]}" ] ;then
 echo "just pulling update nothing else."
 git pull
 
