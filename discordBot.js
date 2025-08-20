@@ -63,12 +63,16 @@ async function loadCommands() {
 }
 
 
+const brows = [">",""]
+const eyes = [":",";"]
+const mouths = [")","(","<","3","]","[","O","/","|"]
+
 client.once('ready', () => {
     const now = new Date();
 
     console.log(`${colors.blue("[Discord]")} Logged in as ${client.user.tag}`);
     client.user.setPresence({
-        activities: [{ name: `:3`, type: ActivityType.Custom }],
+        activities: [{ name: (brows[Math.floor(Math.random() * brows.length)]+eyes[Math.floor(Math.random() * eyes.length)]+mouths[Math.floor(Math.random() * mouths.length)]), type: ActivityType.Custom }],
         status: 'online'
     });
 });
