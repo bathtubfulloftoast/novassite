@@ -23,3 +23,4 @@ src/pages/commitID.txt.js export-ignore
 *.mp3 binary
 *.webm binary
 *.mp4 binary
+*.mdx markdown
