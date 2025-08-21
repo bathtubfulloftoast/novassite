@@ -1,21 +1,6 @@
 # novassite.net
 the official repo for Novas Site
 
-## DISCLAIMER
-
-though 99% of the website is perfectly fine there are very few sections that should not be seen by any minors.
-
-i am a legal adult and i can and will have some things dedicated to adult topics on my website.
-
-since neither github nor git.gay have any way of age gating repos i will say this upfront
-
-**IF YOU ARE A MINOR AVOID THESE PATHS**
-- public/media/NSFW
-- src/pages/adult
-- public/bot/cool/clitoris.png */hj*
-
-everything else in this repo and on the site is entirely SFW
-
 ## How to run
 
 first run ``npm install`` to install required dependencies
