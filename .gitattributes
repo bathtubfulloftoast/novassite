@@ -1,7 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-public/media/NSFW export-ignore
-src/pages/adult export-ignore
 src/pages/commitID.txt.js export-ignore
 .vscode export-ignore
 .gitignore export-ignore
