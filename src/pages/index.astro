@@ -216,16 +216,11 @@ audioElement.remove();
     }
 }
 
-loadimg.addEventListener('load', async function() {
+document.addEventListener('DOMContentLoaded', async function() {
 loadimg.className = "fadein";
 loadimg.style.opacity = "1";
-  if (profilepage.complete) {
-    await weather();
-  } else {
-    profilepage.addEventListener('load', async function () {
-      await weather();
-    }, { once: true });
-  }
+weather()
 });
+
 </script>
 
