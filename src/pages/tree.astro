@@ -5,7 +5,6 @@ import links from '/src/assets/links.json';
 const socials = links[2] ?? [];
 
 import '/src/styles/colors.css';
-import '/src/styles/tree.css';
 
 ---
 
@@ -21,6 +20,52 @@ import '/src/styles/tree.css';
 <meta content="#6b0059" data-react-helmet="true" name="theme-color" />
 <meta charset="UTF-8" />
 <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://novassite.net/blog/rss.xml">
+
+<style>
+body {
+background:var(--bg0);
+color:var(--fg);
+text-align:center;
+font-family: Arial, sans-serif;
+}
+
+.link {
+    background:var(--bg2);
+    border:var(--bg4) 3px solid;
+    border-radius:1em;
+    margin:auto;
+    text-align:center;
+    font-size:30px;
+    margin-bottom:15px;
+    display:inline-block;
+    padding:10px;
+    transition: transform 0.2s ease;
+    cursor:pointer;
+}
+
+.link:hover {
+transform: scale(1.2);
+}
+
+a {
+text-decoration:none;
+}
+
+a:link, a:visited {
+color:var(--bright-aqua);
+}
+
+#pfp {
+width:180px;
+background:var(--bg1);
+border-radius:100%;
+border:var(--bg4) 5px solid;
+}
+
+.links {
+margin-top:25px;
+}
+</style>
 </head>
 
 <img id="pfp" src="/media/pfp.png">
