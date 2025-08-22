@@ -155,6 +155,12 @@
     "comment": "no comment"
   },
   {
+    "filename": "isawthe.sign",
+    "icon": "sign.webp",
+    "id": "thesign",
+    "comment": "if you were thinking that these werent the best just wait till you see the rest."
+  },
+  {
     "filename": "CLICKME.txt",
     "icon": "text.gif",
     "id": "readme",
