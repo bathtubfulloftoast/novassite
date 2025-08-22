@@ -3,9 +3,9 @@ the official repo for Novas Site
 
 ## How to run
 
-first run ``npm install`` to install required dependencies
+first run ``pnpm install`` to install required dependencies
 
-next install ``npm run build`` to build the site itself
+next install ``pnpm run build`` to build the site itself
 
 finally run ``node server.js`` to run the server itself
 
