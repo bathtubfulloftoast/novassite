@@ -9,13 +9,13 @@ pm2 stop novassite
 if [ "$updans" != "${updans#[Ss]}" ] ;then
 echo "only updating site"
 git pull
-npm run build
-npm i
+pnpm run build
+pnpm i
 
 elif [ "$updans" != "${updans#[Bb]}" ] ;then
 echo "only updating bot"
 git pull
-npm i
+pnpm i
 node deploy-commands.js
 
 elif [ "$updans" != "${updans#[Pp]}" ] ;then
@@ -34,8 +34,8 @@ fi
 else
 echo "updating everything."
 git pull
-npm i
-npm run build
+pnpm i
+pnpm run build
 node deploy-commands.js
 fi
 
