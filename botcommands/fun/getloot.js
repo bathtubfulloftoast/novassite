@@ -93,7 +93,8 @@ btoa(interacter),
 "goodbye",
 `${username} brings its face closer to yours\nits face hits the window.`,
 `${username} dies`,
-"death"
+"death",
+"<@852018491900821514>",
 ]
 
 

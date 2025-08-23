@@ -122,10 +122,10 @@ document.getElementById("name").innerHTML = nickname;
 
 for (var item of data.activities) {
 if (item.type == 4) {
+if (item.state) {
 document.getElementById("splash").innerHTML = "&quot;"+item.state+"&quot;";
 break;
-}
-}
+}}}
 
 coverimage.style.border = "5px solid var(--bg2)";
 
