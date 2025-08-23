@@ -71,7 +71,7 @@ const mouths = [")","(","<","3","]","[","O","/","|"]
 
 const randomface = (brows[Math.floor(Math.random() * brows.length)]+eyes[Math.floor(Math.random() * eyes.length)]+mouths[Math.floor(Math.random() * mouths.length)]);
 
-client.once('ready', () => {
+client.once('clientReady', () => {
     const now = new Date();
 
     console.log(`${colors.blue("[Discord]")} Logged in as ${client.user.tag}`);

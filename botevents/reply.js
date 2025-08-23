@@ -33,6 +33,8 @@ export function MessageReply(client) {
       { keywords: ["based"], response: "BASED ON WHAT" },
       { keywords: ["fish"], response: "you know what that means" },
       { keywords: ["goated"], response: "with the sauce?" },
+      { keywords: ["!pingjules"], response: "<@852018491900821514>" },
+
 
     ];
 
