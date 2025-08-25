@@ -54,18 +54,17 @@ document.addEventListener("DOMContentLoaded", async function() {
         const dateDiff = Math.round((Date.now() / 1000 - lfmJoinDate) / (60 * 60 * 24));
         const songsPerDay = Math.round(totalscrobbs / dateDiff);
 
-        let daysNeeded = away / songsPerDay;
-        daysNeeded = Math.ceil(daysNeeded);
+        // let daysNeeded = away / songsPerDay;
+        // daysNeeded = Math.ceil(daysNeeded);
 
-        const daysNeededText = daysNeeded + ' day' + (daysNeeded > 1 ? 's' : '');
+        // const daysNeededText = daysNeeded + ' day' + (daysNeeded > 1 ? 's' : '');
+        const percentage = Math.round((totalscrobbs/target)*100)+"%"
+
 
         document.getElementById("fmstats").innerHTML = `${totalscrobbs} total scrobbles<br>
         im only ${away} away from ${target}!<br>
         thats about ${final} worth of music...<br>
-        itl take me about ${daysNeededText} to reach my goal<br>
-        (with an average of ${songsPerDay} songs per day)`;
-
-
+        im about ${percentage} of the way through my goal`;
 
     }
     await weather();
