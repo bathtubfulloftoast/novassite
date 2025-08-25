@@ -7,6 +7,7 @@
 999eagle.moe
 aarmastah.xyz
 ackwell.au
+actix.rs
 ada.cat
 adamobeng.com
 adryd.com
@@ -20,6 +21,7 @@ alyxia.dev
 anhvn.com
 anybrowser.org
 arcanedisgea.com
+arcanesorrows.com
 arch.dog
 archive.qzap.org
 aria.coffee
@@ -37,6 +39,7 @@ authenyo.xyz
 autumn.town
 auzziejay.com
 avasilver.dev
+awoo.systems
 baccyflap.com
 bechnokid.neocities.org
 belko.xyz
@@ -92,6 +95,7 @@ cooltext.com
 cosyivy.xyz
 cpluspatch.com
 cronokirby.com
+cursor.town
 cve.cx
 cyrneko.eu
 cyrusjavan.com
@@ -104,6 +108,7 @@ datagubbe.se
 daudix.one
 deepy.me
 denisdefreyne.com
+devring.club
 dexrnzacattack.github.io
 dexterdaybreaker.neocities.org
 dheinemann.com
@@ -117,6 +122,7 @@ drakonic.zone
 e2.pm
 easrng.net
 edent.tel
+eldred.fr
 electricbrooke.com
 elke.cafe
 emma.cafe
@@ -125,10 +131,12 @@ epicblazed.com
 eris.meows.gay
 erisdump.neocities.org
 espi.me
+estela.cat
 estela.moe
 european-union.europa.eu
 ezri.pet
 ezrizhu.com
+fair.org
 famfo.xyz
 felidae.city
 fenden.fr
@@ -156,6 +164,7 @@ hatsusixty.in
 hayden.moe
 hayl.in
 hazy.gay
+hazy.sh
 heartette.net
 henryheffernan.com
 hl2.sh
@@ -168,6 +177,7 @@ ilwag.com
 infected.systems
 invoxiplaygames.uk
 irth.pl
+is-a.dev
 isle.pizza
 itsevergreen.rip
 itzzen.net
@@ -182,6 +192,7 @@ jnadeau.com
 joscomputing.space
 jpegzilla.com
 juliaviolet.dev
+jvns.ca
 kate.pet
 keithclark.co.uk
 keleats.rocks
@@ -193,6 +204,7 @@ kraafter.me
 kunall.is
 kyropy.neocities.org
 l4.pm
+labyrinth.zone
 labyrinth.zoneabout
 larsfrommars.neocities.org
 larvaecandy.carrd.co
@@ -207,6 +219,7 @@ lewisakura.moe
 libdb.so
 lili.lgbt
 lily.pet
+lina.sh
 linklane.net
 linus.dev
 loveshock.xyz
@@ -256,6 +269,7 @@ natu.moe
 ndr.sn
 neal.fun
 neilcic.com
+nekoweb.org
 neomojimixer.com
 neonaut.neocities.org
 nic.eu.org
@@ -276,7 +290,9 @@ ovyerus.com
 owo.me
 paddy.li
 palashbauri.in
+palletsprojects.com
 paperr.dev
+petergarner.net
 petermolnar.net
 philo.gay
 pihnea.ovh
@@ -288,11 +304,13 @@ polly.computer
 projectlounge.pw
 psifactor.pl
 pukima.site
+pux.nehukon.de
 queercomputerclub.ca
 r74n.com
 raccoon.quest
 rambhat.la
 redstrate.com
+reim.ar
 resolv.moe
 ribo.zone
 rinici.de
@@ -313,6 +331,7 @@ shinmera.com
 shiver-j.neocities.org
 shrecked.dev
 sillydomain.name
+sinesperia.com
 sinewave.cyou
 skip.house
 sleepy.ink
@@ -325,6 +344,7 @@ sneexy.pages.gay
 sophari.org
 stage7.net
 staggeringbeauty.com
+starfield.nekoweb.org
 supitszaire.com
 tacowolf.net
 tasos.ca
@@ -335,6 +355,7 @@ thehtml.review
 thesecretwordisnotreal.com
 thisisnotawebsitedotcom.com
 thomasricci.dev
+tilde.town
 tiny-universes.net
 tinyfox.dev
 torrent.parts
@@ -345,6 +366,7 @@ tufo.dev
 unsaved.info
 utsuho.rocks
 vanillatf2.com
+varun.ch
 veeronniecaw.space
 vendicated.dev
 vern.cc
