@@ -1,6 +1,6 @@
 export default async function lastfmHandler(req, res) {
-const CF = req.headers["cf-connecting-ip"];
-const XF = req.headers["x-forwarded-for"];
+const CF = req.headers?.["cf-connecting-ip"];
+const XF = req.headers?.["x-forwarded-for"];
 var LOC = req.connection.remoteAddress;
 LOC = LOC.split(":").pop(); // not preferred but if it has to work it will
 
