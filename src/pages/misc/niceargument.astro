@@ -1,0 +1,35 @@
+---
+import '/src/styles/colors.css';
+import '/src/styles/misc.css';
+---
+<head>
+<title>Nice Argument</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="Nice Argument" property="og:title" />
+<meta content="too bad i have just the thing to topple it to the ground" property="og:description" />
+<meta content="#ff0000" data-react-helmet="true" name="theme-color" />
+<meta charset="UTF-8" />
+</head>
+
+<div class="center-screen">
+<div>
+<b style="font-size:2vw">That's a nice argument but</b><br>
+<b style="font-size:6vw" id="addr">192.168.0.64</b><br>
+<i><a href="https://git.gay/bathtubfulloftoast/novassite/src/branch/main/functions/ipgrabber.js">your ip is not saved</a></i>
+</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+
+// const response = await fetch('/IP.txt');
+const response = await fetch('/api/IP');
+let data = await response.text();
+
+if(response.ok) {
+document.getElementById("addr").innerHTML = data;
+}
+
+
+});
+</script>

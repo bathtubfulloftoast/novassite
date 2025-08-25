@@ -10,6 +10,7 @@ import steam from './functions/steamrecent.js';
 import webcam from './functions/webcam.js';
 import botinfo from './functions/botinfo.js';
 import error from './functions/badroute.js';
+import ipaddr from './functions/ipgrabber.js';
 
 export default function registerAPIRoutes(app) {
 app.get('/api/openweather', openweatherAPI);
@@ -23,6 +24,7 @@ app.get('/api/discord-user', discorduser);
 app.get('/api/steam-recent', steam);
 app.get('/api/webcam', webcam);
 app.get('/api/bot', botinfo);
+app.get('/api/IP', ipaddr);
 
 app.get('/api/:route', error);
 app.get('/api/', error);
