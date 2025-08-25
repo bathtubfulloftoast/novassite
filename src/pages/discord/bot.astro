@@ -145,8 +145,10 @@ pfp.onerror = function () {
 pfp.src = '/media/avatar.png'; // Fallback image
 };
 
+const sorted = data.commands.sort((a, b) => a.data.name.localeCompare(b.data.name));
+
 document.getElementById("commands").innerHTML = "";
-for (const item of data.commands) {
+for (const item of sorted) {
 const commandwrap = document.getElementById("commands");
 
 const command = document.createElement("div");
