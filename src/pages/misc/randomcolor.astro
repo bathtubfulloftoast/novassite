@@ -1,5 +1,35 @@
+<head>
+<title>rancom color</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+overflow:hidden;
+}
+
+.center-screen {
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+min-height: 100vh;
+}
+
+button {
+font-size:3vw;
+border:none;
+background:white;
+padding:5px;
+border-radius:0.2em;
+}
+</style>
+</head>
+
+<body>please enable javascript<br>why do you have javascript disabled</body>
+
 <script>
+function color() {
 const randomnumber = Math.floor(Math.random() * 16777215);
+
 
 let hex = randomnumber.toString(16);
 hex = hex.padEnd(6, "0");
@@ -9,5 +39,29 @@ document.body.style.backgroundColor = "#" + hex;
 document.title='#'+hex;
 
 console.log(hex);
+};
+
+document.addEventListener("DOMContentLoaded", async function() {
+color();
+document.body.innerHTML="";
+
+const center= document.createElement("div");
+center.className = "center-screen";
+
+const newcolor = document.createElement("button");
+newcolor.innerHTML = "New Color"
+
+document.body.appendChild(center);
+center.appendChild(newcolor);
+
+
+newcolor.addEventListener("click", function(event) {
+event.preventDefault();
+color();
+});
+
+});
+
+
 
 </script>
