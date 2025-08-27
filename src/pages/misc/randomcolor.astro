@@ -20,11 +20,21 @@ border:none;
 background:white;
 padding:5px;
 border-radius:0.2em;
+background:none;
+backdrop-filter:hue-rotate(180deg) invert();
+cursor:pointer;
+text-filter:invert();
+color:transparent;
+}
+
+::SELECTION {
+color:white;
+background-color:black;
 }
 </style>
 </head>
 
-<body>please enable javascript<br>why do you have javascript disabled</body>
+<body>party rock is in the house toniiight</body>
 
 <script>
 function color() {
@@ -37,8 +47,6 @@ hex = hex.padEnd(6, "0");
 document.body.style.backgroundColor = "#" + hex;
 
 document.title='#'+hex;
-
-console.log(hex);
 };
 
 document.addEventListener("DOMContentLoaded", async function() {
@@ -55,9 +63,12 @@ document.body.appendChild(center);
 center.appendChild(newcolor);
 
 
-newcolor.addEventListener("click", function(event) {
+newcolor.addEventListener("click", async function(event) {
 event.preventDefault();
 color();
+newcolor.style.display="none";
+await new Promise(r => setTimeout(r, 1000));
+newcolor.style = "";
 });
 
 });
