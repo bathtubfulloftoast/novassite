@@ -11,3 +11,4 @@ pnpm-debug.log*
 webcam.jpg
 webcam_s.jpg
 webcam_d.jpg
+cache/*
