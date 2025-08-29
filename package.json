@@ -25,6 +25,7 @@
     "express": "^5.1.0",
     "express-ip": "^1.0.4",
     "marked": "^16.2.0",
+    "node-cron": "^4.2.1",
     "node-webcam": "^0.8.2",
     "sharp": "^0.34.3",
     "systeminformation": "^5.27.7",

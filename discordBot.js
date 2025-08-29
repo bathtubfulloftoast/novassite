@@ -9,6 +9,7 @@ import { pathToFileURL, fileURLToPath } from 'url';
 import { MemberJoin } from './botevents/memberjoin.js';
 import { MemberLeave } from './botevents/memberleave.js';
 import { MessageReply } from './botevents/reply.js';
+import { PISS } from './botevents/piss.js';
 
 import { MessageLogger } from './botevents/log-message.js';
 import { MemberLogger } from './botevents/log-member.js';
@@ -122,6 +123,7 @@ botLogin();
 MemberJoin(client);
 MemberLeave(client);
 MessageReply(client);
+PISS(client);
 
 MessageLogger(client);
 MemberLogger(client);
