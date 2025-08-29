@@ -6,13 +6,13 @@ const db = new sqlite3.Database('cache/guestbook.db', sqlite3.OPEN_READ, (err) =
 if (err) return console.error('DB open error:', err.message);
 });
 
-db.all('SELECT username, message, date FROM messages', (err, rows) => {
+db.all('SELECT username, message, date, scam FROM messages', (err, rows) => {
 if (err) {
 console.error('DB query error:', err.message);
 return;
 }
 
-const messages = rows.map(row => ({
+const messages = rows.filter(row => !row.scam).map(row => ({
 name: row.username,
 message: row.message,
 date: row.date
