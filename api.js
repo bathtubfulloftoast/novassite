@@ -1,7 +1,7 @@
 import openweatherAPI from './functions/openweather.js';
 import qrAPI from './functions/qr.js';
 // import discordinviteAPI from './functions/invite.js';
-import uptime from './functions/uptime.js';
+import uptime from './functions/statistics.js';
 import dspresence from './functions/presence.js';
 import lastfmTop from './functions/lastfm-top.js';
 import lastfmRecent from './functions/lastfm-recent.js';
@@ -19,7 +19,7 @@ app.get('/ping', (req, res) => {res.redirect('/snow')})
 app.get('/api/openweather', openweatherAPI);
 app.get('/api/qr', qrAPI);
 // app.get('/api/discord-invite', discordinviteAPI);
-app.get('/api/uptime', uptime);
+app.get('/api/stats', uptime);
 app.get('/api/discord', dspresence);
 app.get('/api/fm-top', lastfmTop);
 app.get('/api/fm-recent', lastfmRecent);

@@ -51,12 +51,12 @@ let servertime = 0;
 let processtime = 0;
 
 try {
-const response = await fetch('/api/uptime');
+const response = await fetch('/api/stats');
 if (!response.ok) throw new Error('Failed to fetch');
 const data = await response.json();
 
-servertime = data.server;
-processtime = data.process;
+servertime = data.uptime.server_ms;
+processtime = data.uptime.process_ms;
 } catch (err) {
 console.warn(err);
 }
