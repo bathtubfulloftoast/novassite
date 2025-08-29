@@ -1,6 +1,8 @@
 import { Events } from 'discord.js';
 import colors from 'colors';
 
+const GUILDID = process.env.PRESENCE_GUILDID;
+
 export function MessageReply(client) {
   client.on(Events.MessageCreate, message => {
     if (message.author.bot) return;
@@ -8,12 +10,16 @@ export function MessageReply(client) {
 
 
     function sendmessage(content) {
-      client.channels.cache.get(message.channelId).send(content);
+    client.channels.cache.get(message.channelId).send(content);
     }
 
     if (message.mentions.has(client.user)) {
     message.react("🦌");
     console.log(`${colors.cyan("[Discord]")} deer reacted ${message.author.username}`);
+    }
+
+    if (message.guildId !==  GUILDID) {
+    return;
     }
 
     const responses = [
