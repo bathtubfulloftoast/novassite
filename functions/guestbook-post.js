@@ -1,13 +1,48 @@
 import colors from 'colors';
 import sqlite3 from 'sqlite3';
 
+const censored = ["nigg","fag","trann","account","elon","trump","sell","buy","crypto","coin"];
+var site = new RegExp("(http|ftp|https):\\/\\/([\\w_-]+(?:(?:\\.[\\w_-]+)+))([\\w.,@?^=%&:\\/~+#-]*[\\w@?^=%&\\/~+#-])");
 
 export default async function lastfmHandler(req, res) {
 const now = new Date();
 
-const username = "Alice";
-const message = "Hello World";
+if(!req.body) {
+return res.status(400).json({
+error:"no data"
+});
+}
+
+var username = req.body.name;
+var message = req.body.message;
 const ipaddr = "127.0.0.1";
+var scammer = false;
+
+username = username.substring(0, 20);
+message = message.substring(0, 512);
+
+if(!username) {
+return res.status(400).json({
+error:"no username set"
+});
+};
+
+if(!message) {
+return res.status(400).json({
+error:"no message set"
+});
+};
+
+if(site.test(message.toLowerCase())) {
+scammer = true;
+}
+
+for (const item of censored) {
+if(message.toLowerCase().includes(item)) {
+scammer = true;
+break;
+}
+}
 
 const db = new sqlite3.Database('cache/guestbook.db', sqlite3.OPEN_READWRITE | sqlite3.OPEN_CREATE, (err) => {
 if (err) return console.error('DB open error:', err.message);
@@ -21,21 +56,22 @@ db.serialize(() => {
         username TEXT NOT NULL,
         message TEXT NOT NULL,
         date TEXT NOT NULL,
-        ipaddr TEXT NOT NULL
+        ipaddr TEXT NOT NULL,
+        scam BOOLEAN
     )
     `, (err) => {
         if (err) console.error('Table creation error:', err.message);
     });
 
-        const stmt = db.prepare(`INSERT INTO messages (username, message,date,ipaddr) VALUES (?,?,?,?)`);
-        stmt.run(username, message,now.toISOString(),ipaddr, function(err) {
-            if (err) {
-                console.error('Insert error:', err.message);
-            } else {
-                // console.log(`Row inserted with id ${this.lastID}`);
-            }
-        });
-        stmt.finalize();
+const stmt = db.prepare(`INSERT INTO messages (username, message,date,ipaddr,scam) VALUES (?,?,?,?,?)`);
+stmt.run(username, message,now.toISOString(),ipaddr,scammer, function(err) {
+    if (err) {
+        console.error('Insert error:', err.message);
+    } else {
+        // console.log(`Row inserted with id ${this.lastID}`);
+    }
+});
+stmt.finalize();
 });
 
 db.close((err) => {
@@ -43,7 +79,10 @@ if (err) console.error('Error closing DB:', err.message);
 // else console.log('Database connection closed');
 });
 
-
+res.status(200).json({
+name:username,
+message:message
+});
 
 console.log(`${colors.green("[Site]")} someone posted to the guestbook`);
 }
