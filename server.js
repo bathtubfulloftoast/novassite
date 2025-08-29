@@ -37,10 +37,13 @@ console.log(`${colors.red("[ERROR]")} Server running invalid config please check
 return;
 }
 
+app.use(express.urlencoded());
+
 registerAPIRoutes(app);
 
 app.use(base, express.static('dist/client/'));
 app.use(ssrHandler);
+
 
 app.use((req, res) => {
     res.status(404).sendFile('dist/client/404.html', { root: '.' });
