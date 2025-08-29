@@ -5,7 +5,24 @@ const censored = ["nigg","fag","trann","account","elon","trump","sell","buy","cr
 var site = new RegExp("(http|ftp|https):\\/\\/([\\w_-]+(?:(?:\\.[\\w_-]+)+))([\\w.,@?^=%&:\\/~+#-]*[\\w@?^=%&\\/~+#-])");
 
 export default async function lastfmHandler(req, res) {
+const CF = req.headers['cf-connecting-ip'];
+const XF = req.headers['x-forwarded-for'];
+var LOC = req.connection.remoteAddress;
+LOC = LOC.split(":").pop(); // not preferred but if it has to work it will
+
+let IPADDR = "couldnt grab ip address";
+
+if(CF) {
+IPADDR = CF;
+} else if (XF) {
+IPADDR = XF;
+} else {
+IPADDR = LOC;
+}
+
 const now = new Date();
+
+
 
 if(!req.body) {
 return res.status(400).json({
@@ -15,7 +32,6 @@ error:"no data"
 
 var username = req.body.name;
 var message = req.body.message;
-const ipaddr = "127.0.0.1";
 var scammer = false;
 
 username = username.substring(0, 20);
@@ -37,8 +53,19 @@ if(site.test(message.toLowerCase())) {
 scammer = true;
 }
 
+if(site.test(username.toLowerCase())) {
+scammer = true;
+}
+
 for (const item of censored) {
 if(message.toLowerCase().includes(item)) {
+scammer = true;
+break;
+}
+}
+
+for (const item of censored) {
+if(username.toLowerCase().includes(item)) {
 scammer = true;
 break;
 }
@@ -64,7 +91,7 @@ db.serialize(() => {
     });
 
 const stmt = db.prepare(`INSERT INTO messages (username, message,date,ipaddr,scam) VALUES (?,?,?,?,?)`);
-stmt.run(username, message,now.toISOString(),ipaddr,scammer, function(err) {
+stmt.run(username, message,now.toISOString(),IPADDR,scammer, function(err) {
     if (err) {
         console.error('Insert error:', err.message);
     } else {
@@ -81,7 +108,8 @@ if (err) console.error('Error closing DB:', err.message);
 
 res.status(200).json({
 name:username,
-message:message
+message:message,
+date:now.toISOString(),
 });
 
 console.log(`${colors.green("[Site]")} someone posted to the guestbook`);
