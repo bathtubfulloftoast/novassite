@@ -12,6 +12,7 @@ import botinfo from './functions/botinfo.js';
 import error from './functions/badroute.js';
 import ipaddr from './functions/ipgrabber.js';
 import gbpost from './functions/guestbook-post.js';
+import gbget from './functions/guestbook-get.js';
 
 export default function registerAPIRoutes(app) {
 app.post('/ping', (req, res) => {res.send('☃\n')})
@@ -31,9 +32,12 @@ app.get('/api/bot', botinfo);
 app.get('/api/IP', ipaddr);
 
 app.post('/api/guestbook', gbpost);
-
+app.get('/api/guestbook', gbget);
 
 app.get('/api/:route', error);
 app.get('/api/', error);
 app.get('/api', error);
+app.post('/api/:route', error);
+app.post('/api/', error);
+app.post('/api', error);
 }
