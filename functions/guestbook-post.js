@@ -34,9 +34,6 @@ var username = req.body.name;
 var message = req.body.message;
 var scammer = false;
 
-username = username.substring(0, 20);
-message = message.substring(0, 512);
-
 if(!username) {
 return res.status(400).json({
 error:"no username set"
@@ -48,6 +45,9 @@ return res.status(400).json({
 error:"no message set"
 });
 };
+
+username = username.substring(0, 20);
+message = message.substring(0, 512);
 
 if(site.test(message.toLowerCase())) {
 scammer = true;
