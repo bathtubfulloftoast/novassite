@@ -13,6 +13,9 @@ import error from './functions/badroute.js';
 import ipaddr from './functions/ipgrabber.js';
 
 export default function registerAPIRoutes(app) {
+app.post('/ping', (req, res) => {res.send('☃\n')})
+app.get('/ping', (req, res) => {res.redirect('/snow')})
+
 app.get('/api/openweather', openweatherAPI);
 app.get('/api/qr', qrAPI);
 // app.get('/api/discord-invite', discordinviteAPI);
