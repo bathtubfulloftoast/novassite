@@ -1,0 +1,70 @@
+<div id="posts">
+</div>
+
+<hr>
+
+<form id="form">
+
+<label for="name">Name:</label>
+<input type="text" id="name" maxlength="20" name="name" required><br><br>
+
+<label for="message">Message:</label><br>
+<textarea type="text" maxlength="512"  rows="5" cols="50" id="message" name="message" required></textarea><br><br>
+
+<input type="submit" value="Submit">
+</form>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+
+// const response = await fetch('/api/guestbook');
+const response = await fetch('/guestbook.json');
+const data = await response.json();
+
+const wrapper = document.getElementById("posts");
+for (var item of data) {
+const date = new Date(item.date);
+
+var dd = String(date.getDate()).padStart(2, '0');
+var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = date.getFullYear();
+
+let hours = date.getHours();
+let minutes = date.getMinutes();
+let ampm = hours >= 12 ? 'PM' : 'AM';
+
+hours = hours % 12;
+hours = hours ? hours : 12; // If hour is 0, set it to 12
+
+const post = document.createElement("div");
+post.className = "post";
+post.innerHTML = `${item.name} - ${item.message} | ${mm}/${dd}/${yyyy} ${hours}:${minutes} ${ampm}`;
+wrapper.appendChild(post);
+}
+
+
+});
+</script>
+
+<script>
+const form = document.getElementById("form");
+
+
+form.addEventListener("submit", async function(event) {
+event.preventDefault();
+const name = form.name.value;
+const message = form.message.value;
+
+const response = await fetch("/api/guestbook", {
+method: 'POST',
+body: new URLSearchParams( {
+'name': name,
+'message': message,
+}),
+});
+
+const data = await response.json();
+
+console.log(data);
+})
+</script>
