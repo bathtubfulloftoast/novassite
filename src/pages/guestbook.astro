@@ -111,6 +111,14 @@ wrapper.innerHTML = "";
 for (var item of data) {
 
 const date = new Date(item.date);
+var name = item.name;
+name = name.replaceAll("<", "&lt;");
+name = name.replaceAll(">", "&gt;");
+
+var message = item.message;
+message = message.replaceAll("<", "&lt;");
+message = message.replaceAll(">", "&gt;");
+
 
 var dd = String(date.getDate()).padStart(2, '0');
 var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -126,7 +134,7 @@ minutes = minutes < 10 ? '0' + minutes : minutes;
 
 const post = document.createElement("div");
 post.className = "post";
-post.innerHTML = `<b>${item.name}</b> <i>${mm}/${dd}/${yyyy} ${hours}:${minutes} ${ampm}</i><br><span>${item.message}</span>`;
+post.innerHTML = `<b>${name}</b> <i>${mm}/${dd}/${yyyy} ${hours}:${minutes} ${ampm}</i><br><span>${message}</span>`;
 wrapper.appendChild(post);
 }
 
