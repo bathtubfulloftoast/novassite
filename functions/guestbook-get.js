@@ -18,7 +18,7 @@ message: row.message,
 date: row.date
 }));
 
-res.status(200).json(messages)
+res.status(200).json(messages.reverse().slice(0,25))
 
 db.close((err) => {
 if (err) console.error('Error closing DB:', err.message);

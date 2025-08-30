@@ -1,6 +1,9 @@
 import colors from 'colors';
 import sqlite3 from 'sqlite3';
 
+let rcache;
+const CACHE_DURATION = 120000;
+
 const censored = ["nigg","fag","trann","account","elon","trump","sell","buy","crypto","coin"];
 var site = new RegExp("(http|ftp|https):\\/\\/([\\w_-]+(?:(?:\\.[\\w_-]+)+))([\\w.,@?^=%&:\\/~+#-]*[\\w@?^=%&\\/~+#-])");
 
@@ -22,7 +25,14 @@ IPADDR = LOC;
 
 const now = new Date();
 
-
+if (rcache && (Date.now() - rcache < CACHE_DURATION)) {
+const remaining = CACHE_DURATION - (Date.now() - rcache);
+return res.status(400).json({
+error:"not so fast, the rate limit is active."
+});
+} else {
+rcache = Date.now();
+}
 
 if(!req.body) {
 return res.status(400).json({

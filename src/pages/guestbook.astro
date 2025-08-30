@@ -1,15 +1,94 @@
+---
+import '/src/styles/colors.css';
+---
+<head>
+<title>guestbook</title>
+<style is:global>
+body {
+background:var(--bg0);
+color:var(--fg0);
+}
+
+.post {
+background:var(--bg3);
+display:inline-block;
+max-width:50vw;
+margin:auto;
+padding:5px;
+border-radius:12px;
+text-align:left;
+margin:5px;
+}
+
+.post b {
+font-size:18px;
+color:var(--purple);
+}
+
+.post i {
+font-size:13px;
+color:var(--fg4)
+}
+
+.post span {
+font-size:15px;
+overflow-wrap: break-word;
+}
+
+.postwrapper {
+text-align:center;
+margin-bottom:12px;
+}
+
+.message {
+display:inline-block;
+padding:5px;
+margin:5px;
+border-radius:10px;
+}
+
+.message.succ {
+background:var(--green);
+color:var(--fg1);
+}
+
+.message.fale {
+background:var(--red);
+color:var(--fg1);
+}
+
+input {
+background:var(--bg4);
+color:var(--fg0);
+border:1px solid var(--fg3);
+}
+
+textarea {
+background:var(--bg4);
+color:var(--fg0);
+border:1px solid var(--fg3);
+}
+</style>
+</head>
+
 <div id="posts">
+
+<div class="postwrapper">
 </div>
+
+</div>
+
+
 
 <hr>
 
 <form id="form">
 
 <label for="name">Name:</label>
-<input type="text" id="name" maxlength="20" name="name" required><br><br>
+<input type="text" id="name" maxlength="20" name="name" placeholder="Alice" required><br><br>
 
 <label for="message">Message:</label><br>
-<textarea type="text" maxlength="512"  rows="5" cols="50" id="message" name="message" required></textarea><br><br>
+<textarea type="text" maxlength="512"  rows="5" cols="50" id="message" name="message" placeholder="i love novassite.net" required></textarea><br><br>
 
 <input type="submit" value="Submit">
 </form>
@@ -17,12 +96,14 @@
 <script>
 document.addEventListener("DOMContentLoaded", async function() {
 
-// const response = await fetch('/api/guestbook');
-const response = await fetch('/guestbook.json');
-const data = await response.json();
+const response = await fetch('/api/guestbook');
+// const response = await fetch('/guestbook.json');
+var data = await response.json();
 
 const wrapper = document.getElementById("posts");
+wrapper.innerHTML = "";
 for (var item of data) {
+
 const date = new Date(item.date);
 
 var dd = String(date.getDate()).padStart(2, '0');
@@ -38,7 +119,7 @@ hours = hours ? hours : 12; // If hour is 0, set it to 12
 
 const post = document.createElement("div");
 post.className = "post";
-post.innerHTML = `${item.name} - ${item.message} | ${mm}/${dd}/${yyyy} ${hours}:${minutes} ${ampm}`;
+post.innerHTML = `<b>${item.name}</b> <i>${mm}/${dd}/${yyyy} ${hours}:${minutes} ${ampm}</i><br><span>${item.message}</span>`;
 wrapper.appendChild(post);
 }
 
@@ -48,7 +129,6 @@ wrapper.appendChild(post);
 
 <script>
 const form = document.getElementById("form");
-
 
 form.addEventListener("submit", async function(event) {
 event.preventDefault();
@@ -63,7 +143,15 @@ body: new URLSearchParams( {
 }),
 });
 
+if(response.ok) {
+form.innerHTML = `<div class="message succ">submission posted refresh the page to see it posted!</div>`;
+}
+
 const data = await response.json();
+
+if(data.error) {
+form.innerHTML = `<div class="message fale">${data.error}</div>`;
+}
 
 console.log(data);
 })
