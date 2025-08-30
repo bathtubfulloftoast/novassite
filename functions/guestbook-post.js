@@ -2,7 +2,7 @@ import colors from 'colors';
 import sqlite3 from 'sqlite3';
 
 let rcache;
-const CACHE_DURATION = 120000;
+const CACHE_DURATION = 30000;
 
 const censored = ["nigg","fag","trann","account","elon","trump","sell","buy","crypto","coin"];
 var site = new RegExp("(http|ftp|https):\\/\\/([\\w_-]+(?:(?:\\.[\\w_-]+)+))([\\w.,@?^=%&:\\/~+#-]*[\\w@?^=%&\\/~+#-])");
