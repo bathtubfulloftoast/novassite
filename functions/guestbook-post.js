@@ -116,6 +116,12 @@ if (err) console.error('Error closing DB:', err.message);
 // else console.log('Database connection closed');
 });
 
+if(scammer) {
+res.status(400).json({
+error:"your post has been held for review please wait for it to be checked manually.",
+});
+}
+
 res.status(200).json({
 name:username,
 message:message,
