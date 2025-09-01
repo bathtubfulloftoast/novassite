@@ -111,7 +111,7 @@ var data = await response.json();
 
 const wrapper = document.getElementById("posts");
 wrapper.innerHTML = "";
-for (var item of data) {
+for (var item of data.messages) {
 
 const date = new Date(item.date);
 var name = item.name;
