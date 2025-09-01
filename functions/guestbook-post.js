@@ -27,7 +27,7 @@ const now = new Date();
 
 if (rcache && (Date.now() - rcache < CACHE_DURATION)) {
 const remaining = CACHE_DURATION - (Date.now() - rcache);
-return res.status(400).json({
+return res.status(429).json({
 error:"not so fast, the rate limit is active."
 });
 } else {
