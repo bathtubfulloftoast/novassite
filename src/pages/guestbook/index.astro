@@ -21,7 +21,7 @@ font-family: Arial, sans-serif;
 .post {
 background:var(--bg3);
 display:inline-block;
-max-width:50vw;
+max-width:20vw;
 margin:auto;
 padding:5px;
 border-radius:12px;
@@ -42,6 +42,10 @@ color:var(--fg4)
 .post span {
 font-size:15px;
 overflow-wrap: break-word;
+overflow-y:scroll;
+overflow-x:hidden;
+display:block;
+max-height:40px;
 }
 
 .postwrapper {
@@ -76,6 +80,10 @@ textarea {
 background:var(--bg4);
 color:var(--fg0);
 border:1px solid var(--fg3);
+}
+
+.post span::-webkit-scrollbar {
+  display: none;
 }
 </style>
 </head>
@@ -121,6 +129,7 @@ name = name.replaceAll(">", "&gt;");
 var message = item.message;
 message = message.replaceAll("<", "&lt;");
 message = message.replaceAll(">", "&gt;");
+message = message.replaceAll("\n", "<br>");
 
 
 var dd = String(date.getDate()).padStart(2, '0');

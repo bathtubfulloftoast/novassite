@@ -1,0 +1,70 @@
+<head>
+<style is:global>
+.post {
+margin-bottom: 20px;
+border:1px solid black;
+padding:5px;
+display:inline-block;
+max-width:50vw;
+text-align:left;
+
+}
+
+.wrapper {
+text-align:center;
+}
+</style>
+</head>
+
+<div id="posts">
+</div>
+<a href="#">Previous Page</a> <a href="#">Next Page</a>
+<hr>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+
+// const response = await fetch('/api/guestbook');
+const response = await fetch('/guestbook.json');
+var data = await response.json();
+
+const wrapper = document.getElementById("posts");
+wrapper.innerHTML = "";
+for (var item of data.messages) {
+
+const date = new Date(item.date);
+var name = item.name;
+name = name.replaceAll("<", "&lt;");
+name = name.replaceAll(">", "&gt;");
+
+var message = item.message;
+message = message.replaceAll("<", "&lt;");
+message = message.replaceAll(">", "&gt;");
+message = message.replaceAll("\n", "<br>");
+
+
+var dd = String(date.getDate()).padStart(2, '0');
+var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = date.getFullYear();
+
+let hours = date.getHours();
+let minutes = date.getMinutes();
+let ampm = hours >= 12 ? 'PM' : 'AM';
+
+hours = hours % 12;
+hours = hours ? hours : 12; // If hour is 0, set it to 12
+minutes = minutes < 10 ? '0' + minutes : minutes;
+const otherwrap = document.createElement("div");
+otherwrap.className = "wrapper";
+
+const post = document.createElement("div");
+post.className = "post";
+post.innerHTML = `<b>${name}</b> <i>${mm}/${dd}/${yyyy} ${hours}:${minutes} ${ampm}</i><br><span>${message}</span>`;
+wrapper.appendChild(otherwrap);
+otherwrap.appendChild(post);
+
+}
+
+
+});
+</script>
