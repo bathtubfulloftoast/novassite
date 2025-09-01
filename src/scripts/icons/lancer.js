@@ -1,13 +1,9 @@
-const audioUrl = "/media/sfx/splat.ogg";
-
-
-
 async function createaudio() {
 
 
 
     const audioElement = document.createElement('audio');
-    audioElement.src = audioUrl;
+    audioElement.src = "/media/sfx/splat.ogg";
     audioElement.volume = 0.2;
 
 
@@ -23,6 +19,7 @@ audioElement.remove();
 };
 
 document.getElementById("lancer").addEventListener("click", function(event) {
+event.preventDefault();
 createaudio();
 
 });

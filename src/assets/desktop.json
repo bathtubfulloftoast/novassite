@@ -18,6 +18,12 @@
     "comment": "dexterdaybreaker (gave image)"
   },
   {
+    "filename": "jules.jpog",
+    "icon": "jules.png",
+    "id": "julessite",
+    "comment": "julessite.net"
+  },
+  {
     "filename": "Azure.png",
     "icon": "azure.gif",
     "id": "azure",
