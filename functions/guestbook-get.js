@@ -49,6 +49,7 @@ const result = {
 messages:messages.reverse().slice(min,max),
 info:{
 total_posts: ptot,
+posts_per_page: perp,
 total_pages: tpag,
 current_page: cpage,
 }

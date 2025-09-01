@@ -49,8 +49,7 @@ max-height:40px;
 }
 
 .postwrapper {
-text-align:center;
-margin-bottom:12px;
+display:inline-block;
 }
 
 .message {
@@ -85,13 +84,27 @@ border:1px solid var(--fg3);
 .post span::-webkit-scrollbar {
   display: none;
 }
+
+@media screen and (max-width: 1280px) {
+.postwrapper{
+display:block;
+text-align:center;
+}
+
+.post {
+max-width:90vw;
+width:90vw;
+}
+
+.post span {
+max-height:100vw;
+}
+}
 </style>
 </head>
 
 <div id="posts">
 
-<div class="postwrapper">
-</div>
 
 </div>
 
@@ -144,10 +157,15 @@ hours = hours % 12;
 hours = hours ? hours : 12; // If hour is 0, set it to 12
 minutes = minutes < 10 ? '0' + minutes : minutes;
 
+const postwrap = document.createElement("div");
+postwrap.className = "postwrapper";
+
 const post = document.createElement("div");
 post.className = "post";
 post.innerHTML = `<b>${name}</b> <i>${mm}/${dd}/${yyyy} ${hours}:${minutes} ${ampm}</i><br><span>${message}</span>`;
-wrapper.appendChild(post);
+wrapper.appendChild(postwrap);
+postwrap.appendChild(post);
+
 }
 
 
