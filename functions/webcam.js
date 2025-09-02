@@ -24,7 +24,7 @@ res.set('Content-Type', "image/jpeg");
 if (rcache && (Date.now() - rcache < CACHE_DURATION)) {
 const remaining = CACHE_DURATION - (Date.now() - rcache);
 res.set('Nova-Next-Snapshot', (Math.floor(remaining/1000)));
-fs.readFile('./webcam_s.jpg', (err, data) => {
+fs.readFile('cache/webcam_s.jpg', (err, data) => {
 return res.status(200).send(data);
 });
 
@@ -33,7 +33,7 @@ rcache = Date.now();
 res.set('Nova-Next-Snapshot', (Math.floor(CACHE_DURATION/1000)));
 
 
-await NodeWebcam.capture( "webcam_s", opts, function( err, data ) {
+await NodeWebcam.capture( "cache/webcam_s", opts, function( err, data ) {
 return res.status(200).send(data);
 });
 }
