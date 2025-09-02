@@ -15,7 +15,23 @@ body {
 background:var(--bg0);
 color:var(--fg0);
 font-family: Arial, sans-serif;
+}
 
+a {
+text-decoration:none;
+}
+
+a:link,a:visited {
+color:var(--aqua);
+}
+
+a:hover {
+color:var(--bright-aqua);
+}
+
+#navigator {
+font-size:20px;
+word-spacing:15px;
 }
 
 .post {
@@ -110,7 +126,9 @@ max-height:100vw;
 <div id="posts">
 </div>
 
-
+<div style="text-align:center;" id="navigator">
+<a id="first" href="#">&lt;&lt;</a> <a id="prev" href="#">&lt;-</a> <a href="#" id="next">-&gt;</a> <a href="#" id="last">&gt;&gt;</a>
+</div>
 
 <hr>
 
@@ -126,11 +144,69 @@ max-height:100vw;
 </form>
 
 <script>
+const rootreq = "/api/guestbook";
+let url = rootreq;
 document.addEventListener("DOMContentLoaded", async function() {
+var hash = window.location.hash;
+hash = hash.substring(1);
+hash = Number(hash);
 
-const response = await fetch('/api/guestbook');
+if(hash < 1) {
+hash = 1;
+}
+
+
+if(hash) {
+url = `${rootreq}/?page=${hash}`;
+}
+
+const response = await fetch(url);
 // const response = await fetch('/guestbook.json');
 var data = await response.json();
+
+const nextpage = document.getElementById("next");
+const previouspage = document.getElementById("prev");
+const firstpage = document.getElementById("first");
+const lastpage = document.getElementById("last");
+
+
+nextpage.addEventListener("click", async function(event) {
+event.preventDefault();
+window.location.replace(`#${hash+1}`);
+await location.reload();
+});
+
+previouspage.addEventListener("click", async function(event) {
+event.preventDefault();
+window.location.replace(`#${hash-1}`);
+await location.reload();
+});
+
+firstpage.addEventListener("click", async function(event) {
+event.preventDefault();
+window.location.replace(`#1`);
+await location.reload();
+});
+
+lastpage.addEventListener("click", async function(event) {
+event.preventDefault();
+window.location.replace(`#${data.info.total_pages}`);
+await location.reload();
+});
+
+console.log(hash);
+
+if(data.info.total_pages == 1) {
+document.getElementById("navigator").remove();
+nextpage.remove();
+} else if (data.info.current_page <= 1) {
+firstpage.remove();
+previouspage.remove();
+} else if (data.info.current_page >= data.info.total_pages) {
+nextpage.remove();
+lastpage.remove();
+}
+
 
 const wrapper = document.getElementById("posts");
 wrapper.innerHTML = "";
@@ -170,7 +246,6 @@ postwrap.appendChild(post);
 
 }
 
-
 });
 </script>
 
@@ -192,6 +267,7 @@ body: new URLSearchParams( {
 
 if(response.ok) {
 form.innerHTML = `<div class="message succ">submission posted refresh the page to see it posted!</div>`;
+window.location.replace(`#1`);
 }
 
 const data = await response.json();
