@@ -8,6 +8,7 @@ const censored = ["nigg","fag","trann","account","elon","trump","sell","buy","cr
 var site = new RegExp("(http|ftp|https):\\/\\/([\\w_-]+(?:(?:\\.[\\w_-]+)+))([\\w.,@?^=%&:\\/~+#-]*[\\w@?^=%&\\/~+#-])");
 
 export default async function lastfmHandler(req, res) {
+const UserAgent = req.get('User-Agent');
 const CF = req.headers['cf-connecting-ip'];
 const XF = req.headers['x-forwarded-for'];
 var LOC = req.connection.remoteAddress;
@@ -94,14 +95,15 @@ db.serialize(() => {
         message TEXT NOT NULL,
         date TEXT NOT NULL,
         ipaddr TEXT NOT NULL,
+        useragent TEXT NOT NULL,
         scam BOOLEAN
     )
     `, (err) => {
         if (err) console.error('Table creation error:', err.message);
     });
 
-const stmt = db.prepare(`INSERT INTO messages (username, message,date,ipaddr,scam) VALUES (?,?,?,?,?)`);
-stmt.run(username, message,now.toISOString(),IPADDR,scammer, function(err) {
+const stmt = db.prepare(`INSERT INTO messages (username, message,date,ipaddr,useragent,scam) VALUES (?,?,?,?,?,?)`);
+stmt.run(username, message, now.toISOString(), IPADDR, UserAgent, scammer, function(err) {
     if (err) {
         console.error('Insert error:', err.message);
     } else {

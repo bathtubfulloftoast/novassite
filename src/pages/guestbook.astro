@@ -168,11 +168,6 @@ url = `${rootreq}/?page=${hash}`;
 const response = await fetch(url);
 // const response = await fetch('/guestbook.json');
 
-if(!response.ok) {
-document.getElementById("posts").innerHTML = `there was an error grabbing guestbook posts`;
-
-document.getElementById("navigator").remove();
-}
 
 var data = await response.json();
 
@@ -182,6 +177,7 @@ const nextpage = document.getElementById("next");
 const previouspage = document.getElementById("prev");
 const firstpage = document.getElementById("first");
 const lastpage = document.getElementById("last");
+const pagecount = document.getElementById("pagecount");
 
 
 nextpage.addEventListener("click", async function(event) {
@@ -210,7 +206,6 @@ await location.reload();
 
 if(data.info.total_pages == 1) {
 document.getElementById("navigator").remove();
-nextpage.remove();
 } else if (data.info.current_page <= 1) {
 firstpage.remove();
 previouspage.remove();
@@ -219,7 +214,10 @@ nextpage.remove();
 lastpage.remove();
 }
 
-document.getElementById("pagecount").innerHTML = `Page ${data.info.current_page}/${data.info.total_pages}`;
+if (pagecount) {
+pagecount.innerHTML = `Page ${data.info.current_page}/${data.info.total_pages}`;
+}
+
 
 const wrapper = document.getElementById("posts");
 wrapper.innerHTML = "";
