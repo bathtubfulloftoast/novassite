@@ -34,6 +34,11 @@ font-size:20px;
 word-spacing:15px;
 }
 
+#navigator i {
+font-size:16px;
+word-spacing:0;
+}
+
 .post {
 background:var(--bg3);
 display:inline-block;
@@ -127,6 +132,7 @@ max-height:100vw;
 </div>
 
 <div style="text-align:center;" id="navigator">
+<i id="pagecount">Page 1/2</i><br>
 <a id="first" href="#">&lt;&lt;</a> <a id="prev" href="#">&lt;-</a> <a href="#" id="next">-&gt;</a> <a href="#" id="last">&gt;&gt;</a>
 </div>
 
@@ -161,7 +167,16 @@ url = `${rootreq}/?page=${hash}`;
 
 const response = await fetch(url);
 // const response = await fetch('/guestbook.json');
+
+if(!response.ok) {
+document.getElementById("posts").innerHTML = `there was an error grabbing guestbook posts`;
+
+document.getElementById("navigator").remove();
+}
+
 var data = await response.json();
+
+
 
 const nextpage = document.getElementById("next");
 const previouspage = document.getElementById("prev");
@@ -204,6 +219,7 @@ nextpage.remove();
 lastpage.remove();
 }
 
+document.getElementById("pagecount").innerHTML = `Page ${data.info.current_page}/${data.info.total_pages}`;
 
 const wrapper = document.getElementById("posts");
 wrapper.innerHTML = "";
@@ -248,6 +264,14 @@ postwrap.appendChild(post);
 
 <script>
 const form = document.getElementById("form");
+
+document.addEventListener("DOMContentLoaded", async function() {
+form.name.placeholder = form.name.value || form.name.placeholder;
+form.message.placeholder = form.message.value || form.message.placeholder;
+
+form.name.value = "";
+form.message.value = "";
+});
 
 form.addEventListener("submit", async function(event) {
 event.preventDefault();

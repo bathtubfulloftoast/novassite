@@ -62,5 +62,5 @@ if (err) console.error('Error closing DB:', err.message);
 });
 });
 
-console.log(`${colors.green("[Site]")} function guestbook ran`);
+console.log(`${colors.green("[Site]")} grabbed from the guestbook`);
 }
