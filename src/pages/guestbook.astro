@@ -133,12 +133,11 @@ max-height:100vw;
 <hr>
 
 <form id="form">
-
 <label for="name">Name:</label>
 <input type="text" id="name" maxlength="20" name="name" placeholder="Alice" required><br><br>
 
 <label for="message">Message:</label><br>
-<textarea type="text" maxlength="512"  rows="5" cols="50" id="message" name="message" placeholder="i love novassite.net" required></textarea><br><br>
+<textarea type="text" maxlength="512"  rows="2" cols="50" id="message" name="message" placeholder="i love novassite.net" required></textarea><br><br>
 
 <input type="submit" value="Submit">
 </form>
@@ -275,7 +274,5 @@ const data = await response.json();
 if(data.error) {
 form.innerHTML = `<div class="message fale">${data.error}</div>`;
 }
-
-console.log(data);
 })
 </script>
