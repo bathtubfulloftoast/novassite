@@ -80,13 +80,21 @@ var year = creationdate.getFullYear();
 
 for (var item of data.activities) {
 if (item.type == 4) {
+
+if(item.emoji) {
 if(item.emoji.imageURL) {
 document.getElementById("status").innerHTML = `<img src="https://cdn.discordapp.com/emojis/${item.emoji.id}?size=16" class="statusemoji"> ${item.state??""}`;
-} else if (!item.emoji.imageURL && item.emoji.name) {
+}
+
+else if (!item.emoji.imageURL && item.emoji.name) {
 document.getElementById("status").innerHTML = `<span class="emoji">${item.emoji.name}</span> ${item.state??""}`
-} else {
+}
+}
+
+else {
 document.getElementById("status").innerHTML = item.state;
 }
+
 break;
 }
 }
