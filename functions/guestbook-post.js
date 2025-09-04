@@ -26,15 +26,6 @@ IPADDR = LOC;
 
 const now = new Date();
 
-if (rcache && (Date.now() - rcache < CACHE_DURATION)) {
-const remaining = CACHE_DURATION - (Date.now() - rcache);
-return res.status(429).json({
-error:`not so fast, the rate limit is active for another ${Math.ceil(remaining/1000)}. seconds`
-});
-} else {
-rcache = Date.now();
-}
-
 if(!req.body) {
 return res.status(400).json({
 error:"no data"
@@ -56,6 +47,15 @@ return res.status(400).json({
 error:"no message set"
 });
 };
+
+if (rcache && (Date.now() - rcache < CACHE_DURATION)) {
+const remaining = CACHE_DURATION - (Date.now() - rcache);
+return res.status(429).json({
+error:`not so fast, the rate limit is active for another ${Math.ceil(remaining/1000)}. seconds`
+});
+} else {
+rcache = Date.now();
+}
 
 username = username.substring(0, 20);
 message = message.substring(0, 512);
