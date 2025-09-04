@@ -263,14 +263,6 @@ postwrap.appendChild(post);
 <script>
 const form = document.getElementById("form");
 
-document.addEventListener("DOMContentLoaded", async function() {
-form.name.placeholder = form.name.value || form.name.placeholder;
-form.message.placeholder = form.message.value || form.message.placeholder;
-
-form.name.value = "";
-form.message.value = "";
-});
-
 form.addEventListener("submit", async function(event) {
 event.preventDefault();
 const name = form.name.value;
@@ -285,6 +277,8 @@ body: new URLSearchParams( {
 });
 
 if(response.ok) {
+form.name.value = "";
+form.message.value = "";
 form.innerHTML = `<div class="message succ">submission posted refresh the page to see it posted!</div>`;
 window.location.replace(`#1`);
 }
