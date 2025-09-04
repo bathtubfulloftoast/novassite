@@ -95,7 +95,7 @@ db.serialize(() => {
         message TEXT NOT NULL,
         date TEXT NOT NULL,
         ipaddr TEXT NOT NULL,
-        useragent TEXT NOT NULL,
+        useragent TEXT,
         scam BOOLEAN
     )
     `, (err) => {
