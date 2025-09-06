@@ -28,7 +28,7 @@ const icons = desktop;
     <div class="title-bar-controls">
       <button style="cursor:pointer" aria-label="Minimize" onclick="location.href='/death';"></button>
       <button style="cursor:pointer" aria-label="Maximize" onclick="location.href='/profile';"></button>
-      <button style="cursor:pointer" aria-label="Close" onclick='document.getElementById("window").remove()'></button>
+      <button style="cursor:pointer" aria-label="Close" id="closewindow"></button>
     </div>
   </div>
   <div style="padding:0px;margin:0px">
@@ -52,6 +52,8 @@ const icons = desktop;
 
 <div class="taskbar">
 <div style="float:left"><a id="start" style="cursor:pointer;"><img fetchPriority="low" src="/media/start.gif"></a></div> <!-- no href because it adds select box -->
+<div id="reopen"><img src="/media/retro.png"></div>
+
 
 <div class="time" id="time">11:24 PM</div>
 <div class="time"><a href="/media/secrets/clouds.mp4" id="wlnk" title="22&deg;C" target="_blank" ><img fetchPriority="low" src="/media/weather/16/03d.png" id="wimg" style="vertical-align: -2px;"> <span id="wtmp">72&deg;F</span></a></div>
@@ -179,4 +181,24 @@ createaudio(); //ive removed the ability to spam im sorgy.
 });
 
 </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+document.getElementById("reopen").style.display = "none";
+});
+
+document.getElementById("closewindow").addEventListener("click", function(event) {
+event.preventDefault();
+document.getElementById("window").style.display = "none";
+document.getElementById("reopen").style.display = "block";
+});
+
+document.getElementById("reopen").addEventListener("click", function(event) {
+event.preventDefault();
+document.getElementById("window").style.display = "block";
+document.getElementById("reopen").style.display = "none";
+
+});
+</script>
+
 
