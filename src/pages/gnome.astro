@@ -1,0 +1,64 @@
+<head>
+<title>gnome</title>
+
+<style is:global>
+body{
+overflow:hidden;
+}
+
+img {
+cursor:pointer;
+max-width:60vw;
+max-height:60vh;
+}
+
+.center-screen {
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+min-height: 100vh;
+}
+</style>
+</head>
+
+<div class="center-screen">
+<img src="/media/gnome.webp" id="gome">
+</div>
+
+<script>
+
+
+async function createaudio() {
+
+    const audioElement = document.createElement('audio');
+    audioElement.src = "/media/sfx/gnomed.ogg";
+    audioElement.volume = 0.2;
+    audioElement.id = "audio";
+
+    document.body.appendChild(audioElement);
+
+
+    audioElement.play();
+
+audioElement.addEventListener('ended', () => gnomed());
+
+async function gnomed() {
+document.getElementById("gome").remove();
+document.title = "no gnome";
+audioElement.remove();
+await new Promise(r => setTimeout(r, 1000));
+window.location.replace("/");
+}
+
+};
+
+document.getElementById("gome").addEventListener("click", function(event) {
+event.preventDefault();
+if(!document.getElementById("audio")) {
+createaudio();
+}
+});
+
+
+</script>
