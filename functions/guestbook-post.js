@@ -48,6 +48,24 @@ error:"no message set"
 });
 };
 
+username = username.substring(0, 20);
+message = message.substring(0, 512);
+username = username.replace(/  +/g, ' ');
+message = message.replace(/  +/g, ' ');
+// its done in this order on purpose cause fuck you :3
+
+if(username.length < 2) {
+return res.status(400).json({
+error:"name too short"
+});
+};
+
+if(message.length < 5) {
+return res.status(400).json({
+error:"message too short"
+});
+};
+
 if (rcache && (Date.now() - rcache < CACHE_DURATION)) {
 const remaining = CACHE_DURATION - (Date.now() - rcache);
 return res.status(429).json({
@@ -56,9 +74,6 @@ error:`not so fast, the rate limit is active for another ${Math.ceil(remaining/1
 } else {
 rcache = Date.now();
 }
-
-username = username.substring(0, 20);
-message = message.substring(0, 512);
 
 if(site.test(message.toLowerCase())) {
 scammer = true;
