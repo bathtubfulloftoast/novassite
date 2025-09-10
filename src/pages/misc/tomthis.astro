@@ -45,7 +45,7 @@ font-weight:bold;
 <body>
 <div id="bg">CAN'T</div>
 
-<div id="mouse" style="top:100;left:100;"><img src="/bot/tom.png"></div>
+<div id="mouse"><img src="/bot/tom.png"></div>
 </body>
 
 <script>
@@ -53,11 +53,8 @@ document.addEventListener('mousemove', function(event) {
 var mouseX = event.clientX;
 var mouseY = event.clientY;
 
-mouseX = mouseX-25;
-mouseY = mouseY-12;
-
-document.getElementById("mouse").style.left = mouseX;
-document.getElementById("mouse").style.top = mouseY;
+document.getElementById("mouse").style.left = mouseX-25;
+document.getElementById("mouse").style.top = mouseY-12;
 });
 </script>
 
