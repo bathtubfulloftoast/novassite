@@ -1,11 +1,14 @@
 <head>
 <!-- clone of cant-not-tweet-this.com but with tom scott. -->
+<title>CAN'T</title>
+
 <style is:global>
 body {
 cursor:pointer;
 overflow:hidden;
 width:100vw;
 height:100vh;
+user-select:none;
 }
 
 #mouse {
@@ -49,12 +52,12 @@ font-weight:bold;
 </body>
 
 <script>
-document.addEventListener('mousemove', function(event) {
+document.addEventListener('mousemove', (event) => {
 var mouseX = event.clientX;
 var mouseY = event.clientY;
 
-document.getElementById("mouse").style.left = mouseX-25;
-document.getElementById("mouse").style.top = mouseY-12;
+document.getElementById("mouse").style.left = mouseX-25+"px";
+document.getElementById("mouse").style.top = mouseY-12+"px";
 });
 </script>
 
@@ -89,6 +92,7 @@ counter++;
 
 await new Promise(r => setTimeout(r, 700));
 document.getElementById("bg").innerHTML = textarr[counter];
+document.title = textarr[counter];
 
 }
 };
