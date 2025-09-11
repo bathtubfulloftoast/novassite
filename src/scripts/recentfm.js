@@ -64,7 +64,8 @@ document.addEventListener("DOMContentLoaded", async function() {
 document.getElementById("fmstats").innerHTML = `${totalscrobbs} total scrobbles<br>
 im only ${away} away from ${target}!<br>
 thats about ${final} worth of music...<br>
-im about ${percentage} of the way through my goal and i average about ${songsPerDay} songs per day.`;
+im about ${percentage} of the way through my goal<br>
+i average about ${songsPerDay} songs per day.`;
 }
     await weather();
 });
