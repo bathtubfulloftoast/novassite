@@ -1,0 +1,141 @@
+---
+import '/src/styles/colors.css';
+---
+
+<head>
+<title>Daily Man (The Game)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="Daily Man (The Game)" property="og:title" />
+<meta content="the best RPG Maker game ever made, a delightful time filled with copyright infringement and goofs!" property="og:description" />
+<meta content="/media/embeds/dailyman.jpg" property="og:image" />
+<meta content="#d64215" data-react-helmet="true" name="theme-color" />
+<meta charset="UTF-8" />
+
+<style is:global>
+body {
+text-align:center;
+background:var(--bg0);
+color:var(--fg0);
+font-family: 'Comic Sans MS', cursive;
+}
+
+#game {
+display:inline-block;
+color:white;
+background:var(--bg3);
+}
+
+.thumb {
+cursor:pointer;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+
+.thumb:hover {
+filter: brightness(0.5);
+}
+
+.player {
+background: none;
+width: 100px;
+height: 100px;
+border: solid 5px var(--fg1);
+border-radius: 100%;
+position: relative; 
+text-indent:-9999px;
+}
+
+.player span {
+width: 0;
+height: 0;
+border-top: 30px solid transparent;
+border-left: 40px solid var(--fg2);
+border-bottom: 30px solid transparent;
+position:absolute;
+top:20%;
+left:36%;    
+}
+
+a {
+text-decoration:none;
+}
+
+a:link, a:visited {
+color:var(--fg1);
+}
+
+.downloads {
+padding:5px;
+background-color:var(--red);
+margin-top:20px;
+display:inline-block;
+font-size:20px;
+border-radius:10px;
+}
+
+.downloads:hover {
+filter: brightness(0.8);
+}
+
+iframe {
+display:block;
+}
+
+hr {
+border: 2px solid var(--bg4);
+margin: -10px -10px 20px;
+margin-top:20px;
+}
+</style>
+</head>
+
+<h1>Daily Man (The Game)</h1>
+<div id="game">
+you cannot play this game without javascript.<br>seriously why dont you have javascript enabled what the fuck?
+</div><br>
+<a class="downloads" href="//cdn.novassite.net/dump/DailyMan">Downloads</a>
+
+<hr>
+
+Daily Man (The Game) is a delightful venture into copyright infringement and fun, you play as harvey through his journey across the world wide world.<br>meet funny characters like the lochness monster, <i>brian</i>, and even jack black!
+
+<script>
+const wrapper = document.getElementById("game");
+const gw= "816px";
+const gh= "624px";
+
+const thumbnail = document.createElement('div');
+thumbnail.className = "thumb";
+thumbnail.style.width= gw;
+thumbnail.style.height= gh;
+
+const piw = document.createElement('div'); // playicon wrapper
+const pis = document.createElement('span'); //playicon span
+
+piw .className = "player";
+
+
+
+const game = document.createElement('iframe');
+game.src= "//dailyman.novassite.net";
+game.scrolling= "no";
+game.style.width= gw;
+game.style.height= gh;
+game.style.border= "none";
+
+
+document.addEventListener("DOMContentLoaded", async function() {
+wrapper.innerHTML = "";
+wrapper.appendChild(thumbnail);
+thumbnail.appendChild(piw);
+piw.appendChild(pis);
+});
+
+thumbnail.addEventListener("click", function(event) {
+event.preventDefault();
+thumbnail.remove();
+wrapper.appendChild(game);
+});
+</script>
