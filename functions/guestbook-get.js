@@ -23,7 +23,7 @@ const messages = rows.filter(row => !row.scam).map(row => ({
 name: row.username,
 message: row.message,
 date: row.date,
-// id: row.id,
+id: row.id,
 }));
 
 const ptot = messages.length;
