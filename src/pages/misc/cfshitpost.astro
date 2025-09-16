@@ -1,0 +1,93 @@
+---
+import '/src/styles/colors.css';
+import '/src/styles/misc.css';
+---
+
+<head>
+<title>Cloudflare Shitposter</title>
+
+<style is:global>
+textarea {
+width:600px;
+height:100px;
+cursor:pointer;
+}
+</style>
+</head>
+
+<h1>Cloudflare Shitposter</h1>
+<h2>ruin a useful tool with your own text!</h2>
+<hr>
+<div id="inputs">
+jjjjjjjavascript :)
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+//let hash = window.location.hash;
+//hash = hash.substring(1); 
+
+//const decode = atob(hash);
+
+const decode = `{"isCf":"Yes","isDoh":"Yes","isDot":"No","isWarp":"No","ispName":"Cloudflare, Inc.","ispAsn":"13335","datacenterLocation":"ABQ","resolverIp-1.1.1.1":"Yes","resolverIp-1.0.0.1":"Yes","resolverIp-2606:4700:4700::1111":"No","resolverIp-2606:4700:4700::1001":"No"}`;
+const data = JSON.parse(decode);
+
+const wrapper = document.getElementById("inputs");
+wrapper.innerHTML = "";
+
+const form = document.createElement("form");
+wrapper.appendChild(form);
+
+const submit = document.createElement("input");
+submit.type="submit";
+
+for (const item of Object.keys(data)) {
+const content = data[item];
+
+
+const br= document.createElement("br");
+
+const input = document.createElement("input");
+input.type="text";
+input.placeholder=content;
+input.name=item;
+
+const label = document.createElement("label");
+label.innerHTML = `${item}: `;
+
+form.appendChild(label);
+form.appendChild(input);
+form.appendChild(br);
+
+};
+
+form.appendChild(submit);
+
+form.addEventListener("submit", async function(event) {
+event.preventDefault();
+
+const formData = new FormData(form);
+
+const jsonform = JSON.stringify(Object.fromEntries(formData));
+const b64 = btoa(jsonform);
+
+const url = `https://one.one.one.one/help/#${b64}`;
+
+const link = document.createElement("textarea");
+link.innerHTML= url;
+
+wrapper.innerHTML = "";
+wrapper.appendChild(link);
+link.addEventListener("keydown", async function(event) {event.preventDefault();});
+
+link.addEventListener("click", async function(event) {
+navigator.clipboard.writeText(url);
+link.select();
+});
+
+});
+
+
+});
+
+</script>
