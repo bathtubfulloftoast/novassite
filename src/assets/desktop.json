@@ -173,6 +173,12 @@
     "comment": "sign the petition."
   },
   {
+    "filename": "dailyman.game",
+    "icon": "dailyman.png",
+    "id": "dailyman",
+    "comment": "bumpin that"
+  },
+  {
     "filename": "CLICKME.txt",
     "icon": "text.gif",
     "id": "readme",
