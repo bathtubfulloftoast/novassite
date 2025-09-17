@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         // daysNeeded = Math.ceil(daysNeeded);
 
         // const daysNeededText = daysNeeded + ' day' + (daysNeeded > 1 ? 's' : '');
-        const percentage = Math.round((totalscrobbs/target)*100)+"%"
+        const percentage = Math.floor((totalscrobbs/target)*100)+"%"
 
 
 document.getElementById("fmstats").innerHTML = `${totalscrobbs} total scrobbles<br>
