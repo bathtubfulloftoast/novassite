@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", async function() {
             away = target - totalscrobbs;
         }
 
-        let final = away*3.5;
+        let final = away*3.4;
 
         if (final >= 1440) {
             final = final / 1440;
