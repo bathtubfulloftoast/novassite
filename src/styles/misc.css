@@ -6,6 +6,7 @@ color:var(--fg);
 text-align:center;
 font-family:SetoFont;
 }
+
 button,input[type="submit"] {
 background:var(--red);
 color:var(--fg);
@@ -16,7 +17,7 @@ button:active,input[type="submit"]:active {
 background:var(--bright-red);
 }
 
-input[type="text"],textarea {
+input[type="text"],textarea,input[type="date"],input[type="time"] {
 background:var(--bg0);
 border:1px solid var(--fg3);
 border-radius:0.2em;
@@ -24,11 +25,11 @@ color:var(--fg)
 }
 
 .center-screen {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+min-height: 100vh;
 }
 
 a {

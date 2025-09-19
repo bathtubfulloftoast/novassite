@@ -1,0 +1,84 @@
+---
+import '/src/styles/colors.css';
+import '/src/styles/misc.css';
+---
+<head>
+<title>Countdown</title>
+<style is:global>
+.center-screen h1 {
+font-size:7.5vw;
+}
+</style>
+</head>
+
+<body>
+<div class="center-screen">
+<form id="dselect">
+<label>Countdown Date:</label>
+<input type="date" name="date" required="true"></input>
+<input type="time" name="time" required="true"></input>
+<input type="submit"></input>
+</form>
+</div>
+</body>
+
+<script>
+let hash = window.location.hash;
+hash = hash.substring(1); 
+hash = decodeURI(hash);
+
+const time = new Date(hash);
+
+const timer = document.createElement("h1");
+timer.innerHTML = "0d 0h 0m 0s";
+
+const wrapper = document.createElement("div");
+wrapper.className = "center-screen";
+
+if(hash) {
+document.body.innerHTML="";
+document.body.appendChild(wrapper);
+wrapper.appendChild(timer);
+
+
+var x = setInterval(function() {
+
+const now = new Date();
+
+  var distance = time- now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  timer.innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    timer.innerHTML = "Time Over";
+  }
+}, 1000);
+
+}
+</script>
+
+<script>
+const now = new Date();
+
+const date = document.getElementById("dselect");
+date.date.valueAsDate = now;
+date.time.value = now.toString().substring(16,21);
+
+date.addEventListener("submit", async function(event) {
+event.preventDefault();
+window.location.replace(`#${date.date.value} ${date.time.value}`);
+await location.reload();
+
+});
+
+</script>
