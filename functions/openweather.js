@@ -8,6 +8,8 @@ export default async function lastfmHandler(req, res) {
     const CITYID = "5476913";
     const CACHE_DURATION = 3600000;
 
+    res.set('Cache-Control', "max-age="+(CACHE_DURATION/1000));
+
     if (cache.timestamp && (Date.now() - cache.timestamp < CACHE_DURATION)) {
         const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);
         return res.status(200).json({

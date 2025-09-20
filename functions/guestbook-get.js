@@ -8,7 +8,6 @@ export default async function lastfmHandler(req, res) {
 let cpage = 1;
 const page = Number(req.query.page);
 
-
 const db = new sqlite3.Database('cache/guestbook.db', sqlite3.OPEN_READ, (err) => {
 if (err) return console.error('DB open error:', err.message);
 });

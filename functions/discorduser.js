@@ -8,6 +8,8 @@ export default async function lastfmHandler(req, res) {
     const userid = req.query.userid;
     const CACHE_DURATION = 86400000;
 
+    res.set('Cache-Control', "max-age="+(CACHE_DURATION/1000));
+
     if (!userid) {
         return res.status(400).json({ error: 'no userid set' });
     } else if (/[^0-9]/.test(userid)) {
