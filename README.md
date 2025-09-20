@@ -33,7 +33,6 @@ an easy example config for you to copy and paste
 
 ```
 PORT=8080
-HTTPSPORT=8443
 STEAM_API_KEY=
 LASTFM_API_KEY=
 OPENWEATHER_API_KEY=
@@ -48,10 +47,9 @@ LOGCHANNEL=
 
 ### explanation
 
-| Key | What it does | notes |
+| Key | What it does | where to get |
 | -------- | ------- | ------- |
-| PORT | port for the website | required for site to run |
-| HTTPSPORT | https port for the website | this whole system is planned around nginx so this directive is only for testing since astrojs doesnt have an https development mode. |
+| PORT | port for the website | right above this |
 | STEAM_API_KEY | steam API key | https://steamcommunity.com/dev/apikey |
 | LASTFM_API_KEY | Last.FM API Key | https://www.last.fm/api/authentication |
 | OPENWEATHER_API_KEY | Open Weather Map API Key | https://home.openweathermap.org/api_keys |

@@ -1,6 +1,4 @@
 import express from 'express';
-import http from 'http';
-import https from 'https';
 import bodyParser from 'body-parser'
 import colors from 'colors';
 import { handler as ssrHandler } from './dist/server/entry.mjs';
@@ -10,22 +8,14 @@ import 'dotenv/config';
 import fs from 'fs';
 import {marked} from 'marked';
 
-let httport = process.env.PORT;
-let httpsort = process.env.HTTPSPORT;
-
-var key = fs.readFileSync('fakecert.key');
-var cert = fs.readFileSync('fakecert.crt');
-var options = {
-    key: key,
-    cert: cert
-};
+let port = process.env.PORT;
 
 const app = express();
 const base = '/';
 
 function startServer() {
-if(!httport && !httpsort) {
-httport = 8080;
+if(!port) {
+port = 8080;
 console.log(`${colors.red("[ERROR]")} config invalid please check site.`);
 
 fs.readFile('./README.md', 'utf8', (err, data) => {
@@ -41,8 +31,8 @@ process.exit(0);
 });
 
 
-app.listen(httport, () => {
-console.log(`${colors.red("[ERROR]")} Server running invalid config please check http://localhost:${httport}`);
+app.listen(port, () => {
+console.log(`${colors.red("[ERROR]")} Server running invalid config please check http://localhost:${port}`);
 });
 return;
 }
@@ -59,20 +49,9 @@ app.use((req, res) => {
     res.status(404).sendFile('dist/client/404.html', { root: '.' });
 });
 
-var httpserver = http.createServer(app);
-var httpsserver = https.createServer(options, app);
-
-if(httport) {
-httpserver.listen(httport, () => {
-    console.log(`${colors.green("[Site]")} Server running at http://localhost:${httport}`);
+app.listen(port, () => {
+    console.log(`${colors.green("[Site]")} Server running at http://localhost:${port}`);
 });
-}
-
-if(httpsort) {
-httpsserver.listen(httpsort, () => {
-    console.log(`${colors.green("[Site]")} Server running at https://localhost:${httpsort}`);
-});
-}
 }
 
 startServer();
