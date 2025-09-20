@@ -20,6 +20,7 @@ var opts = {
 };
 
 res.set('Content-Type', "image/jpeg");
+res.set('Cache-Control', "max-age="+(CACHE_DURATION/1000));
 
 if (rcache && (Date.now() - rcache < CACHE_DURATION)) {
 const remaining = CACHE_DURATION - (Date.now() - rcache);

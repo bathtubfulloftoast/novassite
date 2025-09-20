@@ -9,6 +9,8 @@ export default async function lastfmHandler(req, res) {
     const MAXFM = "5";
     const CACHE_DURATION = 60000;
 
+    res.set('Cache-Control', "max-age="+(CACHE_DURATION/1000));
+
     if (cache.timestamp && (Date.now() - cache.timestamp < CACHE_DURATION)) {
         const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);
         return res.status(200).json({
@@ -17,7 +19,7 @@ export default async function lastfmHandler(req, res) {
         });
     }
 
-    const url = `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USER}&api_key=${API_KEY}&format=json&limit=${MAXFM}`;
+const url = `http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${USER}&api_key=${API_KEY}&format=json&limit=${MAXFM}`;
 
     try {
         const response = await fetch(url);
@@ -37,6 +39,7 @@ export default async function lastfmHandler(req, res) {
     } catch (error) {
         res.status(500).json({ error: 'Failed to fetch data' });
         console.log(`${colors.red("[ERROR]")} failed to grab recent songs from last.fm`);
+        console.error(error);
 
     }
 }

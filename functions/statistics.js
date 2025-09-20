@@ -9,6 +9,8 @@ let PStamp;
 
 
 export default async function lastfmHandler(req, res) {
+    res.set('Cache-Control', "max-age=60");
+
     const NOW = Date.now();
 
     PUT = process.uptime();

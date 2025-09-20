@@ -14,6 +14,8 @@ export default async function presenceHandler(req, res) {
     const userId = process.env.PRESENCE_USERID;
     const guild = client.guilds.cache.get(process.env.PRESENCE_GUILDID);
 
+    res.set('Cache-Control', "max-age="+(CACHE_DURATION/1000));
+
     // Check for valid cache
     if (cache.timestamp && (Date.now() - cache.timestamp < CACHE_DURATION)) {
         const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);

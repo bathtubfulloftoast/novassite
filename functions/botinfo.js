@@ -7,6 +7,8 @@ let cache = {};
 export default async function presenceHandler(req, res) {
     const CACHE_DURATION = 60000;
 
+    res.set('Cache-Control', "max-age="+(CACHE_DURATION/1000));
+
     // Check for valid cache
     if (cache.timestamp && (Date.now() - cache.timestamp < CACHE_DURATION)) {
         const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);

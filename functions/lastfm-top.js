@@ -9,6 +9,8 @@ export default async function lastfmHandler(req, res) {
     const MAXFM = "5";
     const CACHE_DURATION = 172800000; // 48 hours
 
+    res.set('Cache-Control', "max-age="+(CACHE_DURATION/1000));
+
     if (cache.timestamp && (Date.now() - cache.timestamp < CACHE_DURATION)) {
         const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);
         return res.status(200).json({
@@ -17,7 +19,7 @@ export default async function lastfmHandler(req, res) {
         });
     }
 
-    const url = `http://ws.audioscrobbler.com/2.0/?method=user.getTopTracks&user=${USER}&api_key=${API_KEY}&format=json&limit=${MAXFM}&period=1month`;
+const url = `http://ws.audioscrobbler.com/2.0/?method=user.getTopTracks&user=${USER}&api_key=${API_KEY}&format=json&limit=${MAXFM}&period=1month`;
 
     try {
         const response = await fetch(url);

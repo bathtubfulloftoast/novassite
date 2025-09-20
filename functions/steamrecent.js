@@ -8,6 +8,8 @@ export default async function lastfmHandler(req, res) {
     const STEAMID = "76561198853505045";
     const CACHE_DURATION = 7200000;
 
+    res.set('Cache-Control', "max-age="+(CACHE_DURATION/1000));
+
     if (cache.timestamp && (Date.now() - cache.timestamp < CACHE_DURATION)) {
         const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);
         return res.status(200).json({
