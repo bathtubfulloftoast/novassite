@@ -1,0 +1,98 @@
+---
+import '/src/styles/colors.css';
+import '/src/styles/misc.css';
+
+import runs from '/src/assets/speedruns.json';
+
+---
+<head>
+<title>DailyMan Speedruns</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="Daily Man (The Game) SPEEDRUNS" property="og:title" />
+<meta content="check out the most intense time saves possible for daily man" property="og:description" />
+<meta content="/media/embeds/dailyman.jpg" property="og:image" />
+<meta content="#d64215" data-react-helmet="true" name="theme-color" />
+<meta charset="UTF-8" />
+<style>
+.percents {
+background:var(--red);
+color:var(--fg1);
+margin:10px;
+padding:5px;
+}
+
+.percents:hover {
+background:var(--bright-red);
+}
+
+.runs {
+background:var(--bg2);
+line-height:20px;
+margin:auto;
+margin-top:20px;
+padding:10px;
+max-height:90%;
+overflow:scroll;
+}
+
+.box {
+height:80vh;
+margin-top:20px;
+}
+</style>
+<head>
+
+<body>
+<h1><a href="/dailyman">Daily Man (The Game)</a> Speedruns</h1>
+<div class="box">
+<div class="heading">
+{
+Object.keys(runs)
+.map((item) => (
+<a class="percents" href="#" run={item} >{item} %</a>
+))
+}
+</div>
+
+{
+Object.keys(runs)
+.map((item) => (
+<div class="runs" style="display:none;" id={item}>
+{
+
+runs?.[item]
+.reverse()
+.map((item) => (
+<span><a href={"https://youtu.be/"+item.id}>{item.creator} {item.time}</a></span><br>
+))
+
+}
+</div>
+))
+}
+</div>
+<hr>
+welcome to the daily man speedrunning page!<br>
+all speedruns are manually added and verified by ME. (<i>alice</i>)<br>
+if you wish to run the game and have your run made official <a href="/discord/server">join the server</a> and tell me about your run!
+</body>
+
+<script>
+const runclas = document.getElementsByClassName("percents");
+const runs = document.getElementsByClassName("runs");
+
+
+for (let item of runclas) {
+item.addEventListener("click", function(event) {
+event.preventDefault();
+const run = item.getAttribute("run");
+
+for (let r of runs) {
+r.style.display = "none"
+}
+
+document.getElementById(run).style.display="inline-block";
+});
+};
+
+</script>
