@@ -43,3 +43,9 @@ color:var(--aqua)
 a:hover {
 color:var(--bright-aqua);
 }
+
+hr {
+    border: 2px solid var(--bg4);
+    margin: -10px -10px 20px;
+    margin-top:20px;
+}
