@@ -62,11 +62,11 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 
 document.getElementById("fmstats").innerHTML = `<b>${totalscrobbs} total</b> scrobbles<br>
-<b>${away} away</b> from ${target}<br>
-<b>${final}</b> worth of music...<br>
+<b>${away} away</b> from <b>${target}</b><br>
+<b>${final}</b> worth of music<br>
 <b>${percentage}</b> of the way through goal<br>
 <b>${daysNeededText} estimated</b> till goal reached<br>
-<b>${songsPerDay} songs per day</b> on average..`;
+<b>${songsPerDay} songs per day</b> on average`;
 }
     await weather();
 });
