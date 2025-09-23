@@ -1,18 +1,10 @@
-const audioUrl = "/media/sfx/fun.ogg";
+ function createaudio() {
 
 
 
-async function createaudio() {
-
-
-
-    const audioElement = document.createElement('audio');
-    audioElement.src = audioUrl;
+    const audioElement = new Audio("/media/sfx/fun.ogg");
     audioElement.volume = 0.2;
     audioElement.id = "pinkieaudio";
-
-
-    document.body.appendChild(audioElement);
 
 
     audioElement.play();

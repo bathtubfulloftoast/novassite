@@ -1,7 +1,5 @@
 async function createAudio() {
-    const audioElement = document.createElement('audio');
-    audioElement.src = "/media/sfx/ps1.ogg";
-    audioElement.id = "windows93audio";
+    const audioElement = new Audio("/media/sfx/ps1.ogg");
     audioElement.volume = 0.5;
     // audioElement.playbackRate = 1;
 
@@ -25,7 +23,6 @@ async function createAudio() {
 
     CONTAINER.appendChild(imageElement);
     document.body.appendChild(CONTAINER);
-    document.body.appendChild(audioElement);
 
     // Force a reflow before setting opacity to 1
     void CONTAINER.offsetHeight; // this line ensures the opacity transition is triggered
@@ -52,7 +49,6 @@ async function createAudio() {
 
 document.getElementById("windows93").addEventListener("click", (event) => {
     event.preventDefault();
-    if (!document.getElementById("windows93audio")) {
-        createAudio();
-    }
+    createAudio();
+
 });

@@ -1,13 +1,8 @@
-const audioUrl = "/media/sfx/tf2notif.ogg";
-
-
-
 async function createaudio() {
 
 
 
-    const audioElement = document.createElement('audio');
-    audioElement.src = audioUrl;
+    const audioElement = new Audio("/media/sfx/tf2notif.ogg");
     audioElement.volume = 0.5;
 
 
@@ -30,9 +25,6 @@ async function createaudio() {
     container.style.height = "100vw";
     container.style.background = "black";
 
-
-
-    document.body.appendChild(audioElement);
     document.body.appendChild(container);
 
     container.appendChild(imageElement);

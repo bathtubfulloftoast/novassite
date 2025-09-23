@@ -1,13 +1,8 @@
-const audioUrl = "/media/sfx/love.ogg";
-
-
-
 async function createaudio() {
 
 
 
-    const audioElement = document.createElement('audio');
-    audioElement.src = audioUrl;
+    const audioElement = new Audio("/media/sfx/love.ogg");
     audioElement.volume = 0.5;
 
 
@@ -20,8 +15,6 @@ async function createaudio() {
     imageElement.style.width = "100vw";
     imageElement.style.height = "100vh";
 
-
-    document.body.appendChild(audioElement);
     document.body.appendChild(imageElement);
 
 

@@ -1,10 +1,6 @@
-const audioUrl = "/media/sfx/speen.ogg";
-
-
 async function createaudio() {
 
-    const audioElement = document.createElement('audio');
-    audioElement.src = audioUrl;
+    const audioElement = new Audio("/media/sfx/speen.ogg");
     audioElement.volume = 0.2;
     audioElement.id = "speenaudio";
 

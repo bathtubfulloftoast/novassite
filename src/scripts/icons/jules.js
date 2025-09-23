@@ -4,8 +4,7 @@ async function createaudio() {
     const max = 13;
     const rand = Math.round(Math.random()*max);
 
-    const audioElement = document.createElement('audio');
-    audioElement.src = dir+rand+".ogg";
+    const audioElement = new Audio(dir+rand+".ogg");
     audioElement.volume = 0.9;
     audioElement.id = "julesaudio";
 

@@ -1,13 +1,8 @@
-const audioUrl = "/media/sfx/MEGALOVANIA.ogg";
-
-
-
 async function createaudio() {
 
 
 
-    const audioElement = document.createElement('audio');
-    audioElement.src = audioUrl;
+    const audioElement = new Audio("/media/sfx/MEGALOVANIA.ogg");
     audioElement.volume = 1;
 
 

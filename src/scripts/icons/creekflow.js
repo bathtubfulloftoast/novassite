@@ -1,13 +1,8 @@
-const audioUrl = "/media/sfx/creeky.ogg";
-
-
-
 async function createaudio() {
 
 
 
-    const audioElement = document.createElement('audio');
-    audioElement.src = audioUrl;
+    const audioElement = new Audio("/media/sfx/creeky.ogg");
     audioElement.volume = 0.5;
 
 

@@ -1,13 +1,8 @@
-const audioUrl = "/media/sfx/lobotomy.ogg";
-
-
-
 async function createaudio() {
 
 
 
-    const audioElement = document.createElement('audio');
-    audioElement.src = audioUrl;
+    const audioElement = new Audio("/media/sfx/lobotomy.ogg");
     audioElement.volume = 0.08;
 
 
@@ -22,8 +17,6 @@ async function createaudio() {
     container.style.cursor = "none";
 
 
-
-    document.body.appendChild(audioElement);
     document.body.appendChild(container);
 
 

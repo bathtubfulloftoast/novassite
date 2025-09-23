@@ -1,13 +1,8 @@
-const audioUrl = "/media/sfx/vineboom.ogg";
-
-
-
 async function createaudio() {
 
 
 
-    const audioElement = document.createElement('audio');
-    audioElement.src = audioUrl;
+    const audioElement = new Audio("/media/sfx/vineboom.ogg");
     audioElement.volume = 0.6;
 
 

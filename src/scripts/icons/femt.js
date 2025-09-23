@@ -1,20 +1,12 @@
-const katamari = "/media/sfx/katamari intro.ogg";
-const fuck = "/media/sfx/fuckthat.ogg"; //ey... fucj that...
-const murder = "/media/sfx/murderevery1intro.ogg";
-
-
 async function createaudio() {
 
-    const katamariElement = document.createElement('audio');
-    katamariElement.src = katamari;
+    const katamariElement = new Audio("/media/sfx/katamari intro.ogg");
     katamariElement.volume = 0.3;
 
-    const fuckElement = document.createElement('audio');
-    fuckElement.src = fuck;
+    const fuckElement = new Audio("/media/sfx/fuckthat.ogg");//ey... fucj that...
     fuckElement.volume = 0.3;
 
-    const murderElement = document.createElement('audio');
-    murderElement.src = murder;
+    const murderElement = new Audio("/media/sfx/murderevery1intro.ogg");
     murderElement.volume = 0.3;
 
     const femtIMG = document.createElement('img');
@@ -42,10 +34,6 @@ async function createaudio() {
     container.style.height = "100vw";
     container.style.background = "black";
     container.style.textAlign = "center";
-
-    document.body.appendChild(katamariElement);
-    document.body.appendChild(fuckElement);
-    document.body.appendChild(murderElement);
 
     document.body.appendChild(femtIMG);
 
