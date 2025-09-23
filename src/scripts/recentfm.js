@@ -61,12 +61,12 @@ document.addEventListener("DOMContentLoaded", async function() {
         const percentage = Math.floor((totalscrobbs/target)*100)+"%"
 
 
-document.getElementById("fmstats").innerHTML = `${totalscrobbs} total scrobbles<br>
-${away} away from ${target}<br>
-${final} worth of music...<br>
-${percentage} of the way through goal<br>
-${daysNeededText} estimated till goal reached<br>
-${songsPerDay} songs per day on average..`;
+document.getElementById("fmstats").innerHTML = `<b>${totalscrobbs} total</b> scrobbles<br>
+<b>${away} away</b> from ${target}<br>
+<b>${final}</b> worth of music...<br>
+<b>${percentage}</b> of the way through goal<br>
+<b>${daysNeededText} estimated</b> till goal reached<br>
+<b>${songsPerDay} songs per day</b> on average..`;
 }
     await weather();
 });
