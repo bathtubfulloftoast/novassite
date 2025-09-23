@@ -1,13 +1,8 @@
-const audioUrl = "/media/sfx/mimi.ogg";
-
-
-
 async function createaudio() {
 
 
 
-    const audioElement = document.createElement('audio');
-    audioElement.src = audioUrl;
+    const audioElement = new Audio("/media/sfx/mimi.ogg");
     audioElement.volume = 0.2;
     audioElement.id = "eepyaudio";
 
