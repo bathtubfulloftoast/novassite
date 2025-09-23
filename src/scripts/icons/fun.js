@@ -6,6 +6,7 @@
     audioElement.volume = 0.2;
     audioElement.id = "pinkieaudio";
 
+    document.body.appendChild(audioElement);
 
     audioElement.play();
 
