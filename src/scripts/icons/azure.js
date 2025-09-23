@@ -15,8 +15,6 @@ async function createaudio() {
     imageElement.style.width = "100vw";
     imageElement.style.height = "100vh";
 
-
-    document.body.appendChild(audioElement);
     document.body.appendChild(imageElement);
 
 
