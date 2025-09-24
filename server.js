@@ -1,4 +1,5 @@
 import express from 'express';
+import http from 'http';
 import bodyParser from 'body-parser'
 import colors from 'colors';
 import { handler as ssrHandler } from './dist/server/entry.mjs';
@@ -22,6 +23,9 @@ app.use((req, res) => {
     res.status(404).sendFile('dist/client/404.html', { root: '.' });
 });
 
-app.listen(port, () => {
+var server = http.createServer(app);
+
+
+server.listen(port, () => {
     console.log(`${colors.green("[Site]")} Server running at http://localhost:${port}`);
 });
