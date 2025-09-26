@@ -11,8 +11,7 @@ export async function GET() {
         .map((name, index) => (index+1).toString().padStart(4, " ") + " | " + name);
 
         // all of this is to make sure people arent downloading thousands of splashes
-        const sorted = splashes.sort();
-        const textContent = sorted.join("\n");
+        const textContent = splashes.join("\n");
 
         const headerstring = `all ${splashes.length} of Novas Splashes!`;
         const headerlen = headerstring.length;
