@@ -4,7 +4,7 @@ import '/src/styles/misc.css';
 
 const basePath = "./";
 
-const files = Object.keys(import.meta.glob('./**/*.astro', { eager: true }));
+const files = Object.keys(import.meta.glob('./*.astro', { eager: true }));
 
 // Convert file paths to valid Astro routes
 const routes = files.map(file => {
