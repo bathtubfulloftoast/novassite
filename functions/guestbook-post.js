@@ -5,7 +5,7 @@ let rcache;
 const CACHE_DURATION = 30000;
 
 const censored = ["nigg","fag","trann","account","elon","trump","sell","buy","crypto","coin"];
-var site = new RegExp("(https|http):\/\/.*\.\S+");
+var site = new RegExp(/(https|http):\/\/.*\.\S+/);
 
 export default async function lastfmHandler(req, res) {
 const UserAgent = req.get('User-Agent');
