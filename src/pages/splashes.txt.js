@@ -1,7 +1,8 @@
 import { promises as fs } from "fs";
 import path from "path";
 
-// this is litterally just for me to test making text files with astro, theres no real reason im doing this.
+// this is no longer just for me to test making text files with astro
+// i really like adding splashes...
 
 function shuffle(array) {
     let currentIndex = array.length;
