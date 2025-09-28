@@ -1,0 +1,70 @@
+:root {
+  --bg: #dce0e8;
+  --bg0: #e6e9ef;
+  --bg1: #eff1f5;
+  --bg2: #ccd0da;
+  --bg3: #bcc0cc;
+  --bg4: #acb0be;
+
+  --fg: #4c4f69;
+  --fg0: #5c5f77;
+  --fg1: #6c6f85;
+  --fg2: #7c7f93;
+  --fg3: #8c8fa1;
+  --fg4: #9ca0b0;
+
+  --aqua: #179299;
+  --blue: #1e66f5;
+  --gray: #dc8a78;
+  --green: #40a02b;
+  --orange: #fe640b;
+  --purple: #8839ef;
+  --red: #d20f39;
+  --yellow: #df8e1d;
+
+  --bright-aqua: #209fb5;
+  --bright-blue: #04a5e5;
+  --bright-gray: #dd7878;
+  --bright-green: #5fb34d;
+  --bright-orange: #f0a275;
+  --bright-purple: #7287fd;
+  --bright-red: #e64553;
+  --bright-yellow: #d6a35c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #232634;
+    --bg0: #292c3c;
+    --bg1: #303446;
+    --bg2: #414559;
+    --bg3: #51576d;
+    --bg4: #626880;
+
+    --fg: #c6d0f5;
+    --fg0: #b5bfe2;
+    --fg1: #a5adce;
+    --fg2: #949cbb;
+    --fg3: #838ba7;
+    --fg4: #737994;
+
+    --aqua: #81c8be;
+    --blue: #8caaee;
+    --gray: #f2d5cf;
+    --green: #a6d189;
+    --orange: #ef9f76;
+    --purple: #ca9ee6;
+    --red: #e78284;
+    --yellow: #e5c890;
+
+    --bright-aqua: #99d1db;
+    --bright-blue: #85c1dc;
+    --bright-gray: #eebebe;
+    --bright-green: #a4de7c;
+    --bright-orange: #f79c6e;
+    --bright-purple: #babbf1;
+    --bright-red: #ea999c;
+    --bright-yellow: #f1cd83;
+  }
+}
+/*https://github.com/catppuccin/catppuccin*/
