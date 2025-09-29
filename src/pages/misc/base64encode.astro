@@ -11,3 +11,26 @@
 <br><br>
 
 <textarea placeholder="output" id="output"></textarea>
+
+<script>
+const form = document.getElementById("b64o");
+const morf = document.getElementById("b64i");
+
+
+const output = document.getElementById("output");
+
+form.addEventListener("submit", async function(event) {
+event.preventDefault();
+const input = form.input.value;
+const b64 = btoa(input);
+output.value = b64;
+});
+
+morf.addEventListener("submit", async function(event) {
+event.preventDefault();
+output.value = "couldnt decode base64 input";
+const input = morf.input.value;
+const b64 = atob(input);
+output.value = b64;
+});
+</script>
