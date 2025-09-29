@@ -1,0 +1,18 @@
+<form id="input">
+  <textarea name="input" placeholder="BASE64 Input"></textarea><br>
+  <input type="submit">
+</form>
+
+<textarea placeholder="output" id="output"></textarea>
+
+<script>
+const form = document.getElementById("input");
+const output = document.getElementById("output");
+
+form.addEventListener("submit", async function(event) {
+event.preventDefault();
+const input = form.input.value;
+const b64 = btoa(input);
+output.value = b64;
+});
+</script>
