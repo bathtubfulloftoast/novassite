@@ -73,12 +73,14 @@ const now = new Date();
 const date = document.getElementById("dselect");
 date.date.valueAsDate = now;
 date.time.value = now.toString().substring(16,21);
-
 date.addEventListener("submit", async function(event) {
 event.preventDefault();
-window.location.replace(`#${date.date.value} ${date.time.value}`);
+window.open(`#${date.date.value} ${date.time.value}`, '_top');
 await location.reload();
 
 });
 
+window.onhashchange = function() {
+location.reload();
+}
 </script>
