@@ -34,11 +34,36 @@ padding:10px;
 max-height:90%;
 overflow-y:scroll;
 overflow-x:hidden;
+text-align:right;
+
 }
 
 .box {
 height:80vh;
 margin-top:20px;
+}
+
+table {
+border:1px solid var(--fg1);
+}
+
+table td {
+text-align:left;
+padding:2px;
+}
+
+table tr {
+background:var(--bg0);
+}
+
+table tr:nth-child(even) {
+background:var(--bg5);
+}
+
+table th {
+background:var(--bg1);
+text-align:center;
+padding:2px;
 }
 </style>
 <head>
@@ -59,15 +84,21 @@ Object.keys(runs)
 Object.keys(runs)
 .map((item) => (
 <div class="runs" style="display:none;" id={item}>
+<table>
+<tr>
+<th>User</th>
+<th>Time</th>
+</tr>
 {
 
 runs?.[item]
 .reverse()
 .map((item) => (
-<span><a href={"https://youtu.be/"+item.id}>{item.creator} {item.time}</a></span><br>
+<tr><td><a href={"https://youtu.be/"+item.id}>{item.creator}</a></td> <td>{item.time}</td></tr>
 ))
 
 }
+</table>
 </div>
 ))
 }
