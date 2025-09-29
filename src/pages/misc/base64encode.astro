@@ -1,18 +1,13 @@
-<form id="input">
-  <textarea name="input" placeholder="text input"></textarea><br>
-  <input type="submit">
+<form id="b64o">
+<textarea name="input" placeholder="text input"></textarea><br>
+<input type="submit">
+</form>
+<br><br>
+<form id="b64i">
+<textarea name="input" placeholder="base64 input"></textarea><br>
+<input type="submit">
 </form>
 
-<textarea placeholder="base64 output" id="output"></textarea>
+<br><br>
 
-<script>
-const form = document.getElementById("input");
-const output = document.getElementById("output");
-
-form.addEventListener("submit", async function(event) {
-event.preventDefault();
-const input = form.input.value;
-const b64 = btoa(input);
-output.value = b64;
-});
-</script>
+<textarea placeholder="output" id="output"></textarea>
