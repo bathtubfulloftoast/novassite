@@ -83,7 +83,7 @@ break;
 
 if(found) {
 if(counter != 1) {
-response = `sites is on outdated version: ${currentCommit.slice(0, 7)} ${counter-1} commit${(counter-1 > 1 ? 's' : '')} behind current version ${hubCommit[0].sha.slice(0,7)}`;
+response = `site is on outdated version: ${currentCommit.slice(0, 7)} ${counter-1} commit${(counter-1 > 1 ? 's' : '')} behind current version ${hubCommit[0].sha.slice(0,7)}`;
 url = `https://git.gay/bathtubfulloftoast/novassite/compare/${currentCommit}..${hubCommit[0].sha}`;
 }
 else if (counter == 1) {
