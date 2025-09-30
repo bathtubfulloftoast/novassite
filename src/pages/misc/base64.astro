@@ -12,38 +12,31 @@ height:10vw;
 </style>
 </head>
 <form id="b64o">
-<textarea name="input" placeholder="text input"></textarea><br>
+<textarea name="input" placeholder="text"></textarea><br>
 <input type="submit">
 </form>
 <br><br>
 <form id="b64i">
-<textarea name="input" placeholder="base64 input"></textarea><br>
+<textarea name="input" placeholder="base64"></textarea><br>
 <input type="submit">
 </form>
-
-<br><br>
-
-<textarea placeholder="output" id="output"></textarea>
 
 <script>
 const form = document.getElementById("b64o");
 const morf = document.getElementById("b64i");
 
-
 const output = document.getElementById("output");
 
 form.addEventListener("submit", async function(event) {
 event.preventDefault();
-const input = form.input.value;
-const b64 = btoa(input);
-output.value = b64;
+const b64 = btoa(form.input.value);
+morf.input.value = b64;
 });
 
 morf.addEventListener("submit", async function(event) {
 event.preventDefault();
-output.value = "couldnt decode base64 input";
-const input = morf.input.value;
-const b64 = atob(input);
-output.value = b64;
+form.input.value = "couldnt decode base64 input";
+const b64 = atob(morf.input.value);
+form.input.value = b64;
 });
 </script>
