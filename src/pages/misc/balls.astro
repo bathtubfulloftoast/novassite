@@ -1,0 +1,65 @@
+---
+import '/src/styles/colors.css';
+import '/src/styles/misc.css';
+---
+<head>
+<title>what does it do?</title>
+<style is:global>
+
+.flash {
+animation: flashing 1s step-start infinite;
+
+}
+
+@keyframes flashing {
+  0%   {color:white;}
+  25%  {color:yellow;}
+  50%  {color:white;}
+  75%  {color:yellow;}
+}
+
+#play {
+cursor:pointer;
+}
+
+h1 {
+user-select:none;
+font-size:5vw;
+}
+</style>
+
+<meta content="the webpage that just says...." property="og:title" />
+<meta content="what does it say?" property="og:description" />
+
+</head>
+
+<div id="wrapper" class="center-screen">
+<div id="play">
+<h1>Play</h1>
+</div>
+</div>
+
+<script>
+const justsays = new Audio("/media/sfx/justsays.ogg");
+const balls = new Audio("/media/sfx/balls.ogg");
+const player = document.getElementById("play");
+const maindiv = document.getElementById("wrapper");
+
+const semen = document.createElement("h1");
+
+player.addEventListener("click", function(event) {
+justsays.play();
+maindiv.innerHTML = "";
+maindiv.appendChild(semen);
+semen.innerHTML = "this is the webpage that just says";
+});
+
+justsays.addEventListener("ended", function(event) {
+balls.play();
+semen.innerHTML = "BALLS";
+semen.className = "flash";
+document.body.style.background="#000";
+document.body.requestFullscreen();
+
+});
+</script>
