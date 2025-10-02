@@ -1,0 +1,40 @@
+---
+import '/src/styles/colors.css';
+import '/src/styles/misc.css';
+---
+<head>
+<title>todaynt</title>
+<style is:global>
+body {
+overflow:hidden;
+}
+
+.center-screen h1 {
+font-size:7.5vw;
+}
+</style>
+</head>
+<body>
+kys
+</body>
+<script>
+const now = new Date();
+let day = now.getDay()
+
+const days = ["sunday","monday","tuesday","wednesday","thursday","friday","saturday"] // mondays the first day of the week actually.
+
+const removed = days.filter(num => num !== days[day]);
+const max = removed.length;
+const random = Math.floor(Math.random()*max);
+document.body.innerHTML = "";
+
+const wrap = document.createElement("div");
+wrap.className="center-screen";
+
+const text = document.createElement("h1");
+text.innerHTML = removed[random];
+
+document.body.appendChild(wrap);
+wrap.appendChild(text);
+
+</script>
