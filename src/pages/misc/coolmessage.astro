@@ -56,7 +56,8 @@ coolstring += event.key;
 console.log(event.key);
 }
 var displaystring = "";
-displaystring = coolstring.replace(/</g,"&lt;");
+displaystring = coolstring.replace(/&/g,"&amp;");
+displaystring = displaystring.replace(/</g,"&lt;");
 displaystring = displaystring.replace(/>/g,"&gt;");
 displaystring = displaystring.replace(/(?:\r\n|\r|\n)/g, '<br>');
 
