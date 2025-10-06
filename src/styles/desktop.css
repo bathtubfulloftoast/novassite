@@ -1,9 +1,5 @@
 body {
-background-image: linear-gradient(
--45deg,
-var(--bg),
-var(--bright-blue)
-);
+background-color:#000;
 overflow:hidden;
 height:100vh;
 width:100vw;
@@ -108,17 +104,16 @@ line-height: 25px;
 color:white;
 }
 
-.bnuy {
+#bnuy {
 position:absolute;
 z-index:1;
-background-image:url("/media/wallpaper.png");
 width:100vw;
-height:calc(100vh - 30px);
-left:0px;
-top:0px;
+height:calc(100vh - 25px);
 background-size: 60vh;
 background-repeat: no-repeat;
 background-position: 20px bottom ;
+left:0px;
+top:0px;
 }
 
 a {
