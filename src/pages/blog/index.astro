@@ -13,7 +13,7 @@ const posts = (await getCollection('blog')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
-import '/src/styles/blog.css';
+import '/src/styles/blogposts.css';
 import '/src/styles/colors.css';
 
 ---
@@ -42,10 +42,9 @@ import '/src/styles/colors.css';
 <h3><a href="/blog/rss.xml">RSS Feed</h3></p>
 </div>
 
-
 {
 posts
-.filter(posts => !posts.hidden)
+.filter(posts => !posts.data.hidden)
 .map((post) => (
 <div class="box">
 <a href={`/blog/${post.id}/`}>
@@ -53,6 +52,7 @@ posts
 </a>
 <FormattedDate date={post.data.pubDate} />
 </div>
+<br>
 
 ))
 }

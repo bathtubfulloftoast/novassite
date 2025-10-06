@@ -1,0 +1,39 @@
+body {
+text-align:center;
+background:var(--bg0);
+color:var(--fg0);
+}
+
+a {
+text-decoration:none;
+}
+
+a:link,a:visited {
+color:var(--aqua)
+}
+
+a:hover {
+color:var(--bright-aqua);
+}
+
+.topbox {
+background:var(--bg2);
+padding:10px;
+border-radius:1em;
+text-align:center;
+display:block;
+width:90vw;
+margin:auto;
+margin-bottom:50px;
+}
+
+.box {
+background:var(--bg2);
+padding:10px;
+border-radius:1em;
+text-align:center;
+display:inline-block;
+min-width:10vw;
+margin:auto;
+margin-bottom:20px;
+}
