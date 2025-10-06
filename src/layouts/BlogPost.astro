@@ -1,5 +1,5 @@
 ---
-import type { CollectionEntry } from 'astro:content';
+import { type CollectionEntry, getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
@@ -9,6 +9,9 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 import '/src/styles/blog.css';
 import '/src/styles/colors.css';
 
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 ---
 
 <html lang="en">
@@ -34,6 +37,23 @@ import '/src/styles/colors.css';
 </div>
 
 <hr />
-<div class="content"><slot /></div>
+
+<div class="content">
+<slot />
+</div>
+
+<div class="past">
+<b>Previous Posts:</b><br>
+{
+posts
+.filter(posts => !posts.data.hidden)
+.filter(posts => posts.data.title !== title)
+.slice(0,5)
+.map((post) => (
+<a href={`/blog/${post.id}/`}>{post.data.title}</a><br>
+))
+}
+</div>
+
 </body>
 </html>

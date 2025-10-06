@@ -1,112 +1,86 @@
-@font-face { font-family: SetoFont; src: url('/fonts/setofont.woff'); }
-
 body {
-    background-color: var(--bg);
-    color: var(--fg0);
-    text-align:center;
-    font-family: SetoFont;
-    overflow-x: hidden;
+text-align:center;
+background:var(--bg0);
+color:var(--fg0);
 }
 
 a {
-    text-decoration:none;
+text-decoration:none;
 }
 
-a:link, a:visited{
-    color: var(--aqua);
-    transition: color 0.2s;
+a:link,a:visited {
+color:var(--aqua)
 }
 
 a:hover {
-    color: var(--bright-aqua);
+color:var(--bright-aqua);
 }
 
-.box {
-background-color:var(--bg2);
-width:20vw;
-margin:auto;
-margin-top:20px;
-padding:5px;
+.content {
+border: 2px var(--bg2) solid;
+background:var(--bg1);
 display:block;
-border-radius: 1em;
+width:77vw;
+float:left;
+padding:10px;
+text-align:left;
+word-wrap:break-word;
+}
+
+.past {
+border: 1px var(--bg1) solid;
+background:var(--bg3);
+display:inline-block;
+float:right;
+max-width:22vw;
+padding:10px;
+margin-right:10px;
+text-align:right;
+word-wrap:break-word;
 }
 
 .topbox {
-    background-color:var(--bg3);
-    width:80vw;
-    margin:auto;
-    margin-top:20px;
-    padding:5px;
-    display:block;
-    border-radius: 1em;
-    padding:10px;
-}
-
-hr {
-    border: 2px solid var(--bg1);
-    margin: -10px -10px 20px;
-    margin-top:20px;
-}
-
-.content {
 background:var(--bg2);
-width:90vw;
-min-height:100vh;
-margin:auto;
-padding:20px;
-border: 10px var(--bg3) solid;
-margin-bottom:0;
-padding-bottom:0;
-display: inline-block;
-border-radius: 5vmax 5vmax 0 0;
-
-}
-
-.content p {
-white-space: pre;
-word-break: break-word;
-white-space: pre-line;
-}
-
-code {
-background-color:var(--bg4);
-padding:5px;
-border-radius:5px;
+padding:10px;
+border-radius:1em;
+text-align:center;
 display:inline-block;
-text-align:left;
-}
-
-
-ul {
-text-align:left;
-margin:auto;
-width:30%;
-
-}
-
-@media screen and (max-width: 1280px){
-.content {
-background:none;
-width:95vw;
-padding:0;
-border:none;
-border-radius:0;
-}
-
-ul {
-    width:100%;
-
-}
-
-.box {
-width:80vw;
-}
+word-wrap:break-word;
 }
 
 img {
-max-width:80%;
+max-width:90%;
 }
 
 video {
-width:70%;
+max-width:90%;
+}
+
+iframe {
+max-width:90%;
+}
+
+@media screen and (max-width: 1500px){
+.content {
+float:none;
+border:none;
+text-align:center;
+background:none;
+width:95vw;
+margin:auto;
+display:inline-block;
+}
+
+.past {
+display:none;
+}
+ul {
+text-align:left;
+}
+}
+
+hr {
+border: 2px solid var(--bg4);
+margin: -10px -10px 20px;
+margin-top:20px;
 }
