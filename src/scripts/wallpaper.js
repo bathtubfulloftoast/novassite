@@ -15,7 +15,7 @@ paperdoll.style.backgroundImage = "url('/media/wallpapers/bunny.png')";
 else if([6,7,8].includes(month)) {//summer
 document.body.style.backgroundImage = "linear-gradient(180deg,var(--bg),var(--aqua))";
 
-paperdoll.style.backgroundImage = "url('/media/wallpapers/dog.png')";
+paperdoll.style.backgroundImage = "url('/media/wallpapers/bird.png')";
 paperdoll.style.backgroundSize = "70vh";
 
 }
