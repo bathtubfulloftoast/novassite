@@ -1,5 +1,20 @@
 # novassite.net
-the official repo for Novas Site
+## The silliest site on the web*
+
+novassite is my main project previously developed in PHP and basic terrible manually written html,
+this current revision is written in astrojs and uses expressjs as the backend
+
+this site is designed to be hosted myself and also acts as a discord bot in order to grab my [discord presence](https://discord.com/developers/docs/rich-presence/overview)
+
+this project does not work off of releases, the current commit is the current version that should be expected to be public.
+
+this is also a personal passion project so do not expect the code to be nice and commented.
+
+
+## Official Mirrors
+- [git.gay](https://git.gay/bathtubfulloftoast/novassite) `MASTER`
+- [github](https://github.com/bathtubfulloftoast/novassite)
+- [gitlab](https://gitlab.com/bathtubfulloftoast/novassite)
 
 ## How to run
 
