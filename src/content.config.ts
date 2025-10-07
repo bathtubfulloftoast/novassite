@@ -22,7 +22,7 @@ const trailers = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
-		description: z.string(),
+		video: z.string(),
 		hidden: z.boolean().optional(),
 		// Transform string to Date object
 		pubDate: z.coerce.date(),

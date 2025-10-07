@@ -4,7 +4,7 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate } = Astro.props;
+const { title, video, pubDate } = Astro.props;
 
 import '/src/styles/trailer.css';
 import '/src/styles/colors.css';
@@ -12,7 +12,7 @@ import '/src/styles/colors.css';
 <head>
 <title>{title}</title>
 <meta content={title} property="og:title" />
-<meta content={description} property="og:description" />
+<meta content="a trailer for novassite." property="og:description" />
 <meta content="#6b0059" data-react-helmet="true" name="theme-color" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,8 +20,9 @@ import '/src/styles/colors.css';
 
 <div class="content">
 <h1>{title}</h1>
-<slot />
+<video controls src={"/media/trailers/"+video}></video>
 <p><FormattedDate date={pubDate} /><br><br>
-{description}</p>
+<slot />
+</p>
 
 </div>
