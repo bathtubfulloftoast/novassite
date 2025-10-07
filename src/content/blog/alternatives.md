@@ -5,7 +5,8 @@ pubDate: '10/6/2025 3:45 PM'
 ---
 
 # What is this
-this is less so an individual blogpost but more so appending to [my last blogpost](/blog/hikersguide) and making a list of alternatives ive personally used and recommend.
+this is less so an individual blogpost but more so appending to [my last blogpost](/blog/hikersguide) and making a list of alternatives ive heard of or used.
+not everything is fully endorsed *ex: [plex](https://www.plex.tv/blog/important-2025-plex-updates/)* but they are valid alternatives.
 if you dont find what you want you can do some of your own research or look at the [Awesome-Selfhosted thread](https://github.com/awesome-selfhosted/awesome-selfhosted)<br>
 i plan to consistently update this too so check back every once and awhile.
 
