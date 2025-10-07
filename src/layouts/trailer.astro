@@ -1,0 +1,25 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate } = Astro.props;
+
+import '/src/styles/trailer.css';
+import '/src/styles/colors.css';
+---
+<head>
+<title>{title}</title>
+<meta content={title} property="og:title" />
+<meta content={description} property="og:description" />
+<meta content="#6b0059" data-react-helmet="true" name="theme-color" />
+</head>
+
+<div class="content">
+<h1>{title}</h1>
+<slot />
+<p><FormattedDate date={pubDate} /><br><br>
+{description}</p>
+
+</div>
