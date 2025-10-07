@@ -8,8 +8,8 @@ const censored = ["nigg","fag","trann","account","elon","trump","sell","buy","cr
 var site = new RegExp(/(https|http):\/\/.*\.\S+/);
 
 export default async function lastfmHandler(req, res) {
-// this grabs useragents and ips purely for trying to grab bots
-// those are all i can really get to ban individual bots, if you dont want me to have this, thats fair you dont have to post.
+// this grabs useragents and ips purely for trying to ban any bots if they are to get past the filter
+// those are all i can really get to ban individual bots without adding other trackers, if you dont want me to have this info, thats fair you dont have to post though im still glad you read my little blurb !
 const UserAgent = req.get('User-Agent');
 const CF = req.headers['cf-connecting-ip'];
 const XF = req.headers['x-forwarded-for'];
