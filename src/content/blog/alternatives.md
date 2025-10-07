@@ -45,7 +45,7 @@ i plan to consistently update this too so check back every once and awhile.
 - [boxy svg](https://boxy-svg.com) (not a good alternative but its worked for me)
 - [inkscape](https://inkscape.org/)
 
-## Basic Apps (messages, phone,gallery, contacts, keyboard, files)
+## Basic Apps (messages, phone,gallery, contacts, keyboard, files, launchers)
 - [fossify](https://www.fossify.org) (all) (mobile)
 - [KDE Apps](https://apps.kde.org/) (all) (desktop)
 
