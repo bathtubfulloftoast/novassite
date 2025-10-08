@@ -1,0 +1,25 @@
+@font-face { font-family: SetoFont; src: url('/fonts/setofont.woff'); }
+
+body {
+text-align:center;
+background:var(--bg0);
+color:var(--fg0);
+font-family:SetoFont;
+}
+
+img {
+max-width:80vw;
+max-height:80vh;
+}
+
+a {
+text-decoration:none;
+}
+
+a:link,a:visited {
+color:var(--aqua)
+}
+
+a:hover {
+color:var(--bright-aqua);
+}
