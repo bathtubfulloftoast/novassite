@@ -2,8 +2,6 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import FormattedDate from '../components/FormattedDate.astro';
 
-type Props = CollectionEntry<'blog'>['data'];
-
 const { title, video, pubDate } = Astro.props;
 
 import '/src/styles/trailer.css';
@@ -13,7 +11,6 @@ import '/src/styles/colors.css';
 <title>{title}</title>
 <meta content={title} property="og:title" />
 <meta content="a trailer for novassite." property="og:description" />
-<meta content="#6b0059" data-react-helmet="true" name="theme-color" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>

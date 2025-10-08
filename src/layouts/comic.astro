@@ -1,0 +1,51 @@
+---
+import { type CollectionEntry, getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+
+var { title, image, pubDate, artist, id } = Astro.props;
+id = Number(id);
+
+import '/src/styles/comic.css';
+import '/src/styles/colors.css';
+import artists from '/src/assets/artist.json';
+
+const comics = (await getCollection('comics')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const next = id+1;
+const previous = id-1;
+const last = comics.length;
+// this is a terrible way to do it, however i dont care enough to make sure it works for missing ids.
+// this is more so a proof of concept rather than the best i can do, its been hours i dont care.
+
+let fbut = "";
+let bbut = "";
+
+if(next > last) {
+fbut = "display: none";
+}
+
+if(previous < 1) {
+bbut = "display: none";
+}
+
+// love having to do this the worst way because astro converts < to &lt;
+---
+<head>
+<title>{title}</title>
+<meta content={title} property="og:title" />
+<meta content={"Drawn by "+artists[artist].name} property="og:description" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+<h1>{title}</h1>
+<img src={"/media/comics/"+image}>
+<p>Drawn by <a href={artists[artist].url}>{artists[artist].name}</a> on <FormattedDate date={pubDate} /><br><br>
+
+<slot />
+</p>
+<a href="/comic/1" style={bbut}>&lt;&lt;</a> <a href={"/comic/"+previous} style={bbut}>&lt;</a> <a href={"/comic/"+next} style={fbut} >&gt;</a> <a href={"/comic/"+last} style={fbut} >&gt;&gt;</a>
+</body>
