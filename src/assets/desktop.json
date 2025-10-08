@@ -24,6 +24,12 @@
     "comment": "julessite.net"
   },
   {
+    "filename": "SCarical",
+    "icon": "hpglobical.gif",
+    "id": "hitpoint",
+    "comment": "his hp is... critical..."
+  },
+  {
     "filename": "Azure.png",
     "icon": "azure.gif",
     "id": "azure",
