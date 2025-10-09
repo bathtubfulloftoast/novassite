@@ -23,10 +23,11 @@ export async function GET() {
     const filePath = path.resolve("src/assets/splashes.txt"); // Adjust based on your project structure
     try {
         const text = await fs.readFile(filePath, "utf-8");
-        const splashes = text.split("\n").map(name => name.trim()).filter(name => name);
+        const splashes = text.split("\n").map(name => name.trim());
 
         // all of this is to make sure people arent downloading thousands of splashes
-        const shuffled = shuffle(splashes);
+        const cut = splashes.filter((word) => word.length < 85).filter((word) => word.length > 2);
+        const shuffled = shuffle(cut);
         const sliced = shuffled.slice(0,150);
         const textContent = sliced.join("\n");
 
