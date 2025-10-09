@@ -24,7 +24,7 @@ export async function GET() {
         const splashes = text.split("\n").map(name => name.trim()).filter(name => name);
         const shuffled = shuffle(splashes);
         const string = shuffled.join("\n");
-        const textContent = btoa(string);
+        const textContent = string;
 
         return new Response(`hey if youre on this list and you dont want to be contact me at mail@novassite.net\n${textContent}`);
     } catch (error) {
