@@ -23,7 +23,7 @@ const currentdate = `${mm}/${dd}`;
     "7/4": "AMERICA FUCK YEAHHH!",
     [thanksgiving(yyyy)]: "happy turkey day :D", // no idea if this one works i just kind of smashed my head against a table here
     "3/17":"its saint patrick's day! :D", // we really dont gaf its not a major holiday
-    "12/24":"santa approaches",
+    "12/24":"the arcade's empty..",
     "12/25":"MERRRYYY CHRIMAAAA",
     "10/31":"AAH",
     "9/11":"i forgor",// never forgor
