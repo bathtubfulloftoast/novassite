@@ -29,9 +29,8 @@ then run one of these
 
 | Command | What it does |
 | -------- | ------- |
-| npm run build | builds astro |
-| npm run preview | preview built site without server functions |
-| npm run dev | astro dev mode |
+| pnpm run build | builds astro |
+| pnpm run dev | astro dev mode |
 | node server.js | run the server with node |
 
 ## .env
