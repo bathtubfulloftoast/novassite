@@ -25,10 +25,12 @@ export async function GET() {
         const text = await fs.readFile(filePath, "utf-8");
         const splashes = text.split("\n").map(name => name.trim());
 
+let maxsplash = 150;
+
         // all of this is to make sure people arent downloading thousands of splashes
         const cut = splashes.filter((word) => word.length < 85).filter((word) => word.length > 2);
         const shuffled = shuffle(cut);
-        const sliced = shuffled.slice(0,150);
+        const sliced = shuffled.slice(0,maxsplash);
         const textContent = sliced.join("\n");
 
         return new Response(textContent);
