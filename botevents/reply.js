@@ -40,6 +40,7 @@ export function MessageReply(client) {
       { keywords: ["fish"], response: "you know what that means" },
       { keywords: ["goated"], response: "with the sauce?" },
       { keywords: ["!pingjules"], response: "<@852018491900821514>" },
+      { keywords: ["f150","ford"], response: "stupid fucking truck i fucking hate the ford f150" },
 
 
     ];
