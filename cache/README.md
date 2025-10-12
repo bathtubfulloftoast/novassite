@@ -1,7 +1,3 @@
-i only exist to let this folder be created by git.
-
-so i dont have to add code that creates it if it doesnt exist it.
-
-hi :)
-
-im gay :D
+this area exists mostly as an area for specific files 
+such as webcam screenshots and guestbook posts
+less of a temporary storage and more a place to keep gwnerated files.
