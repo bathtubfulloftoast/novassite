@@ -5,7 +5,7 @@ let rcache;
 const CACHE_DURATION = 30000;
 
 const censored = ["nigg","fag","trann","account","elon","trump","sell","buy","crypto","coin"];
-var site = new RegExp(/(https|http):\/\/.*\.\S+/);
+var site = new RegExp(/https?:\/\/.*\.\S+/ig);
 
 export default async function lastfmHandler(req, res) {
 // this grabs useragents and ips purely for trying to ban any bots if they are to get past the filter
