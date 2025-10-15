@@ -14,7 +14,7 @@ serialize(item) {
 if (/secret/.test(item.url)) {
 return undefined;// they're secrets cmon
 }
-if (/snow/.test(item.url)) {
+if (/ping/.test(item.url)) {
 return undefined;
 }
 return item;
