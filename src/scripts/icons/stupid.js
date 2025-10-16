@@ -34,6 +34,9 @@ counter = counter+1
 
 HAHElement.addEventListener('ended', (event) => {
 HAHElement.remove();
+if (counter > 7) {
+document.write("");
+}
 });
 
 
