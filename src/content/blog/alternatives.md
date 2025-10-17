@@ -61,7 +61,7 @@ i plan to consistently update this too so check back every once and awhile.
 - [gitbucket](https://gitbucket.github.io)
 - [gitea](https://about.gitea.com)
 
-## File Servers (google photos)
+## File Servers (google drive)
 - [copyparty](https://github.com/9001/copyparty)
 - [filebrowser](https://github.com/filebrowser/filebrowser) (not updated) (PLEASE HELP THEM IF YOU CAN!!)
 - [dufs](https://github.com/sigoden/dufs)
