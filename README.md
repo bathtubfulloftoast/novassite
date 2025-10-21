@@ -18,20 +18,11 @@ this is also a personal passion project so do not expect the code to be nice and
 
 ## How to run
 
-first run ``pnpm install`` to install required dependencies
-
-next install ``pnpm run build`` to build the site itself
-
-finally run ``node server.js`` to run the server itself
-
-
-then run one of these
-
 | Command | What it does |
 | -------- | ------- |
-| pnpm run build | builds astro |
-| pnpm run dev | astro dev mode |
-| node server.js | run the server with node |
+| pnpm run build | builds astro page |
+| pnpm run dev | astro dev mode (no server functions) |
+| node server.js | run the server with node (must build pages first) |
 
 ## .env
 
