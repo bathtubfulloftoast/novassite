@@ -70,7 +70,7 @@ i plan to consistently update this too so check back every once and awhile.
 
 ## Streaming Services (netflix) [NOT PIRACY SITES LOOK FOR THOSE YOURSELF ;3]
 - [jellyfin](https://jellyfin.org)
-- [plex](https://www.plex.tv) (not selfhosted, for profit company.)
+- [plex](https://www.plex.tv) (not *entirely* selfhosted, for profit company.)
 - [emby](https://emby.media)
 
 ## Video Editors
