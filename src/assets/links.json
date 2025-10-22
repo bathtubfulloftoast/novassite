@@ -252,6 +252,11 @@
       "url": "mailto:mail@novassite.net"
     },
     {
+      "title": "archive.org",
+      "source": "link-45deg",
+      "url": "https://archive.org/details/@bathtubfulloftoast"
+    },
+    {
       "title": "Bandcamp",
       "source": "link-45deg",
       "url": "https://bandcamp.com/bathtubfulloftoast"
@@ -389,6 +394,11 @@
       "title": "VRChat",
       "source": "badge-vr",
       "url": "https://vrchat.com/home/user/usr_f14ae8a1-89cf-4ac9-8cdb-bbdef294ae5e"
+    },
+    {
+      "title": "wikipedia",
+      "source": "wikipedia",
+      "url": "https://en.wikipedia.org/wiki/User:BathtubFullOfToast"
     },
     {
       "title": "Xbox",
