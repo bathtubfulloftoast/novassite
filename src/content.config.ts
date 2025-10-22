@@ -16,7 +16,7 @@ const blog = defineCollection({
 
 const trailers = defineCollection({
 	// Load Markdown and MDX files in the `src/content/blog/` directory.
-	loader: glob({ base: './src/content/trailers', pattern: '**/*.{md,mdx}' }),
+	loader: glob({ base: './src/content/trailers', pattern: '*.md' }),
 	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
@@ -29,7 +29,7 @@ const trailers = defineCollection({
 
 const comics = defineCollection({
 	// Load Markdown and MDX files in the `src/content/blog/` directory.
-	loader: glob({ base: './src/content/comics', pattern: '**/*.{md,mdx}' }),
+	loader: glob({ base: './src/content/comics', pattern: '*.md' }),
 	// Type-check frontmatter using a schema
 	schema: z.object({
 		title: z.string(),
