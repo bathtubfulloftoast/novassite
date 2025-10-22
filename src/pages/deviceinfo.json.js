@@ -128,11 +128,10 @@ const batt = await getBATT();
 
 export async function GET() {
 const data = {
-    architecture: architecture,
-    ram: formatBytes(memory.total),
     system: {
     manufacturer:sysinfo.manufacturer,
     model:sysinfo.model,
+    ram: formatBytes(memory.total),
     },
     os: {
     hostname: osinfo.hostname,
@@ -143,6 +142,7 @@ const data = {
     build: osinfo.build,
     },
     cpu: {
+    architecture: architecture,
     manufacturer:cpudata.manufacturer,
     vendor:cpudata.vendor,
     brand:cpudata.brand, // my BRand!?!?
