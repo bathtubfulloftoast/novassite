@@ -63,7 +63,7 @@ export default async function lastfmHandler(req, res) {
     cputemp: Math.round(cputemp.main),
     memory: {
     total:memory.total,
-    free:memory.free,
+    free:memory.free, // seems to be swapped on the pi for whatever reason, not keeping it in till i figure it out.
     used:memory.used,
     }
     });
