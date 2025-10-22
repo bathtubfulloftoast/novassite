@@ -19,11 +19,17 @@ const routes = files.map(file => {
 ---
 <head>
 <title>misc</title>
+<style>
+body {
+text-align:left;
+}
+</style>
 </head>
 
-<h1>list of miscellaneous projects</h1>
-
+<h1>Index of /misc/</h1>
+<hr>
+<a href="/">../</a><br>
 {routes.map(route => (
-  <a href={"/misc/" + route}>{route}</a><br>
+<a href={"/misc/" + route}>{route}</a><br>
 ))}
-
+<hr>
