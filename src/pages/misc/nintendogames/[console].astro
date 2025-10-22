@@ -1,0 +1,45 @@
+---
+import '/src/styles/colors.css';
+import '/src/styles/misc.css';
+
+
+export function getStaticPaths() {
+  return [
+    { params: { console: "wiiu" }},
+    { params: { console: "3ds" }},
+  ];
+}
+
+const { console } = Astro.params;
+---
+<head>
+<title>{console}</title>
+</head>
+<div class="center-screen">
+<h1 id="game" console={console}>{console}</h1>
+</div>
+
+<script>
+var wiiu = document.getElementById("game");
+var gamesconsole = wiiu.getAttribute("console");
+
+const response = await fetch(`/stupid nintendo games/${gamesconsole}.txt`);
+const text = await response.text();
+const sauce = text.split("\n").map(name => name.trim()).filter(name => name);
+
+
+
+const max = sauce.length;
+const id = Math.floor(Math.random() * max);
+
+const picked = sauce[id];
+
+const link = document.createElement("a");
+link.href = "https://google.com/search?q="+encodeURIComponent(`${picked} for ${gamesconsole}`);
+link.innerHTML = picked;
+link.target = "_blank";
+
+wiiu.innerHTML = "";
+wiiu.appendChild(link);
+
+</script>
