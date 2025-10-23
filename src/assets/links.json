@@ -123,6 +123,11 @@
       "url": "https://hl2.sh"
     },
     {
+      "title": "year two thousand",
+      "source": "Y2K.png",
+      "url": "https://y2k.neocities.org/"
+    },
+    {
       "title": "Git hosting for the queers",
       "source": "gitgay.png",
       "url": "https://git.gay/"
@@ -148,6 +153,16 @@
       "url": "https://getfirefox.com"
     },
     {
+      "title": "abolish copyright law ^.^",
+      "source": "piracy.png",
+      "url": "/misc/coolmessage/#Rule%201%20of%20piracy:%20never%20share%20your%20resources%20to%20a%20wide%20audience%20or%20else%20theyll%20be%20taken%20down.%20(also%20github%20and%20gitlab%20will%20probably%20get%20mad%20at%20me)"
+    },
+    {
+      "title": "1920 x 1080",
+      "source": "site_best_viewed_with_monitor.png",
+      "url": "https://www.viewsonic.com/pk/products/lcd/VA2456-MIKU"
+    },
+    {
       "title": "what a guy",
       "source": "bob.gif",
       "url": "https://web.archive.org/web/20021004080450if_/http://www.animal-crossing.com/index.jsp"
@@ -158,9 +173,29 @@
       "url": "https://www.youtube.com/watch?v=6qmUTclZhUo"
     },
     {
+      "title": "dont kys",
+      "source": "KYSnow.png",
+      "url": "https://988lifeline.org/"
+    },
+    {
+      "title": "LEARN HTML!!",
+      "source": "learn.png",
+      "url": "https://www.w3schools.com/html"
+    },
+    {
       "title": "selfhosted ftw",
       "source": "webmaster.gif",
       "url": "https://nginx.org/"
+    },
+    {
+      "title": "meow :3",
+      "source": "Nekoweb.gif",
+      "url": "https://nekoweb.org/"
+    },
+    {
+      "title": "neocities is also pretty cool",
+      "source": "neocities_button.png",
+      "url": "https://neocities.org/"
     },
     {
       "title": "thats me!!",
