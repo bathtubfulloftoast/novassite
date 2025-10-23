@@ -170,3 +170,7 @@ cursor: pointer;
 #reopen img{
 width:20px;
 }
+
+#window {
+position:absolute;
+}

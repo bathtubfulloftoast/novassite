@@ -27,9 +27,9 @@ const icons = desktop;
   <div class="title-bar">
     <div class="title-bar-text"><img fetchPriority="low" src="/media/retro.png" height="16px" style="vertical-align: text-top;"> <span id="splash">Nova's Profile</span></div>
     <div class="title-bar-controls">
-      <button style="cursor:pointer" aria-label="Minimize" onclick="location.href='/death';"></button>
+      <button style="cursor:pointer" aria-label="Minimize" id="closewindow" ></button>
       <button style="cursor:pointer" aria-label="Maximize" onclick="location.href='/profile';"></button>
-      <button style="cursor:pointer" aria-label="Close" id="closewindow"></button>
+      <button style="cursor:pointer" aria-label="Close" onclick="location.href='/death';"></button>
     </div>
   </div>
   <div style="padding:0px;margin:0px">
@@ -188,4 +188,38 @@ document.getElementById("reopen").style.display = "none";
 });
 </script>
 
+<script>
 
+const element = document.getElementById("window");
+
+let startX, startY, startLeft, startTop;
+
+element.addEventListener("mousedown", (e) => {
+  e.preventDefault();
+  element.style.cursor = "move";
+
+  startX = e.clientX;
+  startY = e.clientY;
+
+  startLeft = element.offsetLeft;
+  startTop = element.offsetTop;
+
+  const onMove = (event) => {
+    const dx = event.clientX - startX;
+    const dy = event.clientY - startY;
+
+    element.style.left = `${startLeft + dx}px`;
+    element.style.top = `${startTop + dy}px`;
+  };
+
+  const onUp = () => {
+    element.style.cursor = "default";
+    document.removeEventListener("mousemove", onMove);
+    document.removeEventListener("mouseup", onUp);
+  };
+
+  document.addEventListener("mousemove", onMove);
+  document.addEventListener("mouseup", onUp);
+});
+
+</script>
