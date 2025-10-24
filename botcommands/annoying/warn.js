@@ -27,7 +27,7 @@ export default {
 
         const messageEmbed = {
             "color": 16711680,
-            "title": `You have been warned in **${interaction.guild.name}** by ${interaction.user.username}`,
+            "title": `You have been warned in ***${interaction.guild.name}*** by ***${interaction.user.username}***`,
             "description": `\`\`\`${input}\`\`\``,
             "thumbnail": {
                 "url": `https://cdn.discordapp.com/icons/${interaction.guild.id}/${interaction.guild.icon}.webp?size=1024`
