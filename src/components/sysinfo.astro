@@ -59,6 +59,11 @@ let hubCommit;
 async function getlinks() {
   if (!hubCommit) {
     const response = await fetch('https://git.gay/api/v1/repos/bathtubfulloftoast/novassite/commits');
+
+    if(!response.ok) {
+    document.getElementById("version").remove();
+    }
+
     const data = await response.json();
     hubCommit = data;
   }

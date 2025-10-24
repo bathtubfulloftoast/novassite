@@ -2,6 +2,8 @@
 import '/src/styles/colors.css';
 import '/src/styles/misc.css';
 
+const asPath = Astro.url.pathname;
+
 const basePath = "./";
 
 const files = Object.keys(import.meta.glob('./*.astro', { eager: true }));
@@ -15,10 +17,27 @@ const routes = files.map(file => {
     .replace('/', ''); // Remove .astro extension
 });
 
+function truncate(input) {
+   if (input.length > 20) {
+      return input.substring(0, 17) + '...';
+   }
+   return input;
+};
+// i was just being lazy here but im still gonna give credit
+// https://stackoverflow.com/a/4700265/20960756
 
+const text = asPath.split("/");
+const fuckyou = text.length;
+// what if this was easy?
+// the humble javascript:
+const current = text[fuckyou-1];
+
+// ironically right after this i tried to make it a function that could be run anywhere
+// and astrojs glob fucked me over because it cant be a dynamic fucking thing
+// thank fucking god it cant be dynamic
 ---
 <head>
-<title>misc</title>
+<title>{asPath}</title>
 <style>
 body {
 text-align:left;
@@ -26,10 +45,10 @@ text-align:left;
 </style>
 </head>
 
-<h1>Index of /misc/</h1>
+<h1>Index of {asPath}</h1>
 <hr>
 <a href="/">../</a><br>
 {routes.map(route => (
-<a href={"/misc/" + route}>{route}</a><br>
+<a title={route} href={"/misc/" + route}>{truncate(route)}</a><br>
 ))}
 <hr>
