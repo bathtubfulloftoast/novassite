@@ -36,9 +36,9 @@ export default {
 
         console.log();
 
-        await attacheduser.send({embeds: [messageEmbed]});
 
         await interaction.reply({embeds: [serverEmbed]});
+        await attacheduser.send({embeds: [messageEmbed]});
 
     },
 };
