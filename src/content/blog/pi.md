@@ -1,13 +1,13 @@
 ---
 title: 'yummyyy... raspberry pi,,,,'
 description: 'my oppinions on the raspberry pi so far'
-pubDate: '10/24/2025 8:59 AM'
+pubDate: '10/24/2025 9:48 AM'
 ---
 
 so ive had the [pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/?variant=raspberry-pi-5-8gb) and [pi 500](https://www.raspberrypi.com/products/raspberry-pi-500/) for awhile now and i like them both alot!
 
 # pi 500
-so first i bought the raspberry pi 500 on june 10th (the day after my birthday) because i had some money to spend and i just fucking hate having money so i gave it to [pishop.us](https://pishop.us/) 
+so first i bought the raspberry pi 500 on june 10th (the day after my birthday) due to the fact i had some money to spend and i just fucking hate having money so i gave it to [pishop.us](https://pishop.us/) 
 
 ## frist thoughts
 ### packaging
