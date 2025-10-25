@@ -45,8 +45,8 @@ console.error(error);
 
         const messageEmbed = {
             "color": 16711680,
-            "title": `You have been warned in ***${interaction.guild.name}*** by ***${interaction.user.username}***`,
-            "description": `\`\`\`${input}\`\`\`\nnote:there are no consequences to you seeing this message you are just getting annoyed by ${interaction.user.username}\n\nto disable run \`\`/warn-disable\`\``,
+            "title": `You have been warned in ***${interaction.guild.name}***`,
+            "description": `\`\`\`${input}\`\`\`\nnote: there are no consequences to you seeing this message you are just getting annoyed by **${interaction.user.username}**\n\nto disable run \`\`/warn-disable\`\``,
             "thumbnail": {
                 "url": `https://cdn.discordapp.com/icons/${interaction.guild.id}/${interaction.guild.icon}.webp?size=1024`
             }
