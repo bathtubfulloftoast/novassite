@@ -1,5 +1,6 @@
 import { SlashCommandBuilder,MessageFlags,EmbedBuilder } from 'discord.js';
 import colors from 'colors';
+import fs from 'fs/promises';
 
 export default {
     data: new SlashCommandBuilder()
@@ -20,6 +21,23 @@ export default {
         const attacheduser =  interaction.options.getUser('user');
         const input = interaction.options.getString('reason');
 
+
+try {
+    // Read file contents
+    const text = await fs.readFile('./cache/dmdeny.txt', 'utf-8');
+    const users = text.split('\n').filter(Boolean);
+
+    // Check if user is already listed
+    if (users.includes(attacheduser.id)) {
+        return interaction.reply({
+            content: `<@${attacheduser.id}> has warns disabled.`,
+            flags: MessageFlags.Ephemeral,
+        });
+    }
+} catch (error) {
+console.error(error);
+}
+
         const serverEmbed = {
             "color": 16711680,
             "title": `❌ *${attacheduser.username} has been warned*`,
@@ -28,7 +46,7 @@ export default {
         const messageEmbed = {
             "color": 16711680,
             "title": `You have been warned in ***${interaction.guild.name}*** by ***${interaction.user.username}***`,
-            "description": `\`\`\`${input}\`\`\``,
+            "description": `\`\`\`${input}\`\`\`\nnote:there are no consequences to you seeing this message you are just getting annoyed by ${interaction.user.username}\n\nto disable run \`\`/warn-disable\`\``,
             "thumbnail": {
                 "url": `https://cdn.discordapp.com/icons/${interaction.guild.id}/${interaction.guild.icon}.webp?size=1024`
             }
