@@ -32,7 +32,7 @@ export default {
 
             // Remove user ID
             const updatedUsers = users.filter(id => id !== interaction.user.id);
-            await fs.writeFile(file, updatedUsers.join('\n'));
+            await fs.writeFile(file, updatedUsers.join('\n')+"\n");
 
             return interaction.reply({
                 content: 'Successfully removed you from the deny list.',
