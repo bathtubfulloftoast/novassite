@@ -15,6 +15,7 @@ this is also a personal passion project so do not expect the code to be nice and
 - [git.gay](https://git.gay/bathtubfulloftoast/novassite) `MASTER`
 - [github](https://github.com/bathtubfulloftoast/novassite)
 - [gitlab](https://gitlab.com/bathtubfulloftoast/novassite)
+- [codeberg](https://codeberg.org/bathtubfulloftoast/novassite)
 
 ## How to run
 
