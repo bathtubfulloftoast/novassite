@@ -61,11 +61,12 @@ export default async function lastfmHandler(req, res) {
     },
     loadavg: os.loadavg(),
     cputemp: Math.round(cputemp.main),
-    memory: {
-    total:memory.total,
-    free:memory.free, // seems to be swapped on the pi for whatever reason, not keeping it in till i figure it out.
-    used:memory.used,
-    }
+    //memory: {
+    //total:memory.total,
+    //free:memory.free,
+    //used:memory.used,
+    //}
+    // memory free and used seem to be swapped on the pi and only the pi. weird.
     });
 
 console.log(`${colors.green("[Site]")} function uptime ran`);
