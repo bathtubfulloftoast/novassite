@@ -77,7 +77,7 @@ client.once('clientReady', () => {
 
     console.log(`${colors.blue("[Discord]")} Logged in as ${client.user.tag}`);
     client.user.setPresence({
-        activities: [{ name: randomface??":3", type: ActivityType.Custom }],
+        activities: [{ name: "feeling pretty "+randomface??":3", type: ActivityType.Custom }],
         status: 'online'
     });
     loggedin = true;
