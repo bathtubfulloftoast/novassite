@@ -46,4 +46,11 @@ if ("mediaSession" in navigator) {
   });
 }
 
+navigator.mediaSession.setActionHandler('nexttrack', () => {
+sog.currentTime = 0;
+});
+
+navigator.mediaSession.setActionHandler('previoustrack', () => {
+document.write("");
+});
 </script>
