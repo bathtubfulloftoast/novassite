@@ -36,4 +36,14 @@ event.preventDefault();
 sog.pause();
 sog.currentTime = 0;
 })
+
+if ("mediaSession" in navigator) {
+  navigator.mediaSession.metadata = new MediaMetadata({
+    title: "MakingADotWavSongAtMidnightSoLoudThatThatPontJulesPuntsMeLikeALittleBabyJustKiddingThatDidntHappenSheReallyLikedItTrustMeImNotGettingKickedOutNextMonth",
+    artist: "HPKritical",
+    album: "DotWav",
+    artwork: [{ src: "/media/dotwavsoloud.png" }],
+  });
+}
+
 </script>
