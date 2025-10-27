@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         const average = array => array.reduce((a, b) => a + b) / array.length;
         // https://stackoverflow.com/a/41452260/20960756
 
-const uptime = data.uptime.process_ms;
+const uptime = data.uptime.server_ms;
 
 let time = "0ms";
 
