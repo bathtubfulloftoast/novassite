@@ -1,6 +1,6 @@
 ---
 title: 'alternatives'
-description: 'a list of alternatives to apps/services ive personally used.'
+description: 'a list of alternatives to apps/services ive heard of.'
 pubDate: '10/6/2025 3:45 PM'
 ---
 
@@ -60,6 +60,7 @@ i plan to consistently update this too so check back every once and awhile.
 - [forgejo](https://forgejo.org)
 - [gitbucket](https://gitbucket.github.io)
 - [gitea](https://about.gitea.com)
+- [codeberg](https://codeberg.org/)
 
 ## File Servers (google drive)
 - [copyparty](https://github.com/9001/copyparty)
@@ -77,3 +78,8 @@ i plan to consistently update this too so check back every once and awhile.
 - [kdenlive](https://kdenlive.org/)
 - [DaVinci Resolve](https://www.blackmagicdesign.com/products/davinciresolve/)
 - [openshot](https://www.openshot.org/)
+
+## Web Browsers
+- [firefox](https://firefox.com)
+- [librewolf](https://librewolf.net/) (pain in the ass if you dont care about privacy)
+- [waterfox](https://www.waterfox.net/)
