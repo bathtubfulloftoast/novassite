@@ -35,7 +35,7 @@ time = uptime + ' millisecond' + (uptime > 1 ? 's' : '');
 }
 
         document.getElementById("serverstats").innerHTML = `<b>Server Stats:</b><br>
-        site up for: ${time}<br>
+        server up for: ${time}<br>
         cpu temp: ${data.cputemp}&deg;C<br>
         loadavg: ${average(data.loadavg).toFixed(2)}`;
 
