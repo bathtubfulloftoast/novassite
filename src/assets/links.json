@@ -318,6 +318,11 @@
       "adult": true
     },
     {
+      "title": "codeberg",
+      "source": "git",
+      "url": "http://codeberg.org/bathtubfulloftoast"
+    },
+    {
       "title": "Discord",
       "source": "discord",
       "url": "https://novassite.net/discord/user/#471806482648924174"
