@@ -13,9 +13,9 @@ const uptime = data.uptime.server_ms;
 let time = "0ms";
 
 const second = 1000;
-const minute = second * 60;
-const hour = minute * 60;
-const day = hour * 24;
+const minute =  60 * second;
+const hour =  60 * minute;
+const day = 24 * hour;
 
 if (uptime >= day) {
 time = Math.floor(uptime/day);
