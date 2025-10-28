@@ -81,5 +81,5 @@ i plan to consistently update this too so check back every once and awhile.
 
 ## Web Browsers
 - [firefox](https://firefox.com)
-- [librewolf](https://librewolf.net/) (pain in the ass if you dont care about privacy)
+- [librewolf](https://librewolf.net/) (pain in the ass if youre not a privacy freak) [they disable dark mode for privacy.]
 - [waterfox](https://www.waterfox.net/)
