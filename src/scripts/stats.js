@@ -16,8 +16,16 @@ const second = 1000;
 const minute = second * 60;
 const hour = minute * 60;
 const day = hour * 24;
+const week = day * 7;
+const month = day * 4;
 
-if (uptime >= day) {
+if (uptime >= month) {
+time = Math.floor(uptime/month);
+time = time + ' month' + (time > 1 ? 's' : '');
+} else if (uptime >= week) {
+time = Math.floor(uptime/week);
+time = time + ' week' + (time > 1 ? 's' : '');
+} else if (uptime >= day) {
 time = Math.floor(uptime/day);
 time = time + ' day' + (time > 1 ? 's' : '');
 } else if (uptime >= hour) {
