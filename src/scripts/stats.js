@@ -17,7 +17,7 @@ const minute = second * 60;
 const hour = minute * 60;
 const day = hour * 24;
 const week = day * 7;
-const month = day * 4;
+const month = week * 4;
 
 if (uptime >= month) {
 time = Math.floor(uptime/month);
