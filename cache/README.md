@@ -1,5 +1,4 @@
-this file only exists to allow for this folder to be created automatically 
-if anything else is in this folder it shouldnt be.
+this file only exists to allow for this folder to be created automatically.
 
 however while im here ill explain this a little bit
 
