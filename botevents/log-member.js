@@ -28,7 +28,7 @@ const MessageEmbed = {
   "timestamp": now.toISOString()
 }
 
-WebHook(client,LCHANNEL,`<@${newMember.user.id}> changed their server nickname`,[MessageEmbed],hookname,hookavi);
+WebHook(client,LCHANNEL,`${newMember.user.username} changed their server nickname`,[MessageEmbed],hookname,hookavi);
 console.log(`${colors.cyan("[Discord]")} ${oldMember.user.username} changed their nickname`);
 }
 
@@ -71,7 +71,7 @@ const MessageEmbed = {
   }
 }
 
-WebHook(client,LCHANNEL,`<@${newMember.user.id}> changed their server banner`,[MessageEmbed],hookname,hookavi);
+WebHook(client,LCHANNEL,`${newMember.user.username} changed their server banner`,[MessageEmbed],hookname,hookavi);
 console.log(`${colors.cyan("[Discord]")} ${oldMember.user.username} changed their server banner`);
 }
 }
