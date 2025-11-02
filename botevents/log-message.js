@@ -57,6 +57,10 @@ const hookavi = `https://cdn.discordapp.com/avatars/${client.user.id}/${client.u
 // too tired fuck you future alice.
 // seperate this yourself when you burn in hell.
 
+if(message.author.bot) {
+    return;
+}
+
 const MessageEmbed = {
     "title": `Message edited in <#${message.channelId}>`,
     "author": {
