@@ -3,7 +3,7 @@ async function createaudio() {
 const audioElement = await new Audio("/media/sfx/blips.ogg");
 audioElement.volume = 0.3;
 
-const response = await fetch('/404');
+const response = await fetch('/404/404/');
 const data = await response.text();
 
 audioElement.addEventListener('ended', (event) => {
