@@ -97,6 +97,12 @@
     "comment": "who is number one?"
   },
   {
+    "filename": "anti.virus",
+    "icon": "protogent.png",
+    "id": "protogent",
+    "comment": "bl*ps my system crashed i lost my data!!!"
+  },
+  {
     "filename": "joemany.txt",
     "icon": "liberals.gif",
     "id": "liberals",
