@@ -32,7 +32,7 @@ const MessageEmbed = {
   "timestamp": now.toISOString()
 }
 
-WebHook(client,LCHANNEL,`${newMember.username}changed their global nickname`,[MessageEmbed],hookname,hookavi);
+WebHook(client,LCHANNEL,`${newMember.username} changed their global nickname`,[MessageEmbed],hookname,hookavi);
 console.log(`${colors.cyan("[Discord]")} ${oldMember.username} changed their global nickname`);
 }
 
@@ -51,7 +51,7 @@ const MessageEmbed = {
   "timestamp": now.toISOString()
 }
 
-WebHook(client,LCHANNEL,`${newMember.username}changed their username`,[MessageEmbed],hookname,hookavi);
+WebHook(client,LCHANNEL,`${newMember.username} changed their username`,[MessageEmbed],hookname,hookavi);
 console.log(`${colors.cyan("[Discord]")} ${oldMember.username} changed their username to ${newMember.username}`);
 }
 
@@ -72,7 +72,7 @@ const MessageEmbed = {
   "timestamp": now.toISOString()
 }
 
-WebHook(client,LCHANNEL,`${newMember.username}changed their personal avatar`,[MessageEmbed],hookname,hookavi);
+WebHook(client,LCHANNEL,`${newMember.username} changed their personal avatar`,[MessageEmbed],hookname,hookavi);
 console.log(`${colors.cyan("[Discord]")} ${oldMember.username} changed their avatar`);
 }
 
@@ -94,7 +94,7 @@ const MessageEmbed = {
   "timestamp": now.toISOString()
 };
 
-WebHook(client,LCHANNEL,`${newMember.username}changed their personal banner`,[MessageEmbed],hookname,hookavi);
+WebHook(client,LCHANNEL,`${newMember.username} changed their personal banner`,[MessageEmbed],hookname,hookavi);
 console.log(`${colors.cyan("[Discord]")} ${oldMember.username} changed their banner`);
 }
 
