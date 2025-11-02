@@ -33,6 +33,9 @@ const MessageEmbed = {
 "thumbnail": {
 "url": `attachment://pfp.webp`
 },
+"footer": {
+"text": `${member.guild.memberCount} members`,
+},
 "color": hex,
 "timestamp": jointime.toISOString()
 }
