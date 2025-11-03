@@ -51,36 +51,38 @@ console.log(`${colors.cyan("[Discord]")} ${message.author.username} deleted a me
 }
 });
 
-client.on(Events.MessageUpdate, message => {
-const hookname = `${client.user.username} Logs`;
-const hookavi = `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp?size=1024`;
-// too tired fuck you future alice.
-// seperate this yourself when you burn in hell.
+// client.on(Events.MessageUpdate, message => {
+// const hookname = `${client.user.username} Logs`;
+// const hookavi = `https://cdn.discordapp.com/avatars/${client.user.id}/${client.user.avatar}.webp?size=1024`;
+// // too tired fuck you future alice.
+// // seperate this yourself when you burn in hell.
+//
+// if(message.author.bot) {
+//     return;
+// }
+//
+// const MessageEmbed = {
+//     "title": `Message edited in <#${message.channelId}>`,
+//     "author": {
+//         "name": message.author.username,
+//         "icon_url": `https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.webp`
+//     },
+//     "color": 3447003,
+//     "fields": [
+//         {
+//             "name": "Original Message",
+//             "value": message.content
+//         },
+//         {
+//             "name": "New Message",
+//             "value": message.reactions.message.content
+//         }
+//     ]
+// };
+//
+// WebHook(client,LCHANNEL,`${message.author.username} edited their message https://discord.com/channels/${message.guildId}/${message.channelId}/${message.id}`,[MessageEmbed],hookname,hookavi);
+// console.log(`${colors.cyan("[Discord]")} ${message.author.username} edited a message.`);
+// });
 
-if(message.author.bot) {
-    return;
-}
-
-const MessageEmbed = {
-    "title": `Message edited in <#${message.channelId}>`,
-    "author": {
-        "name": message.author.username,
-        "icon_url": `https://cdn.discordapp.com/avatars/${message.author.id}/${message.author.avatar}.webp`
-    },
-    "color": 3447003,
-    "fields": [
-        {
-            "name": "Original Message",
-            "value": message.content
-        },
-        {
-            "name": "New Message",
-            "value": message.reactions.message.content
-        }
-    ]
-};
-
-WebHook(client,LCHANNEL,`${message.author.username} edited their message https://discord.com/channels/${message.guildId}/${message.channelId}/${message.id}`,[MessageEmbed],hookname,hookavi);
-console.log(`${colors.cyan("[Discord]")} ${message.author.username} edited a message.`);
-});
+// insanely broken
 }
