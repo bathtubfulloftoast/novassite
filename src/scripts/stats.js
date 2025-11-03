@@ -5,8 +5,6 @@ document.addEventListener("DOMContentLoaded", async function() {
         // const response = await fetch('/stats.json');
         let data = await response.json();
 
-        const average = array => array.reduce((a, b) => a + b) / array.length;
-        // https://stackoverflow.com/a/41452260/20960756
 
 const uptime = data.uptime.server_ms;
 
@@ -45,7 +43,7 @@ time = uptime + ' millisecond' + (uptime > 1 ? 's' : '');
         document.getElementById("serverstats").innerHTML = `<b>Server Stats:</b><br>
         server up for: ${time}<br>
         cpu temp: ${data.cputemp}&deg;C<br>
-        loadavg: ${average(data.loadavg).toFixed(2)}`;
+        loadavg: ${JSON.stringify(data.loadavg).replaceAll(",", ", ")}`;
 
 
     }
