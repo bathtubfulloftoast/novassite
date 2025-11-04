@@ -65,6 +65,10 @@ if (message.content == message.reactions.message.content) {
     return;
 }
 
+if (message.guild.id !== GUILDID) {
+    return;
+}
+
 const MessageEmbed = {
     "title": `Message edited in <#${message.channelId}>`,
     "author": {
