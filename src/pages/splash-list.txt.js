@@ -32,7 +32,7 @@ export async function GET() {
         const Content_h = splashes_hal.join("\n");
         const Content_c = splashes_chr.join("\n");
 
-        const headerstring = `all ${splashes.length+splashes_hal.length+splashes_chr.length} of Novas Splashes!`;
+        const headerstring = `${splashes.length} regular | ${splashes_hal.length} halloween | ${splashes_chr.length} christmas | ${splashes.length+splashes_hal.length+splashes_chr.length} Total`;
         const headerlen = headerstring.length;
 
         return new Response(
