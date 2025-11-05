@@ -81,5 +81,10 @@ i plan to consistently update this too so check back every once and awhile.
 
 ## Web Browsers
 - [firefox](https://firefox.com)
-- [librewolf](https://librewolf.net/) (pain in the ass if youre not a privacy freak) [they disable dark mode for privacy.]
+- [librewolf](https://librewolf.net/) (pain in the ass if youre not a privacy freak)
 - [waterfox](https://www.waterfox.net/)
+
+## Android OS'es
+this ones not going to be useful to many but its a nice list to keep
+- [lineageos](https://lineageos.org/)
+- [grapheneos](https://grapheneos.org/) (google pixel only)
