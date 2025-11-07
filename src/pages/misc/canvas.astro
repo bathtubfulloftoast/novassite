@@ -1,0 +1,35 @@
+<script>
+const canvas = document.createElement("canvas");
+canvas.width = 200;
+canvas.height = 100;
+const ctx = canvas.getContext("2d");
+
+ctx.fillStyle = "rgb(0 255 0)";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+ctx.save();
+ctx.rotate((Math.PI / 180) * 45);
+ctx.strokeStyle = "rgb(255 20 90)";
+ctx.strokeRect(80, -70, 50, 50);
+
+ctx.restore();
+ctx.fillStyle = "rgb(255 0 0 / 50%)";
+ctx.fillRect(20, 20, 50, 50);
+
+ctx.fillStyle = "rgb(0 0 255 / 50%)";
+ctx.fillRect(30, 30, 50, 60);
+
+ctx.fillStyle = "rgb(0 0 0)";
+ctx.font = "30px arial";
+ctx.save();
+
+ctx.filter = "drop-shadow(2px 2px 1px #fff)";
+ctx.fillText("i shit myself.", 20, canvas.height/2);
+
+const compressed = canvas.toDataURL("image/jpeg", 0.1);
+
+const image = document.createElement("img");
+image.src=compressed;
+
+document.body.appendChild(image);
+</script>
