@@ -4,7 +4,7 @@ import sqlite3 from 'sqlite3';
 let rcache;
 const CACHE_DURATION = 30000;
 
-const censored = ["nigg","fag","trann","account","elon","trump","sell","buy","crypto","coin"];
+const censored = ["nigg","fag","trann","account","elon","trump","sell","buy","crypto","coin","kys","kill yo","kill my","kms"];
 var site = new RegExp(/https?:\/\/.*\.\S+/ig);
 
 export default async function lastfmHandler(req, res) {
