@@ -29,9 +29,7 @@ this is also a personal passion project so do not expect the code to be nice and
 
 this is where all the api keys and other config goes
 
-the only things with proper error handling is an unset discord bot token and an unset port
-
-everything else will just shit itself.
+dont expect anything to help you if you forget to set it (im lazy)
 
 ### example
 
