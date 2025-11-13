@@ -26,8 +26,8 @@ export async function GET() {
         const string = shuffled.join("\n");
         const textContent = string;
 
-        return new Response(`hey if youre on this list and you dont want to be contact me at mail@novassite.net\n${textContent}`);
+        return new Response(`hey if youre on this list and you dont want to be contact me at any of the places listed under /tree\n${textContent}`);
     } catch (error) {
-        return new Response("Error: File not found");
+        return new Response(error);
     }
 }
