@@ -1,0 +1,78 @@
+<head>
+<title>beleprompter</title>
+<style>
+body {
+background:#000;
+color:#fff;
+text-align:center;
+font-family:arial;
+}
+
+.center-screen {
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+min-height: 100vh;
+}
+</style>
+</head>
+<div class="center-screen">
+<div>
+<h1 id="script">use the square brackets to navigate []</h1>
+<progress id="progress"></progress>
+<p id="count">0/1364</p>
+</div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+const response = await fetch('/bee.txt');
+var text = await response.text();
+text = text.split("\n").map(name => name.trim());
+
+var counter = -1;
+
+const wrap = document.getElementById("script");
+const page = document.getElementById("count");
+const progress = document.getElementById("progress");
+progress.max = text.length;
+
+function advance() {
+if (counter >= text.length-1) {
+counter = text.length-1
+} else {
+counter = counter+1;
+}
+wrap.innerHTML = text[counter];
+page.innerHTML = `${counter+1}/${text.length}`;
+progress.value = counter+1;
+
+}
+
+function retract() {
+if (counter <= 0) {
+counter = 0
+} else {
+counter = counter-1;
+}
+wrap.innerHTML = text[counter];
+page.innerHTML = `${counter+1}/${text.length}`;
+progress.value = counter+1;
+
+}
+
+document.addEventListener("keypress", function(event) {
+if (event.keyCode == 93) {
+advance()
+}
+
+if (event.keyCode == 91) {
+retract()
+}
+
+console.log(event.keyCode)
+});
+
+});
+</script>

@@ -1,0 +1,43 @@
+<head>
+<title>EEB</title>
+<style is:global>
+body {
+background:gray;
+}
+
+p {
+line-height:8px;
+}
+
+p:nth-child(even) {
+color:yellow;
+}
+
+p:nth-child(odd) {
+color:black;
+}
+</style>
+</head>
+
+<p><a href="//cdn.novassite.net/dump/Bee%20Movie%20DVD%20Extras/index.html">bee movie dvd extras</a> | <a href="beleprompter">beleprompter</a></p>
+<hr>
+<div id="script">
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async function() {
+const response = await fetch('/bee.txt');
+var text = await response.text();
+text = text.split("\n").map(name => name.trim());
+
+const wrap = document.getElementById("script");
+
+for (const item of text) {
+const line = document.createElement("p");
+line.innerHTML = item;
+wrap.appendChild(line);
+
+};
+
+});
+</script>
