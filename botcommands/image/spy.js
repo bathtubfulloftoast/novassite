@@ -1,4 +1,4 @@
-import { SlashCommandBuilder, AttachmentBuilder } from 'discord.js';
+/*import { SlashCommandBuilder, AttachmentBuilder } from 'discord.js';
 import colors from 'colors';
 import NodeWebcam from 'node-webcam';
 
@@ -32,5 +32,4 @@ await console.log(`${colors.cyan("[Discord]")} command spy has been run by ${int
 
 
     },
-};
-
+};*/
