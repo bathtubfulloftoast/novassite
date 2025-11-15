@@ -7,7 +7,7 @@ import lastfmTop from './functions/lastfm-top.js';
 import lastfmRecent from './functions/lastfm-recent.js';
 import discorduser from './functions/discorduser.js';
 import steam from './functions/steamrecent.js';
-import webcam from './functions/webcam.js';
+// import webcam from './functions/webcam.js';
 import botinfo from './functions/botinfo.js';
 import error from './functions/badroute.js';
 import ipaddr from './functions/ipgrabber.js';
@@ -26,7 +26,7 @@ app.get('/api/fm-top', lastfmTop);
 app.get('/api/fm-recent', lastfmRecent);
 app.get('/api/discord-user', discorduser);
 app.get('/api/steam-recent', steam);
-app.get('/api/webcam', webcam);
+// app.get('/api/webcam', webcam);
 app.get('/api/bot', botinfo);
 app.get('/api/IP', ipaddr);
 
