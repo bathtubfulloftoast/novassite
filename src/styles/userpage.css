@@ -117,8 +117,8 @@ margin:2px;
 
 }
 .blurb .activityimg {
-max-width:100px;
-max-height:100px;
+width:100px;
+height:100px;
 margin-right:10px;
 border-radius:12px;
 background:var(--bg2);
