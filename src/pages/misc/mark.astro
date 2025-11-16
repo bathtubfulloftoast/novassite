@@ -1,0 +1,69 @@
+<head>
+<title>FUCK YOU!!!</title>
+<style>
+body {
+text-align:center;
+background:#000;
+color:#fff;
+overflow:hidden;
+}
+
+#mark {
+width:500px;
+height:500px;
+cursor:pointer;
+}
+</style>
+</head>
+
+<img src="/media/FUCK.gif"><br>
+
+<img id="mark" src="/media/Mark.png">
+
+
+<script>
+let width = 500;
+const winder = window.outerWidth;
+
+const mark = document.getElementById("mark");
+mark.addEventListener("click", function(event) {
+event.preventDefault();
+if(!document.getElementById("markaudio")) {
+const audioElement = new Audio("/media/sfx/mark.ogg");
+audioElement.volume = 0.5;
+audioElement.id = "markaudio";
+// audioElement.playbackRate = 5;
+
+const jule = new Audio("/media/sfx/julez/2.ogg");
+jule.id = "markaudio";
+
+if (width >= winder-100) {
+document.body.appendChild(jule);
+
+jule.play()
+mark.src="/media/icons/jules.png";
+} else {
+width= width+50;
+mark.style.width=width+"px";
+
+document.body.appendChild(audioElement);
+
+audioElement.play();
+}
+
+
+
+
+
+audioElement.addEventListener('ended', (event) => {
+audioElement.remove();
+});
+
+jule.addEventListener('ended', (event) => {
+window.location.replace("https://thatponyjules.nekoweb.org/DisclaimerSecret");
+});
+}
+});
+
+
+</script>
