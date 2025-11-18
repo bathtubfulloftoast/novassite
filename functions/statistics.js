@@ -1,16 +1,29 @@
-import os from 'os';
+import 'dotenv/config';
 import colors from 'colors';
 import si from 'systeminformation';
+import os from 'os';
+
+let cache = {};
 
 let PUT; // Process UpTime
 let OUT; // OS UpTime
 let OStamp;
 let PStamp;
 
-
 export default async function lastfmHandler(req, res) {
-    res.set('Cache-Control', "max-age=60");
+    const CACHE_DURATION = 2000;
 
+    res.set('Cache-Control', "max-age="+(CACHE_DURATION/1000));
+
+    if (cache.timestamp && (Date.now() - cache.timestamp < CACHE_DURATION)) {
+        const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);
+        return res.status(200).json({
+            ...cache.data,
+            cache_remaining_ms: remaining,
+        });
+    }
+
+try {
     const NOW = Date.now();
 
     PUT = process.uptime();
@@ -51,8 +64,7 @@ export default async function lastfmHandler(req, res) {
     const cputemp = await getCPUTEMP();
     const memory = await getMEM();
 
-
-    res.status(200).json({
+        const data = {
     uptime: {
     process_ms: PUT,
     server_ms: OUT,
@@ -67,7 +79,23 @@ export default async function lastfmHandler(req, res) {
     //used:memory.used,
     //}
     // memory free and used seem to be swapped on the pi and only the pi. weird.
-    });
+    };
 
-console.log(`${colors.green("[Site]")} function uptime ran`);
+        cache = {
+            data,
+            timestamp: Date.now(),
+        };
+
+        res.status(200).json({
+            ...data,
+            cache_remaining_ms: CACHE_DURATION,
+        });
+        console.log(`${colors.green("[Site]")} function uptime ran`);
+
+    } catch (error) {
+        res.status(500).json({ error: 'some shit got fucked holy shit how did this fail' });
+        console.log(`${colors.red("[ERROR]")} stats failed whatd you do`);
+        console.error(error);
+
+    }
 }
