@@ -20,6 +20,7 @@ export default async function lastfmHandler(req, res) {
         return res.status(200).json({
             ...cache.data,
             cache_remaining_ms: remaining,
+            cache_total_ms: CACHE_DURATION,
         });
     }
 
@@ -89,6 +90,7 @@ try {
         res.status(200).json({
             ...data,
             cache_remaining_ms: CACHE_DURATION,
+            cache_total_ms: CACHE_DURATION,
         });
         console.log(`${colors.green("[Site]")} function uptime ran`);
 
