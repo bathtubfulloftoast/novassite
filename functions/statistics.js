@@ -11,7 +11,7 @@ let OStamp;
 let PStamp;
 
 export default async function lastfmHandler(req, res) {
-    const CACHE_DURATION = 2000;
+    const CACHE_DURATION = 15000;
 
     res.set('Cache-Control', "max-age="+(CACHE_DURATION/1000));
 
