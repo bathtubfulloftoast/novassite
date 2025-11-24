@@ -2,6 +2,7 @@
 title: 'opinions on being so eepy'
 description: 'im so fucking tired please god save me'
 pubDate: '11/10/2025 8:33 AM'
+hidden: true
 ---
 
 hey guys
