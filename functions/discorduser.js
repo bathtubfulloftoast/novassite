@@ -27,7 +27,7 @@ export default async function lastfmHandler(req, res) {
         const remaining = CACHE_DURATION - (Date.now() - cache[userid].timestamp);
         return res.status(200).json({
             ...cache[userid].data,
-            // cache_remaining: Math.floor(remaining/1000),
+            cache_remaining: Math.floor(remaining/1000),
         });
     }
 
@@ -51,7 +51,7 @@ export default async function lastfmHandler(req, res) {
 
         res.status(200).json({
             ...data,
-            // cache_remaining: Math.floor(CACHE_DURATION/1000),
+            cache_remaining: Math.floor(CACHE_DURATION/1000),
         });
         console.log(`${colors.green("[Site]")} grabbed info for discord userid ${userid}`);
 
