@@ -203,6 +203,8 @@ activityimg.src = `https://i.scdn.co/image/`+spotifysplit[1];
 } else if(lareimg.startsWith("mp:external/")) {
 const spotifysplit = lareimg.split("mp:external/", 2);
 activityimg.src = `https://media.discordapp.net/external/`+spotifysplit[1];
+} else if(item.emoji) {
+activityimg.src = `https://cdn.discordapp.com/emojis/${item.emoji.id}.webp`;
 } else {
 activityimg.src = `https://cdn.discordapp.com/app-assets/${item.applicationId}/${lareimg}.png?size=256`;
 }
