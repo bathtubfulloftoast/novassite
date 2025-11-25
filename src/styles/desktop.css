@@ -79,7 +79,7 @@ filter: drop-shadow(1px 1px 0px #000);
 
 .icons {
 position:absolute;
-left:0px;
+left:10px;
 top:0px;
 display:flex;
 flex-direction:column;
