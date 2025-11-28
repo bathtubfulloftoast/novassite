@@ -9,17 +9,17 @@ export default defineConfig({
 site: 'https://novassite.net',
 integrations: [
 mdx(),
-sitemap({
-serialize(item) {
-if (/secret/.test(item.url)) {
-return undefined;// they're secrets cmon
-}
-if (/ping/.test(item.url)) {
-return undefined;
-}
-return item;
-},
-}),
+// sitemap({
+// serialize(item) {
+// if (/secret/.test(item.url)) {
+// return undefined;// they're secrets cmon
+// }
+// if (/ping/.test(item.url)) {
+// return undefined;
+// }
+// return item;
+// },
+// }),
 (await import("astro-compress")).default({Image: false}) //i compress images myself before committing them i don't need you to do that, also god does it really make all this shit take so much longer
 ],
     adapter: node({
