@@ -17,7 +17,7 @@ const currentdate = `${mm}/${dd}`;
   let cachedsplash;
 
   const holidays = {
-    "6/9":"happy birthday alice!!", // im the first one cus im so great ;3
+    "6/9":"HAPPY BIRTHDAY!!", // im the first one cus im so great ;3
     "12/31": `${yyyy+1} is upon us...`,
     "1/1": "HAPPY NEW YEAR!!!",
     "7/4": "fuck the british",
