@@ -27,6 +27,19 @@ icon.querySelector("span").innerHTML = "mariah.carey";
 return;
 }
 
+else if(date == "6-9") {
+document.body.style.backgroundImage = "url('/media/wallpapers/yippee.png')";
+document.body.style.backgroundColor = "var(--bright-purple)";
+document.body.style.backgroundPosition = "center 30%";
+document.body.style.backgroundRepeat = "no-repeat";
+paperdoll.style.backgroundImage = "url('/confetti.gif')";
+paperdoll.style.backgroundRepeat = "repeat-x";
+paperdoll.style.backgroundSize = "50% 100vh";
+paperdoll.style.backgroundPosition = "center center";
+
+return;
+}
+
 
 if([3,4,5].includes(month)) {//spring
 document.body.style.backgroundImage = "linear-gradient(-45deg,var(--bg),var(--bright-blue))";
@@ -35,7 +48,7 @@ paperdoll.style.backgroundImage = "url('/media/wallpapers/bunny.png')";
 }
 
 else if([6,7,8].includes(month)) {//summer
-document.body.style.backgroundImage = "linear-gradient(180deg,var(--bg),var(--aqua))";
+document.body.style.backgroundImage = "linear-gradient(190deg,var(--fg0),var(--aqua))";
 
 paperdoll.style.backgroundImage = "url('/media/wallpapers/bird.png')";
 paperdoll.style.backgroundSize = "70vh";
