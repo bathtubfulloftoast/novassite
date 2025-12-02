@@ -6,7 +6,7 @@ LOC = LOC.split(":").pop(); // not preferred but if it has to work it will
 
 let IPADDR = "192.168.0.64";
 
-res.set('Cache-Control', "max-age=3600");
+res.set('Cache-Control', "max-age=3600"); // client side request to your browser to save the data for 3600 seconds.
 
 if(CF) {
 IPADDR = CF;
