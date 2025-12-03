@@ -11,7 +11,7 @@ let OStamp;
 let PStamp;
 
 export default async function lastfmHandler(req, res) {
-    const CACHE_DURATION = 15000;
+    const CACHE_DURATION = 60000;
 
     res.set('Cache-Control', "max-age="+(CACHE_DURATION/1000));
 
@@ -19,8 +19,11 @@ export default async function lastfmHandler(req, res) {
         const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);
         return res.status(200).json({
             ...cache.data,
-            cache_remaining_ms: remaining,
-            cache_total_ms: CACHE_DURATION,
+            uptime: {
+            ...cache.data.uptime,
+            process_ms: cache.data.uptime.process_ms+CACHE_DURATION-remaining,
+            server_ms: cache.data.uptime.server_ms+CACHE_DURATION-remaining,
+            },
         });
     }
 
@@ -89,8 +92,6 @@ try {
 
         res.status(200).json({
             ...data,
-            cache_remaining_ms: CACHE_DURATION,
-            cache_total_ms: CACHE_DURATION,
         });
         console.log(`${colors.green("[Site]")} function uptime ran`);
 
