@@ -16,8 +16,8 @@ aleteoryx.me
 alia.science
 altgo.us
 alula.me
-alyxia.dev
 alyx.sh
+alyxia.dev
 anhvn.com
 anybrowser.org
 arcanedisgea.com
@@ -50,6 +50,7 @@ bigrat.monster
 birb.cc
 birdcat.online
 bitterfilms.com
+bl-world.neocities.org
 blindtwig.neocities.org
 blinkieobsession.freeservers.com
 blinkies.cafe
@@ -58,7 +59,6 @@ blog.geocities.institute
 blooym.dev
 blowback.show
 blueb.pages.gay
-bl-world.neocities.org
 bookwyrm.social
 borahae.nu
 boxin.space
@@ -74,12 +74,12 @@ bun-e.fyi
 byeoon.dev
 c7.pm
 cadence.moe
+cat.vin.pet
 catboy.au
 catgirl.homes
 catppuccin.com
 catsp.in
 catttttttt.neocities.org
-cat.vin.pet
 cbax.dev
 cecilyrenns.neocities.org
 cervine.online
@@ -130,8 +130,8 @@ elke.cafe
 emma.cafe
 encounters-ltd.neocities.org
 epicblazed.com
-erisdump.neocities.org
 eris.meows.gay
+erisdump.neocities.org
 espi.me
 estela.moe
 european-union.europa.eu
@@ -265,11 +265,11 @@ mouchette.org
 mrdoob.com
 msx.gay
 mutant.techdemo
+n.cyrneko.eu
 n2.pm
 natty.gay
 natty.sh
 natu.moe
-n.cyrneko.eu
 ndr.sn
 neal.fun
 neilcic.com
@@ -366,8 +366,9 @@ thisisnotawebsitedotcom.com
 thomasricci.dev
 through-the-light.neocities.org
 tilde.town
-tinyfox.dev
 tiny-universes.net
+tinyfox.dev
+tobyfox.com
 tomscott.com
 torrent.parts
 translunar.academy
