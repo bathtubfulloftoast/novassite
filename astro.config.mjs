@@ -25,9 +25,4 @@ mdx(),
     adapter: node({
       mode: 'middleware',
     }),
-    markdown: {
-        shikiConfig: {
-        theme: "none", // Removes automatic styles
-    },
-},
 });
