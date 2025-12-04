@@ -10,6 +10,7 @@ export default {
     .addStringOption(option =>
     option.setName('question')
     .setDescription('what shall be asked')
+    .setMaxLength(512)
     .setRequired(true)),
     async execute(interaction) {
         await console.log(`${colors.cyan("[Discord]")} command interview has been run by ${interaction.user.tag}`);
