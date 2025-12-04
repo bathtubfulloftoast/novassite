@@ -9,7 +9,7 @@ export default {
     async execute(interaction) {
 
 const username = interaction.client.user.username;
-const interacter = interaction.user.username;// im keeping this typo i dont care
+const interacter = interaction.user.globalName;// im keeping this typo i dont care
 
 const loot = [
 `${username} grabs whatever you were holding right from your hand`,
@@ -95,6 +95,9 @@ btoa(interacter),
 `${username} dies`,
 "death",
 "<@852018491900821514>",
+`${username} pulls out a fushigi`,
+`${username} pulls out ${Math.ceil(Math.random() * 20)} movie tickets`,
+`${username} is dead.`
 ]
 
 
