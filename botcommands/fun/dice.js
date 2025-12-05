@@ -22,7 +22,7 @@ export default {
         const category = interaction.options.getString('sides');
         const roll = Math.floor(Math.random() * category)+1;
 
-        await interaction.reply({ content: `<@${interaction.user.id}> rolls a ${category} sided dice and gets...\n\`\`${roll}\`\`` });
+        await interaction.reply({ content: `you roll a ${category} sided dice and get...\n\`\`${roll}\`\`` });
 
     },
 };
