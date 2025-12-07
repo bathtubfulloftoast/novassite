@@ -58,6 +58,7 @@ const icons = desktop;
 
 
 <div class="time" id="time">11:24 PM</div>
+<div class="time" id="date" style="width:100px;word-spacing: -2px;">06 / 09 / 2007</div>
 <div class="time"><a href="/media/secrets/clouds.mp4" id="wlnk" title="22&deg;C" target="_blank" ><img fetchPriority="low" src="/media/weather/16/03d.png" id="wimg" style="vertical-align: -2px;"> <span id="wtmp">72&deg;F</span></a></div>
 
 <!-- <div class="time" style="width:40px"><img id="battery" class="battery" src="/blank.gif"></div> -->
@@ -72,7 +73,7 @@ there is nothing else about this video worth mentioning<br>
 also if youre on mobile youre a cheater how dare you<br>
 edit your browsers css like the desktop users you CHEATER
 
-<!--<div id="loadingImg" style="background:#000;color:#fff;position:absolute;left:0;top:0;width:100vw;height:100vh;z-index:200;display:flex;align-items:center;text-align:center;justify-content:center;"><img style="width:35vh;image-rendering: pixelated;opacity:0;" fetchPriority="high" src="/media/loading.webp" id="sickassloadingimage"></div>-->
+<div id="loadingImg" style="background:#000;color:#fff;position:absolute;left:0;top:0;width:100vw;height:100vh;z-index:200;display:flex;align-items:center;text-align:center;justify-content:center;"><img style="width:35vh;image-rendering: pixelated;opacity:0;" fetchPriority="high" src="/media/loading.webp" id="sickassloadingimage"></div>
 
 <script src="/src/scripts/wallpaper.js"></script>
 
@@ -112,6 +113,69 @@ edit your browsers css like the desktop users you CHEATER
 
 
 <script>
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+// why is this dogshit
+// die i hate javascript
+// i shouldve never gotten into javascript
+
+document.addEventListener("DOMContentLoaded", async function() {
+
+const img = document.getElementById("sickassloadingimage");
+const wrap = document.getElementById("loadingImg");
+if (getCookie("startupseen")) {
+loadingImg.remove();
+};
+
+const sound = new Audio("/media/sfx/startup.ogg");
+
+loadingImg.style.transition = "opacity 2s ease-in-out"
+img.style.transition = "opacity 2s ease-in-out"
+img.style.opacity=1;
+
+if(window.chrome){
+loadingImg.remove();
+alert("this site is designed for firefox expect issues on chrome.");
+document.cookie = "startupseen=true";
+}
+
+const autoplay = navigator.getAutoplayPolicy(sound);
+
+if(autoplay == "allowed") {
+await new Promise(r => setTimeout(r, 3000));
+sound.play();
+await new Promise(r => setTimeout(r, 500));
+loadingImg.style.opacity=0;
+await new Promise(r => setTimeout(r, 2000));
+loadingImg.remove();
+document.cookie = "startupseen=true";
+} else {
+document.head.innerHTML="";
+document.title="please enable autoplay :3";
+document.body.style.background="#000";
+document.body.style.color="#fff";
+document.body.innerHTML="please enable autoplay and popups<br>these are required for the site to work<br>if youre worried about the popups its just to open youtube links that you CLICK ON.<br>if you dont know how <a href='https://www.google.com/search?q=how%20to%20enable%20autoplay%20in%20browser'>google it</a>"
+}
+
+
+
+});
+</script>
+
+<script>
 let now = new Date();
 let hours = now.getHours();
 let minutes = now.getMinutes();
@@ -123,6 +187,15 @@ hours = hours ? hours : 12;
 minutes = minutes < 10 ? '0' + minutes : minutes;
 
 document.getElementById("time").innerHTML = `${hours}:${minutes} ${ampm}`;
+</script>
+
+<script>
+const now = new Date();
+const month = String(now.getMonth()).padStart(2, '0');
+const day = String(now.getDate()).padStart(2, '0');
+const year = now.getFullYear();
+
+document.getElementById("date").innerHTML = `${month} / ${day} / ${year}`;
 </script>
 
 <script>
