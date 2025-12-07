@@ -46,7 +46,7 @@ const icons = desktop;
 .filter(item => !item.hidden)
 .map((item) => (
 <div class="icon" id={item.id}>
-<img fetchPriority="low" src={`/media/icons/${item.icon}`} alt={item.filename} /><br>
+<img fetchPriority="low" src={`/media/icons/${item.icon}`} alt={item.icon} /><br>
 <span>{item.filename}</span>
 </div>
 ))}

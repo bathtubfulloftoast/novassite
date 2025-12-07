@@ -1,7 +1,7 @@
 [
   {
     "filename": "\"The Bin\"",
-    "icon": "tarsh.gif",
+    "icon": "tarsh.png",
     "id": "tarsh",
     "comment": "i hope she made lotsa spaghetti!!"
   },
@@ -13,7 +13,7 @@
   },
   {
     "filename": "Pinkie Pied.fun",
-    "icon": "fluttershit.gif",
+    "icon": "fluttershit.png",
     "id": "pinkie",
     "comment": "dexterdaybreaker (gave image)"
   },
@@ -37,50 +37,50 @@
   },
   {
     "filename": "Azure.png",
-    "icon": "azure.gif",
+    "icon": "azure.png",
     "id": "azure",
     "comment": "Azure Comet (is the image)"
   },
   {
     "filename": "i remember.txt",
-    "icon": "remember.gif",
+    "icon": "remember.png",
     "id": "remember",
     "comment": "canni (gave image)"
   },
   {
     "filename": "lancer",
-    "icon": "lancer.gif",
+    "icon": "lancer.png",
     "id": "lancer",
     "comment": "lancer"
   },
   {
     "filename": "Among Us",
-    "icon": "among.gif",
+    "icon": "among.png",
     "id": "amongus",
     "comment": "DeadlyAidan (made amongus)"
   },
   {
     "filename": "eepy.mimi",
-    "icon": "eepster.gif",
+    "icon": "eepster.png",
     "id": "eepster",
     "comment": "ZoruDied (gave image)"
   },
   {
     "filename": "rock.jpg",
-    "icon": "gettingyou.gif",
+    "icon": "gettingyou.png",
     "id": "gettingyou",
     "comment": "Bobbi (gave image)"
   },
   {
     "filename": "girl.gay",
-    "icon": "girl.gif",
+    "icon": "girl.png",
     "id": "enid",
     "comment": "Vivian (is Gay)",
     "hidden": true
   },
   {
     "filename": "FUCKYOU.FUCK",
-    "icon": "GIRLY.gif",
+    "icon": "GIRLY.png",
     "id": "teengirl",
     "comment": "Jules (made song)"
   },
@@ -116,26 +116,26 @@
   },
   {
     "filename": "joemany.txt",
-    "icon": "liberals.gif",
+    "icon": "liberals.png",
     "id": "liberals",
     "comment": "Riff (Played tf2)"
   },
   {
     "filename": "sponge.jpg",
-    "icon": "spaunch.gif",
+    "icon": "spaunch.png",
     "id": "spaunch",
     "comment": "Toasty (Took Photo)",
     "hidden": true
   },
   {
     "filename": "charmer.love",
-    "icon": "winning smile.gif",
+    "icon": "winning smile.png",
     "id": "charmer",
     "comment": "Storm (autistic)"
   },
   {
     "filename": "YAYL.AD",
-    "icon": "yayl.gif",
+    "icon": "yayl.png",
     "id": "yayl",
     "comment": "WHO POSTED MY NUDES ON TWITTER DOT COM??? (veniadev)",
     "hidden": true
@@ -148,19 +148,19 @@
   },
   {
     "filename": "femtanyl.mp3",
-    "icon": "femt.gif",
+    "icon": "femt.png",
     "id": "femt",
     "comment": "make a big mac ^.^"
   },
   {
     "filename": "deltar.une",
-    "icon": "delta.gif",
+    "icon": "delta.png",
     "id": "deltarune",
     "comment": "lqrf (gave image)"
   },
   {
     "filename": "food.house",
-    "icon": "foodhouse.gif",
+    "icon": "foodhouse.png",
     "id": "foodhouse",
     "comment": "if you can get anthony to review two house ill add that"
   },
@@ -210,7 +210,7 @@
   },
   {
     "filename": "CLICKME.txt",
-    "icon": "text.gif",
+    "icon": "text.png",
     "id": "readme",
     "comment": "aah"
   }
