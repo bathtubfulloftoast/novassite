@@ -1,13 +1,13 @@
-const audioUrl = "/media/brooklyn.mp4";
-
-
+const now = new Date();
+const month = now.getMonth();
+const logan = document.getElementById("smlwiki");
 
 async function createaudio() {
 
 
 
 const audioElement = document.createElement('video');
-audioElement.src = audioUrl;
+audioElement.src = "/media/brooklyn.mp4";
 audioElement.volume = 0.5;
 audioElement.style.position = "absolute";
 audioElement.style.left = 0;
@@ -28,10 +28,12 @@ audioElement.remove();
 });
 
 };
-
-document.getElementById("smlwiki").addEventListener("click", function(event) {
+if(month !== 9) {
+logan.remove();
+} else {
+logan.addEventListener("click", function(event) {
 event.preventDefault();
 createaudio();
 
 });
-
+}

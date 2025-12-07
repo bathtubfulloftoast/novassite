@@ -1,3 +1,7 @@
+const now = new Date();
+const month = now.getMonth();
+const hp = document.getElementById("hitpoint");
+
 async function createaudio() {
 
 const audioElement = document.createElement('video');
@@ -21,10 +25,13 @@ audioElement.remove();
 });
 
 };
-
-document.getElementById("hitpoint").addEventListener("click", function(event) {
+if (month !== 9) {
+hp.remove();
+} else {
+hp.addEventListener("click", function(event) {
 event.preventDefault();
 createaudio();
 
 });
+}
 

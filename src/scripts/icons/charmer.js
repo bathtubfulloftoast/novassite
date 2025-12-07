@@ -1,3 +1,7 @@
+const now = new Date();
+const month = now.getMonth();
+const frida = document.getElementById("charmer");
+
 async function createaudio() {
 
 
@@ -26,10 +30,13 @@ imageElement.remove();
 });
 };
 
-document.getElementById("charmer").addEventListener("click", function(event) {
+if (month !== 9) {
+frida.remove();
+} else {
+frida.addEventListener("click", function(event) {
 event.preventDefault();
 
 createaudio();
 
 });
-
+}

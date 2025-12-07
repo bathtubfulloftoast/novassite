@@ -17,6 +17,12 @@
     "id": "pinkie",
     "comment": "dexterdaybreaker (gave image)"
   },
+    {
+    "filename": "brat.summer",
+    "icon": "bort.png",
+    "id": "brat",
+    "comment": "bump'n that"
+  },
   {
     "filename": "jules.jpog",
     "icon": "jules.png",
@@ -77,6 +83,12 @@
     "icon": "GIRLY.gif",
     "id": "teengirl",
     "comment": "Jules (made song)"
+  },
+  {
+    "filename": "hh.gregg",
+    "icon": "gregg.png",
+    "id": "hhgregg",
+    "comment": "like christmas in july!"
   },
   {
     "filename": "SML.wiki",
