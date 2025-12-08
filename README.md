@@ -11,13 +11,23 @@ this project does not work off of releases, the current commit is the current ve
 this is also a personal passion project so do not expect the code to be nice and commented.
 
 
-## Official Mirrors
+# Official Mirrors
 - [git.gay](https://git.gay/bathtubfulloftoast/novassite) `MASTER`
 - [github](https://github.com/bathtubfulloftoast/novassite)
 - [gitlab](https://gitlab.com/bathtubfulloftoast/novassite)
 - [codeberg](https://codeberg.org/bathtubfulloftoast/novassite)
 
-## How to run
+these are the official mirrors of novassite.
+
+git.gay serves as the master being the only host with proper permissions
+
+if anything is done outside the master it will be entirely ignored
+
+these mirrors only exist to make sure the sites source is *always* avalible
+
+*and to make sure its easy to switch if needed.*
+
+# How to run
 
 | Command | What it does |
 | -------- | ------- |
@@ -25,13 +35,13 @@ this is also a personal passion project so do not expect the code to be nice and
 | pnpm run dev | astro dev mode (no server functions) |
 | node server.js | run the server with node (must build pages first) |
 
-## .env
+# .env
 
 this is where all the api keys and other config goes
 
 dont expect anything to help you if you forget to set it (im lazy)
 
-### example
+## example
 
 an easy example config for you to copy and paste
 
@@ -49,7 +59,7 @@ JOINCHANNEL=
 LOGCHANNEL=
 ```
 
-### explanation
+## explanation
 
 | Key | What it does | where to get |
 | -------- | ------- | ------- |
