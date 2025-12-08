@@ -148,10 +148,10 @@ img.style.opacity=1;
 
 if(window.chrome){
 loadingImg.remove();
-alert("this site is designed for firefox expect issues on chrome.\nalso please make sure autoplay and popups are enabled");
+alert("please enable autoplay and popups\nand be aware that this site is designed for firefox (which youre not using)\nexpect me forgetting to add shit that makes shit work on chrome.");
 document.cookie = "startupseen=true";
 }
-
+// fuck safari lmao
 const autoplay = navigator.getAutoplayPolicy(sound);
 
 if(autoplay == "allowed") {
@@ -163,11 +163,7 @@ await new Promise(r => setTimeout(r, 2000));
 loadingImg.remove();
 document.cookie = "startupseen=true";
 } else {
-document.head.innerHTML="";
-document.title="please enable autoplay :3";
-document.body.style.background="#000";
-document.body.style.color="#fff";
-document.body.innerHTML="please enable autoplay and popups<br>these are required for the site to work<br>if youre worried about the popups its just to open youtube links that you CLICK ON.<br>if you dont know how <a href='https://www.google.com/search?q=how%20to%20enable%20autoplay%20in%20browser'>google it</a>"
+alert("please enable autoplay and popups\nthese are required for most of the jokes on the site.\nand more importantly the startup that this is interrupting.\nif you dont enable these i will genuinely hate you as a person\yes im being /srs garfield.")
 }
 
 
