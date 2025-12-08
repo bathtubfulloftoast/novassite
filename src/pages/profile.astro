@@ -150,7 +150,7 @@ this site is entirely self developed, you can find the source on <a target="_top
 <b>Latest Blog Posts:</b><br>
 {
 posts
-.filter(posts => !posts.hidden)
+.filter(posts => !posts.data.hidden)
 .slice(0,5)
 .map((post) => (
 <a href={`/blog/${post.id}/`} target="blank">{post.data.title}</a><br>
