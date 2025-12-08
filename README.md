@@ -19,7 +19,9 @@ this is also a personal passion project so do not expect the code to be nice and
 
 these are the official mirrors of novassite.
 git.gay serves as the master being the host, pushing commits to the mirrors.
-if anything is done outside the master it will be entirely ignored,
+
+**if anything is done outside the master it will be entirely ignored**
+
 these mirrors only exist to make sure the sites source is *always* avalible
 *and to make sure its easy to switch if needed.*
 
