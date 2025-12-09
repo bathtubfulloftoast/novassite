@@ -7,5 +7,5 @@ const comics = (await getCollection('comics')).sort(
 
 const last = comics.length;
 
-return Astro.redirect('/comic/'+last, 301);
+return Astro.redirect('/comic/'+last+"/", 301);
 ---
