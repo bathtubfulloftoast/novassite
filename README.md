@@ -76,9 +76,11 @@ DEVMODE=
 | DEVMODE | weather to enable devmode or not | true (must be lowercase, dont enter false for the checks are ass.) |
 
 # Licenses
-it must be noted that i am an induvidual and do not profit from this site, any profits gained are given to me as an induvidual and not as a developer of this website.
+> [!NOTE]
+> i am an induvidual and do not profit from this site, any profits gained are given to me as an induvidual and not as a developer of this website.
 
-if you are a copyright owner and believe that i have infringed on your works contact me at ``nova@novassite.net``
+> [!IMPORTANT]
+> if you are a copyright owner and believe that i have infringed on your works contact me at ``nova@novassite.net``
 
 ## Source Code
 ```
