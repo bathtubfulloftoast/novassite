@@ -89,9 +89,11 @@ however any published variants must be provided with the same license.
 
 ## Assets
 ```
-any assets that are not code such as images, videos, fonts and sound effects are under their own seperate copyrights unless stated othewise.
+assets include anything that isnt code such as images, videos, fonts, sound effects and other binary files.
+assets fall under their own seperate copyrights unless stated othewise.
 
-directories that are counted as assets are listed below (all subdirectories included unless stated otherwise)
-* public/
-* src/content/
+directories can also be included under asset copyrights.
+directories that fall under asset copyrights are listed below (all subdirectories included unless stated otherwise)
+public/
+src/content/
 ```
