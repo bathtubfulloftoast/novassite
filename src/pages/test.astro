@@ -1,0 +1,10 @@
+---
+import 'dotenv/config';
+let devmode;
+
+if (process.env.DEVMODE) {
+devmode=`<a href="poop">unactivated</a>`;
+}
+---
+
+<Fragment set:html={devmode} />

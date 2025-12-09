@@ -1,11 +1,16 @@
 ---
+import 'dotenv/config';
 import "xp.css/dist/XP.css";
 import '/src/styles/desktop.css';
 import '/src/styles/colors.css';
 
 import desktop from '/src/assets/desktop.json';
 const icons = desktop;
+let devmode;
 
+if (process.env.DEVMODE) {
+devmode=`<h1 class="devmode">NovasSite DEVMODE</h1>`;
+}
 ---
 <head>
 <title>NovasDesktop</title>
@@ -74,6 +79,9 @@ also if youre on mobile youre a cheater how dare you<br>
 edit your browsers css like the desktop users you CHEATER
 
 <div id="loadingImg" style="background:#000;color:#fff;position:absolute;left:0;top:0;width:100vw;height:100vh;z-index:200;display:flex;align-items:center;text-align:center;justify-content:center;"><img style="width:35vh;image-rendering: pixelated;opacity:0;" fetchPriority="high" src="/media/loading.webp" id="sickassloadingimage"></div>
+
+<Fragment set:html={devmode} />
+
 
 <script src="/src/scripts/wallpaper.js"></script>
 

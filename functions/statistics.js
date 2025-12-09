@@ -24,6 +24,9 @@ export default async function lastfmHandler(req, res) {
             process_ms: cache.data.uptime.process_ms+CACHE_DURATION-remaining,
             server_ms: cache.data.uptime.server_ms+CACHE_DURATION-remaining,
             },
+            ...( process.env.DEVMODE === "true" && {
+                cache_remaining: Math.floor(remaining / 1000),
+            })
         });
     }
 
@@ -92,6 +95,9 @@ try {
 
         res.status(200).json({
             ...data,
+            ...( process.env.DEVMODE === "true" && {
+                cache_remaining: Math.floor(CACHE_DURATION / 1000)
+            })
         });
         console.log(`${colors.green("[Site]")} function uptime ran`);
 

@@ -55,6 +55,7 @@ DISCORD_API_KEY=
 DISCORD_BOT_CLIENTID=
 JOINCHANNEL=
 LOGCHANNEL=
+DEVMODE=
 ```
 
 ## explanation
@@ -72,3 +73,4 @@ LOGCHANNEL=
 | DISCORD_BOT_CLIENTID | Discord Bots Client ID | again no guide ig?? |
 | JOINCHANNEL | Discord Channel where joins/leaves will be logged | https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID |
 | LOGCHANNEL | Discord Channel where things will be logged | https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID |
+| DEVMODE | weather to enable devmode or not | true (must be lowercase, dont enter false for the checks are ass.) |

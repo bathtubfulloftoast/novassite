@@ -8,13 +8,17 @@ let IPADDR = "192.168.0.64";
 
 res.set('Cache-Control', "max-age=3600"); // client side request to your browser to save the data for 3600 seconds.
 
-if(CF) {
+if(process.env.DEVMODE) {
+IPADDR = "localhost (DEVMODE)";
+} else if(CF) {
 IPADDR = CF;
 } else if (XF) {
 IPADDR = XF;
 } else {
 IPADDR = LOC;
 }
+
+
 res.set('Content-Type', "text/plain");
 
 res.status(200).send(IPADDR);

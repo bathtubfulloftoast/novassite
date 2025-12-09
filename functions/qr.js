@@ -16,7 +16,9 @@ export default async function lastfmHandler(req, res) {
         const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);
         return res.status(200).json({
             ...cache.data,
+            ...( process.env.DEVMODE === "true" && {
             cache_remaining: Math.floor(remaining/1000),
+            })
         });
     }
 
@@ -59,7 +61,9 @@ export default async function lastfmHandler(req, res) {
 
         res.status(200).json({
             ...data,
+            ...( process.env.DEVMODE === "true" && {
             cache_remaining: Math.floor(CACHE_DURATION/1000),
+            })
         });
         console.log(`${colors.green("[Site]")} function qrcode ran`);
 
