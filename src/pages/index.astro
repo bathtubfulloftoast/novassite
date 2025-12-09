@@ -84,9 +84,10 @@ edit your browsers css like the desktop users you CHEATER
 
 
 <script src="/src/scripts/wallpaper.js"></script>
-
 <script src="/src/scripts/splash.js"></script>
 <script src="/src/scripts/openweather.js"></script>
+<script src="/src/scripts/startup.js"></script>
+<script src="/src/scripts/click.js"></script>
 
 <script src="/src/scripts/icons/amongus.js"></script>
 <script src="/src/scripts/icons/azure.js"></script>
@@ -119,65 +120,6 @@ edit your browsers css like the desktop users you CHEATER
 <script src="/src/scripts/icons/gregg.js"></script>
 <script src="/src/scripts/icons/brat.js"></script>
 
-
-<script>
-function getCookie(cname) {
-  let name = cname + "=";
-  let decodedCookie = decodeURIComponent(document.cookie);
-  let ca = decodedCookie.split(';');
-  for(let i = 0; i <ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-// why is this dogshit
-// die i hate javascript
-// i shouldve never gotten into javascript
-
-document.addEventListener("DOMContentLoaded", async function() {
-
-const img = document.getElementById("sickassloadingimage");
-const wrap = document.getElementById("loadingImg");
-if (getCookie("startupseen")) {
-loadingImg.remove();
-};
-
-const sound = new Audio("/media/sfx/startup.ogg");
-
-loadingImg.style.transition = "opacity 2s ease-in-out"
-img.style.transition = "opacity 2s ease-in-out"
-img.style.opacity=1;
-
-if(window.chrome){
-loadingImg.remove();
-alert("please enable autoplay and popups\nand be aware that this site is designed for firefox (which youre not using)\nexpect me forgetting to add shit that makes shit work on chrome.");
-document.cookie = "startupseen=true";
-}
-// fuck safari lmao
-const autoplay = navigator.getAutoplayPolicy(sound);
-
-if(autoplay == "allowed") {
-await new Promise(r => setTimeout(r, 3000));
-sound.play();
-await new Promise(r => setTimeout(r, 500));
-loadingImg.style.opacity=0;
-await new Promise(r => setTimeout(r, 2000));
-loadingImg.remove();
-document.cookie = "startupseen=true";
-} else {
-alert("please enable autoplay and popups\nthese are required for most of the jokes on the site.\nand more importantly the startup that this is interrupting.\nif you dont enable these i will genuinely hate you as a person\yes im being /srs garfield.")
-}
-
-
-
-});
-</script>
 
 <script>
 let now = new Date();
