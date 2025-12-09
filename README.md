@@ -83,7 +83,7 @@ if you are a copyright owner and believe that i have infringed on your works con
 ## Source Code
 ```
 this sites source code is provided under the  GNU General Public License (Version 3)
-you are free to copy, edit, and view this code and use it however you please.
+you are free to copy, edit, and view this code or use it however you please.
 however any published variants must be provided with the same license.
 ```
 
