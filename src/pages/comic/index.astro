@@ -1,11 +1,3 @@
 ---
-import {getCollection } from 'astro:content';
-
-const comics = (await getCollection('comics')).sort(
-(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
-
-const last = comics.length;
-
-return Astro.redirect('/comic/'+last, 301);
+return Astro.redirect('/comics/', 301);
 ---
