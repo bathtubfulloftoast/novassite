@@ -74,3 +74,24 @@ DEVMODE=
 | JOINCHANNEL | Discord Channel where joins/leaves will be logged | https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID |
 | LOGCHANNEL | Discord Channel where things will be logged | https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID |
 | DEVMODE | weather to enable devmode or not | true (must be lowercase, dont enter false for the checks are ass.) |
+
+# Licenses
+it must be noted that i am an induvidual and do not profit from this site, any profits gained are given to me as an induvidual and not as a developer of this website.
+
+if you are a copyright owner and believe that i have infringed on your works contact me at ``nova@novassite.net``
+
+## Source Code
+```
+this sites source code is provided under the  GNU General Public License (Version 3)
+you are free to copy, edit, and view this code and use it however you please.
+however any published variants must be provided with the same license.
+```
+
+## Assets
+```
+any assets that are not code such as images, videos, fonts and sound effects are under their own seperate copyrights unless stated othewise.
+
+directories that are counted as assets are listed below (all subdirectories included unless stated otherwise)
+* public/
+* src/content/
+```
