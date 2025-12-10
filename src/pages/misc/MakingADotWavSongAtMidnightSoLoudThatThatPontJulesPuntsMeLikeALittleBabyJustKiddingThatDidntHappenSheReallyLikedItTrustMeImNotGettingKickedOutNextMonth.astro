@@ -77,8 +77,8 @@ return "#"+hex
   document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 const divs = document.getElementsByClassName("block");
-var mouseX = event.clientX+document.body.scrollLeft;
-var mouseY = event.clientY+document.body.scrollTop;
+var mouseX = event.clientX+document.documentElement.scrollLeft;
+var mouseY = event.clientY+document.documentElement.scrollTop;
     
     const titfart = document.createElement("div");
     titfart.className = "block";
