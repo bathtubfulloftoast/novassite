@@ -6,11 +6,18 @@
 <meta content="/media/embeds/dotwavsoloud.png" property="og:image" />
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+<style is:global>
 body {
 background:url("/media/dotwavsoloud.png");
 background-size:10vw 20vh;
 color:red;
+}
+
+.block {
+width:20px;
+height:20px;
+position:absolute;
+display:block;
 }
 </style>
 </head>
@@ -52,5 +59,38 @@ sog.currentTime = 0;
 
 navigator.mediaSession.setActionHandler('previoustrack', () => {
 document.write("");
+navigator.mediaSession.remove();
 });
+
+</script>
+
+<script>
+function color() {
+const randomnumber = Math.floor(Math.random() * 16777215);
+
+
+let hex = randomnumber.toString(16);
+hex = hex.padEnd(6, "0");
+
+return "#"+hex
+};
+
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+const divs = document.getElementsByClassName("block");
+var mouseX = event.clientX-5;
+var mouseY = event.clientY-5;
+    
+    const titfart = document.createElement("div");
+    titfart.className = "block";
+    titfart.style.left = mouseX+"px";
+    titfart.style.top = mouseY+"px";
+    titfart.style.background= color()
+
+    document.body.appendChild(titfart);
+    if (divs.length > 20) {
+    divs[0].remove();
+    }
+    console.log(divs.length);
+  }, false);
 </script>
