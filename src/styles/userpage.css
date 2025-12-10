@@ -145,5 +145,5 @@ max-height:16px;
 }
 
 #oneko {
-filter: sepia(100%)  saturate(2000%) hue-rotate(250deg);
+filter: sepia(100%)  saturate(300%);
 }
