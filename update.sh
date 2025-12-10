@@ -2,13 +2,12 @@
 
 if [ "$1" == "-noprod" ]; then
 echo "assuming site only update."
-pm2 stop novassite
 
 git pull
 pnpm i
 pnpm run build
 
-pm2 start novassite
+pm2 restart novassite
 exit 0
 fi
 
@@ -18,7 +17,6 @@ printf 'What do you want to update?\n(Site Bot Pull Reset All)\n(S/B/P/R/A)'
 read updans
 
 clear
-pm2 stop novassite
 if [ "$updans" != "${updans#[Ss]}" ] ;then
 echo "only updating site"
 git pull
@@ -52,4 +50,4 @@ pnpm run build
 node deploy-commands.js
 fi
 
-pm2 start novassite
+pm2 restart novassite
