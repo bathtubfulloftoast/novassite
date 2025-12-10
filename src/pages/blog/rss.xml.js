@@ -10,7 +10,7 @@ export async function GET(context) {
 		description: "The Blog Of Nova",
 		site: context.site,
 		items: posts
-		.filter(posts => !posts.hidden)
+		.filter(posts => !posts.data.hidden)
 		.slice(0,10)
 		.map((post) => ({
 			...post.data,
