@@ -59,7 +59,8 @@ sog.currentTime = 0;
 
 navigator.mediaSession.setActionHandler('previoustrack', () => {
 document.write("");
-navigator.mediaSession.remove();
+navigator.mediaSession.metadata = null;
+
 });
 
 </script>
