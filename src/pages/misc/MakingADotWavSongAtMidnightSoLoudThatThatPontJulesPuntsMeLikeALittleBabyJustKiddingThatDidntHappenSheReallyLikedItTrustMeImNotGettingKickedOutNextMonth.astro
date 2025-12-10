@@ -77,13 +77,13 @@ return "#"+hex
   document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 const divs = document.getElementsByClassName("block");
-var mouseX = (event.clientX+document.body.scrollLeft)-5;
-var mouseY = (event.clientY+document.body.scrollTop)-5;
+var mouseX = event.clientX+document.body.scrollLeft;
+var mouseY = event.clientY+document.body.scrollTop;
     
     const titfart = document.createElement("div");
     titfart.className = "block";
-    titfart.style.left = mouseX+"px";
-    titfart.style.top = mouseY+"px";
+    titfart.style.left = mouseX-5+"px";
+    titfart.style.top = mouseY-5+"px";
     titfart.style.background= color()
 
     document.body.appendChild(titfart);
