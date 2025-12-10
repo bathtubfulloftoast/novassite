@@ -59,8 +59,6 @@ sog.currentTime = 0;
 
 navigator.mediaSession.setActionHandler('previoustrack', () => {
 document.write("");
-navigator.mediaSession.metadata = null;
-
 });
 
 </script>
@@ -79,8 +77,8 @@ return "#"+hex
   document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
 const divs = document.getElementsByClassName("block");
-var mouseX = event.clientX-5;
-var mouseY = event.clientY-5;
+var mouseX = (event.clientX+document.body.scrollLeft)-5;
+var mouseY = (event.clientY+document.body.scrollTop)-5;
     
     const titfart = document.createElement("div");
     titfart.className = "block";
@@ -93,5 +91,6 @@ var mouseY = event.clientY-5;
     divs[0].remove();
     }
     console.log(divs.length);
+    
   }, false);
 </script>
