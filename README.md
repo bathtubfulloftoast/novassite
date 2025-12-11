@@ -13,8 +13,8 @@ this is also a personal passion project so do not expect the code to be nice and
 
 # Official Mirrors
 - [git.gay](https://git.gay/bathtubfulloftoast/novassite) `MASTER`
-- [github](https://github.com/bathtubfulloftoast/novassite)
-<!-- - [gitlab](https://gitlab.com/bathtubfulloftoast/novassite) -->
+- [github](https://github.com/bathtubfulloftoast/novassite)<!--
+- [gitlab](https://gitlab.com/bathtubfulloftoast/novassite) -->
 - [codeberg](https://codeberg.org/bathtubfulloftoast/novassite)
 
 these are the official mirrors of novassite.
@@ -94,8 +94,5 @@ however any published variants must be provided with the same license.
 assets include anything that isnt code such as images, videos, fonts, sound effects and other binary files.
 assets fall under their own seperate copyrights unless stated othewise.
 
-directories can also be included under asset copyrights.
-directories that fall under asset copyrights are listed below (all subdirectories included unless stated otherwise)
-public/
-src/content/
+everything under git lfs is an asset.
 ```
