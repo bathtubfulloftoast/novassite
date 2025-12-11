@@ -17,3 +17,4 @@ update.sh export-ignore
 *.mp3 binary
 *.webm binary
 *.mp4 binary
+public/ filter=lfs diff=lfs merge=lfs -text
