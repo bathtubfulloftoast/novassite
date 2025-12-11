@@ -1,0 +1,65 @@
+<head>
+<title>i am placing blocks and shit</title>
+<style is:global>
+body {
+width:200vw;
+height:200vh;
+}
+.block {
+position:absolute;
+display:block;
+}
+</style>
+</head>
+<body>
+i am placing blocks and shit cause im in fucking minecraft
+</body>
+<script>
+let clicked = false;
+
+function color() {
+const randomnumber = Math.floor(Math.random() * 16777215);
+
+
+let hex = randomnumber.toString(16);
+hex = hex.padEnd(6, "0");
+
+return "#"+hex
+};
+
+document.addEventListener("mouseup", (e) => {
+   switch (e.button) {
+         case 0:
+
+if (clicked == false) {
+document.body.innerHTML = "";
+clicked = true;
+}
+
+const divs = document.getElementsByClassName("block");
+var mouseX = event.clientX+document.documentElement.scrollLeft;
+var mouseY = event.clientY+document.documentElement.scrollTop;
+const size = Math.ceil(Math.random()* (60 - 10) + 10);
+
+    const titfart = document.createElement("div");
+    titfart.className = "block";
+    titfart.style.left = mouseX-(Math.round(size/2))+"px";
+    titfart.style.top = mouseY-(Math.round(size/2))+"px";
+    titfart.style.width = size+"px";
+    titfart.style.height = size+"px";
+    titfart.style.background= color()
+
+    document.body.appendChild(titfart);
+    if (divs.length > 500) {
+    divs[0].remove();
+    }
+    console.log(divs.length);
+
+         break;
+   }
+});
+
+document.addEventListener("DOMContentLoaded", async function() {
+document.body.innerHTML = "click the screen to create a cube";
+});
+</script>
