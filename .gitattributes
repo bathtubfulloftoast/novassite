@@ -18,3 +18,4 @@ update.sh export-ignore
 *.webm binary
 *.mp4 binary
 public/** filter=lfs diff=lfs merge=lfs -text
+public/bee.txt filter=lfs diff=lfs merge=lfs -text
