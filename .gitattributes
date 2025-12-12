@@ -6,15 +6,16 @@ src/pages/commitID.txt.js export-ignore
 .gitattributes export-ignore
 update.sh export-ignore
 *.sh text eol=lf
-*.png binary
-*.jpg binary
+*.png filter=lfs diff=lfs merge=lfs -text
+*.jpg filter=lfs diff=lfs merge=lfs -text
 *.gif binary
-*.webp binary
+*.webp filter=lfs diff=lfs merge=lfs -text
 *.ico binary
 *.glb binary
 *.ttf binary
 *.ogg binary
 *.mp3 binary
 *.webm binary
-*.mp4 binary
+*.mp4 filter=lfs diff=lfs merge=lfs -text
 public/** filter=lfs diff=lfs merge=lfs -text
+*.jpeg filter=lfs diff=lfs merge=lfs -text
