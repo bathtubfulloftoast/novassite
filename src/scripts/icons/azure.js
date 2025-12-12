@@ -7,7 +7,7 @@ async function createaudio() {
 
 
     const imageElement = document.createElement('img');
-    imageElement.src = "/media/icons/azure.gif";
+    imageElement.src = "/media/icons/azure.png";
     imageElement.style.position = "absolute";
     imageElement.style.left = 0;
     imageElement.style.top = 0;

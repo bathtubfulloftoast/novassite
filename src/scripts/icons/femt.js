@@ -10,7 +10,7 @@ async function createaudio() {
     murderElement.volume = 0.3;
 
     const femtIMG = document.createElement('img');
-    femtIMG.src = "/media/icons/femt.gif";
+    femtIMG.src = "/media/p3t.webp";
     femtIMG.style.position = "absolute";
     femtIMG.style.left = 0;
     femtIMG.style.top = 0;
