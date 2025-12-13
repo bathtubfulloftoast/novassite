@@ -39,7 +39,19 @@ function getCookie(cname) {
 //     requestAnimationFrame(step);
 // }
 
+
 document.addEventListener("DOMContentLoaded", async function() {
+    const width = window.outerWidth;
+    let hash = window.location.hash;
+    let hashValue = hash.substring(1);
+
+
+    if (width<1500) {
+    if (hashValue !== "fromtree") {
+    window.location.replace("/tree#warn");
+    return;
+    }
+    }
 
     const img = document.getElementById("sickassloadingimage");
     const wrap = document.getElementById("loadingImg");
