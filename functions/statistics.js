@@ -58,6 +58,16 @@ try {
         }
     }
 
+        async function getLOAD() {
+        try {
+            const data = await si.currentLoad();
+            return data;
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
+    }
+
     async function getMEM() {
         try {
             const data = await si.mem();
@@ -70,6 +80,7 @@ try {
 
     const cputemp = await getCPUTEMP();
     const memory = await getMEM();
+    const load = await getLOAD();
 
         const data = {
     uptime: {
@@ -78,8 +89,9 @@ try {
     process_timestamp: PStamp,
     server_timestamp: OStamp
     },
-    loadavg: os.loadavg(),
-    cputemp: Math.round(cputemp.main),
+    loadavg: os.loadavg(),// what the fuck is a load average
+    cputemp: Math.round(cputemp.main), // in celseus 
+    cpu_usage: load.currentLoad; // listed as a percentage
     //memory: {
     //total:memory.total,
     //free:memory.free,
