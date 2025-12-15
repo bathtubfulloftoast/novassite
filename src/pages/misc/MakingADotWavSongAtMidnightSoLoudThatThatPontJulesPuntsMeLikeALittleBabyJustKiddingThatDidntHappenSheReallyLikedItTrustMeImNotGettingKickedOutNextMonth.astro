@@ -64,15 +64,6 @@ document.write("");
 </script>
 
 <script is:inline>
-function color() {
-const randomnumber = Math.floor(Math.random() * 16777215);
-
-
-let hex = randomnumber.toString(16);
-hex = hex.padEnd(6, "0");
-
-return "#"+hex
-};
 
   document.addEventListener('contextmenu', function(e) {
     e.preventDefault();
@@ -84,13 +75,12 @@ var mouseY = event.clientY+document.documentElement.scrollTop;
     titfart.className = "block";
     titfart.style.left = mouseX-5+"px";
     titfart.style.top = mouseY-5+"px";
-    titfart.style.background= color()
+    titfart.style.background= "#ff1c00";
 
     document.body.appendChild(titfart);
     if (divs.length > 20) {
     divs[0].remove();
     }
-    console.log(divs.length);
     
   }, false);
 </script>
