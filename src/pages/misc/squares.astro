@@ -2,8 +2,9 @@
 <title>i am placing blocks and shit</title>
 <style is:global>
 body {
-width:200vw;
-height:200vh;
+background:#000;
+color:#fff;
+overflow:hidden;
 }
 .block {
 position:absolute;
@@ -39,18 +40,19 @@ clicked = true;
 const divs = document.getElementsByClassName("block");
 var mouseX = event.clientX+document.documentElement.scrollLeft;
 var mouseY = event.clientY+document.documentElement.scrollTop;
-const size = Math.ceil(Math.random()* (60 - 10) + 10);
+const sizeX = Math.ceil(Math.random()* (80 - 15) + 15);
+const sizeY = Math.ceil(Math.random()* (80 - 15) + 15);
 
     const titfart = document.createElement("div");
     titfart.className = "block";
-    titfart.style.left = mouseX-(Math.round(size/2))+"px";
-    titfart.style.top = mouseY-(Math.round(size/2))+"px";
-    titfart.style.width = size+"px";
-    titfart.style.height = size+"px";
+    titfart.style.left = mouseX-(Math.round(sizeX/2))+"px";
+    titfart.style.top = mouseY-(Math.round(sizeY/2))+"px";
+    titfart.style.width = sizeX+"px";
+    titfart.style.height = sizeY+"px";
     titfart.style.background= color()
 
     document.body.appendChild(titfart);
-    if (divs.length > 500) {
+    if (divs.length > 1000) {
     divs[0].remove();
     }
     console.log(divs.length);
