@@ -11,7 +11,7 @@ this project does not work off of releases, the current commit is the current ve
 this is also a personal passion project so do not expect the code to be nice and commented.
 
 
-<!--# Official Mirrors
+# Official Mirrors
 - [git.gay](https://git.gay/bathtubfulloftoast/novassite) `MASTER`
 - [github](https://github.com/bathtubfulloftoast/novassite)
 - [gitlab](https://gitlab.com/bathtubfulloftoast/novassite)
@@ -24,7 +24,6 @@ git.gay serves as the master being the host, pushing commits to the mirrors.
 
 these mirrors only exist to make sure the sites source is *always* avalible
 *and to make sure its easy to switch if needed.*
--->
 # How to run
 
 | Command | What it does |
