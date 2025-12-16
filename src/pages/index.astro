@@ -1,231 +1,49 @@
----
-import 'dotenv/config';
-import "xp.css/dist/XP.css";
-import '/src/styles/desktop.css';
-import '/src/styles/colors.css';
-
-import desktop from '/src/assets/desktop.json';
-const icons = desktop;
-let devmode;
-
-if (process.env.DEVMODE) {
-devmode=`<h1 class="devmode">NovasSite DEVMODE</h1>`;
-}
----
 <head>
-<title>NovasDesktop</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" href="/favicon.ico">
-<meta name="generator" content={Astro.generator} />
-<meta content="Novas Site" property="og:title" />
-<meta content="Novas Desktop, free for all to see!" property="og:description" />
-<meta content="/media/embeds/main.png" property="og:image" />
-<meta content="#6b0059" data-react-helmet="true" name="theme-color" />
-<meta charset="UTF-8" />
-<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://novassite.net/blog/rss.xml">
-<meta name="darkreader-lock"/> <!-- i love how you can force disable dark reader (good feature but can be used for EVILLLLLL) -->
-<link rel="sitemap" href="/sitemap-index.xml" />
+<style is:global>
+body {
+overflow:hidden;
+background:#000;
+}
+
+
+iframe {
+width:100vw;
+height:100vh;
+position:absolute;
+left:0;
+top:0;
+border:none;
+
+}
+</style>
 </head>
 
-
-<div class="center-screen"  >
-<div style="display:inline-block;z-index:5;padding:0px;margin:0px" id="window">
-  <div class="title-bar">
-    <div class="title-bar-text"><img fetchPriority="low" src="/media/retro.png" height="16px" style="vertical-align: text-top;"> <span id="splash">Nova's Profile</span></div>
-    <div class="title-bar-controls">
-      <button style="cursor:pointer" aria-label="Minimize" id="closewindow" ></button>
-      <button style="cursor:pointer" aria-label="Maximize" onclick="location.href='/profile';"></button>
-      <button style="cursor:pointer" aria-label="Close" onclick="location.href='/death';"></button>
-    </div>
-  </div>
-  <div style="padding:0px;margin:0px">
-<iframe style="padding:0px;margin:0px;border-left:1px solid #0831d9;border-top:none;border-right:1px solid #001ea0;border-bottom:2px solid #001ea0;background:#ece9d8" src="/profile" width="800px" height="600px;" frameBorder="" id="novasprofile"></iframe>
-</div>
-</div>
-</div>
-
-<div id="bnuy"></div>
-
-<div class="icons">
-{icons
-.filter(item => !item.hidden)
-.map((item) => (
-<div class="icon" id={item.id}>
-<img fetchPriority="low" src={`/media/icons/${item.icon}`} alt={item.icon} /><br>
-<span>{item.filename}</span>
-</div>
-))}
-</div>
-
-<div class="taskbar">
-<div style="float:left"><a id="start" style="cursor:pointer;"><img fetchPriority="low" src="/media/start.gif"></a></div> <!-- no href because it adds select box -->
-<div id="reopen"><img src="/media/retro.png"></div>
-
-
-<div class="time" id="time">11:24 PM</div>
-<div class="time" id="date" style="width:100px;word-spacing: -2px;">06 / 09 / 2007</div>
-<div class="time"><a href="/media/secrets/clouds.mp4" id="wlnk" title="22&deg;C" target="_blank" ><img fetchPriority="low" src="/media/weather/16/03d.png" id="wimg" style="vertical-align: -2px;"> <span id="wtmp">72&deg;F</span></a></div>
-
-<!-- <div class="time" style="width:40px"><img id="battery" class="battery" src="/blank.gif"></div> -->
-
-</div>
-
-<span style="background:#fff">welcome to boundary break where we basically take the camera anywhere we want</span><br>
-<video src="/media/secrets/electroricardo.mp4" preload="none" controls></video>
-<br>
-watch as hit star ricardo milos does a funny dance with a funnier backing track!<br>
-there is nothing else about this video worth mentioning<br>
-also if youre on mobile youre a cheater how dare you<br>
-edit your browsers css like the desktop users you CHEATER
-
-<div id="loadingImg" style="background:#000;color:#fff;position:absolute;left:0;top:0;width:100vw;height:100vh;z-index:200;display:flex;align-items:center;text-align:center;justify-content:center;"><img style="width:35vh;image-rendering: pixelated;opacity:0;" fetchPriority="high" src="/media/loading.webp" id="sickassloadingimage"></div>
-
-<Fragment set:html={devmode} />
-
-
-<script src="/src/scripts/wallpaper.js"></script>
-<script src="/src/scripts/splash.js"></script>
-<script src="/src/scripts/openweather.js"></script>
-<script src="/src/scripts/startup.js"></script>
-<script src="/src/scripts/click.js"></script>
-
-<script src="/src/scripts/icons/amongus.js"></script>
-<script src="/src/scripts/icons/azure.js"></script>
-<script src="/src/scripts/icons/brooklyn.js"></script>
-<script src="/src/scripts/icons/charmer.js"></script>
-<script src="/src/scripts/icons/creekflow.js"></script>
-<script src="/src/scripts/icons/deltarune.js"></script>
-<script src="/src/scripts/icons/femt.js"></script>
-<script src="/src/scripts/icons/foodhouse.js"></script>
-<script src="/src/scripts/icons/fun.js"></script>
-<script src="/src/scripts/icons/girlyteengirl.js"></script>
-<script src="/src/scripts/icons/lancer.js"></script>
-<script src="/src/scripts/icons/liberal.js"></script>
-<script src="/src/scripts/icons/lobotomy.js"></script>
-<script src="/src/scripts/icons/mimi.js"></script>
-<script src="/src/scripts/icons/mrdouchebag.js"></script>
-<script src="/src/scripts/icons/remember.js"></script>
-<script src="/src/scripts/icons/rotten.js"></script>
-<script src="/src/scripts/icons/speen.js"></script>
-<script src="/src/scripts/icons/stupid.js"></script>
-<script src="/src/scripts/icons/win93.js"></script>
-<script src="/src/scripts/icons/ytps.js"></script>
-<script src="/src/scripts/icons/sawthesign.js"></script>
-<script src="/src/scripts/icons/guestbook.js"></script>
-<script src="/src/scripts/icons/jules.js"></script>
-<script src="/src/scripts/icons/dailyman.js"></script>
-<script src="/src/scripts/icons/toby.js"></script>
-<script src="/src/scripts/icons/hitpoint.js"></script>
-<script src="/src/scripts/icons/protogent.js"></script>
-<script src="/src/scripts/icons/gregg.js"></script>
-<script src="/src/scripts/icons/brat.js"></script>
-
-
 <script>
-let now = new Date();
-let hours = now.getHours();
-let minutes = now.getMinutes();
-let ampm = hours >= 12 ? 'PM' : 'AM';
+const width = window.outerWidth;
+let hash = window.location.hash;
+let hashValue = hash.substring(1);
 
-hours = hours % 12;
-hours = hours ? hours : 12;
+document.addEventListener("DOMContentLoaded", async function() {
+const desktop = document.createElement('iframe');
+desktop.src="/desktop/";
 
-minutes = minutes < 10 ? '0' + minutes : minutes;
+window.scrollTo(0,0);
 
-document.getElementById("time").innerHTML = `${hours}:${minutes} ${ampm}`;
-</script>
+if (hashValue == "fromtree") {
+window.location.replace("/desktop/");
+return;
+}
 
-<script>
-const now = new Date();
-const month = String(now.getMonth()+1).padStart(2, '0');
-const day = String(now.getDate()).padStart(2, '0');
-const year = now.getFullYear();
+if (width<1500) {
+window.location.replace("/tree/#warn");
+return;
+} else {
+document.body.appendChild(desktop);
 
-document.getElementById("date").innerHTML = `${month} / ${day} / ${year}`;
-</script>
-
-<script>
-
-
-async function createaudio() {
-
-
-    const audioElement = new Audio("/media/sfx/fart.ogg");
-    audioElement.volume = 0.2;
-    audioElement.id = "shartmenu";
-
-
-    document.body.appendChild(audioElement);
-
-
-    audioElement.play();
-
-audioElement.addEventListener('ended', (event) => {
-audioElement.remove();
-});
-
+desktop.onload = function() {
+document.title=desktop.contentWindow.document.title;
 };
 
-document.getElementById("start").addEventListener("click", function(event) {
-event.preventDefault();
-if(!document.getElementById("shartmenu")) {
-createaudio(); //ive removed the ability to spam im sorgy.
 }
 });
-
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", async function() {
-document.getElementById("reopen").style.display = "none";
-});
-
-document.getElementById("closewindow").addEventListener("click", function(event) {
-event.preventDefault();
-document.getElementById("window").style.display = "none";
-document.getElementById("reopen").style.display = "block";
-});
-
-document.getElementById("reopen").addEventListener("click", function(event) {
-event.preventDefault();
-document.getElementById("window").style.display = "block";
-document.getElementById("reopen").style.display = "none";
-
-});
-</script>
-
-<script>
-
-const element = document.getElementById("window");
-
-let startX, startY, startLeft, startTop;
-
-element.addEventListener("mousedown", (e) => {
-  e.preventDefault();
-  element.style.cursor = "move";
-
-  startX = e.clientX;
-  startY = e.clientY;
-
-  startLeft = element.offsetLeft;
-  startTop = element.offsetTop;
-
-  const onMove = (event) => {
-    const dx = event.clientX - startX;
-    const dy = event.clientY - startY;
-
-    element.style.left = `${startLeft + dx}px`;
-    element.style.top = `${startTop + dy}px`;
-  };
-
-  const onUp = () => {
-    element.style.cursor = "default";
-    document.removeEventListener("mousemove", onMove);
-    document.removeEventListener("mouseup", onUp);
-  };
-
-  document.addEventListener("mousemove", onMove);
-  document.addEventListener("mouseup", onUp);
-});
-
 </script>

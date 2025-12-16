@@ -91,7 +91,7 @@ try {
     },
     loadavg: os.loadavg(),// what the fuck is a load average
     cputemp: Math.round(cputemp.main), // in celseus 
-    cpu_usage: load.currentLoad; // listed as a percentage
+    cpu_usage: Math.round(load.currentLoad), // listed as a percentage
     //memory: {
     //total:memory.total,
     //free:memory.free,

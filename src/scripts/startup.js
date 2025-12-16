@@ -41,21 +41,10 @@ function getCookie(cname) {
 
 
 document.addEventListener("DOMContentLoaded", async function() {
-    const width = window.outerWidth;
-    let hash = window.location.hash;
-    let hashValue = hash.substring(1);
-
-
-    if (width<1500) {
-    if (hashValue !== "fromtree") {
-    window.location.replace("/tree#warn");
-    return;
-    }
-    }
-
     const img = document.getElementById("sickassloadingimage");
     const wrap = document.getElementById("loadingImg");
     const sound = new Audio("/media/sfx/startup.ogg");
+    window.scrollTo(0,0);
 
     if (getCookie("startupseen")) {
         loadingImg.remove();

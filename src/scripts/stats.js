@@ -47,7 +47,7 @@ time = uptime + ' millisecond' + (uptime > 1 ? 's' : '');
         document.getElementById("serverstats").innerHTML = `<b>Server Stats:</b><br>
         server up for: ${time}<br>
         cpu temp: ${data.cputemp}&deg;C<br>
-        loadavg: ${JSON.stringify(data.loadavg).replaceAll(",", ", ")}`;
+        cpu usage: ${data.cpu_usage}%`;
 
 
     }
