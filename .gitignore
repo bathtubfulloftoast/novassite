@@ -8,7 +8,4 @@ pnpm-debug.log*
 .env
 .env.production
 .DS_Store
-webcam.jpg
-webcam_s.jpg
-webcam_d.jpg
 cache/*
