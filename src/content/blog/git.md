@@ -35,8 +35,8 @@ then i pushed the changes and cloned them back from git.gay
 here were the results
 
 * 309M    novassite.git
-* 206M    bfg-deleter-test.git
-* 64M     git-filter-repo-deleter-test.git
+* 206M    bfg
+* 64M     git-filter-repo
 
 note: BFG HAD A FUCKING ADVANTAGE WITH ME DELETING EVERY FILE OVER 2MB
 HOW DID IT LOSE???
