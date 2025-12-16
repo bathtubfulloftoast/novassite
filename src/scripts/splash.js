@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', async function() {
 
   var now = new Date();
-  var dd = String(now.getDate());
-  var mm = String(now.getMonth() + 1); // JANUARY AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
-  var yyyy = now.getFullYear();
+  var day = String(now.getDate());
+  var month = String(now.getMonth() + 1); // JANUARY AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
+  var year = now.getFullYear();
 
   function thanksgiving(theyear) {
     const lastOfNov = new Date(theyear, 10, 30).getDay();
@@ -12,16 +12,16 @@ document.addEventListener('DOMContentLoaded', async function() {
   }
 // stolen from https://forum.freecodecamp.org/t/how-to-calculate-when-is-thanks-giving-day-in-javascript/247187/3
 
-const currentdate = `${mm}/${dd}`;
+const currentdate = `${month}/${day}`;
 
   let cachedsplash;
 
   const holidays = {
     "6/9":"HAPPY BIRTHDAY!!", // im the first one cus im so great ;3
-    "12/31": `${yyyy+1} is upon us...`,
+    "12/31": `${year+1} is upon us...`,
     "1/1": "HAPPY NEW YEAR!!!",
     "7/4": "fuck the british",
-    [thanksgiving(yyyy)]: "happy turkey day :D", // no idea if this one works i just kind of smashed my head against a table here
+    [thanksgiving(year)]: "happy turkey day :D", // no idea if this one works i just kind of smashed my head against a table here
     "3/17":"its saint patrick's day! :D", // we really dont gaf its not a major holiday
     "12/24":"i can hear the sleigh bells ringing...",
     "12/25":"MERRRYYY CHRIMAAAA",
