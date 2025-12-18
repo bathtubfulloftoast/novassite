@@ -40,7 +40,7 @@ wrapper.className = "center-screen";
 if (isNaN(time)) {
 document.getElementById("error").remove();
 }
-else if (time < now-60000) {
+else if (time < now) {
 document.getElementById("error").innerHTML="please select a time in the future";
 } // shit code dont do this, however its easier for me to read and the compiler handles this bullshit so :)
 else if(hash) {
