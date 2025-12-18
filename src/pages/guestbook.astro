@@ -17,6 +17,17 @@ color:var(--fg0);
 font-family: Arial, sans-serif;
 }
 
+#submit {
+cursor:pointer;
+}
+
+#submit:disabled {
+border:none;
+background:var(--bg2);
+color:var(--fg2);
+cursor:not-allowed;
+}
+
 a {
 text-decoration:none;
 }
@@ -80,16 +91,6 @@ margin:5px;
 border-radius:10px;
 }
 
-.message.succ {
-background:var(--green);
-color:var(--fg1);
-}
-
-.message.fale {
-background:var(--red);
-color:var(--fg1);
-}
-
 input {
 background:var(--bg4);
 color:var(--fg0);
@@ -145,7 +146,7 @@ max-height:100vw;
 <label for="message">Message:</label><br>
 <textarea type="text" minlength="5" maxlength="512"  rows="2" cols="50" id="message" name="message" placeholder="i love novassite.net" required></textarea><br><br>
 
-<input type="submit" value="Submit">
+<input id="submit" type="submit" value="Submit">
 </form>
 
 <script>
@@ -277,16 +278,19 @@ body: new URLSearchParams( {
 });
 
 if(response.ok) {
-form.name.value = "";
-form.message.value = "";
-form.innerHTML = `<div class="message succ">submission posted refresh the page to see it posted!</div>`;
+alert("submission posted!\npage will be refreshed.");
 window.location.replace(`#1`);
+await location.reload();
+
 }
 
 const data = await response.json();
 
 if(data.error) {
-form.innerHTML = `<div class="message fale">${data.error}</div>`;
+form.submit.disabled = true;
+alert(data.error);
+await new Promise(r => setTimeout(r, 3100));
+form.submit.disabled = false;
 }
 })
 </script>
