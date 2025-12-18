@@ -10,5 +10,56 @@ import '/src/styles/misc.css';
 <h1>Stupid Nintendo Games</h1>
 <h2>a list of every nintendo game ever*</h2>
 
-<a href="./wiiu">Wii U</a><br>
-<a href="./3ds">3ds</a>
+<a href="#wiiu">Wii U</a><br>
+<a href="#3ds">3ds</a>
+
+<script>
+let hash = window.location.hash;
+hash = hash.substring(1); 
+hash = decodeURI(hash);
+
+document.addEventListener("DOMContentLoaded", async function() {
+
+if(hash) {
+const response = await fetch(`/stupid nintendo games/${hash}.txt`);
+//const response = await fetch(`./${hash}.txt`);
+
+if(response.ok) {
+const text = await response.text();
+const sauce = text.split("\n").map(name => name.trim()).filter(name => name);
+
+const max = sauce.length;
+const id = Math.floor(Math.random() * max);
+
+const picked = sauce[id];
+
+const link = document.createElement("a");
+link.href = "https://google.com/search?q="+encodeURIComponent(`${picked} for ${hash}`);
+link.innerHTML = picked;
+link.target = "_blank";
+
+const wrap = document.createElement("div");
+wrap.className="center-screen";
+
+document.body.innerHTML = "";
+document.body.appendChild(wrap);
+wrap.appendChild(link);
+
+}
+
+}
+
+
+document.querySelectorAll("a").forEach((tag) => {
+
+tag.addEventListener("click", function(event) {
+event.preventDefault();
+
+window.open(tag.href, '_top');
+
+location.reload();
+
+});
+});
+});
+</script>
