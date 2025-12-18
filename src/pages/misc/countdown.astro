@@ -54,7 +54,8 @@ var x = setInterval(function() {
   var distance = time- now;
     
   // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var weeks = Math.floor(distance / (1000 * 60 * 60 * 24 * 7));
+  var days = Math.floor(distance % (1000 * 60 * 60 * 24 * 7) / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
   var seconds = Math.floor((distance % (1000 * 60)) / 1000);
@@ -66,6 +67,7 @@ var x = setInterval(function() {
 const minute = 1000* 60;
 const hour = minute * 60;
 const day = hour * 24;
+const week = day * 7;
 
 if (distance <= minute) {
 timer.innerHTML = seconds + "s ";
@@ -73,8 +75,10 @@ timer.innerHTML = seconds + "s ";
 timer.innerHTML = minutes + "m " + seconds + "s ";
 } else if (distance <= day ) {
 timer.innerHTML = hours + "h " + minutes + "m " + seconds + "s ";
-} else {
+} else if (distance <= week) {
 timer.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+} else {
+timer.innerHTML = weeks + "w " + days + "d " + hours + "h " + minutes + "m " + seconds + "s "; 
 }
   
     
