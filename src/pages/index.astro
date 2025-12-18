@@ -38,21 +38,20 @@ desktop.src="/desktop/";
 
 window.scrollTo(0,0);
 
-if (hashValue == "fromtree") {
-window.location.replace("/desktop/");
-return;
-}
+
 
 if (width<1500) {
-window.location.replace("/tree/#warn");
-return;
-} else {
+if (hashValue !== "fromtree") {
+return window.location.replace("/tree/#warn");
+}
+}
+
 document.body.appendChild(desktop);
 
-desktop.onload = function() {
-document.title=desktop.contentWindow.document.title;
-};
+//desktop.onload = function() {
+//document.title=desktop.contentWindow.document.title;
+//};
 
-}
+
 });
 </script>
