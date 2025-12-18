@@ -6,14 +6,14 @@
       "url": "https://ray.novassite.net"
     },
     {
-      "title": "cool art friend :D",
-      "source": "batz.png",
-      "url": "https://toyhou.se/BATZZILLA"
-    },
-    {
       "title": "all of the worlds creek are mine to flow",
       "source": "jules.gif",
       "url": "https://thatponyjules.nekoweb.org/"
+    },
+    {
+      "title": "cool art friend :D",
+      "source": "batz.png",
+      "url": "https://toyhou.se/BATZZILLA"
     },
     {
       "title": "hoe",
@@ -305,6 +305,11 @@
       "title": "E-Mail",
       "source": "envelope",
       "url": "mailto:mail@novassite.net"
+    },
+    {
+      "title": "ko-fi",
+      "source": "cup-hot",
+      "url": "https://ko-fi.com/bathtubfulloftoast"
     },
     {
       "title": "archive.org",
