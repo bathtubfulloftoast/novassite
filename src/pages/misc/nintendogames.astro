@@ -41,9 +41,12 @@ link.target = "_blank";
 const wrap = document.createElement("div");
 wrap.className="center-screen";
 
+const header = document.createElement("h1");
+
 document.body.innerHTML = "";
 document.body.appendChild(wrap);
-wrap.appendChild(link);
+wrap.appendChild(header);
+header.appendChild(link);
 
 }
 
