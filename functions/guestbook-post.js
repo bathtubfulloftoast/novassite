@@ -30,7 +30,8 @@ const now = new Date();
 
 if(!req.body) {
 return res.status(400).json({
-error:"no data"
+error:"no data",
+wait:1000
 });
 }
 
@@ -40,13 +41,15 @@ var scammer = false;
 
 if(!username) {
 return res.status(400).json({
-error:"no username set"
+error:"no username set",
+wait:1000
 });
 };
 
 if(!message) {
 return res.status(400).json({
-error:"no message set"
+error:"no message set",
+wait:1000
 });
 };
 
@@ -58,20 +61,23 @@ message = message.replace(/  +/g, ' ');
 
 if(username.length < 2) {
 return res.status(400).json({
-error:"name too short"
+error:"name too short",
+wait:1000
 });
 };
 
 if(message.length < 5) {
 return res.status(400).json({
-error:"message too short"
+error:"message too short",
+wait:1000
 });
 };
 
 if (rcache && (Date.now() - rcache < CACHE_DURATION)) {
 const remaining = CACHE_DURATION - (Date.now() - rcache);
 return res.status(429).json({
-error:`not so fast, the rate limit is active for another ${Math.ceil(remaining/1000)}. seconds`
+error:`not so fast, the rate limit is active for another ${Math.ceil(remaining/1000)}. seconds`,
+wait: remaining+500
 });
 } else {
 rcache = Date.now();
@@ -136,8 +142,9 @@ if (err) console.error('Error closing DB:', err.message);
 });
 
 if(scammer) {
-res.status(400).json({
+return res.status(400).json({
 error:"your post has been held for review please wait for it to be checked manually.",
+wait: CACHE_DURATION+500
 });
 }
 
@@ -145,6 +152,7 @@ res.status(200).json({
 name:username,
 message:message,
 date:now.toISOString(),
+wait: CACHE_DURATION+500,
 });
 
 console.log(`${colors.green("[Site]")} someone posted to the guestbook`);

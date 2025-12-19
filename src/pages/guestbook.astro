@@ -236,7 +236,7 @@ message = message.replaceAll("\n", "<br>");
 
 
 var dd = String(date.getDate()).padStart(2, '0');
-var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+var mm = String(date.getMonth() + 1).padStart(2, '0');
 var yyyy = date.getFullYear();
 
 let hours = date.getHours();
@@ -244,7 +244,7 @@ let minutes = date.getMinutes();
 let ampm = hours >= 12 ? 'PM' : 'AM';
 
 hours = hours % 12;
-hours = hours ? hours : 12; // If hour is 0, set it to 12
+hours = hours ? hours : 12;
 minutes = minutes < 10 ? '0' + minutes : minutes;
 
 const postwrap = document.createElement("div");
@@ -277,20 +277,58 @@ body: new URLSearchParams( {
 }),
 });
 
-if(response.ok) {
-alert("submission posted!\npage will be refreshed.");
-window.location.replace(`#1`);
-await location.reload();
-
-}
-
 const data = await response.json();
 
+if(response.ok) {
+alert(`submission posted!\nplease wait ${Math.ceil(data.wait/1000)} seconds to make another post.`);
+
+const date = new Date();
+
+var dd = String(date.getDate()).padStart(2, '0');
+var mm = String(date.getMonth() + 1).padStart(2, '0');
+var yyyy = date.getFullYear();
+
+let hours = date.getHours();
+let minutes = date.getMinutes();
+let ampm = hours >= 12 ? 'PM' : 'AM';
+//mmmmmmm yummy copytingshit i love you i HATE YOUUUUU
+
+hours = hours % 12;
+hours = hours ? hours : 12;
+minutes = minutes < 10 ? '0' + minutes : minutes;
+
+const wrapper = document.getElementsByClassName("postwrapper");
+
+const post = document.createElement("div");
+post.className = "post";
+post.innerHTML = `<b>${name}</b> <i>${mm}/${dd}/${yyyy} ${hours}:${minutes} ${ampm}</i><br><span>${message}</span>`;
+
+form.name.value = "";
+form.message.value = "";
+
+wrapper[0].before(post);
+if(wrapper.length >= 30) {//id rather grab the max post length from the api but i am NOT adding the max to the post api
+wrapper[wrapper.length-1].remove();
+}
+
+
+form.submit.disabled = true;
+await new Promise(r => setTimeout(r, data.wait));
+form.submit.disabled = false;
+
+} else {
 if(data.error) {
 form.submit.disabled = true;
 alert(data.error);
-await new Promise(r => setTimeout(r, 3100));
+await new Promise(r => setTimeout(r, data.wait));
 form.submit.disabled = false;
+} else {
+alert("submission failed to post.");
+return;
 }
+}
+
+
+
 })
 </script>
