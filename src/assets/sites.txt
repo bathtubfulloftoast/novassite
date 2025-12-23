@@ -197,6 +197,7 @@ jpegzilla.com
 juliaviolet.dev
 jvns.ca
 kate.pet
+kc.is.being.pet
 keithclark.co.uk
 keleats.rocks
 kernel.org

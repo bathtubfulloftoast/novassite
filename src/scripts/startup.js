@@ -22,6 +22,8 @@ const bgm = new Audio("/media/sfx/bgm.ogg");
 bgm.volume = 0;
 bgm.loop="true";
 const muter = document.getElementById("muter");
+const bgvolume = 0.2;
+
 
 function fadeTo(target, duration = 1000) {
     bgm.play();
@@ -52,9 +54,9 @@ document.addEventListener("DOMContentLoaded", async function() {
         if (getCookie("bgmute") == "true") {
         muter.src="/media/mute.png";
         bgm.pause();
-        bgm.volume = 1;
+        bgm.volume = bgvolume;
         } else {
-        fadeTo(1, 2000);
+        fadeTo(bgvolume, 2000);
         muter.src = "/media/unmute.png";
         document.cookie = "bgmute=false";
         }
@@ -69,7 +71,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         loadingImg.remove();
         alert("please enable autoplay and popups\nand be aware that this site is designed for firefox (which youre not using)\nexpect me forgetting to add shit that makes shit work on chrome.");
         document.cookie = "startupseen=true";
-        fadeTo(1, 2000);
+        fadeTo(bgvolume, 2000);
     }
     // fuck safari lmao
     const autoplay = navigator.getAutoplayPolicy(sound);
@@ -85,7 +87,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
         sound.addEventListener('ended', async (event) => {
             await new Promise(r => setTimeout(r, 1000));
-            fadeTo(1, 1000);
+            fadeTo(bgvolume, 1000);
         });
 
     } else {
