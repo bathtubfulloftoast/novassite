@@ -18,26 +18,27 @@ function getCookie(cname) {
 // i shouldve never gotten into javascript
 // https://www.w3schools.com/js/js_cookies.asp
 
-// const bgm = new Audio("/media/sfx/bgm.ogg");
-// bgm.volume = 0;
+const bgm = new Audio("/media/sfx/bgm.ogg");
+bgm.volume = 0;
+bgm.loop="true";
+const muter = document.getElementById("muter");
 
-// function fadeTo(target, duration = 1000) {
-//     bgm.loop="true";
-//     bgm.play();
-//     const start = bgm.volume;
-//     const delta = target - start;
-//     const startTime = performance.now();
-//
-//     function step() {
-//         const now = performance.now();
-//         const progress = Math.min((now - startTime) / duration, 1);
-//         bgm.volume = start + delta * progress;
-//
-//         if (progress < 1) requestAnimationFrame(step);
-//     }
-//
-//     requestAnimationFrame(step);
-// }
+function fadeTo(target, duration = 1000) {
+    bgm.play();
+    const start = bgm.volume;
+    const delta = target - start;
+    const startTime = performance.now();
+
+    function step() {
+        const now = performance.now();
+        const progress = Math.min((now - startTime) / duration, 1);
+        bgm.volume = start + delta * progress;
+
+        if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
+}
 
 
 document.addEventListener("DOMContentLoaded", async function() {
@@ -48,7 +49,15 @@ document.addEventListener("DOMContentLoaded", async function() {
 
     if (getCookie("startupseen")) {
         loadingImg.remove();
-        // fadeTo(1, 2000);
+        if (getCookie("bgmute") == "true") {
+        muter.src="/media/mute.png";
+        bgm.pause();
+        bgm.volume = 1;
+        } else {
+        fadeTo(1, 2000);
+        muter.src = "/media/unmute.png";
+        document.cookie = "bgmute=false";
+        }
     };
 
 
@@ -60,6 +69,7 @@ document.addEventListener("DOMContentLoaded", async function() {
         loadingImg.remove();
         alert("please enable autoplay and popups\nand be aware that this site is designed for firefox (which youre not using)\nexpect me forgetting to add shit that makes shit work on chrome.");
         document.cookie = "startupseen=true";
+        fadeTo(1, 2000);
     }
     // fuck safari lmao
     const autoplay = navigator.getAutoplayPolicy(sound);
@@ -75,7 +85,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
         sound.addEventListener('ended', async (event) => {
             await new Promise(r => setTimeout(r, 1000));
-            // fadeTo(1, 1000);
+            fadeTo(1, 1000);
         });
 
     } else {
@@ -83,5 +93,19 @@ document.addEventListener("DOMContentLoaded", async function() {
     }
 
 
+});
 
+
+
+muter.addEventListener("click", function(event) {
+    event.preventDefault();
+    if (getCookie("bgmute") == "true") {
+        muter.src="/media/unmute.png";
+        bgm.play();
+        document.cookie = "bgmute=false";
+    } else {
+    muter.src = "/media/mute.png";
+    bgm.pause();
+    document.cookie = "bgmute=true";
+    }
 });
