@@ -111,3 +111,14 @@ muter.addEventListener("click", function(event) {
     document.cookie = "bgmute=true";
     }
 });
+
+document.addEventListener("visibilitychange", () => {
+if (getCookie("bgmute") == "false") {//i love you bgmute cookie oh my god this code is so BAAAAAADDDDD
+if(document.visibilityState=="hidden") {
+bgm.pause();
+} else {
+bgm.play();
+}
+}
+});
+
