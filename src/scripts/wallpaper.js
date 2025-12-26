@@ -20,7 +20,7 @@ icon.querySelector("img").src = "/media/icons/christmas.png";
 icon.querySelector("img").alt = "mariah carey";
 
 icon.querySelector("span").innerHTML = "mariah.carey";
-
+icon.style.pointerEvents="none";
 
 });
 
