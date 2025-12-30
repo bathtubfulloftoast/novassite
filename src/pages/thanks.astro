@@ -1,0 +1,36 @@
+---
+import { promises as fs } from "fs";
+import path from "path";
+    const filePath = path.resolve("src/assets/people.json"); // Adjust based on your project structure
+        const text = await fs.readFile(filePath, "utf-8");
+        const data = JSON.parse(text);
+
+import '/src/styles/colors.css';
+import '/src/styles/misc.css';
+---
+
+<head>
+<title>Thank You!</title>
+<style>
+body {
+text-align:left;
+}
+</style>
+<!-- how do i style this shit -->
+</head>
+<h1>THANK YOU!!!</h1>
+<p>this page is dedicated to all the people whove helped make this site possible<br>
+thanks are given weather the person has been payed or not because they deserve it all the same fuck you<br>
+thanks are only given to people not copyright holders. <b>takedowns may be issued to <a href="mailto:takedown@novassite.net">takedown@novassite.net</a></b></p>
+
+<p>
+<a href={data[1].url}>{data[1].name}</a> for making a whole bunch of art on the site (<i>like the favicon</i>)<br>
+<a href={data[0].url}>{data[0].name}</a> for making one of the comics and evil nova<br>
+<a href={data[3].url}>{data[3].name}</a> for making all the weather icons<br>
+<a href={data[2].url}>{data[2].name}</a> for making the main bgm and some sound effects<br>
+<a href={data[4].url}>{data[4].name}</a> for making the 3d models of nova<br>
+<a href={data[5].url}>{data[5].name}</a> for screaming on my site<br>
+<a href={data[6].url}>{data[6].name}</a> for making <a id="creekflow" href="#">aliceflow</a><br>
+
+</p>
+<script src="/src/scripts/icons/creekflow.js"></script>

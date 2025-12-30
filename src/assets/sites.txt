@@ -110,6 +110,7 @@ datagubbe.se
 daudix.one
 deepy.me
 denisdefreyne.com
+detour.dev
 devring.club
 dexrnzacattack.github.io
 dexterdaybreaker.neocities.org
@@ -251,6 +252,7 @@ megu.dev
 melankorin.net
 melody.codes
 melonking.net
+melonland.net
 mem451.com
 meower.moe
 metanetsoftware.com

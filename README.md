@@ -79,7 +79,7 @@ DEVMODE=
 > i am an induvidual and do not profit from this site, any profits gained are given to me as an induvidual and not as a developer of this website.
 
 > [!IMPORTANT]
-> if you are a copyright owner and believe that i have infringed on your works contact me at ``nova@novassite.net``
+> if you are a copyright owner and believe that i have infringed on your works contact me at ``takedown@novassite.net``
 
 ## Source Code
 ```

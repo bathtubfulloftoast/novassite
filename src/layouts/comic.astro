@@ -7,7 +7,7 @@ id = Number(id);
 
 import '/src/styles/comic.css';
 import '/src/styles/colors.css';
-import artists from '/src/assets/artist.json';
+import artists from '/src/assets/people.json';
 
 const comics = (await getCollection('comics')).sort(
 	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),

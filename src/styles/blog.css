@@ -5,6 +5,7 @@ text-align:center;
 background:var(--bg0);
 color:var(--fg0);
 font-family:SetoFont;
+overflow-x:hidden;
 }
 
 a {
