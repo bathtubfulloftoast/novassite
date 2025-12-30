@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 const currentdate = `${month}/${day}`;
 const counttime = new Date(`${year+1}-01-01 00:00`);
 
-console.log(counttime);
+// console.log(counttime);
 if(currentdate == "12/31") {
   var x = setInterval(function() {
     const nowsequal = new Date();
