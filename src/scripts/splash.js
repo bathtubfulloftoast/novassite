@@ -49,9 +49,6 @@ if(currentdate == "12/31") {
 return;
 }
 
-
-  let cachedsplash;
-
   const holidays = {
     "6/9":"HAPPY BIRTHDAY!!", // im the first one cus im so great ;3
     "1/1": "HAPPY NEW YEAR!!!",
@@ -68,21 +65,13 @@ return;
 
 }
 
-  async function getlinks() {
-    if (!cachedsplash) {
       const response = await fetch('/splashes.txt');
       const text = await response.text();
       const splashes = text.split("\n").map(name => name.trim()).filter(name => name);
       const maxsplash = splashes.length;
       const splashid = Math.floor(Math.random() * maxsplash);
-      cachedsplash = splashes[splashid];
-    }
-    return cachedsplash;
-  }
+      const splashText = splashes[splashid];
 
-  cachedsplash = await getlinks();
-
-  const splashText = holidays[currentdate] || cachedsplash;
 
   document.getElementById("splash").innerHTML = splashText;
 });
