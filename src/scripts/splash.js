@@ -34,13 +34,16 @@ if(currentdate == "12/31") {
       time = Math.floor(uptime/minute);
       time = time + ' minute' + (time > 1 ? 's' : '');
     } else {
-      time = Math.ceil(uptime/second);
+      time = Math.floor(uptime/second);
+      time = time+1;
       time = time + ' second' + (time > 1 ? 's' : '');
     }
 
     if (uptime < 0) {
       clearInterval(x);
       time="HAPPY NEW YEAR!!!";
+    } else {
+    time = `${time} till ${year+1}..`;
     }
 
     document.getElementById("splash").innerHTML = time;
@@ -70,7 +73,9 @@ return;
       const splashes = text.split("\n").map(name => name.trim()).filter(name => name);
       const maxsplash = splashes.length;
       const splashid = Math.floor(Math.random() * maxsplash);
-      const splashText = splashes[splashid];
+
+
+      const splashText = holidays[currentdate]||splashes[splashid];
 
 
   document.getElementById("splash").innerHTML = splashText;
