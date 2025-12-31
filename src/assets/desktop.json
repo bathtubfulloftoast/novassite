@@ -17,7 +17,7 @@
     "id": "pinkie",
     "comment": "dexterdaybreaker (gave image)"
   },
-    {
+  {
     "filename": "brat.summer",
     "icon": "bort.png",
     "id": "brat",
@@ -144,7 +144,8 @@
     "filename": "douche.link",
     "icon": "douche.gif",
     "id": "douchebag",
-    "comment": "whys your ego so massive?"
+    "comment": "whys your ego so massive?",
+    "hidden": true
   },
   {
     "filename": "femtanyl.mp3",
