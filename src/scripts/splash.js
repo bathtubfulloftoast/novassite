@@ -29,9 +29,11 @@ if(currentdate == "12/31") {
 
      if (uptime >= hour) {
       time = Math.floor(uptime/hour);
+      time = time+1;
       time = time + ' hour' + (time > 1 ? 's' : '');
     } else if (uptime >= minute) {
       time = Math.floor(uptime/minute);
+      time = time+1;
       time = time + ' minute' + (time > 1 ? 's' : '');
     } else {
       time = Math.floor(uptime/second);
