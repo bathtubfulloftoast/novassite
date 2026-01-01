@@ -1,30 +1,47 @@
 [
   {
     "name": "Toviah",
+    "nickname": "Toby",
     "url": "https://toyhou.se/Toviah"
   },
   {
     "name": "Royal Garden",
-    "url": "https://rgs.straw.page/"
+    "nickname": "Wil",
+    "url": "https://rgs.straw.page"
   },
   {
     "name": "cassidy5bear",
+    "nickname": "Cass",
     "url": "https://www.youtube.com/@Shitzing"
   },
   {
     "name": "BATZZILLA",
+    "nickname": "Batz",
     "url": "https://toyhou.se/BATZZILLA"
   },
   {
     "name": "tomthewolff",
-    "url": "https://www.instagram.com/Tom_The_Wolff/"
+    "nickname": "Tom",
+    "url": "https://www.instagram.com/Tom_The_Wolff"
   },
   {
     "name": "hpkritical",
+    "nickname": "HP",
     "url": "https://www.youtube.com/@HPKritical"
   },
   {
     "name": "thatponyjules",
+    "nickname": "Jules",
     "url": "https://thatponyjules.nekoweb.org"
+  },
+  {
+    "name": "Jamsire",
+    "nickname": "Jams",
+    "url": "https://novassite.net/discord/user/#562834193990549524"
+  },
+  {
+    "name": "Dexter Daybreaker",
+    "nickname": "Dexter",
+    "url": "https://dexterdaybreaker.neocities.org"
   }
 ]
