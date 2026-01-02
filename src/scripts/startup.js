@@ -91,7 +91,11 @@ document.addEventListener("DOMContentLoaded", async function() {
         });
 
     } else {
-        alert("please enable autoplay and popups\nthese are required for most of the jokes on the site.\nand more importantly the startup that this is interrupting.\nif you dont enable these i will genuinely hate you as a person\nyes im being /srs garfield.");
+    alert("please enable autoplay and popups\nthese are required for most of the jokes on the site.\nand more importantly the startup that this is interrupting.\nthe site will try to open a little snowman in order to show the popup prompt (he is friendly!)\nwhen youve allowed stuff just refresh.");
+    sound.play();
+    var handle = window.open('/snow/');
+    handle.blur();
+    window.focus();
     }
 
 
