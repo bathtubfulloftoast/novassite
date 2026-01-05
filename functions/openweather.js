@@ -1,47 +1,15 @@
 import 'dotenv/config';
-import colors from 'colors';
+import {fetcher} from './fetch.js';
 
-let cache = {};
+const key = process.env.OPENWEATHER_API_KEY;
+const cityid = "5476913";
+const cache = 3600000; // 1 hour
 
-export default async function lastfmHandler(req, res) {
-    const API_KEY = process.env.OPENWEATHER_API_KEY;
-    const CITYID = "5476913";
-    const CACHE_DURATION = 3600000;
+const url = `http://api.openweathermap.org/data/2.5/weather?id=${CITYID}&units=imperial&appid=${API_KEY}`;
 
-    res.set('Cache-Control', "max-age="+(CACHE_DURATION/1000));
+export default async function swag(req, res) {
+const fetched = await fetcher(cache,url,"openweathermap");
 
-    if (cache.timestamp && (Date.now() - cache.timestamp < CACHE_DURATION)) {
-        const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);
-        return res.status(200).json({
-            ...cache.data,
-            ...( process.env.DEVMODE === "true" && {
-            cache_remaining: Math.floor(remaining/1000),
-            })
-        });
-    }
-
-    const url = `http://api.openweathermap.org/data/2.5/weather?id=${CITYID}&units=imperial&appid=${API_KEY}`;
-
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-
-        cache = {
-            data,
-            timestamp: Date.now(),
-        };
-
-        res.status(200).json({
-            ...data,
-            ...( process.env.DEVMODE === "true" && {
-            cache_remaining: Math.floor(CACHE_DURATION/1000),
-            })
-        });
-        console.log(`${colors.green("[Site]")} grabbed from openweathermap`);
-
-    } catch (error) {
-        res.status(500).json({ error: 'Failed to fetch data' });
-        console.log(`${colors.red("[ERROR]")} failed to grab from openweathermap`);
-
-    }
+res.set('Cache-Control', "max-age="+(cache/1000));
+res.status(200).json(fetched);
 }

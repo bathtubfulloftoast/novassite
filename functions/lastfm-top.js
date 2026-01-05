@@ -1,48 +1,16 @@
 import 'dotenv/config';
-import colors from 'colors';
+import {fetcher} from './fetch.js';
 
-let cache = {};
+const key = process.env.LASTFM_API_KEY;
+const username = "bathtuboftoast";
+const max = "5";
+const cache = 172800000; // 2 days
 
-export default async function lastfmHandler(req, res) {
-    const API_KEY = process.env.LASTFM_API_KEY;
-    const USER = "bathtuboftoast";
-    const MAXFM = "5";
-    const CACHE_DURATION = 172800000; // 48 hours
+const url = `http://ws.audioscrobbler.com/2.0/?method=user.getTopTracks&user=${username}&api_key=${key}&format=json&limit=${max}&period=1month`;
 
-    res.set('Cache-Control', "max-age="+(CACHE_DURATION/1000));
+export default async function swag(req, res) {
+const fetched = await fetcher(cache,url,"last.fm (top)");
 
-    if (cache.timestamp && (Date.now() - cache.timestamp < CACHE_DURATION)) {
-        const remaining = CACHE_DURATION - (Date.now() - cache.timestamp);
-        return res.status(200).json({
-            ...cache.data,
-            ...( process.env.DEVMODE === "true" && {
-            cache_remaining: Math.floor(remaining/1000),
-            })
-        });
-    }
-
-const url = `http://ws.audioscrobbler.com/2.0/?method=user.getTopTracks&user=${USER}&api_key=${API_KEY}&format=json&limit=${MAXFM}&period=1month`;
-
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
-
-        cache = {
-            data,
-            timestamp: Date.now(),
-        };
-
-        res.status(200).json({
-            ...data,
-            ...( process.env.DEVMODE === "true" && {
-            cache_remaining: Math.floor(CACHE_DURATION/1000),
-            })
-        });
-        console.log(`${colors.green("[Site]")} grabbed top songs from last.fm`);
-
-    } catch (error) {
-        res.status(500).json({ error: 'Failed to fetch data' });
-        console.log(`${colors.red("[ERROR]")} faield to grab top songs from last.fm`);
-
-    }
+res.set('Cache-Control', "max-age="+(cache/1000));
+res.status(200).json(fetched);
 }
