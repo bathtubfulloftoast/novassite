@@ -6,3 +6,4 @@ git pull
 git push github main
 git push gitlab main
 git push codeberg main
+git push gitea main
