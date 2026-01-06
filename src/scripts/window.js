@@ -10,12 +10,13 @@ icon.style.height="24px";
 icon.style.display="block";
 icon.style.float="left";
 icon.style.marginLeft="10px";
-icon.style.marginTop="1px";
+icon.style.marginTop="3px";
 icon.style.cursor="pointer";
 
 const iconimg = document.createElement('img');
 iconimg.src=iconURL;
 iconimg.style.width="20px";
+
 icon.appendChild(iconimg);
 }
 
@@ -53,16 +54,21 @@ titlebar.appendChild(titlecontrol);
 const minimize = document.createElement('button');
 minimize.ariaLabel = "Minimize";
 minimize.style.cursor = "pointer";
+minimize.title = "minimize window";
 titlecontrol.appendChild(minimize);
 
 const maximize = document.createElement('button');
 maximize.ariaLabel = "Maximize";
 maximize.style.cursor = "pointer";
+maximize.title = "fullscreen window";
+
 titlecontrol.appendChild(maximize);
 
 const close = document.createElement('button');
 close.ariaLabel = "Close";
 close.style.cursor = "pointer";
+close.title = "refresh window";
+
 titlecontrol.appendChild(close);
 
 
@@ -88,11 +94,7 @@ document.body.appendChild(wrap);
 
 close.addEventListener("click", function(event) {
 event.preventDefault();
-wrap.remove();
-
-if(iconID) {
-icon.remove();
-}
+iframe.src=Isrc;
 
 })
 

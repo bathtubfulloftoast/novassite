@@ -56,7 +56,7 @@ document.querySelectorAll("a").forEach((tag) => {
 tag.addEventListener("click", function(event) {
 event.preventDefault();
 
-window.open(tag.href, '_top');
+window.open(tag.href, '_self');
 
 location.reload();
 

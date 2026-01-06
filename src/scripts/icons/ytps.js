@@ -1,3 +1,7 @@
+import {spawnwindow} from "/src/scripts/window.js";
+var width = window.innerWidth;
+var height = window.innerHeight;
+
 let cached = false;
 let text;
 
@@ -6,7 +10,7 @@ async function redirect() {
 if (cached == true) {
 text = window.localStorage.getItem("ytps");
 } else {
-const response = await fetch('/ytps.txt');
+const response = await fetch('/ytps.json');
 text = await response.text();
 
 await window.localStorage.setItem("ytps", text);
@@ -14,24 +18,32 @@ cached = true;
 }
 
 
-const sauce = text.split("\n").map(name => name.trim()).filter(name => name);
+const sauce = JSON.parse(text);
 
 const max = sauce.length;
 
 const id = Math.floor(Math.random() * max);
-let url = 'https://www.youtube.com/watch?v='+sauce[id];
+// let url = 'https://www.youtube.com/watch?v='+sauce[id];
 // regular player (slower cause youtube hates everyone)
 
 // let url = 'https://inv.nadeko.net/watch?v='+sauce[id];
 // invidious instance (ad free and not bloated) [regular people wouldn't care and it doesnt support the original creators]
 
-//let url = 'https://www.youtube.com/embed/'+sauce[id]+'?autoplay=true';
+let url = 'https://www.youtube.com/embed/'+sauce[id].id+'?autoplay=true';
 // youtube embed (faster supports the creators) [loves to not work any time a video is mildly anything (eg: age restricted {doesnt have to be actually age restricted} or affected by copyright in any way)]
 
 // this was the first code to optimize storing the video links
 // i feel bad for it because im not renaming the code fuck you
 
-window.open(url, '_blank');
+spawnwindow({
+title:sauce[id].title + " - " + sauce[id].creator,
+icon:"/media/icons/tarsh.png",
+x:Math.round((width-800)/2),
+y:Math.round((height-600)/2),
+src:url,
+width:"800px",
+height:"600px"
+})
 }
 
 function createaudio() {

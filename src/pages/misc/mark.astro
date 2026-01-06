@@ -27,7 +27,7 @@ cursor:pointer;
 
 <script>
 let width = 500;
-const winder = window.outerWidth;
+const winder = window.innerWidth;
 
 const mark = document.getElementById("mark");
 mark.addEventListener("click", function(event) {
@@ -64,7 +64,7 @@ audioElement.remove();
 });
 
 jule.addEventListener('ended', (event) => {
-window.location.replace("https://thatponyjules.nekoweb.org/DisclaimerMark");
+window.open("https://thatponyjules.nekoweb.org/DisclaimerMark", "_top");
 });
 }
 });

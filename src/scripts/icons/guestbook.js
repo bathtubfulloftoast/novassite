@@ -1,31 +1,20 @@
-async function createaudio() {
-
-const audioElement = document.createElement('video');
-audioElement.src = "/media/petitititititition.mp4";
-audioElement.volume = 0.5;
-audioElement.style.position = "absolute";
-audioElement.style.left = 0;
-audioElement.style.top = 0;
-audioElement.style.zIndex = 150;
-audioElement.style.width = "100vw";
-audioElement.style.height = "100vh";
-audioElement.style.background = "#000";
-
-document.body.appendChild(audioElement);
-
-audioElement.play();
-
-
-audioElement.addEventListener('ended', (event) => {
-window.open('/guestbook', '_top');
-audioElement.remove();
-});
-
-};
+import {spawnwindow} from "/src/scripts/window.js";
 
 document.getElementById("guestbook").addEventListener("click", function(event) {
 event.preventDefault();
-createaudio();
+var width = window.innerWidth;
+var height = window.innerHeight;
+var winwidth = 800;
+var winheight = 600;
 
+spawnwindow({
+title:"GuestBook",
+icon:"/media/icons/tobyclip.png",
+src:"/guestbook/",
+x:Math.abs(Math.floor(Math.random()*width)-winwidth),
+y:Math.abs(Math.floor(Math.random()*height)-winheight),
+width:winwidth+"px",
+height:winheight+"px"
+})
 });
 

@@ -1,4 +1,10 @@
+import {spawnwindow} from "/src/scripts/window.js";
+
 async function createaudio() {
+    var width = window.innerWidth;
+    var height = window.innerHeight;
+    var winwidth = 800;
+    var winheight = 600;
 
     const audioElement = new Audio("/media/sfx/speen.ogg");
     audioElement.volume = 0.2;
@@ -11,7 +17,16 @@ async function createaudio() {
     audioElement.play();
 
 audioElement.addEventListener('ended', (event) => {
-window.open("/misc/novaview", '_blank'); // SPINN1!!!1\
+spawnwindow({
+title:"Nova Spinner",
+icon:"/media/icons/speen.gif",
+src:"/misc/novaview/",
+x:Math.abs(Math.floor(Math.random()*width)-winwidth),
+y:Math.abs(Math.floor(Math.random()*height)-winheight),
+width:winwidth+"px",
+height:winheight+"px"
+})
+// SPINN1!!!1\
 // also fuck you no spamming
 audioElement.remove();
 });
