@@ -18,22 +18,6 @@ devmode=`<h1 class="devmode">NovasSite DEVMODE</h1>`;
 </head>
 
 
-<div class="center-screen"  >
-<div style="display:inline-block;z-index:5;padding:0px;margin:0px" id="window">
-  <div class="title-bar">
-    <div class="title-bar-text"><img fetchPriority="low" src="/media/retro.png" height="16px" style="vertical-align: text-top;"> <span id="splash">Nova's Profile</span></div>
-    <div class="title-bar-controls">
-      <button style="cursor:pointer" aria-label="Minimize" id="closewindow" ></button>
-      <button style="cursor:pointer" aria-label="Maximize" onclick="location.href='/profile';"></button>
-      <button style="cursor:pointer" aria-label="Close" onclick="location.href='/death';"></button>
-    </div>
-  </div>
-  <div style="padding:0px;margin:0px">
-<iframe style="padding:0px;margin:0px;border-left:1px solid #0831d9;border-top:none;border-right:1px solid #001ea0;border-bottom:2px solid #001ea0;background:#ece9d8" src="/profile" width="800px" height="600px;" frameBorder="" id="novasprofile"></iframe>
-</div>
-</div>
-</div>
-
 <div id="bnuy"></div>
 
 <div class="icons">
@@ -49,7 +33,7 @@ devmode=`<h1 class="devmode">NovasSite DEVMODE</h1>`;
 
 <div class="taskbar">
 <div style="float:left"><a id="start" style="cursor:pointer;"><img fetchPriority="low" src="/media/start.gif"></a></div> <!-- no href because it adds select box -->
-<div id="reopen"><img src="/media/retro.png"></div>
+<div id="reopen"></div>
 
 
 <div class="time" id="time">11:24 PM</div>
@@ -60,14 +44,6 @@ devmode=`<h1 class="devmode">NovasSite DEVMODE</h1>`;
 <!-- <div class="time" style="width:40px"><img id="battery" class="battery" src="/blank.gif"></div> -->
 
 </div>
-
-<span style="background:#fff">welcome to boundary break where we basically take the camera anywhere we want</span><br>
-<video src="/media/secrets/electroricardo.mp4" preload="none" controls></video>
-<br>
-watch as hit star ricardo milos does a funny dance with a funnier backing track!<br>
-there is nothing else about this video worth mentioning<br>
-also if youre on mobile youre a cheater how dare you<br>
-edit your browsers css like the desktop users you CHEATER
 
 <div id="loadingImg" style="background:#000;color:#fff;position:absolute;left:0;top:0;width:100vw;height:100vh;z-index:200;display:flex;align-items:center;text-align:center;justify-content:center;"><img style="width:35vh;image-rendering: pixelated;opacity:0;" fetchPriority="high" src="/media/loading.webp" id="sickassloadingimage"></div>
 
@@ -166,34 +142,44 @@ createaudio(); //ive removed the ability to spam im sorgy.
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", async function() {
-document.getElementById("reopen").style.display = "none";
-});
-
-document.getElementById("closewindow").addEventListener("click", function(event) {
-event.preventDefault();
-document.getElementById("window").style.display = "none";
-document.getElementById("reopen").style.display = "block";
-});
-
-document.getElementById("reopen").addEventListener("click", function(event) {
-event.preventDefault();
-document.getElementById("window").style.display = "block";
-document.getElementById("reopen").style.display = "none";
-
-});
-</script>
-
-<script>
-import {movewindow} from "/src/scripts/windowdrag.js";
-
-document.querySelectorAll("#window").forEach((fart) => {
-movewindow(fart);
-});
-</script>
-
-<script>
 if(window.self == window.top) {
 window.location.replace("/");
 }
+</script>
+
+<script>
+import {spawnwindow} from "/src/scripts/window.js";
+import {splash} from "/src/scripts/splash.js";
+
+document.addEventListener("DOMContentLoaded", async function() {
+var width = window.innerWidth;
+var height = window.innerHeight;
+const splashtext = await splash();
+
+
+
+// spawnwindow({
+// title:"misc",
+// icon:"/media/retro.png",
+// x:200,
+// y:10,
+// open:true,
+// src:"/misc/",
+// width:"800px",
+// height:"600px"
+// });
+
+spawnwindow({
+title:splashtext,
+icon:"/media/retro.png",
+x:Math.round((width-800)/2),
+y:Math.round((height-600)/2),
+id:"reopen",
+open:true,
+src:"/profile/",
+width:"800px",
+height:"600px"
+});
+
+});
 </script>

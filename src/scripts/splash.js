@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', async function() {
-
+export async function splash() {
   var now = new Date();
   var day = String(now.getDate());
   var month = String(now.getMonth() + 1); // JANUARY AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
@@ -78,7 +77,5 @@ return;
 
 
       const splashText = holidays[currentdate]||splashes[splashid];
-
-
-  document.getElementById("splash").innerHTML = splashText;
-});
+      return splashText;
+};
