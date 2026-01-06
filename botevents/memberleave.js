@@ -23,7 +23,7 @@ pfp.setName("pfp.webp");
 const MessageEmbed = {
     "color": 16711680,
     "author": {
-        "name": `${member.user.globalName} has left the server.`,
+        "name": `${member.user.globalName||member.user.username} has left the server.`,
           "icon_url": "attachment://pfp.webp"
     },
     "footer": {

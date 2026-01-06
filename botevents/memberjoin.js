@@ -29,7 +29,7 @@ const MessageEmbed = {
 "name": `Welcome to ${member.guild.name}!`,
 "icon_url": `attachment://server.webp`
 },
-"title": `Welcome ${member.user.globalName}!`,
+"title": `Welcome ${member.user.globalName||member.user.username}!`,
 "thumbnail": {
 "url": `attachment://pfp.webp`
 },
