@@ -3,7 +3,7 @@ import {fetcher} from './fetch.js';
 
 const key = process.env.OPENWEATHER_API_KEY;
 const cityid = "5476913";
-const cache = 3600000; // 1 hour
+const cache = 7200000; // 2 hours
 
 const url = `http://api.openweathermap.org/data/2.5/weather?id=${cityid}&units=imperial&appid=${key}`;
 
