@@ -1,0 +1,61 @@
+---
+import '/src/styles/colors.css';
+import '/src/styles/misc.css';
+---
+
+<head>
+<title>because youtube is where the poop is!</title>
+<style>
+#tarsh {
+font-size:6vw;
+}
+</style>
+</head>
+
+<div class="center-screen">
+<button id="tarsh">press for ytp</button>
+</div>
+
+<script>
+let cached = false;
+let text;
+
+async function redirect() {
+
+if (cached == true) {
+text = window.localStorage.getItem("ytps");
+} else {
+const response = await fetch('/ytps.txt');
+text = await response.text();
+
+await window.localStorage.setItem("ytps", text);
+cached = true;
+}
+
+
+const sauce = text.split("\n").map(name => name.trim()).filter(name => name);
+
+const max = sauce.length;
+
+const id = Math.floor(Math.random() * max);
+let url = 'https://www.youtube.com/watch?v='+sauce[id];
+// regular player (slower cause youtube hates everyone)
+
+// let url = 'https://inv.nadeko.net/watch?v='+sauce[id];
+// invidious instance (ad free and not bloated) [regular people wouldn't care and it doesnt support the original creators]
+
+//let url = 'https://www.youtube.com/embed/'+sauce[id]+'?autoplay=true';
+// youtube embed (faster supports the creators) [loves to not work any time a video is mildly anything (eg: age restricted {doesnt have to be actually age restricted} or affected by copyright in any way)]
+
+// this was the first code to optimize storing the video links
+// i feel bad for it because im not renaming the code fuck you
+
+window.open(url, '_blank');
+}
+
+document.getElementById("tarsh").addEventListener("click", function(event) {
+event.preventDefault();
+redirect();
+});
+
+</script>
