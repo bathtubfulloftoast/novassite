@@ -126,3 +126,12 @@ bgm.play();
 }
 });
 
+if ("mediaSession" in navigator) {
+  navigator.mediaSession.metadata = new MediaMetadata({
+    title: "nova.ogg",
+    artist: "cassidy5bear",
+    album: "Novassite OST",
+    artwork: [{ src: "/nova.svg" }],
+  });
+}
+
