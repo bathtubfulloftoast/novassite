@@ -35,6 +35,7 @@ devmode=`<h1 class="devmode">NovasSite DEVMODE</h1>`;
 <div style="float:left"><a id="start" style="cursor:pointer;"><img fetchPriority="low" src="/media/start.gif"></a></div> <!-- no href because it adds select box -->
 <div id="profile"></div>
 <div id="misc"></div>
+<div id="blog"></div>
 
 
 <div class="time" id="time">11:24 PM</div>
@@ -178,6 +179,18 @@ y:Math.round((height-600)/5),
 id:"misc",
 open:false,
 src:"/misc/",
+width:"800px",
+height:"600px"
+})
+
+spawnwindow({
+title:"Blog",
+icon:"/media/blog.png",
+x:Math.round((width-800)/3),
+y:Math.round((height-600)/8),
+id:"blog",
+open:false,
+src:"/blog/",
 width:"800px",
 height:"600px"
 })

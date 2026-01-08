@@ -17,7 +17,7 @@ const counttime = new Date(`${year+1}-01-01 00:00`);
 
 // console.log(counttime);
 if(currentdate == "12/31") {
-  var x = setInterval(function() {
+
     const nowsequal = new Date();
     const uptime = counttime-nowsequal;
 
@@ -41,17 +41,13 @@ if(currentdate == "12/31") {
     }
 
     if (uptime < 0) {
-      clearInterval(x);
-      time="HAPPY NEW YEAR!!!";
+    time="HAPPY NEW YEAR!!!";
     } else {
     time = `${time} till ${year+1}..`;
     }
 
-    document.getElementById("splash").innerHTML = time;
-  }, 1000);
-  return;
-return;
-}
+    return time;
+};
 
   const holidays = {
     "6/9":"HAPPY BIRTHDAY!!", // im the first one cus im so great ;3
