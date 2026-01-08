@@ -32,7 +32,7 @@ audioElement.addEventListener('ended', (event) => {
 spawnwindow({
 title:"BlueTube",
 icon:"/media/icons/remember.png",
-src:"https://youtube.com/embed/P_nvW4TeF3M",
+src:"https://youtube.com/embed/P_nvW4TeF3M?autoplay=true",
 x:Math.abs(Math.floor(Math.random()*width)-winwidth),
 y:Math.abs(Math.floor(Math.random()*height)-winheight),
 width:winwidth+"px",
