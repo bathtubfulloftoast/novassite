@@ -1,7 +1,9 @@
 # novassite.net
 ## The silliest site on the web*
 
-novassite is my main project previously developed in PHP and basic terrible manually written html,
+novassite has been my primary project since december 1st 2021,
+this site has been my method of learning many different ways of doing code.
+
 this current revision is written in astrojs and uses expressjs as the backend
 
 this site is designed to be hosted myself and also acts as a discord bot in order to grab my [discord presence](https://discord.com/developers/docs/rich-presence/overview)
