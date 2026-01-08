@@ -23,7 +23,7 @@ git.gay serves as the master with updates being pushed to other hosts once every
 
 **if anything is done outside the master it will be entirely ignored**
 
-these mirrors only exist to make sure the sites source is *always* avalible
+these mirrors only exist to make sure the sites source is **always** avalible
 *and to make sure its easy to switch if needed.*
 # How to run
 
