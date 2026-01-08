@@ -39,10 +39,10 @@ spawnwindow({
 title:sauce[id].title + " - " + sauce[id].creator,
 icon:"/media/icons/tarsh.png",
 x:Math.round((width-800)/2),
-y:Math.round((height-600)/2),
+y:Math.round((height-450)/2),
 src:url,
 width:"800px",
-height:"600px"
+height:"450px"
 })
 }
 

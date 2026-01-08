@@ -17,6 +17,9 @@ const routes = files.map(file => {
     .replace('/', ''); // Remove .astro extension
 });
 
+routes.sort((a, b) => a.localeCompare(b));
+
+
 function truncate(input) {
    if (input.length > 20) {
       return input.substring(0, 17) + '...';
