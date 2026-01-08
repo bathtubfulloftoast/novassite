@@ -1,3 +1,10 @@
+import {spawnwindow} from "/src/scripts/window.js";
+
+var width = window.innerWidth;
+var height = window.innerHeight;
+var winwidth = 560;
+var winheight = 315;
+
 async function createaudio() {
 
 const audioElement = document.createElement('video');
@@ -17,7 +24,15 @@ audioElement.play();
 
 
 audioElement.addEventListener('ended', (event) => {
-window.open('https://youtu.be/C8H-k1z9Z7A?si=Q3_v1Fz6QjhfknHK&t=62', '_blank');
+spawnwindow({
+title:"SignTube",
+icon:"/media/sdcard.png", // entirely forgot that was the filename LMAO
+src:"//www.youtube.com/embed/C8H-k1z9Z7A?start=62&autoplay=true",
+x:Math.abs(Math.floor(Math.random()*width)-winwidth),
+y:Math.abs(Math.floor(Math.random()*height)-winheight),
+width:winwidth+"px",
+height:winheight+"px"
+});
 audioElement.remove();
 });
 

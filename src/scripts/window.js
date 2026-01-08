@@ -100,7 +100,7 @@ iframe.src=Isrc;
 
 maximize.addEventListener("click", function(event) {
 event.preventDefault();
-window.open(Isrc,"_top");
+iframe.requestFullscreen();
 })
 
 if(iconID) {

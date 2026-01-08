@@ -1,3 +1,10 @@
+import {spawnwindow} from "/src/scripts/window.js";
+
+var width = window.innerWidth;
+var height = window.innerHeight;
+var winwidth = 480;
+var winheight = 270;
+
 async function createaudio() {
 
 
@@ -21,7 +28,17 @@ async function createaudio() {
     audioElement.play();
 
 audioElement.addEventListener('ended', (event) => {
-window.open("https://youtu.be/P_nvW4TeF3M", '_blank');
+
+spawnwindow({
+title:"BlueTube",
+icon:"/media/icons/remember.png",
+src:"https://youtube.com/embed/P_nvW4TeF3M",
+x:Math.abs(Math.floor(Math.random()*width)-winwidth),
+y:Math.abs(Math.floor(Math.random()*height)-winheight),
+width:winwidth+"px",
+height:winheight+"px"
+})
+
 audioElement.remove();
 imageElement.remove();
 });

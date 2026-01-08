@@ -1,3 +1,5 @@
+import {spawnwindow} from "/src/scripts/window.js";
+
 const amongusvideos = [
 "Ns3YxbIhTRM",
 "yIHa5cjuTBk",
@@ -13,9 +15,25 @@ const amongusvideos = [
 const max = amongusvideos.length;
 
 document.getElementById("amongus").addEventListener("click", function(event) {
+const poop = Math.round(Math.random()* (50 - 20) + 20);
+
+var width = window.innerWidth;
+var height = window.innerHeight;
+var winwidth = 16*poop;
+var winheight = 9*poop;
+
 event.preventDefault();
 const id = Math.floor(Math.random() * max);
-let url = 'https://youtu.be/'+amongusvideos[id];
+let url = 'https://youtube.com/embed/'+amongusvideos[id];
 
-window.open(url, '_blank');// sus sus...
+spawnwindow({
+title:"SUSTube",
+icon:"/media/icons/among.png",
+src:url,
+x:Math.abs(Math.floor(Math.random()*width)-winwidth),
+y:Math.abs(Math.floor(Math.random()*height)-winheight),
+width:winwidth+"px",
+height:winheight+"px"
+});
+
 })
