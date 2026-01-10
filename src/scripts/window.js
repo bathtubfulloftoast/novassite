@@ -42,6 +42,7 @@ icon.style.float="left";
 icon.style.marginLeft="10px";
 icon.style.marginTop="3px";
 icon.style.cursor="pointer";
+icon.title = WindowTitle;
 
 const iconimg = document.createElement('img');
 iconimg.src=iconURL;
