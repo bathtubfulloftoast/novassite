@@ -14,7 +14,8 @@ src:"/guestbook/",
 x:Math.abs(Math.floor(Math.random()*width)-winwidth),
 y:Math.abs(Math.floor(Math.random()*height)-winheight),
 width:winwidth+"px",
-height:winheight+"px"
+height:winheight+"px",
+open:true
 })
 });
 

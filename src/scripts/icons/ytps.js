@@ -42,7 +42,8 @@ x:Math.round((width-800)/2),
 y:Math.round((height-450)/2),
 src:url,
 width:"800px",
-height:"450px"
+height:"450px",
+open:true
 })
 }
 

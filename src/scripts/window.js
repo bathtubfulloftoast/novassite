@@ -31,11 +31,10 @@ element.addEventListener("mousedown", (e) => {
 
 }
 
-export function spawnwindow({title:WindowTitle,icon:iconURL,x:Xpos,y:Ypos,id:iconID,open:AutoOpen,src:Isrc,width:Iwidth,height:Iheight}) {
-let icon;
+export function spawnwindow({title:WindowTitle,icon:iconURL,x:Xpos,y:Ypos,open:AutoOpen,src:Isrc,width:Iwidth,height:Iheight,closable:CloseOption}) {
+const iconwrap = document.getElementById("taskbar-icons");
 
-if(iconID) {
-icon = document.getElementById(iconID);
+const icon = document.createElement('div');
 icon.style.width="24px";
 icon.style.height="24px";
 icon.style.display="block";
@@ -48,8 +47,8 @@ const iconimg = document.createElement('img');
 iconimg.src=iconURL;
 iconimg.style.width="20px";
 
+iconwrap.appendChild(icon);
 icon.appendChild(iconimg);
-}
 
 
 
@@ -98,7 +97,7 @@ titlecontrol.appendChild(maximize);
 const close = document.createElement('button');
 close.ariaLabel = "Close";
 close.style.cursor = "pointer";
-close.title = "refresh window";
+close.title = "close window";
 
 titlecontrol.appendChild(close);
 
@@ -125,8 +124,12 @@ document.body.appendChild(wrap);
 
 close.addEventListener("click", function(event) {
 event.preventDefault();
-iframe.src=Isrc;
-
+if (CloseOption == false) {
+iframe.src = Isrc;
+} else {
+wrap.remove();
+icon.remove();
+}
 })
 
 maximize.addEventListener("click", function(event) {
@@ -134,29 +137,24 @@ event.preventDefault();
 iframe.requestFullscreen();
 })
 
-if(iconID) {
 if (AutoOpen == true) {
 icon.style.display="none";
 } else {
 wrap.style.display="none";
 }
-}
 
-if(iconID) {
+
 icon.addEventListener("click", function(event) {
 event.preventDefault();
 icon.style.display="none";
 wrap.style.display="inline-block";
 })
-}
+
 
 minimize.addEventListener("click", function(event) {
 event.preventDefault();
-if(iconID) {
 icon.style.display="block";
 wrap.style.display="none";
-} else {
-wrap.remove();
-}
+
 })
 }

@@ -168,3 +168,10 @@ font-size:2vw;
 opacity:10%;
 filter: drop-shadow(0px 0px 10px black) drop-shadow(0px 0px 10px black);
 }
+
+
+#taskbar-icons {
+height:25px;
+width:70vw;
+display:inline-block;
+}

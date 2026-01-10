@@ -33,9 +33,7 @@ devmode=`<h1 class="devmode">NovasSite DEVMODE</h1>`;
 
 <div class="taskbar">
 <div style="float:left"><a id="start" style="cursor:pointer;"><img fetchPriority="low" src="/media/start.gif"></a></div> <!-- no href because it adds select box -->
-<div id="profile"></div>
-<div id="misc"></div>
-<div id="blog"></div>
+<div id="taskbar-icons"></div>
 
 
 <div class="time" id="time">11:24 PM</div>
@@ -164,11 +162,11 @@ title:splashtext,
 icon:"/nova.png",
 x:Math.round((width-800)/2),
 y:Math.round((height-600)/2),
-id:"profile",
 open:true,
 src:"/profile/",
 width:"800px",
-height:"600px"
+height:"600px",
+closable:false
 })
 
 spawnwindow({
@@ -176,11 +174,11 @@ title:"Misc",
 icon:"/media/retro.png",
 x:Math.round((width-800)/1.5),
 y:Math.round((height-600)/5),
-id:"misc",
 open:false,
 src:"/misc/",
 width:"800px",
-height:"600px"
+height:"600px",
+closable:false
 })
 
 // spawnwindow({

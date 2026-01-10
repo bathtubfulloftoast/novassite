@@ -24,7 +24,8 @@ src:"//www.youtube.com/embed/b1Vjorjlon4?autoplay=true",
 x:Math.abs(Math.floor(Math.random()*width)-winwidth),
 y:Math.abs(Math.floor(Math.random()*height)-winheight),
 width:winwidth+"px",
-height:winheight+"px"
+height:winheight+"px",
+open:true
 })
 audioElement.remove();
 
