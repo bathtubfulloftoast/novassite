@@ -1,6 +1,9 @@
 import {spawnwindow} from "/src/scripts/window.js";
+import {createicon} from "/src/scripts/icon.js";
 
-document.getElementById("wiki").addEventListener("click", function(event) {
+const icon = createicon({src:"wiki.png",title:"nova.wiki"});
+
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 var width = window.innerWidth;
 var height = window.innerHeight;
