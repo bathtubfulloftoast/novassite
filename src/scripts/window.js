@@ -85,20 +85,17 @@ titlebar.appendChild(titlecontrol);
 const minimize = document.createElement('button');
 minimize.ariaLabel = "Minimize";
 minimize.style.cursor = "pointer";
-minimize.title = "minimize window";
 titlecontrol.appendChild(minimize);
 
 const maximize = document.createElement('button');
 maximize.ariaLabel = "Maximize";
 maximize.style.cursor = "pointer";
-maximize.title = "fullscreen window";
 
 titlecontrol.appendChild(maximize);
 
 const close = document.createElement('button');
 close.ariaLabel = "Close";
 close.style.cursor = "pointer";
-close.title = "close window";
 
 titlecontrol.appendChild(close);
 
