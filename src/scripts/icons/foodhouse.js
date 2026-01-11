@@ -1,6 +1,9 @@
 import {spawnwindow} from "/src/scripts/window.js";
+import {createicon} from "/src/scripts/icon.js";
 
-document.getElementById("foodhouse").addEventListener("click", function(event) {
+const icon = createicon({src:"foodhouse.png",title:"food.house"});
+
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 var width = window.innerWidth;
 var height = window.innerHeight;

@@ -1,3 +1,7 @@
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"eepster.png",title:"eepy.mimi"});
+
 async function createaudio() {
 
 
@@ -18,7 +22,7 @@ audioElement.remove();
 
 };
 
-document.getElementById("eepster").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 if(!document.getElementById("eepyaudio")) {
 createaudio();

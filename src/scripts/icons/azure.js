@@ -1,3 +1,7 @@
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"azure.png",title:"azure.comet"});
+
 async function createaudio() {
 
 
@@ -27,7 +31,7 @@ window.open("https://azurecomettttt.carrd.co/", '_blank');
 });
 };
 
-document.getElementById("azure").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 
 createaudio();

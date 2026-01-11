@@ -1,4 +1,7 @@
 import {spawnwindow} from "/src/scripts/window.js";
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"among.png",title:"Among Us"});
 
 const amongusvideos = [
 "Ns3YxbIhTRM",
@@ -14,7 +17,7 @@ const amongusvideos = [
 
 const max = amongusvideos.length;
 
-document.getElementById("amongus").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 const poop = Math.round(Math.random()* (50 - 20) + 20);
 
 var width = window.innerWidth;

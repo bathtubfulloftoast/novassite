@@ -1,3 +1,7 @@
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"93.png",title:"windows.93"});
+
 async function createAudio() {
     const audioElement = new Audio("/media/sfx/ps1.ogg");
     audioElement.volume = 0.5;
@@ -47,7 +51,7 @@ async function createAudio() {
     });
 }
 
-document.getElementById("windows93").addEventListener("click", (event) => {
+icon.addEventListener("click", (event) => {
     event.preventDefault();
     createAudio();
 

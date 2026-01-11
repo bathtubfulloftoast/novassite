@@ -1,6 +1,8 @@
+import {createicon} from "/src/scripts/icon.js";
+
 const now = new Date();
 const month = now.getMonth();
-const gregg = document.getElementById("hhgregg");
+const gregg = createicon({src:"gregg.png",title:"hh.gregg"});
 let counter = 0;
 
 if (month !== 6) {

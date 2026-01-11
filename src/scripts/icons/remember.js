@@ -1,4 +1,7 @@
 import {spawnwindow} from "/src/scripts/window.js";
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"remember.png",title:"i.remember"});
 
 var width = window.innerWidth;
 var height = window.innerHeight;
@@ -45,7 +48,7 @@ imageElement.remove();
 });
 };
 
-document.getElementById("remember").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 createaudio();
 });

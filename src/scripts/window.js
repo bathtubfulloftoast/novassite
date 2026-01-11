@@ -1,4 +1,4 @@
-export function movewindow(element) {
+function movewindow(element) {
 let startX, startY, startLeft, startTop;
 
 element.addEventListener("mousedown", (e) => {

@@ -1,4 +1,7 @@
 import {spawnwindow} from "/src/scripts/window.js";
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"speen.gif",title:"nova.spin"});
 
 async function createaudio() {
     var width = window.innerWidth;
@@ -34,7 +37,7 @@ audioElement.remove();
 
 };
 
-document.getElementById("speen").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 if(!document.getElementById("speenaudio")) {
 createaudio();

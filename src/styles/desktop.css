@@ -77,7 +77,7 @@ image-rendering: pixelated;
 filter: drop-shadow(1px 1px 0px #000);
 }
 
-.icons {
+#icons {
 position:absolute;
 left:10px;
 top:0px;

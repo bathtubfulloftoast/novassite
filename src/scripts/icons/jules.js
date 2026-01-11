@@ -1,3 +1,7 @@
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"jules.png",title:"jules.jpog"});
+
 const dir = "/media/sfx/julez/";
 
 async function createaudio() {
@@ -20,7 +24,7 @@ audioElement.remove();
 });
 };
 
-document.getElementById("julessite").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 if(!document.getElementById("julesaudio")) {
 createaudio();

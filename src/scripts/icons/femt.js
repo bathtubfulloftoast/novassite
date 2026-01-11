@@ -1,3 +1,7 @@
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"femt.png",title:"femtanyl.mp3"});
+
 async function createaudio() {
 
     const katamariElement = new Audio("/media/sfx/katamari intro.ogg");
@@ -60,7 +64,7 @@ window.open("https://femtanyl.bandcamp.com/track/murder-every-1-u-know-feat-taki
 });
 };
 
-document.getElementById("femt").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 createaudio();
 });

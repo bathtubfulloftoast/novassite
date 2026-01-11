@@ -4,8 +4,6 @@ import "xp.css/dist/XP.css";
 import '/src/styles/desktop.css';
 import '/src/styles/colors.css';
 
-import desktop from '/src/assets/desktop.json';
-const icons = desktop;
 let devmode;
 
 if (process.env.DEVMODE) {
@@ -20,15 +18,7 @@ devmode=`<h1 class="devmode">NovasSite DEVMODE</h1>`;
 
 <div id="bnuy"></div>
 
-<div class="icons">
-{icons
-.filter(item => !item.hidden)
-.map((item) => (
-<div class="icon" id={item.id}>
-<img fetchPriority="low" src={`/media/icons/${item.icon}`} alt={item.icon} /><br>
-<span>{item.filename}</span>
-</div>
-))}
+<div id="icons">
 </div>
 
 <div class="taskbar">
@@ -56,36 +46,35 @@ devmode=`<h1 class="devmode">NovasSite DEVMODE</h1>`;
 <script src="/src/scripts/startup.js"></script>
 <script src="/src/scripts/click.js"></script>
 
-<script src="/src/scripts/icons/amongus.js"></script>
-<script src="/src/scripts/icons/azure.js"></script>
-<script src="/src/scripts/icons/brooklyn.js"></script>
-<script src="/src/scripts/icons/charmer.js"></script>
-<script src="/src/scripts/icons/creekflow.js"></script>
-<script src="/src/scripts/icons/deltarune.js"></script>
-<script src="/src/scripts/icons/femt.js"></script>
-<script src="/src/scripts/icons/foodhouse.js"></script>
-<script src="/src/scripts/icons/fun.js"></script>
-<script src="/src/scripts/icons/girlyteengirl.js"></script>
-<script src="/src/scripts/icons/lancer.js"></script>
-<script src="/src/scripts/icons/liberal.js"></script>
-<script src="/src/scripts/icons/lobotomy.js"></script>
-<script src="/src/scripts/icons/mimi.js"></script>
-<script src="/src/scripts/icons/remember.js"></script>
-<script src="/src/scripts/icons/rotten.js"></script>
-<script src="/src/scripts/icons/speen.js"></script>
-<script src="/src/scripts/icons/stupid.js"></script>
-<script src="/src/scripts/icons/win93.js"></script>
 <script src="/src/scripts/icons/ytps.js"></script>
+<script src="/src/scripts/icons/speen.js"></script>
+<script src="/src/scripts/icons/fun.js"></script>
+<script src="/src/scripts/icons/brooklyn.js"></script>
+<script src="/src/scripts/icons/brat.js"></script>
+<script src="/src/scripts/icons/jules.js"></script>
+<script src="/src/scripts/icons/azure.js"></script>
+<script src="/src/scripts/icons/remember.js"></script>
+<script src="/src/scripts/icons/lancer.js"></script>
+<script src="/src/scripts/icons/amongus.js"></script>
+<script src="/src/scripts/icons/mimi.js"></script>
+<script src="/src/scripts/icons/charmer.js"></script>
+<script src="/src/scripts/icons/lobotomy.js"></script>
+<script src="/src/scripts/icons/girlyteengirl.js"></script>
+<script src="/src/scripts/icons/gregg.js"></script>
+<script src="/src/scripts/icons/toby.js"></script>
+<script src="/src/scripts/icons/rotten.js"></script>
+<script src="/src/scripts/icons/protogent.js"></script>
+<script src="/src/scripts/icons/hitpoint.js"></script>
+<script src="/src/scripts/icons/liberal.js"></script>
+<script src="/src/scripts/icons/femt.js"></script>
+<script src="/src/scripts/icons/deltarune.js"></script>
+<script src="/src/scripts/icons/foodhouse.js"></script>
+<script src="/src/scripts/icons/creekflow.js"></script>
+<script src="/src/scripts/icons/win93.js"></script>
 <script src="/src/scripts/icons/sawthesign.js"></script>
 <script src="/src/scripts/icons/guestbook.js"></script>
-<script src="/src/scripts/icons/jules.js"></script>
 <script src="/src/scripts/icons/dailyman.js"></script>
-<script src="/src/scripts/icons/toby.js"></script>
-<script src="/src/scripts/icons/hitpoint.js"></script>
-<script src="/src/scripts/icons/protogent.js"></script>
-<script src="/src/scripts/icons/gregg.js"></script>
-<script src="/src/scripts/icons/brat.js"></script>
-
+<script src="/src/scripts/icons/stupid.js"></script>
 
 <script>
 let now = new Date();

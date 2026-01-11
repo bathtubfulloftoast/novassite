@@ -1,6 +1,8 @@
+import {createicon} from "/src/scripts/icon.js";
+
 const now = new Date();
 const month = now.getMonth();
-const frida = document.getElementById("charmer");
+const frida = createicon({src:"winning smile.png",title:"charmer.love"});
 
 async function createaudio() {
 
@@ -30,13 +32,10 @@ imageElement.remove();
 });
 };
 
-if (month !== 9) {
-frida.remove();
-} else {
+
 frida.addEventListener("click", function(event) {
 event.preventDefault();
 
 createaudio();
 
 });
-}

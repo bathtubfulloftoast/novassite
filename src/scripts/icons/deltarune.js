@@ -1,3 +1,7 @@
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"delta.png",title:"datar.une"});
+
 async function createaudio() {
 
 
@@ -26,7 +30,7 @@ audioElement.remove();
 });
 };
 
-document.getElementById("deltarune").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 createaudio();
 });

@@ -1,6 +1,9 @@
 import {spawnwindow} from "/src/scripts/window.js";
+import {createicon} from "/src/scripts/icon.js";
 
-document.getElementById("guestbook").addEventListener("click", function(event) {
+const icon = createicon({src:"tobyclip.png",title:"guest.book"});
+
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 var width = window.innerWidth;
 var height = window.innerHeight;

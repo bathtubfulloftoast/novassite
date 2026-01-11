@@ -1,6 +1,8 @@
+import {createicon} from "/src/scripts/icon.js";
+
 const now = new Date();
 const month = now.getMonth();
-const logan = document.getElementById("smlwiki");
+const logan = createicon({src:"sml.png",title:"SML.wiki"});
 
 async function createaudio() {
 

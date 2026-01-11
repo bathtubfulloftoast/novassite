@@ -1,3 +1,7 @@
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"liberals.png",title:"joe.many"});
+
 async function createaudio() {
 
 
@@ -39,7 +43,7 @@ container.remove();
 });
 };
 
-document.getElementById("liberals").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 
 createaudio();

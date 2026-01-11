@@ -1,4 +1,8 @@
 import {spawnwindow} from "/src/scripts/window.js";
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"tarsh.png",title:"\"The Bin\""});
+
 var width = window.innerWidth;
 var height = window.innerHeight;
 
@@ -75,7 +79,7 @@ audioElement.remove();
 
 };
 
-document.getElementById("tarsh").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 createaudio();
 });

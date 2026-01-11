@@ -1,3 +1,7 @@
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"radiation.png",title:"little.treat"});
+
 async function asatreat() {
     const treat = new Audio("/media/sfx/littletreat.ogg");
 
@@ -42,7 +46,7 @@ async function asatreat() {
 
 
 
-document.getElementById("tobyfox").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
     event.preventDefault();
     asatreat();
 })

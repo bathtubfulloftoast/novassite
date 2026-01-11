@@ -1,3 +1,7 @@
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"aproval.webp",title:"creek.flow"});
+
 async function createaudio() {
 
 
@@ -28,7 +32,7 @@ imageElement.remove();
 });
 };
 
-document.getElementById("creekflow").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 
 createaudio();

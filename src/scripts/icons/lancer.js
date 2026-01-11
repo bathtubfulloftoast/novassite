@@ -1,16 +1,14 @@
-async function createaudio() {
+import {createicon} from "/src/scripts/icon.js";
 
-    const audioElement = new Audio("/media/sfx/splat.ogg");
-    audioElement.volume = 0.2;
+const icon = createicon({src:"lancer.png",title:"lancer"});
 
-    audioElement.play();
-
-
-};
-
-document.getElementById("lancer").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
-createaudio();
+
+const audioElement = new Audio("/media/sfx/splat.ogg");
+audioElement.volume = 0.2;
+
+audioElement.play();
 
 });
 

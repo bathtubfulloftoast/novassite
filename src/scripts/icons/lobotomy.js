@@ -1,3 +1,7 @@
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"gettingyou.png",title:"rock.jpg"});
+
 async function createaudio() {
 
 
@@ -30,7 +34,7 @@ container.remove();
 });
 };
 
-document.getElementById("gettingyou").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 createaudio();
 });

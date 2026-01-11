@@ -1,6 +1,8 @@
+import {createicon} from "/src/scripts/icon.js";
+
 const now = new Date();
 const month = now.getMonth();
-const charli = document.getElementById("brat");
+const charli = createicon({src:"bort.png",title:"brat.summer"});
 
 if (month == 5 || month == 6) {
 charli.addEventListener("click", function(event) {

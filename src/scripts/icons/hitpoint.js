@@ -1,6 +1,8 @@
+import {createicon} from "/src/scripts/icon.js";
+
 const now = new Date();
 const month = now.getMonth();
-const hp = document.getElementById("hitpoint");
+const hp = createicon({src:"hpglobical.gif",title:"hp.kritical"});
 
 async function createaudio() {
 

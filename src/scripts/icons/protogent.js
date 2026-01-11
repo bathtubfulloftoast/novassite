@@ -1,3 +1,7 @@
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"protogent.png",title:"anti.virus"});
+
 async function createaudio() {
 
 const audioElement = await new Audio("/media/sfx/blips.ogg");
@@ -18,7 +22,7 @@ await audioElement.play();
 
 };
 
-document.getElementById("protogent").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 createaudio();
 });

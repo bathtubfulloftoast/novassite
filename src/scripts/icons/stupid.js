@@ -1,3 +1,7 @@
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"text.png",title:"CLICK.ME"});
+
 let counter = 0;
 
 async function createaudio() {
@@ -42,7 +46,7 @@ document.write("");
 
 };
 
-document.getElementById("readme").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 if(!document.getElementById("laughaudio")) {
 createaudio();

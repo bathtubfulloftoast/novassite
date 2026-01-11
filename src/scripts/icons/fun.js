@@ -1,4 +1,7 @@
 import {spawnwindow} from "/src/scripts/window.js";
+import {createicon} from "/src/scripts/icon.js";
+
+const icon = createicon({src:"fluttershit.png",title:"pinkie.fun"});
 
 function createaudio() {
 
@@ -33,7 +36,7 @@ audioElement.remove();
 
 };
 
-document.getElementById("pinkie").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 if(!document.getElementById("pinkieaudio")) {
 createaudio();

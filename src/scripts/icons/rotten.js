@@ -1,5 +1,6 @@
-const audioUrl = "/media/rotten.webm";
+import {createicon} from "/src/scripts/icon.js";
 
+const icon = createicon({src:"rotten.png",title:"WeAre#1"});
 
 
 async function createaudio() {
@@ -7,7 +8,7 @@ async function createaudio() {
 
 
 const audioElement = document.createElement('video');
-audioElement.src = audioUrl;
+audioElement.src = "/media/rotten.webm";
 audioElement.volume = 0.5;
 audioElement.style.position = "absolute";
 audioElement.style.left = 0;
@@ -23,13 +24,12 @@ audioElement.play();
 
 
 audioElement.addEventListener('ended', (event) => {
-// window.open('https://smlwiki.com', '_blank');
 audioElement.remove();
 });
 
 };
 
-document.getElementById("wearenumberone").addEventListener("click", function(event) {
+icon.addEventListener("click", function(event) {
 event.preventDefault();
 createaudio();
 
