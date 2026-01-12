@@ -21,7 +21,7 @@ this is also a personal passion project so do not expect the code to be nice and
 - [github](https://github.com/bathtubfulloftoast/novassite)
 
 these are the official mirrors of novassite.
-git.gay serves as the master with updates being pushed to other hosts once every other day.
+git.gay serves as the master with updates being pushed to other hosts.
 
 **if anything is done outside the master it will be entirely ignored**
 
