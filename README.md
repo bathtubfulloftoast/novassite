@@ -84,9 +84,15 @@ DEVMODE=
 > [!IMPORTANT]
 > if you are a copyright owner and believe that i have infringed on your works contact me at ``takedown@novassite.net``
 
+## How things are liscensed
+```
+this sites source code is provided under the GNU General Public License (Version 3)
+however assets fall under their own copyright and cannot be redistributed or modified without express permission from me.
+```
+
 ## Source Code
 ```
-this sites source code is provided under the  GNU General Public License (Version 3)
+falls under GNU General Public License (Version 3)
 you are free to copy, edit, and view this code or use it however you please.
 however any published variants must be provided with the same license.
 ```
@@ -94,7 +100,6 @@ however any published variants must be provided with the same license.
 ## Assets
 ```
 assets include anything that isnt code such as images, videos, fonts, sound effects and other binary files.
-assets fall under their own seperate copyrights unless stated othewise.
 
-everything under git lfs is an asset.
+everything under git lfs should automatically be assumed to be an asset.
 ```
