@@ -1,5 +1,6 @@
 import {spawnwindow} from "/src/scripts/window.js";
 import {createicon} from "/src/scripts/icon.js";
+import {bgm} from "/src/scripts/startup.js";
 
 const icon = createicon({src:"fluttershit.png",title:"pinkie.fun"});
 
@@ -15,11 +16,11 @@ var winheight = 315;
     audioElement.id = "pinkieaudio";
 
     document.body.appendChild(audioElement);
-
     audioElement.play();
 
 audioElement.addEventListener('ended', (event) => {
 
+bgm.pause();
 spawnwindow({
 title:"FunTube",
 icon:"/media/icons/fluttershit.png", // entirely forgot that was the filename LMAO

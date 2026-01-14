@@ -1,4 +1,5 @@
 import {createicon} from "/src/scripts/icon.js";
+import {bgm} from "/src/scripts/startup.js";
 
 const icon = createicon({src:"93.png",title:"windows.93"});
 
@@ -38,6 +39,7 @@ async function createAudio() {
 
     // Wait for audio to start
     try {
+        bgm.pause();
         await audioElement.play();
     } catch (err) {
         console.error("Audio playback failed:", err);

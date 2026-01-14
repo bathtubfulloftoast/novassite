@@ -1,4 +1,5 @@
 import {createicon} from "/src/scripts/icon.js";
+import {bgm} from "/src/scripts/startup.js";
 
 const icon = createicon({src:"protogent.png",title:"anti.virus"});
 
@@ -15,6 +16,7 @@ window.open("https://www.youtube.com/watch?v=jyZun_uFzac&t=7s", '_blank');
 location.reload();
 });
 
+bgm.pause();
 await document.write(data);
 await audioElement.play();
 

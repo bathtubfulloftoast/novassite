@@ -1,5 +1,6 @@
 import {spawnwindow} from "/src/scripts/window.js";
 import {createicon} from "/src/scripts/icon.js";
+import {bgm} from "/src/scripts/startup.js";
 
 const icon = createicon({src:"sign.webp",title:"isawthe.sign"});
 
@@ -22,7 +23,7 @@ audioElement.style.height = "100vh";
 audioElement.style.background = "#000";
 
 document.body.appendChild(audioElement);
-
+bgm.pause();
 audioElement.play();
 
 

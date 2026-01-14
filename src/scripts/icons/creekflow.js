@@ -1,4 +1,5 @@
 import {createicon} from "/src/scripts/icon.js";
+import {bgm,getCookie} from "/src/scripts/startup.js";
 
 const icon = createicon({src:"aproval.webp",title:"creek.flow"});
 
@@ -23,12 +24,15 @@ async function createaudio() {
     document.body.appendChild(audioElement);
     document.body.appendChild(imageElement);
 
-
+    bgm.pause();
     audioElement.play();
 
 audioElement.addEventListener('ended', (event) => {
 audioElement.remove();
 imageElement.remove();
+if(getCookie("bgmute") !== "true") {
+bgm.play();
+}
 });
 };
 

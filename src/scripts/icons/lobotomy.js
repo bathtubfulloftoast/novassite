@@ -1,4 +1,5 @@
 import {createicon} from "/src/scripts/icon.js";
+import {bgm,getCookie} from "/src/scripts/startup.js";
 
 const icon = createicon({src:"gettingyou.png",title:"rock.jpg"});
 
@@ -24,13 +25,15 @@ async function createaudio() {
     document.body.appendChild(container);
 
 
-
+    bgm.pause();
     audioElement.play();
 
 audioElement.addEventListener('ended', (event) => {
 audioElement.remove();
 container.remove();
-
+if(getCookie("bgmute") !== "true") {
+bgm.play();
+}
 });
 };
 

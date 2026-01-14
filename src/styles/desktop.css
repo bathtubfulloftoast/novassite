@@ -104,18 +104,6 @@ line-height: 25px;
 color:white;
 }
 
-#bnuy {
-position:absolute;
-z-index:1;
-width:100vw;
-height:calc(100vh - 25px);
-background-size: 60vh;
-background-repeat: no-repeat;
-background-position: 20px bottom ;
-left:0px;
-top:0px;
-}
-
 a {
 text-decoration:none;
 }
@@ -172,6 +160,6 @@ filter: drop-shadow(0px 0px 10px black) drop-shadow(0px 0px 10px black);
 
 #taskbar-icons {
 height:25px;
-width:70vw;
+max-width:70vw;
 display:inline-block;
 }

@@ -1,4 +1,4 @@
-function getCookie(cname) {
+export function getCookie(cname) {
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
     let ca = decodedCookie.split(';');
@@ -18,7 +18,9 @@ function getCookie(cname) {
 // i shouldve never gotten into javascript
 // https://www.w3schools.com/js/js_cookies.asp
 
-const bgm = new Audio("/media/sfx/bgm.ogg");
+let initialized = false;
+
+export const bgm = new Audio("/media/sfx/bgm.ogg");
 bgm.volume = 0;
 bgm.loop="true";
 const muter = document.getElementById("muter");
@@ -105,7 +107,7 @@ document.addEventListener("DOMContentLoaded", async function() {
 
 muter.addEventListener("click", function(event) {
     event.preventDefault();
-    if (getCookie("bgmute") == "true") {
+    if (bgm.paused) {
         muter.src="/media/unmute.png";
         bgm.play();
         document.cookie = "bgmute=false";
@@ -126,6 +128,14 @@ bgm.play();
 }
 });
 
+bgm.addEventListener("pause", () => {
+muter.src="/media/mute.png";
+});
+
+bgm.addEventListener("play", () => {
+muter.src="/media/unmute.png";
+});
+
 if ("mediaSession" in navigator) {
   navigator.mediaSession.metadata = new MediaMetadata({
     title: "nova.ogg",
@@ -135,3 +145,4 @@ if ("mediaSession" in navigator) {
   });
 }
 
+initialized = true;

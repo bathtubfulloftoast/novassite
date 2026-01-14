@@ -1,4 +1,5 @@
 import {createicon} from "/src/scripts/icon.js";
+import {bgm,getCookie} from "/src/scripts/startup.js";
 
 const icon = createicon({src:"rotten.png",title:"WeAre#1"});
 
@@ -19,12 +20,15 @@ audioElement.style.height = "100vh";
 audioElement.style.objectFit = "cover";
 
 document.body.appendChild(audioElement);
-
+bgm.pause();
 audioElement.play();
 
 
 audioElement.addEventListener('ended', (event) => {
 audioElement.remove();
+if(getCookie("bgmute") !== "true") {
+bgm.play();
+}
 });
 
 };

@@ -1,4 +1,5 @@
 import {createicon} from "/src/scripts/icon.js";
+import {bgm,getCookie} from "/src/scripts/startup.js";
 
 const icon = createicon({src:"liberals.png",title:"joe.many"});
 
@@ -33,13 +34,15 @@ async function createaudio() {
 
     container.appendChild(imageElement);
 
-
+    bgm.pause();
     audioElement.play();
 
 audioElement.addEventListener('ended', (event) => {
 audioElement.remove();
 container.remove();
-
+if(getCookie("bgmute") !== "true") {
+bgm.play();
+}
 });
 };
 

@@ -1,4 +1,5 @@
 import {createicon} from "/src/scripts/icon.js";
+import {bgm} from "/src/scripts/startup.js";
 
 const icon = createicon({src:"azure.png",title:"azure.comet"});
 
@@ -21,7 +22,7 @@ async function createaudio() {
 
     document.body.appendChild(imageElement);
 
-
+    bgm.pause();
     audioElement.play();
 
 audioElement.addEventListener('ended', (event) => {

@@ -1,4 +1,5 @@
 import {createicon} from "/src/scripts/icon.js";
+import {bgm} from "/src/scripts/startup.js";
 
 const icon = createicon({src:"femt.png",title:"femtanyl.mp3"});
 
@@ -41,7 +42,7 @@ async function createaudio() {
 
     document.body.appendChild(femtIMG);
 
-
+    bgm.pause();
     katamariElement.play();
 
 katamariElement.addEventListener('ended', (event) => {

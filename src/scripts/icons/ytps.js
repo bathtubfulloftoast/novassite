@@ -1,5 +1,6 @@
 import {spawnwindow} from "/src/scripts/window.js";
 import {createicon} from "/src/scripts/icon.js";
+import {bgm} from "/src/scripts/startup.js";
 
 const icon = createicon({src:"tarsh.png",title:"\"The Bin\""});
 
@@ -69,6 +70,7 @@ function createaudio() {
     redirect();
     } else {
     document.body.appendChild(audioElement);
+    bgm.pause();
     audioElement.play();
     }
 

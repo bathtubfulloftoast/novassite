@@ -11,7 +11,15 @@ const percent = (hour+minute)/24;
 const deg = Math.round(percent*360);
 // lets hope this math works out :D
 
-const paperdoll = document.getElementById("bnuy");
+const paperdoll = document.createElement("div");
+paperdoll.style.position = "absolute";
+paperdoll.style.zIndex = "1";
+paperdoll.style.width = "100vw";
+paperdoll.style.height = "calc(100vh - 25px)";
+paperdoll.style.backgroundRepeat = "no-repeat";
+paperdoll.style.left = "0";
+paperdoll.style.top = "0";
+document.body.appendChild(paperdoll);
 
 if(date == "12-25") {
 document.body.style.background = "#fff";
@@ -39,6 +47,8 @@ if([3,4,5].includes(month)) {//spring
 document.body.style.backgroundImage = `linear-gradient(${deg}deg,var(--bg),var(--bright-blue))`;
 
 paperdoll.style.backgroundImage = "url('/media/wallpapers/bunny.png')";
+paperdoll.style.backgroundSize = "60vh";
+paperdoll.style.backgroundPosition = "20px bottom";
 }
 
 else if([6,7,8].includes(month)) {//summer
@@ -46,13 +56,14 @@ document.body.style.backgroundImage = `linear-gradient(${deg}deg,var(--fg0),var(
 
 paperdoll.style.backgroundImage = "url('/media/wallpapers/bird.png')";
 paperdoll.style.backgroundSize = "70vh";
-
+paperdoll.style.backgroundPosition = "20px bottom";
 }
 
 else if([9,10,11].includes(month)) {//fall
 document.body.style.backgroundImage = `linear-gradient(${deg}deg,var(--bg),var(--bright-orange))`;
 
 paperdoll.style.backgroundImage = "url('/media/wallpapers/demon.png')";
+paperdoll.style.backgroundPosition = "20px bottom";
 }
 
 else if([12,1,2].includes(month)) {//winter

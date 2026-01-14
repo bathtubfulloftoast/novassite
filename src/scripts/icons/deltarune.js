@@ -1,4 +1,5 @@
 import {createicon} from "/src/scripts/icon.js";
+import {bgm,getCookie} from "/src/scripts/startup.js";
 
 const icon = createicon({src:"delta.png",title:"datar.une"});
 
@@ -21,12 +22,15 @@ async function createaudio() {
 
     document.body.appendChild(imageElement);
 
-
+    bgm.pause();
     audioElement.play();
 
 audioElement.addEventListener('ended', (event) => {
 imageElement.remove();
 audioElement.remove();
+if(getCookie("bgmute") !== "true") {
+bgm.play();
+}
 });
 };
 

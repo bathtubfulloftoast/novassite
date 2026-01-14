@@ -1,5 +1,6 @@
 import {spawnwindow} from "/src/scripts/window.js";
 import {createicon} from "/src/scripts/icon.js";
+import {bgm} from "/src/scripts/startup.js";
 
 const icon = createicon({src:"remember.png",title:"i.remember"});
 
@@ -27,7 +28,7 @@ async function createaudio() {
 
     document.body.appendChild(imageElement);
 
-
+    bgm.pause();
     audioElement.play();
 
 audioElement.addEventListener('ended', (event) => {
