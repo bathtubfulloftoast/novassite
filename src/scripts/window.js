@@ -31,7 +31,7 @@ element.addEventListener("mousedown", (e) => {
 
 }
 
-export function spawnwindow({title:WindowTitle,icon:iconURL,x:Xpos,y:Ypos,open:AutoOpen,src:Isrc,width:Iwidth,height:Iheight,closable:CloseOption}) {
+export function spawnwindow({title:WindowTitle,icon:iconURL,x:Xpos,y:Ypos,open:AutoOpen,src:Isrc,width:Iwidth,height:Iheight,closable:CloseOption,maximize:MaximizeOption,minimize:MinimizeOption,scroll:ScrollOption}) {
 const iconwrap = document.getElementById("taskbar-icons");
 
 const icon = document.createElement('div');
@@ -85,17 +85,27 @@ titlebar.appendChild(titlecontrol);
 const minimize = document.createElement('button');
 minimize.ariaLabel = "Minimize";
 minimize.style.cursor = "pointer";
+
+if(MinimizeOption !== false) {
 titlecontrol.appendChild(minimize);
+}
 
 const maximize = document.createElement('button');
 maximize.ariaLabel = "Maximize";
 maximize.style.cursor = "pointer";
 
+if(MaximizeOption !== false) {
 titlecontrol.appendChild(maximize);
+}
 
 const close = document.createElement('button');
 close.ariaLabel = "Close";
 close.style.cursor = "pointer";
+
+if (CloseOption == false) {
+close.style.cursor = "not-allowed";
+close.style.filter = "grayscale(20%)";
+}
 
 titlecontrol.appendChild(close);
 
@@ -115,6 +125,11 @@ iframe.style.border="1px solid #0831d9";
 iframe.style.borderBottom="2px solid #0831d9";
 iframe.style.borderTop="none";
 iframe.style.background="#ece9d8";
+
+if(ScrollOption == false) {
+iframe.scrolling = "no";
+}
+
 ifwrap.appendChild(iframe);
 
 movewindow(wrap);
@@ -122,9 +137,7 @@ document.body.appendChild(wrap);
 
 close.addEventListener("click", function(event) {
 event.preventDefault();
-if (CloseOption == false) {
-iframe.src = Isrc;
-} else {
+if (CloseOption !== false) {
 wrap.remove();
 icon.remove();
 }

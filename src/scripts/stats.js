@@ -44,10 +44,11 @@ time = uptime + ' millisecond' + (uptime > 1 ? 's' : '');
 
 }
 
-        document.getElementById("serverstats").innerHTML = `<b>Server Stats:</b><br>
-        server up for: ${time}<br>
-        cpu temp: ${data.cputemp}&deg;C<br>
-        cpu usage: ${data.cpu_usage}%`;
+        document.getElementById("livestats").innerHTML = `
+        Server up for ${time}<br>
+        CPU Temp ${data.cputemp}&deg;C<br>
+        CPU Usage ${data.cpu_usage}%
+        `;
 
 
     }

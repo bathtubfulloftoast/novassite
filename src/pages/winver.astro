@@ -1,0 +1,161 @@
+---
+import os from 'os';
+import si from 'systeminformation';
+
+var now = new Date();
+var dd = String(now.getDate()).padStart(2, '0');
+var mm = String(now.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = now.getFullYear();
+
+import { execSync } from 'child_process';
+
+const commitHash = execSync('git rev-parse HEAD').toString().trim();
+
+
+function formatBytes(bytes, decimals = 2) {
+    if (!+bytes) return '0 Bytes'
+
+    const k = 1024
+    const dm = decimals < 0 ? 0 : decimals
+    const sizes = ['Bytes', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB']
+
+    const i = Math.floor(Math.log(bytes) / Math.log(k))
+
+    return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`
+}
+
+async function getOS() {
+    try {
+        const data = await si.osInfo();
+        return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
+async function getSYS() {
+    try {
+        const data = await si.system();
+        return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
+async function getMEM() {
+    try {
+        const data = await si.mem();
+        return data;
+    } catch (error) {
+        console.error(error);
+        return null;
+    }
+}
+
+async function getCPU() {
+  try {
+    const data = await si.cpu();
+    return data;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
+const osinfo = await getOS();
+const sysinfo = await getSYS();
+const memory = await getMEM(); // returned in bytes
+const cpudata = await getCPU();
+
+---
+
+<head>
+<style>
+@font-face {
+font-family:"Pixelated MS Sans Serif";
+src:url(/node_modules/.pnpm/xp.css@0.2.6/node_modules/xp.css/dist/ms_sans_serif.woff) format("woff");
+src:url(/node_modules/.pnpm/xp.css@0.2.6/node_modules/xp.css/dist/ms_sans_serif.woff2) format("woff2");
+font-style:normal
+}
+
+body {
+font-family:"Pixelated MS Sans Serif";
+word-spacing:2px;
+}
+
+.header {
+background:radial-gradient(
+#a0bdf6,
+#7193e7
+);
+position:absolute;
+left:0;
+top:0;
+width:100vw;
+padding-top:10px;
+padding-bottom:10px;
+display:inline-block;
+text-align:center;
+border-bottom:5px solid #f79736;
+}
+
+.wrapper {
+position:absolute;
+top:175px;
+left:0;
+width:100vw;
+height:100vh;
+text-align:center;
+}
+
+.content {
+display:inline-block;
+text-align:left;
+}
+
+hr {
+border-top:1px solid #ada99a;
+border-bottom:1px solid #fff;
+border-left:1px solid #ece9d8;
+border-right:1px solid #ece9d8;
+width:90vw;
+}
+</style>
+</head>
+
+<div class="header">
+<img src="/media/logo.png">
+</div>
+
+<div class="wrapper">
+
+<div class="content">
+Novas Site (dot) net<br>
+Version 2 (Build {commitHash.slice(0, 8)})<br>
+Build Date {mm}/{dd}/{yyyy}<br>
+Copyright 2021-{yyyy} bathtuboftoast<br>
+</div>
+
+<hr>
+
+<div class="content">
+Built by {osinfo.hostname}<br>
+Built on {sysinfo.model}<br>
+Built using {osinfo.distro??osinfo.platform}<br>
+Built with {cpudata.cores} core {os.arch()} {cpudata.manufacturer} CPU @{cpudata.speed} GHz<br>
+{formatBytes(memory.total)} Memory Avalible
+</div>
+
+<hr>
+
+<div class="content" id="livestats">
+Server up for (time)<br>
+CPU Temp (temp)<br>
+CPU Usage (tusage)<br>
+</div>
+
+</div>
+
+<script src="/src/scripts/stats.js"></script>

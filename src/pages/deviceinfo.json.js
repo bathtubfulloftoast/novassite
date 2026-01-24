@@ -18,23 +18,6 @@ export function formatBytes(bytes, decimals = 2) {
 // https://stackoverflow.com/questions/15900485/correct-way-to-convert-size-in-bytes-to-kb-mb-gb-in-javascript
 // me when im lazy
 
-export function getDevice() {
-    const regex = /[^a-zA-Z0-9 \-.,#_\[\]\{\}!@\$%\^&\*\(\)`~\/\?\\\|=\+]/g;
-    try {
-        if (fs.existsSync('/sys/firmware/devicetree/base/model')) {
-            return fs.readFileSync('/sys/firmware/devicetree/base/model', 'utf-8').trim().replace(regex, '');
-        }
-
-        if (fs.existsSync('/sys/devices/virtual/dmi/id/product_name')) {
-            return fs.readFileSync('/sys/devices/virtual/dmi/id/product_name', 'utf-8').trim().replace(regex, '');
-        }
-
-        return 'Unknown Device';
-    } catch (err) {
-        return 'Unknown Device';
-    }
-}
-
 async function getCPU() {
   try {
     const data = await si.cpu();
