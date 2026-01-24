@@ -16,9 +16,9 @@ this is also a personal passion project so do not expect the code to be nice and
 # Official Mirrors
 - [git.gay](https://git.gay/bathtubfulloftoast/novassite) `MASTER`
 - [codeberg](https://codeberg.org/bathtubfulloftoast/novassite)
-- [gitlab](https://gitlab.com/bathtubfulloftoast/novassite)
 - [gitea](https://gitea.com/bathtubfulloftoast/novassite)
 - [github](https://github.com/bathtubfulloftoast/novassite)
+- [gitlab](https://gitlab.com/bathtubfulloftoast/novassite)
 
 these are the official mirrors of novassite.
 git.gay serves as the master with updates being pushed to other hosts.
