@@ -4,6 +4,7 @@
 body {
 overflow:hidden;
 background:#000;
+color:#fff;
 }
 
 
@@ -27,12 +28,17 @@ border:none;
 <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://novassite.net/blog/rss.xml">
 </head>
 
+<body>
+why arent you using javascript what'd you hope to achive here?
+</body>
+
 <script>
 const width = window.outerWidth;
 let hash = window.location.hash;
 let hashValue = hash.substring(1);
 
 document.addEventListener("DOMContentLoaded", async function() {
+document.body.innerHTML = "";
 const desktop = document.createElement('iframe');
 desktop.src="/desktop/";
 desktop.scrolling="no";
